@@ -3,11 +3,11 @@
 import { useParams } from 'next/navigation'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, FormEvent } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import { COMPANY_INFO } from '@/lib/constants'
-import { CheckCircle, Phone, Mail, MapPin } from 'lucide-react'
+import { CheckCircle, Phone, Mail, MapPin, AlertCircle } from 'lucide-react'
 
 const serviceConfig: Record<string, {
   title: string
@@ -73,20 +73,51 @@ export default function ServiceFormPage() {
   })
   
   const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission here
-    setSubmitted(true)
-    // In production, you'd send this to your backend
-    console.log('Form submitted:', formData)
-  }
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState('')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     })
+    setError('')
+  }
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setError('')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message')
+      }
+
+      setSubmitted(true)
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        service: service === 'storm-restoration' ? 'storm' : service,
+        message: '',
+      })
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to send message. Please try again or call us directly.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -133,6 +164,15 @@ export default function ServiceFormPage() {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-4 sm:p-6">
+                {error && (
+                  <div className="rounded-lg bg-red-50 border border-red-200 p-3 mb-4 flex items-start gap-2">
+                    <AlertCircle className="h-5 w-5 text-red-600 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="text-xs font-semibold text-red-900">Error</p>
+                      <p className="text-xs text-red-700">{error}</p>
+                    </div>
+                  </div>
+                )}
                 <form onSubmit={handleSubmit} className="space-y-3">
                   <div>
                     <label htmlFor="name" className="block text-xs font-semibold text-gray-700 mb-1.5">
@@ -217,8 +257,14 @@ export default function ServiceFormPage() {
                     />
                   </div>
 
-                  <Button type="submit" variant="primary" size="md" className="w-full text-sm py-2.5">
-                    Get My Free Estimate
+                  <Button 
+                    type="submit" 
+                    variant="primary" 
+                    size="md" 
+                    className="w-full text-sm py-2.5"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'Sending...' : 'Get My Free Estimate'}
                   </Button>
                 </form>
 

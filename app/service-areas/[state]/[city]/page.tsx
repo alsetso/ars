@@ -7,6 +7,7 @@ import { AnimatedDiv } from '@/components/ui/AnimatedDiv'
 import { LocalBusinessSchema } from '@/components/seo/LocalBusinessSchema'
 import { RelatedCities } from '@/components/seo/RelatedCities'
 import { InsuranceClaimsCTA } from '@/components/sections/InsuranceClaimsCTA'
+import { CityContactForm } from '@/components/forms/CityContactForm'
 import { COMPANY_INFO, SERVICES } from '@/lib/constants'
 import { getAllCityData, slugToCity } from '@/lib/city-utils'
 import { generateCityContent } from '@/lib/content-generator'
@@ -168,84 +169,7 @@ export default function CityServiceAreaPage({
                     Fill out the form below and we'll contact you within 24 hours to schedule your free
                     estimate.
                   </p>
-                  <form className="space-y-4">
-                    <div>
-                      <label htmlFor="name" className="mb-2 block text-sm font-semibold text-gray-700">
-                        Name *
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        required
-                        className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/20"
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="email" className="mb-2 block text-sm font-semibold text-gray-700">
-                        Email *
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        required
-                        className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/20"
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="phone" className="mb-2 block text-sm font-semibold text-gray-700">
-                        Phone *
-                      </label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        required
-                        className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/20"
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="service" className="mb-2 block text-sm font-semibold text-gray-700">
-                        Service Needed
-                      </label>
-                      <select
-                        id="service"
-                        name="service"
-                        className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/20"
-                      >
-                        <option value="">Select a service</option>
-                        <option value="roofing">Roofing</option>
-                        <option value="siding">Siding</option>
-                        <option value="windows">Windows</option>
-                        <option value="storm">Storm Restoration</option>
-                        <option value="other">Other</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label htmlFor="message" className="mb-2 block text-sm font-semibold text-gray-700">
-                        Message
-                      </label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        rows={4}
-                        className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/20"
-                        placeholder={`Tell us about your project in ${cityName}...`}
-                      />
-                    </div>
-
-                    <input type="hidden" name="city" value={cityName} />
-                    <input type="hidden" name="state" value={stateAbbr} />
-
-                    <Button type="submit" variant="primary" size="lg" className="w-full">
-                      Get Free Estimate
-                    </Button>
-                  </form>
+                  <CityContactForm cityName={cityName} stateAbbr={stateAbbr} />
 
                   <div className="mt-6 border-t border-gray-200 pt-6">
                     <h3 className="mb-4 text-xl font-bold text-gray-900">Contact Information</h3>

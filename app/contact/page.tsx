@@ -5,6 +5,7 @@ import { Card } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { AnimatedDiv } from '@/components/ui/AnimatedDiv'
 import { InsuranceClaimsCTA } from '@/components/sections/InsuranceClaimsCTA'
+import { ContactForm } from '@/components/forms/ContactForm'
 import { COMPANY_INFO, SERVICES } from '@/lib/constants'
 import { cityToSlug } from '@/lib/city-utils'
 import { Phone, Mail, MapPin, Clock, Shield, Award, BadgeCheck, CheckCircle, ArrowRight, Home, PaintBucket, Square, CloudRain, Snowflake } from 'lucide-react'
@@ -101,133 +102,13 @@ export default function ContactPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.4 }}
             >
-              <Card>
+              <div>
                 <h3 className="mb-4 text-xl font-bold text-gray-900 md:text-2xl">Request a Free Estimate</h3>
                 <p className="mb-4 text-sm text-gray-600">
                   Need help choosing a service? Learn more about our <Link href="/services/roofing" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">roofing</Link>, <Link href="/services/siding" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">siding</Link>, <Link href="/services/windows" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">windows</Link>, <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">storm restoration</Link>, and <Link href="/services/winterization" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">winterization</Link> services. Or view our <Link href="/services" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">complete services overview</Link>.
                 </p>
-                <form className="space-y-4">
-                  <div>
-                    <label htmlFor="name" className="mb-2 block text-sm font-semibold text-gray-700">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      required
-                      className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/20"
-                      placeholder="John Doe"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="email" className="mb-2 block text-sm font-semibold text-gray-700">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      required
-                      className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/20"
-                      placeholder="john@example.com"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="phone" className="mb-2 block text-sm font-semibold text-gray-700">
-                      Phone Number *
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      required
-                      className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/20"
-                      placeholder="(763) 427-3093"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="address" className="mb-2 block text-sm font-semibold text-gray-700">
-                      Property Address
-                    </label>
-                    <input
-                      type="text"
-                      id="address"
-                      name="address"
-                      className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/20"
-                      placeholder="City, State (e.g., Anoka, MN)"
-                    />
-                    <p className="mt-1 text-xs text-gray-500">We serve <Link href="/service-areas" className="text-brand-primary hover:text-red-700 underline underline-offset-2">Minnesota and Wisconsin</Link> communities</p>
-                  </div>
-
-                  <div>
-                    <label htmlFor="service" className="mb-2 block text-sm font-semibold text-gray-700">
-                      Service Needed *
-                    </label>
-                    <select
-                      id="service"
-                      name="service"
-                      required
-                      className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/20"
-                    >
-                      <option value="">Select a service</option>
-                      <option value="roofing">Premium Roofing</option>
-                      <option value="siding">Siding Solutions</option>
-                      <option value="windows">Window Installation</option>
-                      <option value="storm">Storm Restoration</option>
-                      <option value="winterization">Winterization</option>
-                      <option value="other">Other / Multiple Services</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label htmlFor="timeline" className="mb-2 block text-sm font-semibold text-gray-700">
-                      Project Timeline
-                    </label>
-                    <select
-                      id="timeline"
-                      name="timeline"
-                      className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/20"
-                    >
-                      <option value="">Select timeline</option>
-                      <option value="urgent">Urgent (Within 1 week)</option>
-                      <option value="soon">Soon (Within 1 month)</option>
-                      <option value="planning">Planning (1-3 months)</option>
-                      <option value="exploring">Just exploring options</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="mb-2 block text-sm font-semibold text-gray-700">
-                      Project Details
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={4}
-                      className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/20"
-                      placeholder="Tell us about your project, any specific concerns, or questions..."
-                    />
-                  </div>
-
-                  <div className="rounded-lg bg-gray-50 p-3 text-xs text-gray-600">
-                    <p className="mb-1 font-semibold">What to expect:</p>
-                    <ul className="space-y-1 pl-4 list-disc">
-                      <li>Free, no-obligation estimate</li>
-                      <li>Response within 24 hours</li>
-                      <li>Expert consultation from our <Link href="/about" className="text-brand-primary hover:text-red-700 underline underline-offset-2">GAF Master Elite</Link> team</li>
-                    </ul>
-                  </div>
-
-                  <Button type="submit" variant="primary" size="lg" className="w-full">
-                    Request Free Estimate
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </form>
-              </Card>
+                <ContactForm />
+              </div>
             </AnimatedDiv>
           </div>
         </div>
