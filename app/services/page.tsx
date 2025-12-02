@@ -46,8 +46,12 @@ export default function ServicesPage() {
 
         <div className="grid gap-3 md:gap-4 md:grid-cols-2 lg:grid-cols-5">
           {SERVICES.map((service, index) => {
-            const Icon = iconMap[service.icon as keyof typeof iconMap]
+            const Icon = iconMap[service.icon as keyof typeof iconMap] || Home
             const slug = serviceSlugs[service.id as keyof typeof serviceSlugs]
+
+            if (!Icon) {
+              return null
+            }
 
             return (
               <AnimatedDiv

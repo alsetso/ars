@@ -73,7 +73,11 @@ export default function AboutPage() {
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {FEATURES.map((feature, index) => {
-              const Icon = iconMap[feature.icon as keyof typeof iconMap]
+              const Icon = iconMap[feature.icon as keyof typeof iconMap] || Shield
+
+              if (!Icon) {
+                return null
+              }
 
               return (
                 <AnimatedDiv

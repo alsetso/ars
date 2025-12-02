@@ -10,7 +10,7 @@ import { InsuranceClaimsCTA } from '@/components/sections/InsuranceClaimsCTA'
 import { COMPANY_INFO, SERVICES } from '@/lib/constants'
 import { getAllCityData, slugToCity } from '@/lib/city-utils'
 import { generateCityContent } from '@/lib/content-generator'
-import { Home, PaintBucket, Square, CloudRain, Phone, Mail, MapPin } from 'lucide-react'
+import { Home, PaintBucket, Square, CloudRain, Snowflake, Phone, Mail, MapPin } from 'lucide-react'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
@@ -62,6 +62,7 @@ const iconMap = {
   PaintBucket,
   Square,
   CloudRain,
+  Snowflake,
 }
 
 export default function CityServiceAreaPage({
@@ -377,7 +378,11 @@ export default function CityServiceAreaPage({
           </h2>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {SERVICES.map((service, index) => {
-              const Icon = iconMap[service.icon as keyof typeof iconMap]
+              const Icon = iconMap[service.icon as keyof typeof iconMap] || Home
+
+              if (!Icon) {
+                return null
+              }
 
               return (
                 <AnimatedDiv
