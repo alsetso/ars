@@ -4,7 +4,7 @@ import { Section, SectionHeader } from '@/components/ui/Section'
 import { Card } from '@/components/ui/Card'
 import { AnimatedDiv } from '@/components/ui/AnimatedDiv'
 import { Button } from '@/components/ui/Button'
-import { Building2, Users, Home, Shield, CheckCircle, ArrowRight, Award, Clock, DollarSign } from 'lucide-react'
+import { Building2, Users, Home, Shield, CheckCircle, ArrowRight, Award, Clock, DollarSign, Briefcase } from 'lucide-react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
@@ -33,21 +33,38 @@ const programs = [
     iconBg: 'bg-blue-50',
   },
   {
-    id: 'real-estate',
-    title: 'Real Estate Professional Program',
-    description: 'Dedicated support for real estate professionals who need fast, reliable exterior work for properties they manage or represent.',
+    id: 'agent',
+    title: 'Agent Program',
+    description: 'Exclusive program for realtors, brokers, investors, and wholesalers. Work with us on 2+ deals per year and unlock special incentives.',
     icon: Users,
-    href: '/programs/real-estate',
+    href: '/programs/agent',
     features: [
-      'Priority scheduling for professionals',
+      'Incentives for 2+ deals per year',
+      'Priority scheduling for agents',
       'Fast project completion',
       'Property-ready solutions',
-      'Competitive pricing',
-      'Direct professional support',
+      'Direct agent support line',
     ],
     color: 'from-green-50 to-green-100',
     iconColor: 'text-green-600',
     iconBg: 'bg-green-50',
+  },
+  {
+    id: 'property-manager',
+    title: 'Property Manager Program',
+    description: 'Comprehensive exterior services for property managers handling apartment buildings, multi-family properties, group homes, clinics, and commercial facilities.',
+    icon: Building2,
+    href: '/programs/property-manager',
+    features: [
+      'Multi-property management',
+      'Apartment & multi-family expertise',
+      'Commercial facility services',
+      'Bulk project pricing',
+      'Timeline coordination',
+    ],
+    color: 'from-orange-50 to-orange-100',
+    iconColor: 'text-orange-600',
+    iconBg: 'bg-orange-50',
   },
   {
     id: 'hoa',
@@ -65,6 +82,40 @@ const programs = [
     color: 'from-purple-50 to-purple-100',
     iconColor: 'text-purple-600',
     iconBg: 'bg-purple-50',
+  },
+  {
+    id: 'residential',
+    title: 'Residential Program',
+    description: 'Comprehensive exterior services for homeowners. Expert roofing, siding, windows, and more for your Minnesota or Wisconsin home.',
+    icon: Home,
+    href: '/programs/residential',
+    features: [
+      'GAF Master Elite certified',
+      'Industry-leading warranties',
+      'Free inspections & estimates',
+      'Family-owned & operated',
+      '30+ years experience',
+    ],
+    color: 'from-red-50 to-red-100',
+    iconColor: 'text-red-600',
+    iconBg: 'bg-red-50',
+  },
+  {
+    id: 'commercial',
+    title: 'Commercial Program',
+    description: 'Expert commercial exterior services for business owners and managers. Professional roofing, siding, and building maintenance.',
+    icon: Briefcase,
+    href: '/programs/commercial',
+    features: [
+      'Minimal business disruption',
+      'Commercial property expertise',
+      'Minimal downtime',
+      'Competitive commercial pricing',
+      'Direct business support',
+    ],
+    color: 'from-indigo-50 to-indigo-100',
+    iconColor: 'text-indigo-600',
+    iconBg: 'bg-indigo-50',
   },
 ]
 
@@ -126,7 +177,7 @@ export default function ProgramsPage() {
           description="Choose the program that fits your organization's needs"
         />
         <div className="mx-auto max-w-6xl">
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {programs.map((program, index) => {
               const Icon = program.icon
               return (

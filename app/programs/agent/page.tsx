@@ -9,9 +9,9 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Real Estate Professional Program - Advanced Roofing & Siding Inc.',
-  description: 'Dedicated support for real estate professionals. Fast, reliable exterior work for properties you manage or represent. Priority scheduling and competitive pricing.',
-  keywords: 'real estate professional program, property management services, realtor services, property exterior services, fast turnaround, real estate contractor, Minnesota, Wisconsin',
+  title: 'Agent Program - Advanced Roofing & Siding Inc.',
+  description: 'Exclusive program for realtors, brokers, investors, and wholesalers. Work with us on 2+ deals per year and unlock special incentives. Fast, reliable exterior work.',
+  keywords: 'agent program, realtor program, broker program, investor program, wholesaler program, real estate incentives, property exterior services, Minnesota, Wisconsin',
 }
 
 const services = [
@@ -38,11 +38,12 @@ const services = [
 ]
 
 const benefits = [
-  'Priority scheduling for real estate professionals',
+  'Special incentives for 2+ deals per year',
+  'Priority scheduling for agents',
   'Fast project completion to meet deadlines',
   'Property-ready solutions that enhance value',
-  'Competitive pricing for repeat clients',
-  'Direct professional support line',
+  'Discounted rates for program members',
+  'Direct agent support line',
   'Detailed documentation for property records',
   'GAF Master Elite certified quality',
   'Industry-leading warranties',
@@ -71,8 +72,8 @@ export default function RealEstateProgramPage() {
   return (
     <PageLayout>
       <PageHero
-        title="Real Estate Professional Program"
-        description="Dedicated support for real estate professionals who need fast, reliable exterior work"
+        title="Agent Program"
+        description="Exclusive program for realtors, brokers, investors, and wholesalers. Work with us on 2+ deals per year and unlock special incentives"
         backgroundImage="/gallery/310571525_636102627992261_6745535343486299305_n.webp"
       />
 
@@ -82,13 +83,16 @@ export default function RealEstateProgramPage() {
           <Card>
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-gray-700 mb-4">
-                Our Real Estate Professional Program is designed specifically for real estate agents, property managers, and real estate professionals who need fast, reliable exterior work for properties they manage or represent. We understand that in real estate, time is money, and delays can cost deals.
+                Our Agent Program is designed specifically for realtors, brokers, investors, and wholesalers who need fast, reliable exterior work for properties they're buying, selling, or managing. We understand that in real estate, time is money, and delays can cost deals.
               </p>
               <p className="text-lg text-gray-700 mb-4">
                 As a <Link href="/gaf-master-elite-contractor" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">GAF Master Elite contractor</Link> with <Link href="/about" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">30+ years of experience</Link>, we provide the quality and reliability your clients expect, delivered on the timeline you need. Whether you're preparing a property for listing, addressing inspection findings, or maintaining investment properties, we're here to support your business.
               </p>
+              <p className="text-lg text-gray-700 mb-4">
+                <strong>Special Incentives:</strong> Work with us on 2 or more deals per year and unlock exclusive benefits including priority scheduling, discounted rates, and dedicated agent support. The more you work with us, the more you save.
+              </p>
               <p className="text-lg text-gray-700">
-                Our program offers priority scheduling, fast turnaround times, and competitive pricing for real estate professionals. We work around your schedule and deadlines, ensuring properties are ready when you need them.
+                Our program offers priority scheduling, fast turnaround times, and competitive pricing for agents. We work around your schedule and deadlines, ensuring properties are ready when you need them.
               </p>
             </div>
           </Card>
@@ -98,8 +102,8 @@ export default function RealEstateProgramPage() {
       {/* Services */}
       <Section className="bg-gray-50">
         <SectionHeader
-          title="Services for Real Estate Professionals"
-          description="Comprehensive exterior services tailored to your needs"
+          title="Services for Agents"
+          description="Comprehensive exterior services tailored for realtors, brokers, investors, and wholesalers"
         />
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-6 md:grid-cols-2">
@@ -130,8 +134,8 @@ export default function RealEstateProgramPage() {
       {/* Benefits */}
       <Section className="bg-white">
         <SectionHeader
-          title="Program Benefits"
-          description="What real estate professionals receive with our program"
+          title="Program Benefits & Incentives"
+          description="What agents receive with our program - special incentives for 2+ deals per year"
         />
         <div className="mx-auto max-w-4xl">
           <Card>
@@ -151,7 +155,7 @@ export default function RealEstateProgramPage() {
       <Section className="bg-gray-50">
         <SectionHeader
           title="Common Use Cases"
-          description="How real estate professionals use our services"
+          description="How realtors, brokers, investors, and wholesalers use our services"
         />
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-6 md:grid-cols-2">
@@ -184,10 +188,10 @@ export default function RealEstateProgramPage() {
           >
             <Card className="bg-white border-2 border-green-100 shadow-xl">
               <h2 className="mb-3 text-2xl font-bold text-gray-900 md:text-3xl">
-                Join Our Real Estate Professional Program
+                Join Our Agent Program
               </h2>
               <p className="mb-6 text-base text-gray-700 md:text-lg max-w-2xl mx-auto">
-                Contact us to learn more about our program and how we can support your real estate business with fast, reliable exterior services.
+                Contact us to learn more about our Agent Program and unlock special incentives when you work with us on 2+ deals per year. Fast, reliable exterior services for realtors, brokers, investors, and wholesalers.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
                 <Link href="/contact">

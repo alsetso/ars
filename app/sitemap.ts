@@ -23,8 +23,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/24-7-support',
     '/cities-program',
     '/programs',
+    '/programs/residential',
+    '/programs/commercial',
     '/programs/municipal',
-    '/programs/real-estate',
+    '/programs/agent',
+    '/programs/property-manager',
     '/programs/hoa',
   ]
   

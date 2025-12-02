@@ -102,9 +102,12 @@ export const NAVIGATION_LINKS = [
     href: '/programs',
     label: 'Programs',
     submenu: [
-      { href: '/programs/municipal', label: 'Municipal Program' },
-      { href: '/programs/real-estate', label: 'Real Estate Professional' },
-      { href: '/programs/hoa', label: 'HOA Program' },
+      { href: '/programs/residential', label: 'Residential' },
+      { href: '/programs/commercial', label: 'Commercial' },
+      { href: '/programs/municipal', label: 'Municipal' },
+      { href: '/programs/agent', label: 'Agent' },
+      { href: '/programs/property-manager', label: 'Property Manager' },
+      { href: '/programs/hoa', label: 'HOA' },
     ],
   },
   {
