@@ -22,6 +22,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/gaf-master-elite-contractor',
     '/24-7-support',
     '/cities-program',
+    '/programs',
+    '/programs/municipal',
+    '/programs/real-estate',
+    '/programs/hoa',
   ]
   
   const cityPages = cities.map(city => ({

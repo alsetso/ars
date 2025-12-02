@@ -99,6 +99,15 @@ export const NAVIGATION_LINKS = [
   },
   { href: '/service-areas', label: 'Service Areas' },
   {
+    href: '/programs',
+    label: 'Programs',
+    submenu: [
+      { href: '/programs/municipal', label: 'Municipal Program' },
+      { href: '/programs/real-estate', label: 'Real Estate Professional' },
+      { href: '/programs/hoa', label: 'HOA Program' },
+    ],
+  },
+  {
     href: '#',
     label: 'Resources',
     submenu: [
