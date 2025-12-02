@@ -172,7 +172,7 @@ export default function WindowsPage() {
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                 >
                   <Card className="h-full text-center">
-                    <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100 shadow-sm">
+                    <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100">
                       <Icon className="h-6 w-6 text-brand-primary" strokeWidth={2} />
                     </div>
                     <h3 className="mb-2 text-lg font-bold text-gray-900">{type.title}</h3>
@@ -203,9 +203,9 @@ export default function WindowsPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                 >
-                  <Card className="border-2 border-gray-100 hover:shadow-lg transition-shadow">
+                  <Card className="border-2 border-gray-100">
                     <div className="flex gap-4 md:gap-6">
-                      <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-red-600 to-red-700 text-white text-xl font-bold shadow-md md:h-14 md:w-14">
+                      <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-red-600 to-red-700 text-white text-xl font-bold md:h-14 md:w-14">
                         {step.step}
                       </div>
                       <div className="flex-1">
@@ -262,7 +262,7 @@ export default function WindowsPage() {
               transition={{ duration: 0.4 }}
             >
               <Link href="/services/roofing">
-                <Card className="h-full cursor-pointer hover:shadow-lg transition-shadow text-center">
+                <Card className="h-full cursor-pointer text-center">
                   <Home className="mx-auto mb-3 h-10 w-10 text-brand-primary" />
                   <h3 className="mb-2 font-bold text-gray-900">Premium Roofing</h3>
                   <p className="mb-3 text-sm text-gray-600">GAF Master Elite certified</p>
@@ -277,7 +277,7 @@ export default function WindowsPage() {
               transition={{ duration: 0.4, delay: 0.1 }}
             >
               <Link href="/services/siding">
-                <Card className="h-full cursor-pointer hover:shadow-lg transition-shadow text-center">
+                <Card className="h-full cursor-pointer text-center">
                   <PaintBucket className="mx-auto mb-3 h-10 w-10 text-brand-primary" />
                   <h3 className="mb-2 font-bold text-gray-900">Siding Solutions</h3>
                   <p className="mb-3 text-sm text-gray-600">Transform your exterior</p>
@@ -292,7 +292,7 @@ export default function WindowsPage() {
               transition={{ duration: 0.4, delay: 0.2 }}
             >
               <Link href="/services/storm-restoration">
-                <Card className="h-full cursor-pointer hover:shadow-lg transition-shadow text-center">
+                <Card className="h-full cursor-pointer text-center">
                   <CloudRain className="mx-auto mb-3 h-10 w-10 text-brand-primary" />
                   <h3 className="mb-2 font-bold text-gray-900">Storm Restoration</h3>
                   <p className="mb-3 text-sm text-gray-600">Expert damage repair</p>
@@ -313,7 +313,7 @@ export default function WindowsPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
           >
-            <Card className="bg-white border-2 border-red-100 shadow-xl">
+            <Card className="bg-white border-2 border-red-100">
               <h2 className="mb-3 text-2xl font-bold text-gray-900 md:text-3xl">
                 Ready to Upgrade Your Windows?
               </h2>

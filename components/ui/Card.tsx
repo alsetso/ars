@@ -15,16 +15,12 @@ export function Card({ children, className, hover = true, variant = 'default' }:
   const Component = hover ? motion.div : 'div'
   
   const variantStyles = {
-    default: 'bg-white shadow-soft border border-gray-100',
-    elevated: 'bg-white shadow-medium border border-gray-100',
-    outlined: 'bg-white shadow-sm border-2 border-gray-200',
+    default: 'bg-white border border-gray-100',
+    elevated: 'bg-white border border-gray-100',
+    outlined: 'bg-white border-2 border-gray-200',
   }
   
   const motionProps = hover ? {
-    whileHover: { 
-      y: -2, 
-      boxShadow: '0 8px 20px -4px rgba(0, 0, 0, 0.08), 0 4px 8px -2px rgba(0, 0, 0, 0.03)' 
-    },
     transition: { type: 'spring', stiffness: 400, damping: 30 },
   } : {}
 

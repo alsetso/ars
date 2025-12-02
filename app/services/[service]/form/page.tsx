@@ -163,7 +163,7 @@ export default function ServiceFormPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-4 sm:p-6">
+              <div className="bg-white rounded-2xl border border-gray-200 p-4 sm:p-6">
                 {error && (
                   <div className="rounded-lg bg-red-50 border border-red-200 p-3 mb-4 flex items-start gap-2">
                     <AlertCircle className="h-5 w-5 text-red-600 flex-shrink-0 mt-0.5" />
@@ -292,7 +292,7 @@ export default function ServiceFormPage() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="bg-white rounded-2xl shadow-xl border border-gray-200 p-8 text-center"
+              className="bg-white rounded-2xl border border-gray-200 p-8 text-center"
             >
               <div className="mb-4">
                 <CheckCircle className="h-16 w-16 text-green-600 mx-auto" />

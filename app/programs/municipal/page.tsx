@@ -118,7 +118,7 @@ export default function MunicipalProgramPage() {
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                 >
                   <Card className="h-full">
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 shadow-sm">
+                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-50 to-blue-100">
                       <Icon className="h-6 w-6 text-blue-600" strokeWidth={2} />
                     </div>
                     <h3 className="mb-2 text-xl font-bold text-gray-900">{service.title}</h3>
@@ -169,7 +169,7 @@ export default function MunicipalProgramPage() {
               >
                 <Card className="border-2 border-gray-100">
                   <div className="flex gap-4 md:gap-6">
-                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white text-xl font-bold shadow-md md:h-14 md:w-14">
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white text-xl font-bold md:h-14 md:w-14">
                       {step.step}
                     </div>
                     <div className="flex-1">
@@ -193,7 +193,7 @@ export default function MunicipalProgramPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
           >
-            <Card className="bg-white border-2 border-blue-100 shadow-xl">
+            <Card className="bg-white border-2 border-blue-100">
               <h2 className="mb-3 text-2xl font-bold text-gray-900 md:text-3xl">
                 Partner With Us for Your Municipal Projects
               </h2>

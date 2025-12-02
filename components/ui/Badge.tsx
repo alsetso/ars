@@ -14,7 +14,7 @@ export function Badge({ icon: Icon, text, className }: BadgeProps) {
   return (
     <motion.div
       className={cn(
-        'flex items-center gap-2 rounded-lg bg-white/90 backdrop-blur-sm px-4 py-2 shadow-md',
+        'flex items-center gap-2 rounded-lg bg-white/90 backdrop-blur-sm px-4 py-2',
         className
       )}
       initial={{ opacity: 0, y: 20 }}

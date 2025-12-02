@@ -185,7 +185,7 @@ export default function WinterizationPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Card className="mb-8 border-2 border-blue-100 bg-gradient-to-br from-white to-blue-50/30 shadow-md">
+            <Card className="mb-8 border-2 border-blue-100 bg-gradient-to-br from-white to-blue-50/30">
               <div className="prose prose-lg max-w-none">
                 <div className="flex items-center gap-3 mb-4">
                   <Snowflake className="h-6 w-6 text-blue-600 flex-shrink-0" strokeWidth={2} />
@@ -225,8 +225,8 @@ export default function WinterizationPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                 >
-                  <Card className="h-full border-2 border-blue-100 bg-gradient-to-br from-white to-blue-50/50 hover:shadow-lg transition-shadow">
-                    <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl ${need.color} md:h-14 md:w-14 shadow-sm`}>
+                  <Card className="h-full border-2 border-blue-100 bg-gradient-to-br from-white to-blue-50/50">
+                    <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl ${need.color} md:h-14 md:w-14`}>
                       <Icon className={`h-6 w-6 ${need.iconColor} md:h-7 md:w-7`} strokeWidth={2} />
                     </div>
                     <h3 className="mb-2 text-lg font-bold text-gray-900 md:text-xl">{need.title}</h3>
@@ -260,9 +260,9 @@ export default function WinterizationPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
               >
-                <Card className="border-2 border-blue-100 bg-gradient-to-br from-white to-blue-50/30 hover:shadow-lg transition-shadow">
+                <Card className="border-2 border-blue-100 bg-gradient-to-br from-white to-blue-50/30">
                   <div className="flex gap-4 md:gap-6">
-                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white text-xl font-bold shadow-md md:h-14 md:w-14">
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 text-white text-xl font-bold md:h-14 md:w-14">
                       {step.step}
                     </div>
                     <div className="flex-1">
@@ -310,8 +310,8 @@ export default function WinterizationPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                 >
-                  <Card className="h-full border-2 border-blue-100 bg-gradient-to-br from-white to-blue-50/50 hover:shadow-lg transition-shadow">
-                    <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 md:h-14 md:w-14 shadow-sm">
+                  <Card className="h-full border-2 border-blue-100 bg-gradient-to-br from-white to-blue-50/50">
+                    <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 md:h-14 md:w-14">
                       <Icon className="h-6 w-6 text-blue-600 md:h-7 md:w-7" strokeWidth={2} />
                     </div>
                     <h3 className="mb-2 text-lg font-bold text-gray-900 md:text-xl">{benefit.title}</h3>
@@ -329,7 +329,7 @@ export default function WinterizationPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
           >
-            <Card className="bg-gradient-to-br from-blue-100 via-blue-50 to-white border-2 border-blue-300 shadow-xl relative overflow-hidden">
+            <Card className="bg-gradient-to-br from-blue-100 via-blue-50 to-white border-2 border-blue-300 relative overflow-hidden">
               {/* Snowflake decoration */}
               <div className="absolute top-4 right-4 opacity-10">
                 <Snowflake className="h-24 w-24 text-blue-400" strokeWidth={1} />
@@ -338,7 +338,7 @@ export default function WinterizationPage() {
                 <Snowflake className="h-16 w-16 text-blue-400" strokeWidth={1} />
               </div>
               <div className="text-center mb-6 relative z-10">
-                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 shadow-lg">
+                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-blue-700">
                   <Snowflake className="h-8 w-8 text-white" strokeWidth={2} />
                 </div>
                 <h2 className="mb-3 text-2xl font-bold text-gray-900 md:text-3xl">

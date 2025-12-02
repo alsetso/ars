@@ -138,7 +138,7 @@ export default function PropertyManagerProgramPage() {
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                 >
                   <Card className="h-full">
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-orange-50 to-orange-100 shadow-sm">
+                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-orange-50 to-orange-100">
                       <Icon className="h-6 w-6 text-orange-600" strokeWidth={2} />
                     </div>
                     <h3 className="mb-2 text-xl font-bold text-gray-900">{property.title}</h3>
@@ -170,7 +170,7 @@ export default function PropertyManagerProgramPage() {
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                 >
                   <Card className="h-full">
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-orange-50 to-orange-100 shadow-sm">
+                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-orange-50 to-orange-100">
                       <Icon className="h-6 w-6 text-orange-600" strokeWidth={2} />
                     </div>
                     <h3 className="mb-2 text-xl font-bold text-gray-900">{service.title}</h3>
@@ -238,7 +238,7 @@ export default function PropertyManagerProgramPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
           >
-            <Card className="bg-white border-2 border-orange-100 shadow-xl">
+            <Card className="bg-white border-2 border-orange-100">
               <h2 className="mb-3 text-2xl font-bold text-gray-900 md:text-3xl">
                 Partner With Us for Your Property Management Needs
               </h2>

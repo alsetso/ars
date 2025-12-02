@@ -233,7 +233,7 @@ export default function AboutPage() {
           >
             <Card className="bg-gradient-to-br from-red-50 to-red-100 border-2 border-red-200">
               <div className="text-center mb-8">
-                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-lg">
+                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white">
                   <Building className="h-8 w-8 text-brand-primary" />
                 </div>
                 <h2 className="mb-4 text-3xl font-bold text-gray-900">

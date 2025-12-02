@@ -188,8 +188,8 @@ export default function ProgramsPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <Card className="h-full hover:shadow-lg transition-shadow">
-                    <div className={`mb-4 flex h-14 w-14 items-center justify-center rounded-xl ${program.iconBg} shadow-sm`}>
+                  <Card className="h-full">
+                    <div className={`mb-4 flex h-14 w-14 items-center justify-center rounded-xl ${program.iconBg}`}>
                       <Icon className={`h-7 w-7 ${program.iconColor}`} strokeWidth={2} />
                     </div>
                     <h3 className="mb-3 text-xl font-bold text-gray-900">{program.title}</h3>
@@ -235,7 +235,7 @@ export default function ProgramsPage() {
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                 >
                   <Card className="h-full text-center">
-                    <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100 shadow-sm">
+                    <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100">
                       <Icon className="h-6 w-6 text-brand-primary" strokeWidth={2} />
                     </div>
                     <h3 className="mb-2 text-lg font-bold text-gray-900">{benefit.title}</h3>
@@ -257,7 +257,7 @@ export default function ProgramsPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
           >
-            <Card className="bg-white border-2 border-gray-200 shadow-xl">
+            <Card className="bg-white border-2 border-gray-200">
               <h2 className="mb-3 text-2xl font-bold text-gray-900 md:text-3xl">
                 Ready to Join a Program?
               </h2>

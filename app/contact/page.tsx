@@ -129,7 +129,7 @@ export default function ContactPage() {
             </div>
             <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
               <Card className="text-center">
-                <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100 shadow-sm md:h-14 md:w-14">
+                <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100 md:h-14 md:w-14">
                   <Shield className="h-6 w-6 text-brand-primary md:h-7 md:w-7" strokeWidth={2} />
                 </div>
                 <h3 className="mb-1 text-sm font-bold text-gray-900 md:text-base">GAF Master Elite</h3>
@@ -139,7 +139,7 @@ export default function ContactPage() {
                 </Link>
               </Card>
               <Card className="text-center">
-                <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100 shadow-sm md:h-14 md:w-14">
+                <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100 md:h-14 md:w-14">
                   <Award className="h-6 w-6 text-brand-primary md:h-7 md:w-7" strokeWidth={2} />
                 </div>
                 <h3 className="mb-1 text-sm font-bold text-gray-900 md:text-base">30+ Years</h3>
@@ -149,7 +149,7 @@ export default function ContactPage() {
                 </Link>
               </Card>
               <Card className="text-center">
-                <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100 shadow-sm md:h-14 md:w-14">
+                <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100 md:h-14 md:w-14">
                   <BadgeCheck className="h-6 w-6 text-brand-primary md:h-7 md:w-7" strokeWidth={2} />
                 </div>
                 <h3 className="mb-1 text-sm font-bold text-gray-900 md:text-base">A+ BBB Rating</h3>
@@ -159,7 +159,7 @@ export default function ContactPage() {
                 </Link>
               </Card>
               <Card className="text-center">
-                <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100 shadow-sm md:h-14 md:w-14">
+                <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100 md:h-14 md:w-14">
                   <CheckCircle className="h-6 w-6 text-brand-primary md:h-7 md:w-7" strokeWidth={2} />
                 </div>
                 <h3 className="mb-1 text-sm font-bold text-gray-900 md:text-base">Licensed & Insured</h3>
@@ -218,7 +218,7 @@ export default function ContactPage() {
                     transition={{ duration: 0.4, delay: index * 0.05 }}
                   >
                     <Link href={slug}>
-                      <Card className="h-full cursor-pointer hover:shadow-lg transition-shadow text-center">
+                      <Card className="h-full cursor-pointer text-center">
                         <div className={`mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl md:h-14 md:w-14 ${service.id === 'winterization' ? 'bg-blue-50' : 'bg-red-50'}`}>
                           <Icon className={`h-6 w-6 md:h-7 md:w-7 ${service.id === 'winterization' ? 'text-blue-600' : 'text-brand-primary'}`} />
                         </div>
@@ -259,7 +259,7 @@ export default function ContactPage() {
           >
             <Card className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200">
               <div className="text-center mb-6">
-                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100 shadow-sm">
+                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100">
                   <MapPin className="h-6 w-6 text-brand-primary" strokeWidth={2} />
                 </div>
                 <h2 className="text-2xl font-bold text-gray-900 md:text-3xl mb-2">Serving Minnesota & Wisconsin</h2>
@@ -275,7 +275,7 @@ export default function ContactPage() {
                       <Link
                         key={city}
                         href={`/service-areas/mn/${cityToSlug(city)}`}
-                        className="rounded-full bg-gray-100 px-3 py-1.5 text-xs font-medium text-gray-700 transition-all duration-200 hover:bg-brand-primary hover:text-white hover:shadow-sm"
+                        className="rounded-full bg-gray-100 px-3 py-1.5 text-xs font-medium text-gray-700 transition-all duration-200 hover:bg-brand-primary hover:text-white "
                       >
                         {city}
                       </Link>
@@ -289,7 +289,7 @@ export default function ContactPage() {
                       <Link
                         key={city}
                         href={`/service-areas/wi/${cityToSlug(city)}`}
-                        className="rounded-full bg-gray-100 px-3 py-1.5 text-xs font-medium text-gray-700 transition-all duration-200 hover:bg-brand-primary hover:text-white hover:shadow-sm"
+                        className="rounded-full bg-gray-100 px-3 py-1.5 text-xs font-medium text-gray-700 transition-all duration-200 hover:bg-brand-primary hover:text-white "
                       >
                         {city}
                       </Link>
