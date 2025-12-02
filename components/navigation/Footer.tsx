@@ -181,6 +181,9 @@ export function Footer() {
                 {' • '}
                 <a href="mailto:StacyLehn@GMail.com" className="transition-colors hover:text-brand-primary">StacyLehn@GMail.com</a>
               </p>
+              <p className="mt-2 italic">
+                Prices & Availability Subject To Change Without Notice
+              </p>
             </div>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500 sm:justify-end">
               <Link
