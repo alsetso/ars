@@ -166,9 +166,22 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-8 border-t border-gray-200 pt-8">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-center text-sm text-gray-500 sm:text-left">
-              © {currentYear} {COMPANY_INFO.name}. All rights reserved.
-            </p>
+            <div className="text-center text-xs text-gray-500 sm:text-left">
+              <p className="mb-1">
+                Copyright © 2001 - 2025 Advanced Roofing & Siding, Inc. All Rights Reserved
+              </p>
+              <p className="mb-1">
+                MN License #BC630441 | WI License #2992 - DCRF
+              </p>
+              <p className="mb-1">
+                3601 211th Ln NW, Oak Grove, MN 55303
+              </p>
+              <p className="mb-1">
+                <a href="tel:763-427-3093" className="transition-colors hover:text-brand-primary">763-427-3093</a>
+                {' • '}
+                <a href="mailto:StacyLehn@GMail.com" className="transition-colors hover:text-brand-primary">StacyLehn@GMail.com</a>
+              </p>
+            </div>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500 sm:justify-end">
               <Link
                 href="/privacy-policy"
