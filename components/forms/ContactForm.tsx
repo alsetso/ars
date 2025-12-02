@@ -3,7 +3,7 @@
 import { useState, FormEvent } from 'react'
 import { Button } from '@/components/ui/Button'
 import { Card } from '@/components/ui/Card'
-import { ArrowRight, CheckCircle } from 'lucide-react'
+import { ArrowRight, CheckCircle, AlertCircle } from 'lucide-react'
 import Link from 'next/link'
 
 interface ContactFormProps {
@@ -36,43 +36,55 @@ export function ContactForm({
   })
   
   const [submitted, setSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState('')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     })
+    setError('')
   }
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
-    
-    // Build email content
-    let emailBody = `New Lead from ARS Website\n\n`
-    emailBody += `Contact Information:\n`
-    emailBody += `- Name: ${formData.name}\n`
-    emailBody += `- Email: ${formData.email}\n`
-    emailBody += `- Phone: ${formData.phone}\n`
-    if (formData.address) emailBody += `- Address: ${formData.address}\n`
-    if (formData.city) emailBody += `- City: ${formData.city}\n`
-    if (formData.state) emailBody += `- State: ${formData.state}\n`
-    emailBody += `\nService Information:\n`
-    emailBody += `- Service Needed: ${formData.service || 'Not specified'}\n`
-    if (formData.timeline) emailBody += `- Timeline: ${formData.timeline}\n`
-    if (formData.message) {
-      emailBody += `\nMessage:\n${formData.message}\n`
+    setIsSubmitting(true)
+    setError('')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message')
+      }
+
+      setSubmitted(true)
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        service: service,
+        message: '',
+        address: '',
+        timeline: '',
+        city: city,
+        state: state,
+      })
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to send message. Please try again or call us directly.')
+    } finally {
+      setIsSubmitting(false)
     }
-    emailBody += `\n---\nSubmitted from Advanced Roofing & Siding website`
-
-    // Create mailto link with pre-filled email
-    const subject = encodeURIComponent('New Lead from ARS')
-    const body = encodeURIComponent(emailBody)
-    const mailtoLink = `mailto:alsetsolutionsinc@gmail.com?subject=${subject}&body=${body}`
-
-    // Open email client
-    window.location.href = mailtoLink
-    
-    setSubmitted(true)
   }
 
   if (submitted) {
@@ -80,18 +92,12 @@ export function ContactForm({
       <Card className="bg-green-50 border-green-200">
         <div className="text-center py-6">
           <CheckCircle className="h-16 w-16 text-green-600 mx-auto mb-4" />
-          <h3 className="text-2xl font-bold text-gray-900 mb-2">Email Client Opened!</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
           <p className="text-lg text-gray-700 mb-4">
-            Your email client should have opened with a pre-filled message. Please click "Send" to complete your request.
-          </p>
-          <p className="text-sm text-gray-600 mb-4">
-            If your email client didn't open, you can email us directly at{' '}
-            <a href="mailto:alsetsolutionsinc@gmail.com?subject=New Lead from ARS" className="text-brand-primary hover:text-red-700 font-semibold">
-              alsetsolutionsinc@gmail.com
-            </a>
+            We've received your request and will contact you within 24 hours.
           </p>
           <p className="text-sm text-gray-600">
-            Or call us at{' '}
+            If you need immediate assistance, please call us at{' '}
             <a href="tel:763-427-3093" className="text-brand-primary hover:text-red-700 font-semibold">
               763-427-3093
             </a>
@@ -104,6 +110,15 @@ export function ContactForm({
   return (
     <Card>
       <form onSubmit={handleSubmit} className="space-y-4">
+        {error && (
+          <div className="rounded-lg bg-red-50 border border-red-200 p-4 flex items-start gap-3">
+            <AlertCircle className="h-5 w-5 text-red-600 flex-shrink-0 mt-0.5" />
+            <div>
+              <p className="text-sm font-semibold text-red-900">Error</p>
+              <p className="text-sm text-red-700">{error}</p>
+            </div>
+          </div>
+        )}
 
         <div>
           <label htmlFor="name" className="mb-2 block text-sm font-semibold text-gray-700">
@@ -254,9 +269,10 @@ export function ContactForm({
           variant="primary" 
           size="lg" 
           className="w-full"
+          disabled={isSubmitting}
         >
-          Request Free Estimate
-          <ArrowRight className="ml-2 h-5 w-5" />
+          {isSubmitting ? 'Sending...' : 'Request Free Estimate'}
+          {!isSubmitting && <ArrowRight className="ml-2 h-5 w-5" />}
         </Button>
       </form>
     </Card>

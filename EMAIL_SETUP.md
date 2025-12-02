@@ -1,33 +1,45 @@
 # Email Setup Guide
 
-## Simple Mailto Solution (No Setup Required!)
+## Resend API Configuration
 
-All contact forms on the website use **mailto links** to send emails to `alsetsolutionsinc@gmail.com` with the subject "New Lead from ARS".
+All contact forms on the website send emails via Resend API to `alsetsolutionsinc@gmail.com` with the subject "New Lead from ARS".
 
-### How It Works
+### Required Environment Variable
 
-When a user submits a form:
-1. The form data is formatted into an email message
-2. The user's default email client opens automatically
-3. The email is pre-filled with:
-   - **To:** alsetsolutionsinc@gmail.com
-   - **Subject:** New Lead from ARS
-   - **Body:** All form data (name, email, phone, service, message, etc.)
-4. The user clicks "Send" in their email client
+You need to set the following environment variable:
 
-### No Setup Required!
+```
+RESEND_API_KEY=your-resend-api-key-here
+```
 
-✅ **No API keys**  
-✅ **No SMTP configuration**  
-✅ **No third-party services**  
-✅ **No environment variables**  
-✅ **Works immediately**
+### Setup Instructions
 
-### User Experience
+1. **Get Your Resend API Key**:
+   - Sign up at https://resend.com
+   - Go to API Keys section
+   - Create a new API key
+   - Copy the key
 
-- On desktop: Opens default email client (Mail, Outlook, Gmail, etc.)
-- On mobile: Opens default email app
-- If no email client: User can copy the email address and send manually
+2. **Add to Environment Variables**:
+   - **Local Development**: Add to `.env.local` file:
+     ```
+     RESEND_API_KEY=re_xxxxxxxxxxxxx
+     ```
+   - **Vercel Production**: 
+     - Go to your Vercel project settings
+     - Navigate to "Environment Variables"
+     - Add `RESEND_API_KEY` = `[your API key]`
+     - Redeploy your application
+
+3. **Verify Domain (for production)**:
+   - In Resend dashboard, add and verify `autamn.com` domain
+   - This allows sending from `noreply@autamn.com`
+
+### Email Configuration
+
+- **From:** noreply@autamn.com
+- **To:** alsetsolutionsinc@gmail.com
+- **Subject:** New Lead from ARS
 
 ### Forms Updated
 
@@ -38,10 +50,24 @@ All contact forms have been updated:
 
 ### Email Format
 
-The pre-filled email includes:
+The email includes:
 - Contact Information (name, email, phone, address, city, state)
 - Service Information (service needed, timeline)
 - Message/Project Details
 
-All formatted clearly for easy reading.
+All formatted in HTML for easy reading.
+
+### Testing
+
+After setting up the API key:
+1. Fill out a contact form
+2. Submit the form
+3. Check `alsetsolutionsinc@gmail.com` inbox
+4. You should receive an email with subject "New Lead from ARS"
+
+### Troubleshooting
+
+- **"Email service is not configured"**: Make sure `RESEND_API_KEY` is set in environment variables
+- **Authentication failed**: Verify your API key is correct
+- **Emails not arriving**: Check spam folder, verify domain is verified in Resend dashboard
 
