@@ -174,7 +174,7 @@ export default function WinterizationPage() {
       <PageHero
         title="Home Winterization Services"
         description="Custom winterization packages to protect your Minnesota and Wisconsin home and reduce heating costs"
-        backgroundImage="https://images.unsplash.com/photo-1482517967863-00e15c9b44be?q=80&w=2400"
+        backgroundImage="/gallery/261311101_408550814080778_7104520534060364107_n.webp"
         theme="winter"
       />
       

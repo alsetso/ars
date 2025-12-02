@@ -104,7 +104,7 @@ export default function StormRestorationPage() {
       <PageHero
         title="Storm Restoration"
         description="Expert damage assessment and seamless insurance claim support"
-        backgroundImage="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2400"
+        backgroundImage="/gallery/351499412_645224983741699_6973171527731469674_n.webp"
       />
       <Section className="bg-white">
         <div className="mx-auto max-w-4xl">

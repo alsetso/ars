@@ -103,7 +103,7 @@ export default function WindowsPage() {
       <PageHero
         title="Window Installation"
         description="Energy-efficient windows that reduce costs and enhance comfort"
-        backgroundImage="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2400"
+        backgroundImage="/gallery/315336128_671806221088568_2626046884352502994_n.webp"
       />
       <Section className="bg-white">
         <div className="mx-auto max-w-4xl">

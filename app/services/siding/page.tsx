@@ -103,7 +103,7 @@ export default function SidingPage() {
       <PageHero
         title="Siding Solutions"
         description="Transform your exterior with durable, weather-resistant siding systems"
-        backgroundImage="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2400"
+        backgroundImage="/gallery/310571525_636102627992261_6745535343486299305_n.webp"
       />
       <Section className="bg-white">
         <div className="mx-auto max-w-4xl">

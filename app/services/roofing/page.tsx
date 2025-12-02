@@ -104,7 +104,7 @@ export default function RoofingPage() {
       <PageHero
         title="Premium Roofing Services"
         description="GAF Master Elite certified installations with industry-leading warranties"
-        backgroundImage="https://images.unsplash.com/photo-1632495375739-c7876ca4c8b9?q=80&w=2400"
+        backgroundImage="/gallery/340661788_241238031731100_708703886642482358_n.webp"
       />
       <Section className="bg-white">
         <div className="mx-auto max-w-4xl">
