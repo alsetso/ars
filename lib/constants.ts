@@ -99,21 +99,10 @@ export const NAVIGATION_LINKS = [
   },
   { href: '/service-areas', label: 'Service Areas' },
   {
-    href: '/programs',
-    label: 'Programs',
-    submenu: [
-      { href: '/programs/residential', label: 'Residential' },
-      { href: '/programs/commercial', label: 'Commercial' },
-      { href: '/programs/municipal', label: 'Municipal' },
-      { href: '/programs/agent', label: 'Agent' },
-      { href: '/programs/property-manager', label: 'Property Manager' },
-      { href: '/programs/hoa', label: 'HOA' },
-    ],
-  },
-  {
     href: '#',
     label: 'Resources',
     submenu: [
+      { href: '/programs', label: 'Programs' },
       { href: '/insurance-claims', label: 'Insurance Claims' },
       { href: '/cities-program', label: 'Cities Program' },
       { href: '/gaf-master-elite-contractor', label: 'GAF Master Elite®' },
