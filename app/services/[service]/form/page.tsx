@@ -7,7 +7,7 @@ import { useState, FormEvent } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import { COMPANY_INFO } from '@/lib/constants'
-import { CheckCircle, Phone, Mail, MapPin, AlertCircle } from 'lucide-react'
+import { CheckCircle, Phone, Mail, MapPin } from 'lucide-react'
 
 const serviceConfig: Record<string, {
   title: string
@@ -73,51 +73,39 @@ export default function ServiceFormPage() {
   })
   
   const [submitted, setSubmitted] = useState(false)
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [error, setError] = useState('')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     })
-    setError('')
   }
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
-    setIsSubmitting(true)
-    setError('')
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      })
-
-      const data = await response.json()
-
-      if (!response.ok) {
-        throw new Error(data.error || 'Failed to send message')
-      }
-
-      setSubmitted(true)
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        service: service === 'storm-restoration' ? 'storm' : service,
-        message: '',
-      })
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to send message. Please try again or call us directly.')
-    } finally {
-      setIsSubmitting(false)
+    
+    // Build email content
+    let emailBody = `New Lead from ARS Website\n\n`
+    emailBody += `Contact Information:\n`
+    emailBody += `- Name: ${formData.name}\n`
+    emailBody += `- Email: ${formData.email}\n`
+    emailBody += `- Phone: ${formData.phone}\n`
+    emailBody += `\nService Information:\n`
+    emailBody += `- Service Needed: ${formData.service || 'Not specified'}\n`
+    if (formData.message) {
+      emailBody += `\nMessage:\n${formData.message}\n`
     }
+    emailBody += `\n---\nSubmitted from Advanced Roofing & Siding website`
+
+    // Create mailto link with pre-filled email
+    const subject = encodeURIComponent('New Lead from ARS')
+    const body = encodeURIComponent(emailBody)
+    const mailtoLink = `mailto:alsetsolutionsinc@gmail.com?subject=${subject}&body=${body}`
+
+    // Open email client
+    window.location.href = mailtoLink
+    
+    setSubmitted(true)
   }
 
   return (
@@ -164,15 +152,6 @@ export default function ServiceFormPage() {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-4 sm:p-6">
-                {error && (
-                  <div className="rounded-lg bg-red-50 border border-red-200 p-3 mb-4 flex items-start gap-2">
-                    <AlertCircle className="h-5 w-5 text-red-600 flex-shrink-0 mt-0.5" />
-                    <div>
-                      <p className="text-xs font-semibold text-red-900">Error</p>
-                      <p className="text-xs text-red-700">{error}</p>
-                    </div>
-                  </div>
-                )}
                 <form onSubmit={handleSubmit} className="space-y-3">
                   <div>
                     <label htmlFor="name" className="block text-xs font-semibold text-gray-700 mb-1.5">
@@ -262,9 +241,8 @@ export default function ServiceFormPage() {
                     variant="primary" 
                     size="md" 
                     className="w-full text-sm py-2.5"
-                    disabled={isSubmitting}
                   >
-                    {isSubmitting ? 'Sending...' : 'Get My Free Estimate'}
+                    Get My Free Estimate
                   </Button>
                 </form>
 
@@ -297,9 +275,15 @@ export default function ServiceFormPage() {
               <div className="mb-4">
                 <CheckCircle className="h-16 w-16 text-green-600 mx-auto" />
               </div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-3">Thank You!</h2>
-              <p className="text-lg text-gray-600 mb-6">
-                We've received your request and will contact you within 24 hours.
+              <h2 className="text-2xl font-bold text-gray-900 mb-3">Email Client Opened!</h2>
+              <p className="text-lg text-gray-600 mb-4">
+                Your email client should have opened with a pre-filled message. Please click "Send" to complete your request.
+              </p>
+              <p className="text-sm text-gray-600 mb-6">
+                If your email client didn't open, email us at{' '}
+                <a href="mailto:alsetsolutionsinc@gmail.com?subject=New Lead from ARS" className="text-brand-primary hover:text-red-700 font-semibold">
+                  alsetsolutionsinc@gmail.com
+                </a>
               </p>
               <div className="space-y-3 text-sm text-gray-600">
                 <div className="flex items-center justify-center gap-2">
