@@ -36,7 +36,7 @@ export default function CitiesProgramPage() {
       <PageHero
         title="Cities Partnership Program"
         description="Supporting municipal exterior service needs across Minnesota and Wisconsin"
-        backgroundImage="/gallery/70591306_10156272051195740_842810443335467008_n (1).webp"
+        backgroundImage="/gallery/70591306_10156272051195740_842810443335467008_n.webp"
       />
 
       {/* Introduction Section */}
