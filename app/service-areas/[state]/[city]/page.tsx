@@ -100,68 +100,15 @@ export default function CityServiceAreaPage({
       {/* Main Content & Form Section - Two Column Layout */}
       <Section className="bg-white">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-8 lg:grid-cols-3">
-            {/* Left Column - Content */}
-            <div className="lg:col-span-2">
-              <AnimatedDiv
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-              >
-                <Card>
-                  <h2 className="mb-6 text-3xl font-bold text-gray-900">
-                    Serving {cityName}, {stateName} Since 1994
-                  </h2>
-                  <div className="prose prose-lg max-w-none space-y-6">
-                    <p className="text-lg leading-relaxed text-gray-700">
-                      {cityContent.intro} Advanced Roofing & Siding Inc. provides comprehensive <Link href="/services" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">exterior services</Link> including <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roofing</Link>, <Link href="/services/siding" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">siding</Link>, <Link href="/services/windows" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">windows</Link>, and <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">storm restoration</Link>.
-                    </p>
-                    
-                    <div>
-                      <h3 className="mb-3 text-2xl font-bold text-gray-900">
-                        Understanding {cityName}'s Unique Weather Challenges
-                      </h3>
-                      <p className="text-lg leading-relaxed text-gray-700">
-                        {cityContent.weatherContent} For storm damage concerns, we offer <Link href="/insurance-claims" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">insurance claim assistance</Link> and <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">storm restoration services</Link>.
-                      </p>
-                    </div>
-
-                    <div>
-                      <h3 className="mb-3 text-2xl font-bold text-gray-900">
-                        Comprehensive Exterior Services for {cityName} Homeowners
-                      </h3>
-                      <p className="text-lg leading-relaxed text-gray-700">
-                        {cityContent.servicesContent} Explore our full range of <Link href="/services" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">services</Link> and learn about our <Link href="/warranties" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">industry-leading warranties</Link>.
-                      </p>
-                    </div>
-
-                    <div>
-                      <h3 className="mb-3 text-2xl font-bold text-gray-900">
-                        Why {cityName} Residents Choose Advanced Roofing & Siding Inc.
-                      </h3>
-                      <p className="text-lg leading-relaxed text-gray-700">
-                        {cityContent.localBenefits} As a <Link href="/about" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">GAF Master Elite contractor</Link> with 30+ years of experience, we're committed to excellence. Learn more <Link href="/about" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">about us</Link>.
-                      </p>
-                    </div>
-
-                    <div className="rounded-lg bg-red-50 p-6">
-                      <p className="text-lg font-semibold leading-relaxed text-gray-900">
-                        {cityContent.callToAction}
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-              </AnimatedDiv>
-            </div>
-
-            {/* Right Column - Form */}
-            <div className="lg:col-span-1">
+          <div className="flex flex-col gap-8 lg:grid lg:grid-cols-3">
+            {/* Form - Appears First on Mobile, Right Side on Desktop */}
+            <div className="order-1 lg:order-2 lg:col-span-1">
               <AnimatedDiv
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <Card className="bg-gradient-to-br from-gray-50 to-gray-100 sticky top-8">
+                <Card className="bg-gradient-to-br from-gray-50 to-gray-100 lg:sticky lg:top-8">
                   <h2 className="mb-4 text-2xl font-bold text-gray-900">
                     Get Your Free Estimate in {cityName}
                   </h2>
@@ -220,6 +167,59 @@ export default function CityServiceAreaPage({
                         <li>✓ Licensed & Insured</li>
                         <li>✓ Free Estimates</li>
                       </ul>
+                    </div>
+                  </div>
+                </Card>
+              </AnimatedDiv>
+            </div>
+
+            {/* Left Column - Content */}
+            <div className="order-2 lg:order-1 lg:col-span-2">
+              <AnimatedDiv
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                <Card>
+                  <h2 className="mb-6 text-3xl font-bold text-gray-900">
+                    Serving {cityName}, {stateName} Since 1994
+                  </h2>
+                  <div className="prose prose-lg max-w-none space-y-6">
+                    <p className="text-lg leading-relaxed text-gray-700">
+                      {cityContent.intro} Advanced Roofing & Siding Inc. provides comprehensive <Link href="/services" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">exterior services</Link> including <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roofing</Link>, <Link href="/services/siding" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">siding</Link>, <Link href="/services/windows" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">windows</Link>, and <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">storm restoration</Link>.
+                    </p>
+                    
+                    <div>
+                      <h3 className="mb-3 text-2xl font-bold text-gray-900">
+                        Understanding {cityName}'s Unique Weather Challenges
+                      </h3>
+                      <p className="text-lg leading-relaxed text-gray-700">
+                        {cityContent.weatherContent} For storm damage concerns, we offer <Link href="/insurance-claims" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">insurance claim assistance</Link> and <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">storm restoration services</Link>.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="mb-3 text-2xl font-bold text-gray-900">
+                        Comprehensive Exterior Services for {cityName} Homeowners
+                      </h3>
+                      <p className="text-lg leading-relaxed text-gray-700">
+                        {cityContent.servicesContent} Explore our full range of <Link href="/services" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">services</Link> and learn about our <Link href="/warranties" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">industry-leading warranties</Link>.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="mb-3 text-2xl font-bold text-gray-900">
+                        Why {cityName} Residents Choose Advanced Roofing & Siding Inc.
+                      </h3>
+                      <p className="text-lg leading-relaxed text-gray-700">
+                        {cityContent.localBenefits} As a <Link href="/about" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">GAF Master Elite contractor</Link> with 30+ years of experience, we're committed to excellence. Learn more <Link href="/about" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">about us</Link>.
+                      </p>
+                    </div>
+
+                    <div className="rounded-lg bg-red-50 p-6">
+                      <p className="text-lg font-semibold leading-relaxed text-gray-900">
+                        {cityContent.callToAction}
+                      </p>
                     </div>
                   </div>
                 </Card>
