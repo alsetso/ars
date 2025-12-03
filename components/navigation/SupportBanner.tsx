@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { X, AlertCircle } from 'lucide-react'
@@ -8,19 +9,30 @@ import { X, AlertCircle } from 'lucide-react'
 const STORAGE_KEY = 'support-banner-dismissed'
 
 export function SupportBanner() {
+  const pathname = usePathname()
   const [isVisible, setIsVisible] = useState(false)
+  const isHomepage = pathname === '/'
 
   useEffect(() => {
-    // Check if banner was previously dismissed
+    // Always show on homepage, regardless of dismissal
+    if (isHomepage) {
+      setIsVisible(true)
+      return
+    }
+
+    // For other pages, check if banner was previously dismissed
     const dismissed = localStorage.getItem(STORAGE_KEY)
     if (!dismissed) {
       setIsVisible(true)
     }
-  }, [])
+  }, [isHomepage])
 
   const handleDismiss = () => {
     setIsVisible(false)
-    localStorage.setItem(STORAGE_KEY, 'true')
+    // Only save dismissal state if not on homepage
+    if (!isHomepage) {
+      localStorage.setItem(STORAGE_KEY, 'true')
+    }
   }
 
   return (
@@ -31,7 +43,7 @@ export function SupportBanner() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -100, opacity: 0 }}
           transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-          className="sticky top-0 z-[60] bg-gradient-to-r from-brand-primary to-red-700 text-white shadow-lg"
+          className="sticky top-0 z-[100] bg-gradient-to-r from-brand-primary to-red-700 text-white shadow-lg"
         >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between py-3">

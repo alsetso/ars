@@ -3,120 +3,186 @@ import { PageHero } from '@/components/ui/PageHero'
 import { Section, SectionHeader } from '@/components/ui/Section'
 import { Card } from '@/components/ui/Card'
 import { AnimatedDiv } from '@/components/ui/AnimatedDiv'
-import { PlayCircle, Calendar, MapPin, Camera, Video, MessageSquare, Mail, Star } from 'lucide-react'
+import { Camera, Image as ImageIcon, MapPin, Calendar, Mail, MessageSquare, Video, Star } from 'lucide-react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'Videos - Advanced Roofing & Siding Inc. | Minnesota Roofing Projects',
-  description: 'Watch Advanced Roofing & Siding Inc. in action. View our professional roofing, siding, and exterior projects across Minnesota and Wisconsin. GAF Master Elite contractor showcasing quality craftsmanship.',
-  keywords: ['roofing videos', 'Minnesota roofing projects', 'siding installation videos', 'Advanced Roofing videos', 'roofing contractor videos', 'Minnesota exterior contractor videos', 'GAF Master Elite projects', 'roofing work videos'],
+  title: 'Project Gallery - Advanced Roofing & Siding Inc. | Minnesota & Wisconsin',
+  description: 'Browse our project gallery showcasing professional roofing, siding, and window installations across Minnesota and Wisconsin. GAF Master Elite contractor quality craftsmanship.',
+  keywords: ['roofing gallery', 'Minnesota roofing projects', 'siding installation gallery', 'Advanced Roofing gallery', 'roofing contractor photos', 'Minnesota exterior contractor gallery', 'GAF Master Elite projects', 'roofing work photos'],
   alternates: {
-    canonical: 'https://advancedroofingmn.com/resources/videos',
+    canonical: 'https://advancedroofingmn.com/resources/project-gallery',
   },
   openGraph: {
-    title: 'Videos - Advanced Roofing & Siding Inc. | Minnesota Roofing Projects',
-    description: 'Watch Advanced Roofing & Siding Inc. in action. View our professional roofing, siding, and exterior projects across Minnesota and Wisconsin.',
-    url: 'https://advancedroofingmn.com/resources/videos',
+    title: 'Project Gallery - Advanced Roofing & Siding Inc. | Minnesota & Wisconsin',
+    description: 'Browse our project gallery showcasing professional roofing, siding, and window installations across Minnesota and Wisconsin.',
+    url: 'https://advancedroofingmn.com/resources/project-gallery',
     images: [
       {
         url: 'https://advancedroofingmn.com/AFS-Logo900.png',
         width: 1200,
         height: 630,
-        alt: 'Advanced Roofing & Siding Inc. Videos',
+        alt: 'Advanced Roofing & Siding Inc. Project Gallery',
       },
     ],
   },
 }
 
-// Video data - currently one video, but structured to easily add more
-const VIDEOS = [
+// Project images with categories
+const projectImages = [
   {
-    id: 'inver-grove-heights-project',
-    title: 'Inver Grove Heights, MN Project',
-    description: 'Watch our team in action on this recent project, showcasing our attention to detail and professional craftsmanship. See how Advanced Roofing & Siding Inc. delivers GAF Master Elite quality on every job.',
-    youtubeId: 'dPOfuHMt8hQ',
-    thumbnail: 'https://img.youtube.com/vi/dPOfuHMt8hQ/maxresdefault.jpg',
-    duration: '3:45',
-    date: '2024',
-    location: 'Inver Grove Heights, Minnesota',
+    src: '/gallery/394570286_927694532166401_5050008028973736549_n.webp',
+    alt: 'Storm restoration project in Minnesota',
+    category: 'Storm Restoration',
+  },
+  {
+    src: '/gallery/379307894_905433307725857_336380520310619416_n (1).webp',
+    alt: 'Roofing installation project in Wisconsin',
+    category: 'Roofing',
+  },
+  {
+    src: '/gallery/58814576_10155971881765740_7471379444305756160_n.webp',
+    alt: 'Window installation project',
+    category: 'Windows',
+  },
+  {
+    src: '/gallery/380156327_905711167698071_326976560032986429_n.webp',
+    alt: 'Storm restoration project in Minnesota',
+    category: 'Storm Restoration',
+  },
+  {
+    src: '/gallery/340661788_241238031731100_708703886642482358_n.webp',
+    alt: 'Residential roofing project',
+    category: 'Roofing',
+  },
+  {
+    src: '/gallery/310571525_636102627992261_6745535343486299305_n.webp',
+    alt: 'Commercial storm restoration project',
+    category: 'Storm Restoration',
+  },
+  {
+    src: '/gallery/315336128_671806221088568_2626046884352502994_n.webp',
+    alt: 'Roofing replacement project',
+    category: 'Roofing',
+  },
+  {
+    src: '/gallery/351499412_645224983741699_6973171527731469674_n.webp',
+    alt: 'Roofing replacement project',
+    category: 'Roofing',
+  },
+  {
+    src: '/gallery/380152211_905711257698062_7876618726786121530_n.webp',
+    alt: 'Exterior renovation project',
+    category: 'Roofing',
+  },
+  {
+    src: '/gallery/379833840_906233377645850_4118701267333514526_n.webp',
+    alt: 'Professional roofing installation',
+    category: 'Roofing',
+  },
+  {
+    src: '/gallery/379466626_906233337645854_1361939232979378521_n.webp',
+    alt: 'Storm restoration project',
+    category: 'Storm Restoration',
+  },
+  {
+    src: '/gallery/380157379_905711161031405_8090624436019478063_n.webp',
+    alt: 'Complete exterior renovation',
+    category: 'Roofing',
+  },
+  {
+    src: '/gallery/38600881_10155423224060740_369013887741198336_n.webp',
+    alt: 'Roofing project in Minnesota',
+    category: 'Roofing',
+  },
+  {
+    src: '/gallery/58749283_10155971881775740_7335754229753053184_n.webp',
+    alt: 'Window and siding project',
+    category: 'Windows',
+  },
+  {
+    src: '/gallery/70591306_10156272051195740_842810443335467008_n.webp',
+    alt: 'Commercial roofing project',
+    category: 'Roofing',
+  },
+  {
+    src: '/gallery/71495409_10156313592080740_6523220406751461376_n.webp',
+    alt: 'Residential storm restoration project',
+    category: 'Storm Restoration',
+  },
+  {
+    src: '/gallery/71829930_10156313592070740_6773079622390120448_n (1).webp',
+    alt: 'Roofing installation project',
+    category: 'Roofing',
+  },
+  {
+    src: '/gallery/261311101_408550814080778_7104520534060364107_n.webp',
+    alt: 'Exterior renovation project',
+    category: 'Siding',
+  },
+  {
+    src: '/gallery/305030588_654336832835507_2625733693514799564_n.webp',
+    alt: 'Professional roofing work',
+    category: 'Roofing',
+  },
+  {
+    src: '/gallery/19400203_10154461048575740_5922676874025222668_o.webp',
+    alt: 'Complete exterior project',
+    category: 'Roofing',
   },
 ]
 
-export default function VideosPage() {
+export default function ProjectGalleryPage() {
   return (
     <PageLayout>
       <PageHero
-        title="Our Project Videos"
-        description="Watch Advanced Roofing & Siding Inc. in action across Minnesota and Wisconsin"
+        title="Project Gallery"
+        description="Quality craftsmanship across Minnesota and Wisconsin"
         backgroundImage="https://images.unsplash.com/photo-1632495375739-c7876ca4c8b9?q=80&w=2400"
       />
       
       <Section className="bg-white">
         <div className="mx-auto max-w-7xl">
           <SectionHeader
-            title="Project Videos"
-            description="See our quality craftsmanship and professional work in action"
+            title="Our Recent Projects"
+            description="Browse our gallery of professional roofing, siding, and window installations"
           />
 
-          {/* YouTube-style video list */}
-          <div className="space-y-6">
-            {VIDEOS.map((video, index) => (
+          {/* Image Gallery Grid */}
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {projectImages.map((project, index) => (
               <AnimatedDiv
-                key={video.id}
+                key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.4, delay: index * 0.03 }}
               >
-                <Card className="overflow-hidden">
-                  <div className="grid gap-6 md:grid-cols-3">
-                    {/* Video Embed */}
-                    <div className="md:col-span-2">
-                      <div className="relative w-full overflow-hidden rounded-lg bg-gray-900" style={{ paddingBottom: '56.25%' }}>
-                        <iframe
-                          className="absolute top-0 left-0 h-full w-full"
-                          src={`https://www.youtube.com/embed/${video.youtubeId}`}
-                          title={video.title}
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                        />
-                      </div>
+                <Card className="group relative overflow-hidden p-0" variant="elevated">
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <Image
+                      src={project.src}
+                      alt={project.alt}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                    
+                    {/* Category Badge */}
+                    <div className="absolute left-4 top-4">
+                      <span className="rounded-full bg-white/95 backdrop-blur-sm px-3 py-1.5 text-xs font-semibold text-gray-900">
+                        {project.category}
+                      </span>
                     </div>
 
-                    {/* Video Info - YouTube-style sidebar */}
-                    <div className="md:col-span-1">
-                      <div className="space-y-4">
-                        <div>
-                          <h3 className="mb-2 text-xl font-bold text-gray-900">
-                            {video.title}
-                          </h3>
-                          <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
-                            <div className="flex items-center gap-1">
-                              <MapPin className="h-4 w-4" />
-                              <span>{video.location}</span>
-                            </div>
-                            <div className="flex items-center gap-1">
-                              <Calendar className="h-4 w-4" />
-                              <span>{video.date}</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="rounded-lg bg-gray-50 p-4">
-                          <p className="text-sm text-gray-700 leading-relaxed">
-                            {video.description}
-                          </p>
-                        </div>
-                        <div className="flex items-center gap-2 text-sm">
-                          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-50">
-                            <PlayCircle className="h-5 w-5 text-brand-primary" />
-                          </div>
-                          <div>
-                            <p className="font-semibold text-gray-900">Advanced Roofing & Siding Inc.</p>
-                            <p className="text-xs text-gray-500">GAF Master Elite Contractor</p>
-                          </div>
-                        </div>
+                    {/* Hover Overlay */}
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                      <div className="flex items-center gap-2 rounded-lg bg-white/95 backdrop-blur-sm px-4 py-2">
+                        <ImageIcon className="h-4 w-4 text-brand-primary" />
+                        <span className="text-sm font-semibold text-gray-900">View Project</span>
                       </div>
                     </div>
                   </div>
@@ -237,16 +303,16 @@ export default function VideosPage() {
             <Card className="bg-gray-50">
               <div className="prose prose-lg max-w-none">
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                  Advanced Roofing & Siding Inc. Project Videos
+                  Advanced Roofing & Siding Inc. Project Gallery
                 </h2>
                 <p className="text-gray-700 mb-4">
-                  Welcome to our video gallery showcasing the exceptional work of Advanced Roofing & Siding Inc., 
-                  Minnesota's premier GAF Master Elite contractor. Our videos provide an inside look at our 
-                  professional roofing, siding, and exterior renovation projects across <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota and Wisconsin</Link>.
+                  Welcome to our project gallery showcasing the exceptional work of Advanced Roofing & Siding Inc., 
+                  Minnesota's premier <Link href="/resources/gaf-master-elite-contractor" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">GAF Master Elite contractor</Link>. 
+                  Our gallery features professional roofing, siding, and exterior renovation projects across <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota and Wisconsin</Link>.
                 </p>
                 <p className="text-gray-700 mb-4">
                   As a <Link href="/resources/gaf-master-elite-contractor" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">GAF Master Elite contractor</Link>, 
-                  we represent the top 2% of roofing professionals nationwide. Our videos demonstrate the quality 
+                  we represent the top 2% of roofing professionals nationwide. Our gallery demonstrates the quality 
                   craftsmanship, attention to detail, and professional standards that have earned us an A+ rating 
                   with the Better Business Bureau and the trust of thousands of homeowners and businesses.
                 </p>
@@ -255,10 +321,10 @@ export default function VideosPage() {
                   <Link href="/services/siding" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2"> siding</Link>, 
                   <Link href="/services/windows" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2"> windows</Link>, 
                   or <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">storm restoration</Link> 
-                  services, our project videos show you exactly what to expect when you choose Advanced Roofing & Siding Inc.
+                  services, our project gallery shows you exactly what to expect when you choose Advanced Roofing & Siding Inc.
                 </p>
                 <div className="rounded-lg bg-red-50 p-6 mt-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">Why Watch Our Videos?</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">Why Browse Our Gallery?</h3>
                   <ul className="list-disc list-inside space-y-2 text-gray-700">
                     <li>See our professional team in action on real projects</li>
                     <li>Understand our quality standards and attention to detail</li>

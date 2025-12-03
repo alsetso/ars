@@ -226,7 +226,7 @@ export default function CityServiceAreaPage({
                         Comprehensive Exterior Services for {cityName} Homeowners
                       </h3>
                       <p className="text-lg leading-relaxed text-gray-700">
-                        {cityContent.servicesContent} Explore our full range of <Link href="/services" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">services</Link> and learn about our <Link href="/warranties" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">industry-leading warranties</Link>.
+                        {cityContent.servicesContent} Explore our full range of <Link href="/services" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">services</Link> and learn about our <Link href="/resources/warranties" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">industry-leading warranties</Link>.
                       </p>
                     </div>
 

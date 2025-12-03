@@ -114,24 +114,45 @@ export function Header() {
                       )}
                     </button>
                   ) : (
-                    <Link
-                      href={link.href}
-                      className={`relative block text-sm font-semibold tracking-tight transition-all duration-200 hover:text-brand-primary ${
-                        isActive 
-                          ? 'text-brand-primary' 
-                          : 'text-gray-800'
-                      }`}
-                    >
-                      <span>{link.label}</span>
-                      {isActive && (
-                        <motion.div
-                          layoutId="activeIndicator"
-                          className="absolute -bottom-1 left-0 right-0 h-0.5 bg-brand-primary rounded-full"
-                          initial={false}
-                          transition={{ type: 'spring', stiffness: 500, damping: 30 }}
-                        />
-                      )}
-                    </Link>
+                    link.href.startsWith('tel:') ? (
+                      <a
+                        href={link.href}
+                        className={`relative block text-sm font-semibold tracking-tight transition-all duration-200 hover:text-brand-primary ${
+                          isActive 
+                            ? 'text-brand-primary' 
+                            : 'text-gray-800'
+                        }`}
+                      >
+                        <span>{link.label}</span>
+                        {isActive && (
+                          <motion.div
+                            layoutId="activeIndicator"
+                            className="absolute -bottom-1 left-0 right-0 h-0.5 bg-brand-primary rounded-full"
+                            initial={false}
+                            transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+                          />
+                        )}
+                      </a>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className={`relative block text-sm font-semibold tracking-tight transition-all duration-200 hover:text-brand-primary ${
+                          isActive 
+                            ? 'text-brand-primary' 
+                            : 'text-gray-800'
+                        }`}
+                      >
+                        <span>{link.label}</span>
+                        {isActive && (
+                          <motion.div
+                            layoutId="activeIndicator"
+                            className="absolute -bottom-1 left-0 right-0 h-0.5 bg-brand-primary rounded-full"
+                            initial={false}
+                            transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+                          />
+                        )}
+                      </Link>
+                    )
                   )}
                   
                   {hasSubmenu && openDropdown === link.href && (
@@ -173,12 +194,20 @@ export function Header() {
 
           {/* Desktop CTA & Mobile Menu Button */}
           <div className="flex items-center gap-3">
-            <a
-              href={`tel:${COMPANY_INFO.phone}`}
+            <Link
+              href="/contact"
               className="hidden items-center gap-2 rounded-lg bg-brand-primary px-4 py-2 text-white text-sm font-semibold tracking-tight transition-all duration-200 hover:bg-red-800 hover:shadow-md active:scale-[0.98] sm:flex"
             >
               <Phone className="h-4 w-4" />
               <span>Contact</span>
+            </Link>
+
+            {/* Mobile Phone Number */}
+            <a
+              href={`tel:${COMPANY_INFO.phone}`}
+              className="lg:hidden text-sm font-semibold text-gray-800 hover:text-brand-primary transition-colors"
+            >
+              {COMPANY_INFO.phone}
             </a>
 
             {/* Mobile Menu Button */}
@@ -260,28 +289,43 @@ export function Header() {
                           </AnimatePresence>
                         </>
                       ) : (
-                        <Link
-                          href={link.href}
-                          onClick={() => setMobileMenuOpen(false)}
-                          className={`block py-2.5 px-1 text-sm font-semibold tracking-tight transition-colors hover:text-brand-primary ${
-                            pathname === link.href
-                              ? 'text-brand-primary'
-                              : 'text-gray-800'
-                          }`}
-                        >
-                          {link.label}
-                        </Link>
+                        link.href.startsWith('tel:') ? (
+                          <a
+                            href={link.href}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className={`block py-2.5 px-1 text-sm font-semibold tracking-tight transition-colors hover:text-brand-primary ${
+                              pathname === link.href
+                                ? 'text-brand-primary'
+                                : 'text-gray-800'
+                            }`}
+                          >
+                            {link.label}
+                          </a>
+                        ) : (
+                          <Link
+                            href={link.href}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className={`block py-2.5 px-1 text-sm font-semibold tracking-tight transition-colors hover:text-brand-primary ${
+                              pathname === link.href
+                                ? 'text-brand-primary'
+                                : 'text-gray-800'
+                            }`}
+                          >
+                            {link.label}
+                          </Link>
+                        )
                       )}
                     </div>
                   )
                 })}
-                <a
-                  href={`tel:${COMPANY_INFO.phone}`}
+                <Link
+                  href="/contact"
+                  onClick={() => setMobileMenuOpen(false)}
                   className="mt-3 flex items-center justify-center gap-2 rounded-lg bg-brand-primary px-4 py-2.5 text-white text-sm font-semibold tracking-tight transition-all duration-200 hover:bg-red-800 active:scale-[0.98]"
                 >
                   <Phone className="h-4 w-4" />
                   <span>Contact</span>
-                </a>
+                </Link>
               </div>
             </motion.nav>
           )}

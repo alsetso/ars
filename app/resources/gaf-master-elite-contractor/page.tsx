@@ -61,7 +61,7 @@ export default function GAFMasterElitePage() {
                 </p>
 
                 <p className="text-lg leading-relaxed text-gray-700 mb-6">
-                  When you hire a Master Elite contractor in <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota or Wisconsin</Link>, you're choosing elite workmanship, proven reliability, and the strongest <Link href="/warranties" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roofing warranties</Link> in the industry.
+                  When you hire a Master Elite contractor in <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota or Wisconsin</Link>, you're choosing elite workmanship, proven reliability, and the strongest <Link href="/resources/warranties" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roofing warranties</Link> in the industry.
                 </p>
 
                 <p className="text-lg leading-relaxed text-gray-700 font-semibold">
@@ -216,7 +216,7 @@ export default function GAFMasterElitePage() {
               </div>
               
               <p className="text-lg text-gray-700 mb-6">
-                Only Master Elite® contractors can offer the <Link href="/warranties" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">GAF Golden Pledge® Warranty</Link>, which includes:
+                Only Master Elite® contractors can offer the <Link href="/resources/warranties" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">GAF Golden Pledge® Warranty</Link>, which includes:
               </p>
 
               <div className="space-y-6">

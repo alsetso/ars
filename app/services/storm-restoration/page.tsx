@@ -140,7 +140,7 @@ export default function StormRestorationPage() {
               <p className="text-lg text-gray-700">
                 We respond quickly to storm damage emergencies, providing temporary protection when
                 needed and completing permanent repairs with the same quality and craftsmanship you
-                expect from a <Link href="/gaf-master-elite-contractor" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">GAF Master Elite contractor</Link>. Our storm restoration includes <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roof repairs</Link>, <Link href="/services/siding" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">siding replacement</Link>, and <Link href="/services/windows" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">window damage restoration</Link>. With <Link href="/about" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">30+ years of experience</Link> handling storm damage, we know how to navigate the insurance process and restore your property efficiently.
+                expect from a <Link href="/resources/gaf-master-elite-contractor" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">GAF Master Elite contractor</Link>. Our storm restoration includes <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roof repairs</Link>, <Link href="/services/siding" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">siding replacement</Link>, and <Link href="/services/windows" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">window damage restoration</Link>. With <Link href="/about" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">30+ years of experience</Link> handling storm damage, we know how to navigate the insurance process and restore your property efficiently.
               </p>
             </div>
           </Card>
@@ -349,7 +349,7 @@ export default function StormRestorationPage() {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
-                <Link href="/insurance-claims">
+                <Link href="/resources/insurance-claims">
                   <Button variant="outline" size="lg">
                     Learn About Insurance Claims
                   </Button>

@@ -42,7 +42,7 @@ export function Warranties() {
                 <strong>50-year coverage at no additional cost</strong>. This coverage continues even
                 if we go out of business.
               </p>
-              <Link href="/warranties">
+              <Link href="/resources/warranties">
                 <Button variant="primary" size="lg">
                   Learn More About Our Warranties
                   <ArrowRight className="ml-2 h-5 w-5" />

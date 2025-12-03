@@ -394,7 +394,7 @@ export default function ServiceFormPage() {
               Reviews
             </Link>
             <span className="text-gray-400">•</span>
-            <Link href="/warranties" className="transition-colors hover:text-brand-primary whitespace-nowrap">
+            <Link href="/resources/warranties" className="transition-colors hover:text-brand-primary whitespace-nowrap">
               Warranties
             </Link>
             <span className="text-gray-400">•</span>

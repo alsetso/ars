@@ -17,6 +17,7 @@ import {
   Calendar,
   Download,
   Play,
+  ArrowRight,
 } from 'lucide-react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
@@ -400,7 +401,7 @@ export default function InsuranceClaimsPage() {
                   </h3>
                   <p className="mb-3 text-gray-700">
                     Covers defects in shingles or siding materials (typically 25–50 years depending
-                    on brand). AR&S installs brands like: Learn more about our <Link href="/warranties" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">comprehensive warranty coverage</Link>.
+                    on brand). AR&S installs brands like: Learn more about our <Link href="/resources/warranties" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">comprehensive warranty coverage</Link>.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {['Owens Corning', 'GAF', 'LP', 'Mastic', 'James Hardie'].map((brand) => (
@@ -422,7 +423,7 @@ export default function InsuranceClaimsPage() {
                     Covers the labor — how the <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roof</Link> or <Link href="/services/siding" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">siding</Link> was installed. Most Minnesota
                     contractors offer 1–5 years. AR&S offers longer workmanship warranties
                     depending on the installation and materials. This is the safety net that
-                    protects you even if a shingle lifts or a seam fails due to installation error. See our <Link href="/warranties" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">full warranty details</Link>.
+                    protects you even if a shingle lifts or a seam fails due to installation error. See our <Link href="/resources/warranties" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">full warranty details</Link>.
                   </p>
                 </div>
               </div>
@@ -573,6 +574,61 @@ export default function InsuranceClaimsPage() {
                   <strong>No surprises:</strong> AR&S explains your entire claim breakdown upfront —
                   deductible, supplements, depreciation — so you know exactly what to expect.
                 </p>
+              </div>
+            </Card>
+          </AnimatedDiv>
+        </div>
+      </Section>
+
+      {/* Related Resources Section */}
+      <Section className="bg-white">
+        <div className="mx-auto max-w-6xl">
+          <AnimatedDiv
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <Card className="bg-gradient-to-br from-red-50 to-red-100 border-2 border-red-200">
+              <div className="text-center mb-6">
+                <h2 className="mb-3 text-2xl font-bold text-gray-900 md:text-3xl">
+                  Learn More About Specific Storm Damage Types
+                </h2>
+                <p className="text-lg text-gray-700">
+                  Get detailed information about specific types of storm damage and insurance claims
+                </p>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                <Link href="/resources/insurance-claims/hail-damage">
+                  <Button variant="primary" size="lg" className="group w-full">
+                    Hail Damage Claims Guide
+                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                </Link>
+                <Link href="/resources/insurance-claims/wind-damage">
+                  <Button variant="primary" size="lg" className="group w-full">
+                    Wind Damage Claims Guide
+                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                </Link>
+                <Link href="/resources/insurance-claims/ice-dam-snow-damage-claims">
+                  <Button variant="primary" size="lg" className="group w-full">
+                    Ice Dam & Snow Damage Guide
+                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                </Link>
+                <Link href="/resources/insurance-claims/tree-damage">
+                  <Button variant="primary" size="lg" className="group w-full">
+                    Tree Damage Claims Guide
+                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                </Link>
+                <Link href="/resources/insurance-claims/old-roof">
+                  <Button variant="primary" size="lg" className="group w-full">
+                    Old Roof Claims Guide
+                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                </Link>
               </div>
             </Card>
           </AnimatedDiv>

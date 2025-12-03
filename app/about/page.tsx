@@ -77,7 +77,7 @@ export default function AboutPage() {
                 </p>
                 <p className="text-lg text-gray-700 mb-4">
                   From residential <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roofing</Link> and <Link href="/services/siding" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">siding</Link> to <Link href="/services/windows" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">window installation</Link> and <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">storm restoration</Link>,
-                  we provide comprehensive <Link href="/services" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">exterior solutions</Link> backed by <Link href="/warranties" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">industry-leading warranties</Link>
+                  we provide comprehensive <Link href="/services" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">exterior solutions</Link> backed by <Link href="/resources/warranties" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">industry-leading warranties</Link>
                   and decades of experience. Our commitment to quality extends to both residential and commercial projects, serving homeowners, property managers, and <Link href="/cities-program" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">municipal partners</Link> throughout the region.
                 </p>
                 <div className="rounded-lg bg-red-50 p-6 mt-6">
@@ -162,7 +162,7 @@ export default function AboutPage() {
                       <CheckCircle className="h-5 w-5 flex-shrink-0 text-brand-primary mt-0.5" />
                       <div>
                         <p className="font-semibold text-gray-900">Complete <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 underline underline-offset-2">Roofing Systems</Link></p>
-                        <p className="text-gray-600"><Link href="/services/roofing" className="text-brand-primary hover:text-red-800 underline underline-offset-2">GAF Master Elite certified installations</Link> with <Link href="/warranties" className="text-brand-primary hover:text-red-800 underline underline-offset-2">industry-leading warranties</Link> for residential properties</p>
+                        <p className="text-gray-600"><Link href="/services/roofing" className="text-brand-primary hover:text-red-800 underline underline-offset-2">GAF Master Elite certified installations</Link> with <Link href="/resources/warranties" className="text-brand-primary hover:text-red-800 underline underline-offset-2">industry-leading warranties</Link> for residential properties</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">

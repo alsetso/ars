@@ -90,6 +90,7 @@ export const NAVIGATION_LINKS = [
     href: '/services',
     label: 'Services',
     submenu: [
+      { href: '/services/free-estimate', label: 'Free Estimate' },
       { href: '/services/roofing', label: 'Premium Roofing' },
       { href: '/services/siding', label: 'Siding Solutions' },
       { href: '/services/windows', label: 'Window Installation' },
@@ -102,14 +103,17 @@ export const NAVIGATION_LINKS = [
     href: '/resources',
     label: 'Resources',
     submenu: [
-      { href: '/resources/programs', label: 'Programs' },
+      { href: '/who-we-serve', label: 'Who We Serve' },
       { href: '/resources/insurance-claims', label: 'Insurance Claims' },
       { href: '/resources/gaf-master-elite-contractor', label: 'GAF Master Elite®' },
       { href: '/resources/24-7-support', label: '24/7 Support' },
       { href: '/resources/reviews', label: 'Reviews' },
       { href: '/resources/videos', label: 'Videos' },
+      { href: '/resources/project-gallery', label: 'Project Gallery' },
+      { href: '/resources/days-onsite', label: 'Days on Site' },
+      { href: '/resources/warranties', label: 'Warranties' },
     ],
   },
-  { href: '/contact', label: 'Contact' },
+  { href: `tel:${COMPANY_INFO.phone}`, label: COMPANY_INFO.phone },
 ] as const
 

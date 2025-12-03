@@ -2,13 +2,87 @@
 
 import { COMPANY_INFO, NAVIGATION_LINKS } from '@/lib/constants'
 import Link from 'next/link'
-import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react'
+import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Shield, ArrowRight } from 'lucide-react'
+import Image from 'next/image'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
     <footer className="border-t border-gray-200 bg-gray-50">
+      {/* Compact Warranties Section */}
+      <div className="border-b border-gray-200 bg-gradient-to-br from-gray-50 to-gray-100 py-6">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-6xl">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+              {/* Left: Text Content */}
+              <div className="flex-1 text-center lg:text-left">
+                <div className="mb-1.5 flex items-center justify-center gap-2 lg:justify-start">
+                  <Shield className="h-4 w-4 text-brand-primary" />
+                  <h3 className="text-base font-bold text-gray-900">
+                    GAF Golden Pledge Warranty
+                  </h3>
+                </div>
+                <p className="text-xs text-gray-700 sm:text-sm">
+                  <strong>50-year coverage at no additional cost</strong> – Industry-leading protection that continues even if we go out of business.
+                </p>
+              </div>
+
+              {/* Middle: Certification Badges */}
+              <div className="flex flex-wrap items-center justify-center gap-3">
+                <div className="relative h-12 w-20 sm:h-14 sm:w-24">
+                  <Image
+                    src="/MASTER_ELITE_png2.webp"
+                    alt="GAF Master Elite Certification"
+                    fill
+                    className="object-contain"
+                    sizes="96px"
+                  />
+                </div>
+                <div className="relative h-12 w-20 sm:h-14 sm:w-24">
+                  <Image
+                    src="/GOLDEN_PLEDGE.webp"
+                    alt="GAF Golden Pledge Warranty"
+                    fill
+                    className="object-contain"
+                    sizes="96px"
+                  />
+                </div>
+                <div className="relative h-12 w-20 sm:h-14 sm:w-24">
+                  <Image
+                    src="/GAF-3xTripleAward.webp"
+                    alt="GAF 3x Triple Award"
+                    fill
+                    className="object-contain"
+                    sizes="96px"
+                  />
+                </div>
+                <div className="relative h-12 w-20 sm:h-14 sm:w-24">
+                  <Image
+                    src="/Presidents_Club_3_Star_Residential.webp"
+                    alt="GAF Presidents Club 3 Star Residential"
+                    fill
+                    className="object-contain"
+                    sizes="96px"
+                  />
+                </div>
+              </div>
+
+              {/* Right: CTA Link */}
+              <div className="flex-shrink-0 text-center lg:text-left">
+                <Link
+                  href="/resources/warranties"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-primary transition-colors hover:text-red-800 sm:text-sm"
+                >
+                  Learn More
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Company Info */}
@@ -46,7 +120,7 @@ export function Footer() {
               ))}
               <li>
                 <Link
-                  href="/warranties"
+                  href="/resources/warranties"
                   className="text-sm text-gray-600 transition-colors hover:text-brand-primary"
                 >
                   Warranties
@@ -257,7 +331,7 @@ export function Footer() {
                 Reviews
               </Link>
               <span className="text-gray-400">•</span>
-              <Link href="/warranties" className="transition-colors hover:text-brand-primary whitespace-nowrap">
+              <Link href="/resources/warranties" className="transition-colors hover:text-brand-primary whitespace-nowrap">
                 Warranties
               </Link>
               <span className="text-gray-400">•</span>

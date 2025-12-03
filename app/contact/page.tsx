@@ -180,7 +180,7 @@ export default function ContactPage() {
                 </div>
                 <h3 className="mb-1 text-sm font-bold text-gray-900 md:text-base">Licensed & Insured</h3>
                 <p className="text-xs text-gray-600 md:text-sm">License #{COMPANY_INFO.license}</p>
-                <Link href="/warranties" className="mt-2 inline-block text-xs text-brand-primary hover:text-red-800 font-semibold">
+                <Link href="/resources/warranties" className="mt-2 inline-block text-xs text-brand-primary hover:text-red-800 font-semibold">
                   Warranties →
                 </Link>
               </Card>

@@ -1,4 +1,3 @@
-import { Warranties } from '@/components/sections/Warranties'
 import { ReactNode } from 'react'
 
 interface PageLayoutProps {
@@ -6,12 +5,9 @@ interface PageLayoutProps {
   showWarranties?: boolean
 }
 
-export function PageLayout({ children, showWarranties = true }: PageLayoutProps) {
+export function PageLayout({ children, showWarranties = false }: PageLayoutProps) {
   return (
-    <>
-      <main>{children}</main>
-      {showWarranties && <Warranties />}
-    </>
+    <main>{children}</main>
   )
 }
 

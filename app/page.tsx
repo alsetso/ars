@@ -1,10 +1,4 @@
-import { PageLayout } from '@/components/layout/PageLayout'
-import { Hero } from '@/components/sections/Hero'
-import { Marquee } from '@/components/sections/Marquee'
-import { Services } from '@/components/sections/Services'
-import { WhyChooseUs } from '@/components/sections/WhyChooseUs'
-import { InsuranceClaimsCTA } from '@/components/sections/InsuranceClaimsCTA'
-import { ServiceAreas } from '@/components/sections/ServiceAreas'
+import { HomePageClient } from '@/components/pages/HomePageClient'
 import { OrganizationSchema } from '@/components/seo/OrganizationSchema'
 import type { Metadata } from 'next'
 
@@ -33,14 +27,7 @@ export default function Home() {
   return (
     <>
       <OrganizationSchema />
-      <PageLayout>
-        <Hero />
-        <Marquee />
-        <Services />
-        <ServiceAreas />
-        <WhyChooseUs />
-        <InsuranceClaimsCTA />
-      </PageLayout>
+      <HomePageClient />
     </>
   )
 }

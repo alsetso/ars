@@ -33,11 +33,11 @@ export const metadata: Metadata = {
 }
 
 const features = [
-  { text: 'GAF Master Elite Certified Installation', link: '/gaf-master-elite-contractor' },
-  { text: 'Industry-Leading Warranties', link: '/warranties' },
+  { text: 'GAF Master Elite Certified Installation', link: '/resources/gaf-master-elite-contractor' },
+  { text: 'Industry-Leading Warranties', link: '/resources/warranties' },
   { text: 'Premium Materials & Craftsmanship', link: null },
   { text: 'Free Inspections & Estimates', link: '/contact' },
-  { text: 'Insurance Claim Assistance', link: '/insurance-claims' },
+  { text: 'Insurance Claim Assistance', link: '/resources/insurance-claims' },
   { text: '30+ Years of Experience', link: '/about' },
 ]
 
@@ -130,7 +130,7 @@ export default function RoofingPage() {
                 As a <Link href="/resources/gaf-master-elite-contractor" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">GAF Master Elite contractor</Link>, Advanced Roofing & Siding Inc. represents the
                 top 3% of roofing professionals nationwide. This prestigious certification means we
                 have access to the highest quality materials, comprehensive training, and
-                <Link href="/warranties" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2"> industry-leading warranties</Link> that protect your investment for decades.
+                <Link href="/resources/warranties" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2"> industry-leading warranties</Link> that protect your investment for decades.
               </p>
               <p className="text-lg text-gray-700 mb-4">
                 Our expert team handles everything from complete roof replacements to repairs,

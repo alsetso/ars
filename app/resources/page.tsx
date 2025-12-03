@@ -16,7 +16,8 @@ import {
   CheckCircle,
   Award,
   Clock,
-  MessageSquare
+  MessageSquare,
+  Image as ImageIcon
 } from 'lucide-react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
@@ -46,10 +47,10 @@ export const metadata: Metadata = {
 const resources = [
   {
     id: 'programs',
-    title: 'Community Programs',
-    description: 'Specialized programs for municipalities, real estate professionals, property managers, HOAs, and property managers. Fast, reliable service for large-scale projects.',
+    title: 'Who We Serve',
+    description: 'Specialized solutions for homeowners, businesses, municipalities, real estate professionals, property managers, and HOAs. Fast, reliable service for all markets.',
     icon: Building2,
-    href: '/resources/programs',
+    href: '/who-we-serve',
     color: 'from-blue-50 to-blue-100',
     iconColor: 'text-blue-600',
     iconBg: 'bg-blue-50',
@@ -109,6 +110,28 @@ const resources = [
     iconColor: 'text-indigo-600',
     iconBg: 'bg-indigo-50',
     features: ['Project showcases', 'Quality craftsmanship', 'Real projects', 'Video gallery'],
+  },
+  {
+    id: 'project-gallery',
+    title: 'Project Gallery',
+    description: 'Browse our gallery of professional roofing, siding, and window installations. See quality craftsmanship across Minnesota and Wisconsin.',
+    icon: ImageIcon,
+    href: '/resources/project-gallery',
+    color: 'from-teal-50 to-teal-100',
+    iconColor: 'text-teal-600',
+    iconBg: 'bg-teal-50',
+    features: ['Photo gallery', 'Real projects', 'Quality showcase', 'Before & after'],
+  },
+  {
+    id: 'warranties',
+    title: 'Warranties',
+    description: 'Industry-leading GAF warranties including the Golden Pledge 50-year warranty at no additional cost. GAF Master Elite contractor protection for your investment.',
+    icon: Shield,
+    href: '/resources/warranties',
+    color: 'from-amber-50 to-amber-100',
+    iconColor: 'text-amber-600',
+    iconBg: 'bg-amber-50',
+    features: ['50-year coverage', 'No additional cost', 'GAF Golden Pledge', 'Full replacement protection'],
   },
 ]
 
