@@ -60,7 +60,7 @@ export function Process() {
       />
 
       <div className="mx-auto max-w-6xl">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-5">
+        <div className="grid grid-cols-2 gap-6 md:grid-cols-2 lg:grid-cols-5">
           {steps.map((step, index) => {
             const Icon = step.icon
             return (
@@ -72,15 +72,6 @@ export function Process() {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
               >
                 <Card className="h-full text-center" variant="elevated">
-                  {/* Step Number */}
-                  <div className="mb-4 flex items-center justify-center">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-red-50 to-red-100">
-                      <span className="text-lg font-bold text-brand-primary">
-                        {index + 1}
-                      </span>
-                    </div>
-                  </div>
-
                   {/* Icon */}
                   <div className="mb-4 flex justify-center">
                     <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-white shadow-sm">
@@ -108,18 +99,6 @@ export function Process() {
               </AnimatedDiv>
             )
           })}
-        </div>
-
-        {/* Connecting Line (Desktop Only) */}
-        <div className="hidden lg:block">
-          <div className="relative -mt-6 mb-6 flex items-center justify-between px-8">
-            {steps.slice(0, -1).map((_, index) => (
-              <div
-                key={index}
-                className="h-0.5 flex-1 bg-gradient-to-r from-red-200 to-red-100"
-              />
-            ))}
-          </div>
         </div>
       </div>
     </Section>

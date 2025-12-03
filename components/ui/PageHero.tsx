@@ -21,7 +21,7 @@ export function PageHero({
   backgroundImage,
   showCTA = true,
   ctaText = 'Get Free Estimate',
-  ctaHref = '/contact',
+  ctaHref = '/services/free-estimate',
   children,
   theme = 'default',
 }: PageHeroProps) {

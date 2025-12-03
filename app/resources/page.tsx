@@ -339,7 +339,7 @@ export default function ResourcesPage() {
                 Have questions or ready to start your project? Contact us today for a free estimate or to learn more about our services.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-                <Link href="/contact">
+                <Link href="/services/free-estimate">
                   <Button variant="primary" size="lg">
                     Get Free Estimate
                     <ArrowRight className="ml-2 h-5 w-5" />

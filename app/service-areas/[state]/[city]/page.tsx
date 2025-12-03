@@ -390,7 +390,7 @@ export default function CityServiceAreaPage({
                     Call {COMPANY_INFO.phone}
                   </Button>
                 </a>
-                <Link href="/contact">
+                <Link href="/services/free-estimate">
                   <Button variant="outline" size="lg" className="w-full sm:w-auto">
                     Get Free Estimate
                   </Button>

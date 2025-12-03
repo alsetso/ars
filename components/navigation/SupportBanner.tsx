@@ -14,25 +14,22 @@ export function SupportBanner() {
   const isHomepage = pathname === '/'
 
   useEffect(() => {
-    // Always show on homepage, regardless of dismissal
+    // Only show on homepage
     if (isHomepage) {
-      setIsVisible(true)
-      return
-    }
-
-    // For other pages, check if banner was previously dismissed
-    const dismissed = localStorage.getItem(STORAGE_KEY)
-    if (!dismissed) {
-      setIsVisible(true)
+      // Check if banner was previously dismissed
+      const dismissed = localStorage.getItem(STORAGE_KEY)
+      if (!dismissed) {
+        setIsVisible(true)
+      }
+    } else {
+      // Hide on all other pages
+      setIsVisible(false)
     }
   }, [isHomepage])
 
   const handleDismiss = () => {
     setIsVisible(false)
-    // Only save dismissal state if not on homepage
-    if (!isHomepage) {
-      localStorage.setItem(STORAGE_KEY, 'true')
-    }
+    localStorage.setItem(STORAGE_KEY, 'true')
   }
 
   return (

@@ -5,7 +5,8 @@ import { Card } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { AnimatedDiv } from '@/components/ui/AnimatedDiv'
 import { FAQSchema } from '@/components/seo/FAQSchema'
-import { CheckCircle, FileCheck, Clock, Shield, Award, ArrowRight, Camera, ClipboardCheck, Phone, Mail, Calendar, Users, Home, Building2 } from 'lucide-react'
+import { COMPANY_INFO } from '@/lib/constants'
+import { CheckCircle, FileCheck, Clock, Shield, Award, ArrowRight, Camera, ClipboardCheck, Phone, Mail, Calendar, Users, Home, Building2, MapPin } from 'lucide-react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
@@ -267,6 +268,75 @@ export default function FreeEstimatePage() {
         backgroundImage="/gallery/340661788_241238031731100_708703886642482358_n.webp"
       />
 
+      {/* Contact Information Card */}
+      <Section className="bg-gradient-to-br from-gray-50 to-gray-100">
+        <div className="mx-auto max-w-4xl">
+          <AnimatedDiv
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+          >
+            <Card className="p-4 md:p-6">
+              <h3 className="mb-3 text-lg font-bold text-gray-900 md:mb-4 md:text-2xl">Contact Information</h3>
+
+              <div className="space-y-3 md:space-y-4">
+                <div className="flex items-start gap-2 md:gap-3">
+                  <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-xl bg-red-50 md:h-12 md:w-12">
+                    <Phone className="h-4 w-4 text-brand-primary md:h-6 md:w-6" />
+                  </div>
+                  <div>
+                    <h4 className="mb-0.5 text-sm font-semibold text-gray-900 md:mb-1 md:text-base">Phone</h4>
+                    <a
+                      href={`tel:${COMPANY_INFO.phone}`}
+                      className="text-sm text-brand-primary hover:text-red-800 md:text-base"
+                    >
+                      {COMPANY_INFO.phone}
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-2 md:gap-3">
+                  <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-xl bg-red-50 md:h-12 md:w-12">
+                    <Mail className="h-4 w-4 text-brand-primary md:h-6 md:w-6" />
+                  </div>
+                  <div>
+                    <h4 className="mb-0.5 text-sm font-semibold text-gray-900 md:mb-1 md:text-base">Email</h4>
+                    <a
+                      href={`mailto:${COMPANY_INFO.email}`}
+                      className="text-xs text-brand-primary hover:text-red-800 md:text-base"
+                    >
+                      {COMPANY_INFO.email}
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-2 md:gap-3">
+                  <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-xl bg-red-50 md:h-12 md:w-12">
+                    <MapPin className="h-4 w-4 text-brand-primary md:h-6 md:w-6" />
+                  </div>
+                  <div>
+                    <h4 className="mb-0.5 text-sm font-semibold text-gray-900 md:mb-1 md:text-base">Location</h4>
+                    <p className="text-xs text-gray-600 md:text-base">{COMPANY_INFO.location}</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-2 md:gap-3">
+                  <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-xl bg-red-50 md:h-12 md:w-12">
+                    <Clock className="h-4 w-4 text-brand-primary md:h-6 md:w-6" />
+                  </div>
+                  <div>
+                    <h4 className="mb-0.5 text-sm font-semibold text-gray-900 md:mb-1 md:text-base">Business Hours</h4>
+                    <p className="text-xs text-gray-600 md:text-sm">Monday - Friday: 8:00 AM - 6:00 PM</p>
+                    <p className="text-xs text-gray-600 md:text-sm">Saturday: 9:00 AM - 4:00 PM</p>
+                    <p className="text-xs text-gray-600 md:text-sm">Sunday: Closed</p>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </AnimatedDiv>
+        </div>
+      </Section>
+
       {/* What We Inspect - Moved below hero */}
       <Section className="bg-white">
         <div className="mx-auto max-w-6xl">
@@ -274,7 +344,7 @@ export default function FreeEstimatePage() {
             title="What We Inspect"
             description="Comprehensive assessment of your property's exterior systems"
           />
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 mb-8">
+          <div className="grid grid-cols-2 gap-3 md:gap-4 md:grid-cols-2 lg:grid-cols-3 mb-6 md:mb-8">
             {whatWeInspect.map((item, index) => {
               const Icon = item.icon
               return (
@@ -285,11 +355,11 @@ export default function FreeEstimatePage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
                 >
-                  <Card className="h-full">
-                    <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-red-50">
-                      <Icon className="h-5 w-5 text-brand-primary" strokeWidth={2} />
+                  <Card className="h-full p-3 md:p-5">
+                    <div className="mb-2 flex h-8 w-8 items-center justify-center rounded-lg bg-red-50 md:mb-3 md:h-10 md:w-10">
+                      <Icon className="h-4 w-4 text-brand-primary md:h-5 md:w-5" strokeWidth={2} />
                     </div>
-                    <h3 className="mb-2 text-lg font-bold text-gray-900">
+                    <h3 className="mb-1.5 text-sm font-bold text-gray-900 md:mb-2 md:text-lg">
                       {item.link ? (
                         <Link href={item.link} className="hover:text-brand-primary transition-colors">
                           {item.title}
@@ -298,7 +368,7 @@ export default function FreeEstimatePage() {
                         item.title
                       )}
                     </h3>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-xs text-gray-600 md:text-sm">
                       {typeof item.description === 'string' ? item.description : item.description}
                     </div>
                   </Card>
@@ -312,22 +382,22 @@ export default function FreeEstimatePage() {
       {/* Introduction Section */}
       <Section className="bg-gray-50">
         <div className="mx-auto max-w-4xl">
-          <Card className="mb-8">
+          <Card className="mb-6 p-4 md:mb-8 md:p-6">
             <div className="prose prose-lg max-w-none">
-              <p className="text-lg text-gray-700 mb-4">
+              <p className="text-sm text-gray-700 mb-3 md:text-lg md:mb-4">
                 At Advanced Roofing & Siding Inc., we believe in transparency and honesty. That's why every inspection is conducted by a <strong>licensed project manager</strong> — not a salesperson. You get expert assessment, detailed documentation, and honest recommendations with zero pressure.
               </p>
-              <p className="text-lg text-gray-700 mb-4">
+              <p className="text-sm text-gray-700 mb-3 md:text-lg md:mb-4">
                 Whether you're concerned about <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">storm damage</Link>, wondering if your <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roof needs replacement</Link>, considering <Link href="/services/siding" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">siding replacement</Link>, or evaluating <Link href="/services/windows" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">window replacement</Link> needs, our free estimate provides the answers you need. We serve <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota and Wisconsin</Link> homeowners and businesses with <Link href="/about" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">30+ years of experience</Link> and <Link href="/resources/gaf-master-elite-contractor" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">GAF Master Elite certification</Link>.
               </p>
-              <p className="text-lg text-gray-700">
+              <p className="text-sm text-gray-700 md:text-lg">
                 Our estimates are comprehensive, professional, and completely free. We document everything with photos, provide detailed written reports, and give you honest recommendations — whether that means immediate <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roof repair</Link>, <Link href="/services/siding" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">siding installation</Link>, <Link href="/services/windows" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">window replacement</Link>, <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">storm restoration</Link>, <Link href="/services/winterization" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">winterization</Link>, future maintenance, or no work needed at all.
               </p>
             </div>
           </Card>
 
           {/* Key Benefits */}
-          <div className="grid gap-6 md:grid-cols-2 mb-8">
+          <div className="grid grid-cols-2 gap-3 md:gap-6 md:grid-cols-2 mb-6 md:mb-8">
             {inspectionBenefits.map((benefit, index) => {
               const Icon = benefit.icon
               return (
@@ -338,12 +408,12 @@ export default function FreeEstimatePage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                 >
-                  <Card className="h-full">
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100">
-                      <Icon className="h-6 w-6 text-brand-primary" strokeWidth={2} />
+                  <Card className="h-full p-3 md:p-5">
+                    <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100 md:mb-4 md:h-12 md:w-12">
+                      <Icon className="h-5 w-5 text-brand-primary md:h-6 md:w-6" strokeWidth={2} />
                     </div>
-                    <h3 className="mb-2 text-xl font-bold text-gray-900">{benefit.title}</h3>
-                    <p className="text-gray-700">{benefit.description}</p>
+                    <h3 className="mb-1 text-base font-bold text-gray-900 md:mb-2 md:text-xl">{benefit.title}</h3>
+                    <p className="text-xs text-gray-700 md:text-base">{benefit.description}</p>
                   </Card>
                 </AnimatedDiv>
               )
@@ -359,21 +429,21 @@ export default function FreeEstimatePage() {
             title="How Our Free Estimate Works"
             description="A straightforward 5-step process from scheduling to detailed estimate"
           />
-          <div className="space-y-6 mb-8">
+          <div className="space-y-4 mb-6 md:space-y-6 md:mb-8">
             <AnimatedDiv
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4 }}
             >
-              <Card className="border-2 border-gray-100">
-                <div className="flex gap-4 md:gap-6">
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-red-700 to-red-800 text-white text-xl font-bold md:h-14 md:w-14">
+              <Card className="border-2 border-gray-100 p-3 md:p-5">
+                <div className="flex gap-3 md:gap-6">
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-red-700 to-red-800 text-white text-lg font-bold md:h-14 md:w-14 md:text-xl">
                     1
                   </div>
                   <div className="flex-1">
-                    <h3 className="mb-2 text-xl font-bold text-gray-900 md:text-2xl">Schedule Your Free Estimate</h3>
-                    <p className="text-base text-gray-700 md:text-lg">
+                    <h3 className="mb-1 text-base font-bold text-gray-900 md:mb-2 md:text-2xl">Schedule Your Free Estimate</h3>
+                    <p className="text-sm text-gray-700 md:text-lg">
                       Contact us by phone, email, or <Link href="/contact" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">online form</Link>. We'll schedule a convenient time for a licensed project manager to visit your property. No obligation, no pressure.
                     </p>
                   </div>
@@ -386,14 +456,14 @@ export default function FreeEstimatePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.1 }}
             >
-              <Card className="border-2 border-gray-100">
-                <div className="flex gap-4 md:gap-6">
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-red-700 to-red-800 text-white text-xl font-bold md:h-14 md:w-14">
+              <Card className="border-2 border-gray-100 p-3 md:p-5">
+                <div className="flex gap-3 md:gap-6">
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-red-700 to-red-800 text-white text-lg font-bold md:h-14 md:w-14 md:text-xl">
                     2
                   </div>
                   <div className="flex-1">
-                    <h3 className="mb-2 text-xl font-bold text-gray-900 md:text-2xl">Comprehensive Property Assessment</h3>
-                    <p className="text-base text-gray-700 md:text-lg">
+                    <h3 className="mb-1 text-base font-bold text-gray-900 md:mb-2 md:text-2xl">Comprehensive Property Assessment</h3>
+                    <p className="text-sm text-gray-700 md:text-lg">
                       Our licensed project manager conducts a thorough inspection of your <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roof</Link>, <Link href="/services/siding" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">siding</Link>, <Link href="/services/windows" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">windows</Link>, gutters, attic, and exterior. We check for damage, wear, potential issues, and verify storm dates if applicable.
                     </p>
                   </div>
@@ -406,14 +476,14 @@ export default function FreeEstimatePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.2 }}
             >
-              <Card className="border-2 border-gray-100">
-                <div className="flex gap-4 md:gap-6">
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-red-700 to-red-800 text-white text-xl font-bold md:h-14 md:w-14">
+              <Card className="border-2 border-gray-100 p-3 md:p-5">
+                <div className="flex gap-3 md:gap-6">
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-red-700 to-red-800 text-white text-lg font-bold md:h-14 md:w-14 md:text-xl">
                     3
                   </div>
                   <div className="flex-1">
-                    <h3 className="mb-2 text-xl font-bold text-gray-900 md:text-2xl">Detailed Documentation & Photos</h3>
-                    <p className="text-base text-gray-700 md:text-lg">
+                    <h3 className="mb-1 text-base font-bold text-gray-900 md:mb-2 md:text-2xl">Detailed Documentation & Photos</h3>
+                    <p className="text-sm text-gray-700 md:text-lg">
                       Every finding is documented with professional photos. We check attic moisture, ventilation, flashing, shingles, siding condition, and more. This documentation is crucial for <Link href="/resources/insurance-claims" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">insurance claims</Link>.
                     </p>
                   </div>
@@ -426,14 +496,14 @@ export default function FreeEstimatePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.3 }}
             >
-              <Card className="border-2 border-gray-100">
-                <div className="flex gap-4 md:gap-6">
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-red-700 to-red-800 text-white text-xl font-bold md:h-14 md:w-14">
+              <Card className="border-2 border-gray-100 p-3 md:p-5">
+                <div className="flex gap-3 md:gap-6">
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-red-700 to-red-800 text-white text-lg font-bold md:h-14 md:w-14 md:text-xl">
                     4
                   </div>
                   <div className="flex-1">
-                    <h3 className="mb-2 text-xl font-bold text-gray-900 md:text-2xl">Honest Recommendations & Estimate</h3>
-                    <p className="text-base text-gray-700 md:text-lg">
+                    <h3 className="mb-1 text-base font-bold text-gray-900 md:mb-2 md:text-2xl">Honest Recommendations & Estimate</h3>
+                    <p className="text-sm text-gray-700 md:text-lg">
                       You receive a detailed written report with our honest assessment. We explain what needs attention, what can wait, and provide a comprehensive estimate with material options and timelines.
                     </p>
                   </div>
@@ -446,14 +516,14 @@ export default function FreeEstimatePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.4 }}
             >
-              <Card className="border-2 border-gray-100">
-                <div className="flex gap-4 md:gap-6">
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-red-700 to-red-800 text-white text-xl font-bold md:h-14 md:w-14">
+              <Card className="border-2 border-gray-100 p-3 md:p-5">
+                <div className="flex gap-3 md:gap-6">
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-red-700 to-red-800 text-white text-lg font-bold md:h-14 md:w-14 md:text-xl">
                     5
                   </div>
                   <div className="flex-1">
-                    <h3 className="mb-2 text-xl font-bold text-gray-900 md:text-2xl">No Pressure Decision</h3>
-                    <p className="text-base text-gray-700 md:text-lg">
+                    <h3 className="mb-1 text-base font-bold text-gray-900 md:mb-2 md:text-2xl">No Pressure Decision</h3>
+                    <p className="text-sm text-gray-700 md:text-lg">
                       Take your time to review the estimate. We answer all your questions and provide additional information as needed. There's no pressure to make a decision — we're here when you're ready.
                     </p>
                   </div>
@@ -471,19 +541,19 @@ export default function FreeEstimatePage() {
             title="Why Choose Our Inspection"
             description="What makes our free inspection different"
           />
-          <div className="grid gap-4 md:grid-cols-2 mb-8">
+          <div className="grid grid-cols-2 gap-3 md:gap-4 md:grid-cols-2 mb-6 md:mb-8">
             <AnimatedDiv
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4 }}
             >
-              <Card>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 flex-shrink-0 text-brand-primary" />
+              <Card className="p-3 md:p-5">
+                <div className="flex items-start gap-2 md:gap-3">
+                  <CheckCircle className="h-5 w-5 flex-shrink-0 text-brand-primary md:h-6 md:w-6" />
                   <div>
-                    <h3 className="mb-1 font-bold text-gray-900">Licensed Professionals</h3>
-                    <p className="text-sm text-gray-600">Every inspection is conducted by a licensed project manager, not a salesperson.</p>
+                    <h3 className="mb-0.5 text-xs font-bold text-gray-900 md:mb-1 md:text-sm">Licensed Professionals</h3>
+                    <p className="text-xs text-gray-600 md:text-sm">Every inspection is conducted by a licensed project manager, not a salesperson.</p>
                   </div>
                 </div>
               </Card>
@@ -494,12 +564,12 @@ export default function FreeEstimatePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.1 }}
             >
-              <Card>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 flex-shrink-0 text-brand-primary" />
+              <Card className="p-3 md:p-5">
+                <div className="flex items-start gap-2 md:gap-3">
+                  <CheckCircle className="h-5 w-5 flex-shrink-0 text-brand-primary md:h-6 md:w-6" />
                   <div>
-                    <h3 className="mb-1 font-bold text-gray-900">No Pressure</h3>
-                    <p className="text-sm text-gray-600">Honest recommendations with zero pressure to purchase anything.</p>
+                    <h3 className="mb-0.5 text-xs font-bold text-gray-900 md:mb-1 md:text-sm">No Pressure</h3>
+                    <p className="text-xs text-gray-600 md:text-sm">Honest recommendations with zero pressure to purchase anything.</p>
                   </div>
                 </div>
               </Card>
@@ -510,12 +580,12 @@ export default function FreeEstimatePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.2 }}
             >
-              <Card>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 flex-shrink-0 text-brand-primary" />
+              <Card className="p-3 md:p-5">
+                <div className="flex items-start gap-2 md:gap-3">
+                  <CheckCircle className="h-5 w-5 flex-shrink-0 text-brand-primary md:h-6 md:w-6" />
                   <div>
-                    <h3 className="mb-1 font-bold text-gray-900">Insurance-Grade Documentation</h3>
-                    <p className="text-sm text-gray-600">Professional photos and documentation that meet insurance company standards.</p>
+                    <h3 className="mb-0.5 text-xs font-bold text-gray-900 md:mb-1 md:text-sm">Insurance-Grade Documentation</h3>
+                    <p className="text-xs text-gray-600 md:text-sm">Professional photos and documentation that meet insurance company standards.</p>
                   </div>
                 </div>
               </Card>
@@ -526,12 +596,12 @@ export default function FreeEstimatePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.3 }}
             >
-              <Card>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 flex-shrink-0 text-brand-primary" />
+              <Card className="p-3 md:p-5">
+                <div className="flex items-start gap-2 md:gap-3">
+                  <CheckCircle className="h-5 w-5 flex-shrink-0 text-brand-primary md:h-6 md:w-6" />
                   <div>
-                    <h3 className="mb-1 font-bold text-gray-900">30+ Years Experience</h3>
-                    <p className="text-sm text-gray-600">Decades of experience serving Minnesota and Wisconsin homeowners.</p>
+                    <h3 className="mb-0.5 text-xs font-bold text-gray-900 md:mb-1 md:text-sm">30+ Years Experience</h3>
+                    <p className="text-xs text-gray-600 md:text-sm">Decades of experience serving Minnesota and Wisconsin homeowners.</p>
                   </div>
                 </div>
               </Card>
@@ -547,7 +617,7 @@ export default function FreeEstimatePage() {
             title="Services We Provide Estimates For"
             description="Comprehensive exterior solutions across Minnesota and Wisconsin"
           />
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 mb-8">
+          <div className="grid grid-cols-2 gap-3 md:gap-4 md:grid-cols-2 lg:grid-cols-3 mb-6 md:mb-8">
             <AnimatedDiv
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -555,12 +625,12 @@ export default function FreeEstimatePage() {
               transition={{ duration: 0.4 }}
             >
               <Link href="/services/roofing">
-                <Card className="h-full cursor-pointer group hover:shadow-lg transition-shadow">
-                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-red-50 group-hover:bg-red-100 transition-colors">
-                    <Home className="h-5 w-5 text-brand-primary" strokeWidth={2} />
+                <Card className="h-full cursor-pointer group hover:shadow-lg transition-shadow p-3 md:p-5">
+                  <div className="mb-2 flex h-8 w-8 items-center justify-center rounded-lg bg-red-50 group-hover:bg-red-100 transition-colors md:mb-3 md:h-10 md:w-10">
+                    <Home className="h-4 w-4 text-brand-primary md:h-5 md:w-5" strokeWidth={2} />
                   </div>
-                  <h3 className="mb-2 text-lg font-bold text-gray-900 group-hover:text-brand-primary transition-colors">Premium Roofing</h3>
-                  <p className="text-sm text-gray-600">Free estimates for <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roof replacement</Link>, <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roof repair</Link>, and <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roofing services</Link>. GAF Master Elite certified installations.</p>
+                  <h3 className="mb-1 text-sm font-bold text-gray-900 group-hover:text-brand-primary transition-colors md:mb-2 md:text-lg">Premium Roofing</h3>
+                  <p className="text-xs text-gray-600 md:text-sm">Free estimates for <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roof replacement</Link>, <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roof repair</Link>, and <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roofing services</Link>. GAF Master Elite certified installations.</p>
                 </Card>
               </Link>
             </AnimatedDiv>
@@ -571,12 +641,12 @@ export default function FreeEstimatePage() {
               transition={{ duration: 0.4, delay: 0.1 }}
             >
               <Link href="/services/siding">
-                <Card className="h-full cursor-pointer group hover:shadow-lg transition-shadow">
-                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-red-50 group-hover:bg-red-100 transition-colors">
-                    <Building2 className="h-5 w-5 text-brand-primary" strokeWidth={2} />
+                <Card className="h-full cursor-pointer group hover:shadow-lg transition-shadow p-3 md:p-5">
+                  <div className="mb-2 flex h-8 w-8 items-center justify-center rounded-lg bg-red-50 group-hover:bg-red-100 transition-colors md:mb-3 md:h-10 md:w-10">
+                    <Building2 className="h-4 w-4 text-brand-primary md:h-5 md:w-5" strokeWidth={2} />
                   </div>
-                  <h3 className="mb-2 text-lg font-bold text-gray-900 group-hover:text-brand-primary transition-colors">Siding Solutions</h3>
-                  <p className="text-sm text-gray-600">Free estimates for <Link href="/services/siding" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">siding installation</Link>, <Link href="/services/siding" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">siding replacement</Link>, and <Link href="/services/siding" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">siding repair</Link>. Vinyl, fiber cement, and wood options.</p>
+                  <h3 className="mb-1 text-sm font-bold text-gray-900 group-hover:text-brand-primary transition-colors md:mb-2 md:text-lg">Siding Solutions</h3>
+                  <p className="text-xs text-gray-600 md:text-sm">Free estimates for <Link href="/services/siding" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">siding installation</Link>, <Link href="/services/siding" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">siding replacement</Link>, and <Link href="/services/siding" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">siding repair</Link>. Vinyl, fiber cement, and wood options.</p>
                 </Card>
               </Link>
             </AnimatedDiv>
@@ -587,12 +657,12 @@ export default function FreeEstimatePage() {
               transition={{ duration: 0.4, delay: 0.2 }}
             >
               <Link href="/services/windows">
-                <Card className="h-full cursor-pointer group hover:shadow-lg transition-shadow">
-                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-red-50 group-hover:bg-red-100 transition-colors">
-                    <Home className="h-5 w-5 text-brand-primary" strokeWidth={2} />
+                <Card className="h-full cursor-pointer group hover:shadow-lg transition-shadow p-3 md:p-5">
+                  <div className="mb-2 flex h-8 w-8 items-center justify-center rounded-lg bg-red-50 group-hover:bg-red-100 transition-colors md:mb-3 md:h-10 md:w-10">
+                    <Home className="h-4 w-4 text-brand-primary md:h-5 md:w-5" strokeWidth={2} />
                   </div>
-                  <h3 className="mb-2 text-lg font-bold text-gray-900 group-hover:text-brand-primary transition-colors">Window Installation</h3>
-                  <p className="text-sm text-gray-600">Free estimates for <Link href="/services/windows" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">window replacement</Link> and <Link href="/services/windows" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">window installation</Link>. Energy-efficient windows that reduce heating and cooling costs.</p>
+                  <h3 className="mb-1 text-sm font-bold text-gray-900 group-hover:text-brand-primary transition-colors md:mb-2 md:text-lg">Window Installation</h3>
+                  <p className="text-xs text-gray-600 md:text-sm">Free estimates for <Link href="/services/windows" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">window replacement</Link> and <Link href="/services/windows" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">window installation</Link>. Energy-efficient windows that reduce heating and cooling costs.</p>
                 </Card>
               </Link>
             </AnimatedDiv>
@@ -603,12 +673,12 @@ export default function FreeEstimatePage() {
               transition={{ duration: 0.4, delay: 0.3 }}
             >
               <Link href="/services/storm-restoration">
-                <Card className="h-full cursor-pointer group hover:shadow-lg transition-shadow">
-                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-red-50 group-hover:bg-red-100 transition-colors">
-                    <Shield className="h-5 w-5 text-brand-primary" strokeWidth={2} />
+                <Card className="h-full cursor-pointer group hover:shadow-lg transition-shadow p-3 md:p-5">
+                  <div className="mb-2 flex h-8 w-8 items-center justify-center rounded-lg bg-red-50 group-hover:bg-red-100 transition-colors md:mb-3 md:h-10 md:w-10">
+                    <Shield className="h-4 w-4 text-brand-primary md:h-5 md:w-5" strokeWidth={2} />
                   </div>
-                  <h3 className="mb-2 text-lg font-bold text-gray-900 group-hover:text-brand-primary transition-colors">Storm Restoration</h3>
-                  <p className="text-sm text-gray-600">Free estimates for <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">storm damage repair</Link> with <Link href="/resources/insurance-claims" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">insurance claim assistance</Link>. Expert damage assessment and restoration.</p>
+                  <h3 className="mb-1 text-sm font-bold text-gray-900 group-hover:text-brand-primary transition-colors md:mb-2 md:text-lg">Storm Restoration</h3>
+                  <p className="text-xs text-gray-600 md:text-sm">Free estimates for <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">storm damage repair</Link> with <Link href="/resources/insurance-claims" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">insurance claim assistance</Link>. Expert damage assessment and restoration.</p>
                 </Card>
               </Link>
             </AnimatedDiv>
@@ -619,12 +689,12 @@ export default function FreeEstimatePage() {
               transition={{ duration: 0.4, delay: 0.4 }}
             >
               <Link href="/services/winterization">
-                <Card className="h-full cursor-pointer group hover:shadow-lg transition-shadow">
-                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 group-hover:bg-blue-100 transition-colors">
-                    <Award className="h-5 w-5 text-blue-600" strokeWidth={2} />
+                <Card className="h-full cursor-pointer group hover:shadow-lg transition-shadow p-3 md:p-5">
+                  <div className="mb-2 flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50 group-hover:bg-blue-100 transition-colors md:mb-3 md:h-10 md:w-10">
+                    <Award className="h-4 w-4 text-blue-600 md:h-5 md:w-5" strokeWidth={2} />
                   </div>
-                  <h3 className="mb-2 text-lg font-bold text-gray-900 group-hover:text-brand-primary transition-colors">Winterization</h3>
-                  <p className="text-sm text-gray-600">Free estimates for <Link href="/services/winterization" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">winterization services</Link>. Custom packages to protect your Minnesota home and reduce heating costs.</p>
+                  <h3 className="mb-1 text-sm font-bold text-gray-900 group-hover:text-brand-primary transition-colors md:mb-2 md:text-lg">Winterization</h3>
+                  <p className="text-xs text-gray-600 md:text-sm">Free estimates for <Link href="/services/winterization" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">winterization services</Link>. Custom packages to protect your Minnesota home and reduce heating costs.</p>
                 </Card>
               </Link>
             </AnimatedDiv>
@@ -635,12 +705,12 @@ export default function FreeEstimatePage() {
               transition={{ duration: 0.4, delay: 0.5 }}
             >
               <Link href="/services">
-                <Card className="h-full cursor-pointer group hover:shadow-lg transition-shadow">
-                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-red-50 group-hover:bg-red-100 transition-colors">
-                    <FileCheck className="h-5 w-5 text-brand-primary" strokeWidth={2} />
+                <Card className="h-full cursor-pointer group hover:shadow-lg transition-shadow p-3 md:p-5">
+                  <div className="mb-2 flex h-8 w-8 items-center justify-center rounded-lg bg-red-50 group-hover:bg-red-100 transition-colors md:mb-3 md:h-10 md:w-10">
+                    <FileCheck className="h-4 w-4 text-brand-primary md:h-5 md:w-5" strokeWidth={2} />
                   </div>
-                  <h3 className="mb-2 text-lg font-bold text-gray-900 group-hover:text-brand-primary transition-colors">All Services</h3>
-                  <p className="text-sm text-gray-600">View our complete range of <Link href="/services" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">exterior services</Link>. We provide free estimates for all services across <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota and Wisconsin</Link>.</p>
+                  <h3 className="mb-1 text-sm font-bold text-gray-900 group-hover:text-brand-primary transition-colors md:mb-2 md:text-lg">All Services</h3>
+                  <p className="text-xs text-gray-600 md:text-sm">View our complete range of <Link href="/services" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">exterior services</Link>. We provide free estimates for all services across <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota and Wisconsin</Link>.</p>
                 </Card>
               </Link>
             </AnimatedDiv>
@@ -655,7 +725,7 @@ export default function FreeEstimatePage() {
             title="Frequently Asked Questions"
             description="Common questions about our free estimate and inspection process"
           />
-          <div className="space-y-4 mb-8">
+          <div className="space-y-3 mb-6 md:space-y-4 md:mb-8">
             {faqs.map((faq, index) => (
               <AnimatedDiv
                 key={faq.question}
@@ -664,9 +734,9 @@ export default function FreeEstimatePage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
               >
-                <Card>
-                  <h3 className="mb-2 text-lg font-bold text-gray-900">{faq.question}</h3>
-                  <div className="text-gray-700">
+                <Card className="p-3 md:p-5">
+                  <h3 className="mb-1.5 text-sm font-bold text-gray-900 md:mb-2 md:text-lg">{faq.question}</h3>
+                  <div className="text-xs text-gray-700 md:text-base">
                     {typeof faq.answer === 'string' ? faq.answer : faq.answer}
                   </div>
                 </Card>
@@ -685,31 +755,31 @@ export default function FreeEstimatePage() {
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
           >
-            <Card className="bg-white border-2 border-red-100">
-              <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-red-50 to-red-100">
-                <Calendar className="h-8 w-8 text-brand-primary" />
+            <Card className="bg-white border-2 border-red-100 p-4 md:p-6">
+              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-red-50 to-red-100 md:mb-6 md:h-16 md:w-16">
+                <Calendar className="h-6 w-6 text-brand-primary md:h-8 md:w-8" />
               </div>
-              <h2 className="mb-3 text-2xl font-bold text-gray-900 md:text-3xl">
+              <h2 className="mb-2 text-lg font-bold text-gray-900 md:mb-3 md:text-3xl">
                 Schedule Your Free Estimate Today
               </h2>
-              <p className="mb-6 text-base text-gray-700 md:text-lg max-w-2xl mx-auto">
+              <p className="mb-4 text-sm text-gray-700 md:mb-6 md:text-lg max-w-2xl mx-auto">
                 Get an honest assessment from a licensed project manager for <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roofing</Link>, <Link href="/services/siding" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">siding</Link>, <Link href="/services/windows" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">windows</Link>, <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">storm restoration</Link>, or <Link href="/services/winterization" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">winterization</Link>. No obligation, no pressure — just expert evaluation and detailed documentation.
               </p>
-              <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
+              <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
                 <Link href="/contact">
-                  <Button variant="primary" size="lg" className="group">
+                  <Button variant="primary" size="md" className="w-full sm:w-auto group md:size-lg">
                     Schedule Free Estimate
-                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 md:h-5 md:w-5" />
                   </Button>
                 </Link>
                 <a href="tel:763-427-3093">
-                  <Button variant="outline" size="lg" className="group">
-                    <Phone className="mr-2 h-5 w-5" />
+                  <Button variant="outline" size="md" className="w-full sm:w-auto group md:size-lg">
+                    <Phone className="mr-2 h-4 w-4 md:h-5 md:w-5" />
                     Call 763-427-3093
                   </Button>
                 </a>
               </div>
-              <p className="mt-4 text-sm text-gray-500">
+              <p className="mt-3 text-xs text-gray-500 md:mt-4 md:text-sm">
                 Available throughout <Link href="/service-areas" className="text-brand-primary hover:text-red-800 underline underline-offset-2">Minnesota and Wisconsin</Link>
               </p>
             </Card>

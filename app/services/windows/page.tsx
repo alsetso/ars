@@ -123,26 +123,26 @@ export default function WindowsPage() {
       />
       <Section className="bg-white">
         <div className="mx-auto max-w-4xl">
-          <Card className="mb-8">
+          <Card className="mb-6 p-4 md:mb-8 md:p-6">
             <div className="prose prose-lg max-w-none">
-              <p className="text-lg text-gray-700 mb-4">
+              <p className="text-sm text-gray-700 mb-3 md:text-lg md:mb-4">
                 Upgrade your home with energy-efficient windows that reduce utility costs while
                 enhancing comfort and aesthetics. Our expert window installation services help
                 <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2"> Minnesota and Wisconsin homeowners</Link> save money on heating and cooling while improving their home's
                 value and appearance.
               </p>
-              <p className="text-lg text-gray-700 mb-4">
+              <p className="text-sm text-gray-700 mb-3 md:text-lg md:mb-4">
                 We offer a wide selection of window styles and materials, from traditional double-hung
                 windows to modern casement and picture windows. Our professional installation ensures
                 proper sealing and insulation, maximizing energy efficiency and preventing drafts. For complete exterior renovations, we also provide <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roofing</Link> and <Link href="/services/siding" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">siding services</Link>.
               </p>
-              <p className="text-lg text-gray-700">
+              <p className="text-sm text-gray-700 md:text-lg">
                 Whether you need complete window replacement, window repair, or new construction window installation, our <Link href="/about" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">experienced team</Link> provides professional service with energy-efficient options that reduce your carbon footprint and utility bills. We specialize in residential windows and commercial windows, ensuring optimal performance and lasting value for your property.
               </p>
             </div>
           </Card>
 
-          <div className="mb-8 grid gap-6 md:grid-cols-2">
+          <div className="mb-6 grid gap-3 md:mb-8 md:gap-6 md:grid-cols-2">
             {features.map((feature, index) => (
               <AnimatedDiv
                 key={feature.text}
@@ -151,9 +151,9 @@ export default function WindowsPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 flex-shrink-0 text-brand-primary" />
-                  <span className="text-gray-700">
+                <div className="flex items-start gap-2 md:gap-3">
+                  <CheckCircle className="h-5 w-5 flex-shrink-0 text-brand-primary md:h-6 md:w-6" />
+                  <span className="text-sm text-gray-700 md:text-base">
                     {feature.link ? (
                       <Link href={feature.link} className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">
                         {feature.text}
@@ -176,7 +176,7 @@ export default function WindowsPage() {
             title="Window Styles & Types"
             description="Premium window options designed for Minnesota and Wisconsin homes"
           />
-          <div className="grid gap-4 md:grid-cols-3 mb-8">
+          <div className="grid grid-cols-2 gap-3 md:gap-4 md:grid-cols-3 mb-6 md:mb-8">
             {windowTypes.map((type, index) => {
               const Icon = type.icon
               return (
@@ -187,12 +187,12 @@ export default function WindowsPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                 >
-                  <Card className="h-full text-center">
-                    <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100">
-                      <Icon className="h-6 w-6 text-brand-primary" strokeWidth={2} />
+                  <Card className="h-full text-center p-3 md:p-5">
+                    <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100 md:mb-4 md:h-12 md:w-12">
+                      <Icon className="h-5 w-5 text-brand-primary md:h-6 md:w-6" strokeWidth={2} />
                     </div>
-                    <h3 className="mb-2 text-lg font-bold text-gray-900">{type.title}</h3>
-                    <p className="text-sm text-gray-600">{type.description}</p>
+                    <h3 className="mb-1 text-sm font-bold text-gray-900 md:mb-2 md:text-lg">{type.title}</h3>
+                    <p className="text-xs text-gray-600 md:text-sm">{type.description}</p>
                   </Card>
                 </AnimatedDiv>
               )
@@ -208,7 +208,7 @@ export default function WindowsPage() {
             title="Our Window Installation Process"
             description="A proven 4-step approach to quality window installation"
           />
-          <div className="space-y-6 mb-8">
+          <div className="space-y-4 mb-6 md:space-y-6 md:mb-8">
             {processSteps.map((step, index) => {
               const Icon = step.icon
               return (
@@ -219,14 +219,14 @@ export default function WindowsPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                 >
-                  <Card className="border-2 border-gray-100">
-                    <div className="flex gap-4 md:gap-6">
-                      <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-red-700 to-red-800 text-white text-xl font-bold md:h-14 md:w-14">
+                  <Card className="border-2 border-gray-100 p-3 md:p-5">
+                    <div className="flex gap-3 md:gap-6">
+                      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-red-700 to-red-800 text-white text-lg font-bold md:h-14 md:w-14 md:text-xl">
                         {step.step}
                       </div>
                       <div className="flex-1">
-                        <h3 className="mb-2 text-xl font-bold text-gray-900 md:text-2xl">{step.title}</h3>
-                        <p className="text-base text-gray-700 md:text-lg">{step.description}</p>
+                        <h3 className="mb-1 text-base font-bold text-gray-900 md:mb-2 md:text-2xl">{step.title}</h3>
+                        <p className="text-sm text-gray-700 md:text-lg">{step.description}</p>
                       </div>
                     </div>
                   </Card>
@@ -244,7 +244,7 @@ export default function WindowsPage() {
             title="Frequently Asked Questions"
             description="Common questions about our window installation services"
           />
-          <div className="space-y-4 mb-8">
+          <div className="space-y-3 mb-6 md:space-y-4 md:mb-8">
             {faqs.map((faq, index) => (
               <AnimatedDiv
                 key={faq.question}
@@ -253,9 +253,9 @@ export default function WindowsPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
               >
-                <Card>
-                  <h3 className="mb-2 text-lg font-bold text-gray-900">{faq.question}</h3>
-                  <p className="text-gray-700">{faq.answer}</p>
+                <Card className="p-3 md:p-5">
+                  <h3 className="mb-1.5 text-sm font-bold text-gray-900 md:mb-2 md:text-lg">{faq.question}</h3>
+                  <p className="text-xs text-gray-700 md:text-base">{faq.answer}</p>
                 </Card>
               </AnimatedDiv>
             ))}
@@ -270,7 +270,7 @@ export default function WindowsPage() {
             title="Complete Exterior Solutions"
             description="We offer comprehensive exterior services for your Minnesota or Wisconsin home"
           />
-          <div className="grid gap-4 md:grid-cols-3 mb-8">
+          <div className="grid grid-cols-2 gap-3 md:gap-4 md:grid-cols-3 mb-6 md:mb-8">
             <AnimatedDiv
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -278,10 +278,10 @@ export default function WindowsPage() {
               transition={{ duration: 0.4 }}
             >
               <Link href="/services/roofing">
-                <Card className="h-full cursor-pointer text-center">
-                  <Home className="mx-auto mb-3 h-10 w-10 text-brand-primary" />
-                  <h3 className="mb-2 font-bold text-gray-900">Premium Roofing</h3>
-                  <p className="mb-3 text-sm text-gray-600">GAF Master Elite certified</p>
+                <Card className="h-full cursor-pointer text-center p-3 md:p-5">
+                  <Home className="mx-auto mb-2 h-8 w-8 text-brand-primary md:mb-3 md:h-10 md:w-10" />
+                  <h3 className="mb-1 text-sm font-bold text-gray-900 md:mb-2 md:text-base">Premium Roofing</h3>
+                  <p className="mb-2 text-xs text-gray-600 md:mb-3 md:text-sm">GAF Master Elite certified</p>
                   <span className="text-xs font-semibold text-brand-primary">Learn More →</span>
                 </Card>
               </Link>
@@ -293,10 +293,10 @@ export default function WindowsPage() {
               transition={{ duration: 0.4, delay: 0.1 }}
             >
               <Link href="/services/siding">
-                <Card className="h-full cursor-pointer text-center">
-                  <PaintBucket className="mx-auto mb-3 h-10 w-10 text-brand-primary" />
-                  <h3 className="mb-2 font-bold text-gray-900">Siding Solutions</h3>
-                  <p className="mb-3 text-sm text-gray-600">Transform your exterior</p>
+                <Card className="h-full cursor-pointer text-center p-3 md:p-5">
+                  <PaintBucket className="mx-auto mb-2 h-8 w-8 text-brand-primary md:mb-3 md:h-10 md:w-10" />
+                  <h3 className="mb-1 text-sm font-bold text-gray-900 md:mb-2 md:text-base">Siding Solutions</h3>
+                  <p className="mb-2 text-xs text-gray-600 md:mb-3 md:text-sm">Transform your exterior</p>
                   <span className="text-xs font-semibold text-brand-primary">Learn More →</span>
                 </Card>
               </Link>
@@ -308,10 +308,10 @@ export default function WindowsPage() {
               transition={{ duration: 0.4, delay: 0.2 }}
             >
               <Link href="/services/storm-restoration">
-                <Card className="h-full cursor-pointer text-center">
-                  <CloudRain className="mx-auto mb-3 h-10 w-10 text-brand-primary" />
-                  <h3 className="mb-2 font-bold text-gray-900">Storm Restoration</h3>
-                  <p className="mb-3 text-sm text-gray-600">Expert damage repair</p>
+                <Card className="h-full cursor-pointer text-center p-3 md:p-5">
+                  <CloudRain className="mx-auto mb-2 h-8 w-8 text-brand-primary md:mb-3 md:h-10 md:w-10" />
+                  <h3 className="mb-1 text-sm font-bold text-gray-900 md:mb-2 md:text-base">Storm Restoration</h3>
+                  <p className="mb-2 text-xs text-gray-600 md:mb-3 md:text-sm">Expert damage repair</p>
                   <span className="text-xs font-semibold text-brand-primary">Learn More →</span>
                 </Card>
               </Link>
@@ -329,22 +329,22 @@ export default function WindowsPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
           >
-            <Card className="bg-white border-2 border-red-100">
-              <h2 className="mb-3 text-2xl font-bold text-gray-900 md:text-3xl">
+            <Card className="bg-white border-2 border-red-100 p-4 md:p-6">
+              <h2 className="mb-2 text-lg font-bold text-gray-900 md:mb-3 md:text-3xl">
                 Ready to Upgrade Your Windows?
               </h2>
-              <p className="mb-6 text-base text-gray-700 md:text-lg max-w-2xl mx-auto">
+              <p className="mb-4 text-sm text-gray-700 md:mb-6 md:text-lg max-w-2xl mx-auto">
                 Get your free estimate for energy-efficient window installation. We serve <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota and Wisconsin</Link> with expert window services that reduce costs and enhance comfort.
               </p>
-              <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-                <Link href="/contact">
-                  <Button variant="primary" size="lg">
+              <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
+                <Link href="/services/free-estimate">
+                  <Button variant="primary" size="md" className="w-full sm:w-auto md:size-lg">
                     Get Free Estimate
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                    <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
                   </Button>
                 </Link>
                 <Link href="/services">
-                  <Button variant="outline" size="lg">
+                  <Button variant="outline" size="md" className="w-full sm:w-auto md:size-lg">
                     View All Services
                   </Button>
                 </Link>

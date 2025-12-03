@@ -40,7 +40,7 @@ export function Stats() {
         description="Proven track record of excellence and customer satisfaction"
       />
       <div className="mx-auto max-w-6xl">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-3 gap-3 md:gap-4 lg:gap-6">
           {stats.map((stat, index) => {
             const Icon = stat.icon
             return (
@@ -51,24 +51,24 @@ export function Stats() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="h-full text-center" variant="elevated">
-                  <div className="mb-4 flex justify-center">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100">
-                      <Icon className="h-7 w-7 text-brand-primary" strokeWidth={2} />
+                <Card className="h-full text-center p-3 md:p-5" variant="elevated">
+                  <div className="mb-2 md:mb-4 flex justify-center">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100 md:h-14 md:w-14">
+                      <Icon className="h-4 w-4 text-brand-primary md:h-7 md:w-7" strokeWidth={2} />
                     </div>
                   </div>
                   
-                  <div className="mb-2">
-                    <span className="text-4xl font-bold text-gray-900 md:text-5xl">
+                  <div className="mb-1 md:mb-2">
+                    <span className="text-xl font-bold text-gray-900 md:text-4xl lg:text-5xl">
                       {stat.value}
                     </span>
                   </div>
                   
-                  <h3 className="mb-1 text-base font-bold text-gray-900 md:text-lg">
+                  <h3 className="mb-0.5 text-xs font-bold text-gray-900 md:mb-1 md:text-base lg:text-lg">
                     {stat.label}
                   </h3>
                   
-                  <p className="text-sm text-gray-600">
+                  <p className="text-xs text-gray-600 md:text-sm">
                     {stat.description}
                   </p>
                 </Card>

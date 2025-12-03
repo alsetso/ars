@@ -67,20 +67,20 @@ export function FAQ() {
               <Card className="overflow-hidden" variant="outlined">
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="flex w-full items-center justify-between gap-4 p-5 text-left transition-colors hover:bg-gray-50 md:p-6"
+                  className="flex w-full items-center justify-between gap-2 p-3 text-left transition-colors hover:bg-gray-50 md:gap-4 md:p-6"
                   aria-expanded={openIndex === index}
                   aria-controls={`faq-answer-${index}`}
                 >
-                  <div className="flex items-start gap-4 flex-1">
+                  <div className="flex items-start gap-2 flex-1 md:gap-4">
                     <div className="mt-0.5 flex-shrink-0">
-                      <HelpCircle className="h-5 w-5 text-brand-primary" />
+                      <HelpCircle className="h-4 w-4 text-brand-primary md:h-5 md:w-5" />
                     </div>
-                    <h3 className="text-base font-bold text-gray-900 md:text-lg">
+                    <h3 className="text-sm font-bold text-gray-900 md:text-lg">
                       {faq.question}
                     </h3>
                   </div>
                   <ChevronDown
-                    className={`h-5 w-5 flex-shrink-0 text-gray-500 transition-transform duration-200 ${
+                    className={`h-4 w-4 flex-shrink-0 text-gray-500 transition-transform duration-200 md:h-5 md:w-5 ${
                       openIndex === index ? 'rotate-180' : ''
                     }`}
                   />
@@ -95,9 +95,9 @@ export function FAQ() {
                       transition={{ duration: 0.2 }}
                       className="overflow-hidden"
                     >
-                      <div className="border-t border-gray-100 px-5 pb-5 pt-0 md:px-6 md:pb-6">
-                        <div className="pl-9 md:pl-10">
-                          <p className="text-sm leading-relaxed text-gray-700 md:text-base">
+                      <div className="border-t border-gray-100 px-3 pb-3 pt-0 md:px-6 md:pb-6">
+                        <div className="pl-6 md:pl-10">
+                          <p className="text-xs leading-relaxed text-gray-700 md:text-base">
                             {faq.answer}
                           </p>
                         </div>

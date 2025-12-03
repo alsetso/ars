@@ -55,9 +55,9 @@ export function Services() {
               transition={{ duration: 0.4, delay: index * 0.05 }}
             >
               <Link href={slug}>
-                <Card className="group h-full cursor-pointer overflow-hidden p-0" variant="elevated">
+                <Card className="group h-full cursor-pointer overflow-hidden p-0 border-0 shadow-none hover:shadow-lg transition-shadow duration-300" variant="elevated">
                   {/* Service Image */}
-                  <div className="relative mb-2 h-32 overflow-hidden rounded-t-xl md:mb-3 md:h-40">
+                  <div className="relative h-32 overflow-hidden md:h-40">
                     <Image
                       src={serviceImages[index]}
                       alt={service.title}
@@ -68,13 +68,13 @@ export function Services() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                     
                     {/* Icon Badge */}
-                    <div className="absolute left-3 top-3 rounded-lg bg-white/95 backdrop-blur-sm p-2  transition-transform duration-200 group-hover:scale-105 md:left-4 md:top-4">
+                    <div className="absolute left-3 top-3 rounded-lg bg-white/95 backdrop-blur-sm p-2 transition-transform duration-200 group-hover:scale-105 md:left-4 md:top-4">
                       <Icon className={`h-4 w-4 md:h-5 md:w-5 ${service.id === 'winterization' ? 'text-blue-600' : 'text-brand-primary'}`} strokeWidth={2} />
                     </div>
                   </div>
 
-                  <div className="px-4 pb-4 md:px-4 md:pb-4">
-                    <h3 className="mb-1 text-base font-bold tracking-tight text-gray-900 md:mb-1.5 md:text-lg">{service.title}</h3>
+                  <div className="pt-3 px-3 pb-3 md:pt-4 md:px-4 md:pb-4">
+                    <h3 className="mb-1 text-base font-bold tracking-tight text-gray-900 md:mb-1.5 md:text-lg group-hover:text-brand-primary transition-colors duration-200">{service.title}</h3>
                     <p className="text-xs text-gray-600 leading-snug md:text-sm">{service.description}</p>
                   </div>
                 </Card>

@@ -380,7 +380,7 @@ export default function GAFMasterElitePage() {
               </div>
 
               <div className="mt-8">
-                <Link href="/contact">
+                <Link href="/services/free-estimate">
                   <Button variant="primary" size="lg" className="w-full sm:w-auto bg-yellow-500 hover:bg-yellow-600 text-gray-900">
                     Get Your Free Estimate
                   </Button>

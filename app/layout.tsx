@@ -5,6 +5,7 @@ import { Header } from '@/components/navigation/Header'
 import { Footer } from '@/components/navigation/Footer'
 import { SupportBanner } from '@/components/navigation/SupportBanner'
 import { PageOverlay } from '@/components/ui/PageOverlay'
+import { DemoDisclaimer } from '@/components/ui/DemoDisclaimer'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -80,6 +81,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <DemoDisclaimer />
       </body>
     </html>
   )

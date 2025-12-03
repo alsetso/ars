@@ -60,7 +60,7 @@ export default function ServicesPage() {
           description="Comprehensive exterior solutions backed by decades of expertise"
         />
 
-        <div className="grid gap-3 md:gap-4 md:grid-cols-2 lg:grid-cols-5">
+        <div className="grid grid-cols-2 gap-2 md:gap-4 md:grid-cols-2 lg:grid-cols-5">
           {SERVICES.map((service, index) => {
             const Icon = iconMap[service.icon as keyof typeof iconMap] || Home
             const slug = serviceSlugs[service.id as keyof typeof serviceSlugs]
@@ -78,12 +78,12 @@ export default function ServicesPage() {
                 transition={{ duration: 0.4, delay: index * 0.05 }}
               >
                 <Link href={slug}>
-                  <Card className="h-full cursor-pointer">
-                    <div className={`mb-3 flex h-12 w-12 items-center justify-center rounded-xl md:h-14 md:w-14 ${service.id === 'winterization' ? 'bg-blue-50' : 'bg-red-50'}`}>
-                      <Icon className={`h-6 w-6 md:h-7 md:w-7 ${service.id === 'winterization' ? 'text-blue-600' : 'text-brand-primary'}`} />
+                  <Card className="h-full cursor-pointer p-3 md:p-5">
+                    <div className={`mb-2 flex h-10 w-10 items-center justify-center rounded-xl md:mb-3 md:h-14 md:w-14 ${service.id === 'winterization' ? 'bg-blue-50' : 'bg-red-50'}`}>
+                      <Icon className={`h-5 w-5 md:h-7 md:w-7 ${service.id === 'winterization' ? 'text-blue-600' : 'text-brand-primary'}`} />
                     </div>
-                    <h3 className="mb-1.5 text-lg font-bold text-gray-900 md:text-xl">{service.title}</h3>
-                    <p className="mb-3 text-sm text-gray-600 md:text-base">{service.description}</p>
+                    <h3 className="mb-1 text-sm font-bold text-gray-900 md:mb-1.5 md:text-xl">{service.title}</h3>
+                    <p className="mb-2 text-xs text-gray-600 md:mb-3 md:text-base">{service.description}</p>
                     <span className="text-xs font-semibold text-brand-primary md:text-sm">
                       Learn More →
                     </span>
