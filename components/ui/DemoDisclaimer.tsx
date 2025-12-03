@@ -87,33 +87,12 @@ export function DemoDisclaimer() {
                     <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-50">
                       <Info className="h-4 w-4 text-blue-600" />
                     </div>
-                    <h2 className="text-lg font-semibold text-gray-900">Web Improvement Preview</h2>
+                    <h2 className="text-lg font-semibold text-gray-900">Project Preview</h2>
                   </div>
 
                   <div className="space-y-3 text-sm text-gray-700">
                     <p className="leading-relaxed">
-                      This is a web improvement preview for <strong className="font-semibold text-gray-900">Advanced Roofing and Siding, Inc.</strong> created by <strong className="font-semibold text-gray-900">Alset Solutions, Inc.</strong> This site is for review only and is not publicly accessible.
-                    </p>
-                    <p className="text-xs text-gray-600">
-                      <strong className="font-medium text-gray-700">Existing website:</strong>{' '}
-                      <a
-                        href="https://advancedroofingmn.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-600 underline hover:text-blue-700"
-                      >
-                        https://advancedroofingmn.com
-                      </a>
-                    </p>
-                    <p className="leading-relaxed">
-                      <strong className="font-semibold text-gray-900">Important:</strong> This site does not represent Advanced Roofing and Siding, Inc. in any official capacity. Unauthorized viewers should exit immediately.
-                    </p>
-                  </div>
-
-                  {/* Removal Notice */}
-                  <div className="mt-4 rounded-md border border-amber-200 bg-amber-50 px-3 py-2.5">
-                    <p className="text-xs text-amber-900">
-                      <strong className="font-semibold">Removal date:</strong> December 9, 2025 at 12:00 PM
+                      This is a project URL for an improved website for <strong className="font-semibold text-gray-900">Advanced Roofing and Siding</strong>.
                     </p>
                   </div>
 
