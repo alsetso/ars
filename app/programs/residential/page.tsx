@@ -113,10 +113,10 @@ export default function ResidentialProgramPage() {
                 Our Residential Program is designed specifically for homeowners who want the best protection and value for their most important investment - their home. We understand that your home is more than just a building; it's where you create memories, raise your family, and build your future.
               </p>
               <p className="text-lg text-gray-700 mb-4">
-                As a <Link href="/gaf-master-elite-contractor" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">GAF Master Elite contractor</Link> with <Link href="/about" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">30+ years of experience</Link>, we bring the expertise, quality materials, and industry-leading warranties that protect your home for decades. Whether you need a complete roof replacement, new siding, energy-efficient windows, or storm damage repair, we're here to help.
+                As a <Link href="/gaf-master-elite-contractor" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">GAF Master Elite contractor</Link> with <Link href="/about" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">30+ years of experience</Link>, we bring the expertise, quality materials, and industry-leading warranties that protect your home for decades. Whether you need a complete roof replacement, new siding, energy-efficient windows, or storm damage repair, we're here to help.
               </p>
               <p className="text-lg text-gray-700">
-                Our <Link href="/about" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">family-owned business</Link> is committed to treating your home with the care and respect it deserves. We offer free consultations, competitive pricing, and the peace of mind that comes with <Link href="/warranties" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">industry-leading warranties</Link>.
+                Our <Link href="/about" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">family-owned business</Link> is committed to treating your home with the care and respect it deserves. We offer free consultations, competitive pricing, and the peace of mind that comes with <Link href="/warranties" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">industry-leading warranties</Link>.
               </p>
             </div>
           </Card>
@@ -225,7 +225,7 @@ export default function ResidentialProgramPage() {
               >
                 <Card className="border-2 border-gray-100">
                   <div className="flex gap-4 md:gap-6">
-                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-red-600 to-red-700 text-white text-xl font-bold md:h-14 md:w-14">
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-red-700 to-red-800 text-white text-xl font-bold md:h-14 md:w-14">
                       {step.step}
                     </div>
                     <div className="flex-1">
@@ -254,7 +254,7 @@ export default function ResidentialProgramPage() {
                 Ready to Protect Your Home?
               </h2>
               <p className="mb-6 text-base text-gray-700 md:text-lg max-w-2xl mx-auto">
-                Get your free estimate from a GAF Master Elite contractor. We serve <Link href="/service-areas" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">Minnesota and Wisconsin</Link> homeowners with expert exterior services backed by industry-leading warranties.
+                Get your free estimate from a GAF Master Elite contractor. We serve <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota and Wisconsin</Link> homeowners with expert exterior services backed by industry-leading warranties.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
                 <Link href="/contact">

@@ -304,13 +304,13 @@ export default function ServiceFormPage() {
               <div className="space-y-3 text-sm text-gray-600">
                 <div className="flex items-center justify-center gap-2">
                   <Phone className="h-4 w-4 text-brand-primary" />
-                  <a href={`tel:${COMPANY_INFO.phone}`} className="text-brand-primary hover:text-red-700 font-semibold">
+                  <a href={`tel:${COMPANY_INFO.phone}`} className="text-brand-primary hover:text-red-800 font-semibold">
                     {COMPANY_INFO.phone}
                   </a>
                 </div>
                 <div className="flex items-center justify-center gap-2">
                   <Mail className="h-4 w-4 text-brand-primary" />
-                  <a href={`mailto:${COMPANY_INFO.email}`} className="text-brand-primary hover:text-red-700 font-semibold">
+                  <a href={`mailto:${COMPANY_INFO.email}`} className="text-brand-primary hover:text-red-800 font-semibold">
                     {COMPANY_INFO.email}
                   </a>
                 </div>

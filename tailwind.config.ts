@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          primary: '#C1121F',
+          primary: '#A40F1A',
           secondary: '#1D3557',
           accent: '#F1FAEE',
           dark: '#14213D',
@@ -31,7 +31,7 @@ const config: Config = {
         'soft': '0 1px 8px -2px rgba(0, 0, 0, 0.06), 0 4px 12px -2px rgba(0, 0, 0, 0.03)',
         'medium': '0 2px 12px -3px rgba(0, 0, 0, 0.08), 0 6px 16px -3px rgba(0, 0, 0, 0.04)',
         'large': '0 8px 24px -4px rgba(0, 0, 0, 0.12)',
-        'glow': '0 0 20px rgba(193, 18, 31, 0.3)',
+        'glow': '0 0 20px rgba(164, 15, 26, 0.3)',
       },
       animation: {
         'fade-in-up': 'fadeInUp 0.6s ease-out',
@@ -63,5 +63,3 @@ const config: Config = {
 }
 
 export default config
-
-

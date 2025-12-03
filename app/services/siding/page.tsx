@@ -112,16 +112,16 @@ export default function SidingPage() {
               <p className="text-lg text-gray-700 mb-4">
                 Your home's siding is its first line of defense against the elements. At Advanced
                 Roofing & Siding Inc., we offer comprehensive siding solutions that combine
-                durability, aesthetics, and energy efficiency for <Link href="/service-areas" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">Minnesota and Wisconsin homes</Link>.
+                durability, aesthetics, and energy efficiency for <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota and Wisconsin homes</Link>.
               </p>
               <p className="text-lg text-gray-700 mb-4">
                 We work with premium materials including vinyl siding, fiber cement siding, and wood siding,
                 helping you choose the perfect option for your home's style and budget. Our expert
-                installation ensures your siding will withstand <Link href="/service-areas" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">Minnesota's extreme weather
-                conditions</Link> while enhancing your home's curb appeal and value. For complete exterior solutions, we also offer <Link href="/services/roofing" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">roofing</Link> and <Link href="/services/windows" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">window installation</Link> services.
+                installation ensures your siding will withstand <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota's extreme weather
+                conditions</Link> while enhancing your home's curb appeal and value. For complete exterior solutions, we also offer <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roofing</Link> and <Link href="/services/windows" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">window installation</Link> services.
               </p>
               <p className="text-lg text-gray-700">
-                Whether you need complete siding replacement, siding repair, or new construction siding installation, our <Link href="/about" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">experienced team</Link> provides professional service backed by quality materials and expert craftsmanship. We specialize in residential siding and commercial siding projects, ensuring your property is protected and beautiful for years to come.
+                Whether you need complete siding replacement, siding repair, or new construction siding installation, our <Link href="/about" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">experienced team</Link> provides professional service backed by quality materials and expert craftsmanship. We specialize in residential siding and commercial siding projects, ensuring your property is protected and beautiful for years to come.
               </p>
             </div>
           </Card>
@@ -139,7 +139,7 @@ export default function SidingPage() {
                   <CheckCircle className="h-6 w-6 flex-shrink-0 text-brand-primary" />
                   <span className="text-gray-700">
                     {feature.link ? (
-                      <Link href={feature.link} className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">
+                      <Link href={feature.link} className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">
                         {feature.text}
                       </Link>
                     ) : (
@@ -205,7 +205,7 @@ export default function SidingPage() {
                 >
                   <Card className="border-2 border-gray-100">
                     <div className="flex gap-4 md:gap-6">
-                      <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-red-600 to-red-700 text-white text-xl font-bold md:h-14 md:w-14">
+                      <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-red-700 to-red-800 text-white text-xl font-bold md:h-14 md:w-14">
                         {step.step}
                       </div>
                       <div className="flex-1">
@@ -318,7 +318,7 @@ export default function SidingPage() {
                 Ready to Transform Your Home's Exterior?
               </h2>
               <p className="mb-6 text-base text-gray-700 md:text-lg max-w-2xl mx-auto">
-                Get your free estimate for premium siding installation. We serve <Link href="/service-areas" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">Minnesota and Wisconsin</Link> with expert siding services backed by quality materials and professional installation.
+                Get your free estimate for premium siding installation. We serve <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota and Wisconsin</Link> with expert siding services backed by quality materials and professional installation.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
                 <Link href="/contact">

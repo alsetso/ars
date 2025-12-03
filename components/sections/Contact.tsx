@@ -25,13 +25,13 @@ export function Contact() {
             transition={{ duration: 0.4 }}
           >
             <Card className="text-center" variant="elevated">
-              <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100 shadow-sm md:h-14 md:w-14">
+              <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100  md:h-14 md:w-14">
                 <Phone className="h-6 w-6 text-brand-primary md:h-7 md:w-7" strokeWidth={2} />
               </div>
               <h3 className="mb-1.5 text-base font-bold text-gray-900 md:text-lg">Phone</h3>
               <a
                 href={`tel:${COMPANY_INFO.phone}`}
-                className="text-sm text-brand-primary transition-colors hover:text-red-700 font-semibold md:text-base"
+                className="text-sm text-brand-primary transition-colors hover:text-red-800 font-semibold md:text-base"
               >
                 {COMPANY_INFO.phone}
               </a>
@@ -45,7 +45,7 @@ export function Contact() {
             transition={{ duration: 0.4, delay: 0.05 }}
           >
             <Card className="text-center" variant="elevated">
-              <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100 shadow-sm md:h-14 md:w-14">
+              <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100  md:h-14 md:w-14">
                 <MapPin className="h-6 w-6 text-brand-primary md:h-7 md:w-7" strokeWidth={2} />
               </div>
               <h3 className="mb-1.5 text-base font-bold text-gray-900 md:text-lg">Location</h3>
@@ -60,13 +60,13 @@ export function Contact() {
             transition={{ duration: 0.4, delay: 0.1 }}
           >
             <Card className="text-center" variant="elevated">
-              <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100 shadow-sm md:h-14 md:w-14">
+              <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100  md:h-14 md:w-14">
                 <Mail className="h-6 w-6 text-brand-primary md:h-7 md:w-7" strokeWidth={2} />
               </div>
               <h3 className="mb-1.5 text-base font-bold text-gray-900 md:text-lg">Email</h3>
               <a
                 href={`mailto:${COMPANY_INFO.email}`}
-                className="text-sm text-brand-primary transition-colors hover:text-red-700 font-semibold md:text-base"
+                className="text-sm text-brand-primary transition-colors hover:text-red-800 font-semibold md:text-base"
               >
                 {COMPANY_INFO.email}
               </a>

@@ -112,19 +112,19 @@ export default function StormRestorationPage() {
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-gray-700 mb-4">
                 When severe weather strikes, you need a trusted partner to help restore your home.
-                Advanced Roofing & Siding Inc. provides comprehensive <Link href="/insurance-claims" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">storm restoration services</Link>,
-                from initial damage assessment to complete repairs and <Link href="/insurance-claims" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">insurance claim assistance</Link> for <Link href="/service-areas" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">Minnesota and Wisconsin homeowners</Link>.
+                Advanced Roofing & Siding Inc. provides comprehensive <Link href="/insurance-claims" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">storm restoration services</Link>,
+                from initial damage assessment to complete repairs and <Link href="/insurance-claims" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">insurance claim assistance</Link> for <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota and Wisconsin homeowners</Link>.
               </p>
               <p className="text-lg text-gray-700 mb-4">
                 Our experienced team understands the insurance process and works directly with your
                 insurance company to ensure you receive the coverage you deserve. We provide
                 detailed documentation, professional estimates, and quality repairs that meet or
-                exceed insurance standards. Learn more about our <Link href="/insurance-claims" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">insurance claims process</Link>.
+                exceed insurance standards. Learn more about our <Link href="/insurance-claims" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">insurance claims process</Link>.
               </p>
               <p className="text-lg text-gray-700">
                 We respond quickly to storm damage emergencies, providing temporary protection when
                 needed and completing permanent repairs with the same quality and craftsmanship you
-                expect from a <Link href="/gaf-master-elite-contractor" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">GAF Master Elite contractor</Link>. Our storm restoration includes <Link href="/services/roofing" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">roof repairs</Link>, <Link href="/services/siding" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">siding replacement</Link>, and <Link href="/services/windows" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">window damage restoration</Link>. With <Link href="/about" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">30+ years of experience</Link> handling storm damage, we know how to navigate the insurance process and restore your property efficiently.
+                expect from a <Link href="/gaf-master-elite-contractor" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">GAF Master Elite contractor</Link>. Our storm restoration includes <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roof repairs</Link>, <Link href="/services/siding" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">siding replacement</Link>, and <Link href="/services/windows" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">window damage restoration</Link>. With <Link href="/about" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">30+ years of experience</Link> handling storm damage, we know how to navigate the insurance process and restore your property efficiently.
               </p>
             </div>
           </Card>
@@ -142,7 +142,7 @@ export default function StormRestorationPage() {
                   <CheckCircle className="h-6 w-6 flex-shrink-0 text-brand-primary" />
                   <span className="text-gray-700">
                     {feature.link ? (
-                      <Link href={feature.link} className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">
+                      <Link href={feature.link} className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">
                         {feature.text}
                       </Link>
                     ) : (
@@ -211,7 +211,7 @@ export default function StormRestorationPage() {
                 >
                   <Card className="border-2 border-gray-100">
                     <div className="flex gap-4 md:gap-6">
-                      <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-red-600 to-red-700 text-white text-xl font-bold md:h-14 md:w-14">
+                      <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-red-700 to-red-800 text-white text-xl font-bold md:h-14 md:w-14">
                         {step.step}
                       </div>
                       <div className="flex-1">
@@ -324,7 +324,7 @@ export default function StormRestorationPage() {
                 Need Storm Damage Restoration?
               </h2>
               <p className="mb-6 text-base text-gray-700 md:text-lg max-w-2xl mx-auto">
-                Get your free storm damage inspection and insurance claim assistance. We serve <Link href="/service-areas" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">Minnesota and Wisconsin</Link> with expert storm restoration services backed by 30+ years of experience.
+                Get your free storm damage inspection and insurance claim assistance. We serve <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota and Wisconsin</Link> with expert storm restoration services backed by 30+ years of experience.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
                 <Link href="/contact">

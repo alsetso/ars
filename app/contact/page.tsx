@@ -49,7 +49,7 @@ export default function ContactPage() {
                       <h4 className="mb-1 font-semibold text-gray-900">Phone</h4>
                       <a
                         href={`tel:${COMPANY_INFO.phone}`}
-                        className="text-brand-primary hover:text-red-700"
+                        className="text-brand-primary hover:text-red-800"
                       >
                         {COMPANY_INFO.phone}
                       </a>
@@ -64,7 +64,7 @@ export default function ContactPage() {
                       <h4 className="mb-1 text-sm font-semibold text-gray-900 md:text-base">Email</h4>
                       <a
                         href={`mailto:${COMPANY_INFO.email}`}
-                        className="text-sm text-brand-primary hover:text-red-700 md:text-base"
+                        className="text-sm text-brand-primary hover:text-red-800 md:text-base"
                       >
                         {COMPANY_INFO.email}
                       </a>
@@ -105,7 +105,7 @@ export default function ContactPage() {
               <div>
                 <h3 className="mb-4 text-xl font-bold text-gray-900 md:text-2xl">Request a Free Estimate</h3>
                 <p className="mb-4 text-sm text-gray-600">
-                  Need help choosing a service? Learn more about our <Link href="/services/roofing" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">roofing</Link>, <Link href="/services/siding" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">siding</Link>, <Link href="/services/windows" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">windows</Link>, <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">storm restoration</Link>, and <Link href="/services/winterization" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">winterization</Link> services. Or view our <Link href="/services" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">complete services overview</Link>.
+                  Need help choosing a service? Learn more about our <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roofing</Link>, <Link href="/services/siding" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">siding</Link>, <Link href="/services/windows" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">windows</Link>, <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">storm restoration</Link>, and <Link href="/services/winterization" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">winterization</Link> services. Or view our <Link href="/services" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">complete services overview</Link>.
                 </p>
                 <ContactForm />
               </div>
@@ -134,7 +134,7 @@ export default function ContactPage() {
                 </div>
                 <h3 className="mb-1 text-sm font-bold text-gray-900 md:text-base">GAF Master Elite</h3>
                 <p className="text-xs text-gray-600 md:text-sm">Top 3% nationwide</p>
-                <Link href="/gaf-master-elite-contractor" className="mt-2 inline-block text-xs text-brand-primary hover:text-red-700 font-semibold">
+                <Link href="/gaf-master-elite-contractor" className="mt-2 inline-block text-xs text-brand-primary hover:text-red-800 font-semibold">
                   Learn More →
                 </Link>
               </Card>
@@ -144,7 +144,7 @@ export default function ContactPage() {
                 </div>
                 <h3 className="mb-1 text-sm font-bold text-gray-900 md:text-base">30+ Years</h3>
                 <p className="text-xs text-gray-600 md:text-sm">Experience</p>
-                <Link href="/about" className="mt-2 inline-block text-xs text-brand-primary hover:text-red-700 font-semibold">
+                <Link href="/about" className="mt-2 inline-block text-xs text-brand-primary hover:text-red-800 font-semibold">
                   Our Story →
                 </Link>
               </Card>
@@ -154,7 +154,7 @@ export default function ContactPage() {
                 </div>
                 <h3 className="mb-1 text-sm font-bold text-gray-900 md:text-base">A+ BBB Rating</h3>
                 <p className="text-xs text-gray-600 md:text-sm">Accredited since 2007</p>
-                <Link href="/reviews" className="mt-2 inline-block text-xs text-brand-primary hover:text-red-700 font-semibold">
+                <Link href="/reviews" className="mt-2 inline-block text-xs text-brand-primary hover:text-red-800 font-semibold">
                   Read Reviews →
                 </Link>
               </Card>
@@ -164,7 +164,7 @@ export default function ContactPage() {
                 </div>
                 <h3 className="mb-1 text-sm font-bold text-gray-900 md:text-base">Licensed & Insured</h3>
                 <p className="text-xs text-gray-600 md:text-sm">License #{COMPANY_INFO.license}</p>
-                <Link href="/warranties" className="mt-2 inline-block text-xs text-brand-primary hover:text-red-700 font-semibold">
+                <Link href="/warranties" className="mt-2 inline-block text-xs text-brand-primary hover:text-red-800 font-semibold">
                   Warranties →
                 </Link>
               </Card>
@@ -264,7 +264,7 @@ export default function ContactPage() {
                 </div>
                 <h2 className="text-2xl font-bold text-gray-900 md:text-3xl mb-2">Serving Minnesota & Wisconsin</h2>
                 <p className="text-gray-600 mb-4">
-                  We proudly serve communities across <Link href="/service-areas" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">Minnesota and Wisconsin</Link>, including the Twin Cities metro area, Anoka County, and surrounding regions.
+                  We proudly serve communities across <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota and Wisconsin</Link>, including the Twin Cities metro area, Anoka County, and surrounding regions.
                 </p>
               </div>
               <div className="grid gap-4 md:grid-cols-2">

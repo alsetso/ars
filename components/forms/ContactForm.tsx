@@ -98,7 +98,7 @@ export function ContactForm({
           </p>
           <p className="text-sm text-gray-600">
             If you need immediate assistance, please call us at{' '}
-            <a href="tel:763-427-3093" className="text-brand-primary hover:text-red-700 font-semibold">
+            <a href="tel:763-427-3093" className="text-brand-primary hover:text-red-800 font-semibold">
               763-427-3093
             </a>
           </p>
@@ -183,7 +183,7 @@ export function ContactForm({
               placeholder="City, State (e.g., Anoka, MN)"
             />
             <p className="mt-1 text-xs text-gray-500">
-              We serve <Link href="/service-areas" className="text-brand-primary hover:text-red-700 underline underline-offset-2">Minnesota and Wisconsin</Link> communities
+              We serve <Link href="/service-areas" className="text-brand-primary hover:text-red-800 underline underline-offset-2">Minnesota and Wisconsin</Link> communities
             </p>
           </div>
         )}
@@ -260,7 +260,7 @@ export function ContactForm({
           <ul className="space-y-1 pl-4 list-disc">
             <li>Free, no-obligation estimate</li>
             <li>Response within 24 hours</li>
-            <li>Expert consultation from our <Link href="/about" className="text-brand-primary hover:text-red-700 underline underline-offset-2">GAF Master Elite</Link> team</li>
+            <li>Expert consultation from our <Link href="/about" className="text-brand-primary hover:text-red-800 underline underline-offset-2">GAF Master Elite</Link> team</li>
           </ul>
         </div>
 

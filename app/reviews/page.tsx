@@ -136,7 +136,7 @@ export default function ReviewsPage() {
                             href="https://developers.google.com/maps/documentation/places/web-service/place-id"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-brand-primary hover:text-red-700 underline"
+                            className="text-brand-primary hover:text-red-800 underline"
                           >
                             Place ID Finder
                           </a>

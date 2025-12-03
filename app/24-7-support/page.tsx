@@ -39,7 +39,7 @@ export default function Support24_7Page() {
             <Card className="mb-8">
               <div className="prose prose-lg max-w-none">
                 <p className="text-xl leading-relaxed text-gray-700 mb-6">
-                  Exterior issues don't wait for business hours. Whether it's a leaking roof at midnight, <Link href="/services/siding" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">siding ripped off during a storm</Link>, or unexpected damage you discover on a weekend — <Link href="/about" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">Advanced Roofing & Siding</Link> is here for you 24/7.
+                  Exterior issues don't wait for business hours. Whether it's a leaking roof at midnight, <Link href="/services/siding" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">siding ripped off during a storm</Link>, or unexpected damage you discover on a weekend — <Link href="/about" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Advanced Roofing & Siding</Link> is here for you 24/7.
                 </p>
 
                 <p className="text-lg leading-relaxed text-gray-700 font-semibold">
@@ -66,7 +66,7 @@ export default function Support24_7Page() {
               </div>
               
               <p className="text-lg text-gray-700 mb-6">
-                We believe <Link href="/service-areas" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">Minnesota and Wisconsin homeowners</Link> should never feel stranded or ignored when their home exterior is at risk. That's why Advanced Roofing & Siding offers:
+                We believe <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota and Wisconsin homeowners</Link> should never feel stranded or ignored when their home exterior is at risk. That's why Advanced Roofing & Siding offers:
               </p>
 
               <div className="space-y-6">
@@ -81,7 +81,7 @@ export default function Support24_7Page() {
                     </p>
                     <a 
                       href={`tel:${COMPANY_INFO.phone}`}
-                      className="mt-3 inline-flex items-center gap-2 text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2"
+                      className="mt-3 inline-flex items-center gap-2 text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2"
                     >
                       <Phone className="h-5 w-5" />
                       {COMPANY_INFO.phone}
@@ -96,7 +96,7 @@ export default function Support24_7Page() {
                   <div>
                     <h3 className="mb-2 text-xl font-bold text-gray-900">After-Hours Emergency Response</h3>
                     <p className="text-gray-700">
-                      We prioritize urgent situations where immediate attention may prevent further damage. Our <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">emergency response team</Link> is ready to help protect your home.
+                      We prioritize urgent situations where immediate attention may prevent further damage. Our <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">emergency response team</Link> is ready to help protect your home.
                     </p>
                   </div>
                 </div>
@@ -108,7 +108,7 @@ export default function Support24_7Page() {
                   <div>
                     <h3 className="mb-2 text-xl font-bold text-gray-900">Fast Email and Chat Support</h3>
                     <p className="text-gray-700">
-                      For non-urgent questions, our team responds promptly with clear, helpful answers and guidance. <Link href="/contact" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">Contact us</Link> anytime.
+                      For non-urgent questions, our team responds promptly with clear, helpful answers and guidance. <Link href="/contact" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Contact us</Link> anytime.
                     </p>
                   </div>
                 </div>
@@ -120,7 +120,7 @@ export default function Support24_7Page() {
                   <div>
                     <h3 className="mb-2 text-xl font-bold text-gray-900">Storm-Response Availability</h3>
                     <p className="text-gray-700">
-                      During severe weather in <Link href="/service-areas" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">Minnesota and Wisconsin</Link>, we expand our support team to handle the high volume of calls and ensure you get assistance when you need it most.
+                      During severe weather in <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota and Wisconsin</Link>, we expand our support team to handle the high volume of calls and ensure you get assistance when you need it most.
                     </p>
                   </div>
                 </div>
@@ -169,21 +169,21 @@ export default function Support24_7Page() {
                   <CheckCircle className="h-6 w-6 flex-shrink-0 text-brand-primary mt-0.5" />
                   <div>
                     <p className="font-semibold text-gray-900">Interior Water Intrusion</p>
-                    <p className="text-gray-600">Urgent <Link href="/services/roofing" className="text-brand-primary hover:text-red-700 underline underline-offset-2">roofing repairs</Link> to stop water from entering your home</p>
+                    <p className="text-gray-600">Urgent <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 underline underline-offset-2">roofing repairs</Link> to stop water from entering your home</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-6 w-6 flex-shrink-0 text-brand-primary mt-0.5" />
                   <div>
                     <p className="font-semibold text-gray-900">Storm Damage</p>
-                    <p className="text-gray-600">Hail, wind, and ice damage requiring immediate <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-700 underline underline-offset-2">storm restoration</Link> attention</p>
+                    <p className="text-gray-600">Hail, wind, and ice damage requiring immediate <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-800 underline underline-offset-2">storm restoration</Link> attention</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-6 w-6 flex-shrink-0 text-brand-primary mt-0.5" />
                   <div>
                     <p className="font-semibold text-gray-900">Missing Shingles or Torn Siding</p>
-                    <p className="text-gray-600">Protect your home from further exposure with emergency <Link href="/services/siding" className="text-brand-primary hover:text-red-700 underline underline-offset-2">siding</Link> and <Link href="/services/roofing" className="text-brand-primary hover:text-red-700 underline underline-offset-2">roofing</Link> repairs</p>
+                    <p className="text-gray-600">Protect your home from further exposure with emergency <Link href="/services/siding" className="text-brand-primary hover:text-red-800 underline underline-offset-2">siding</Link> and <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 underline underline-offset-2">roofing</Link> repairs</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -239,7 +239,7 @@ export default function Support24_7Page() {
                   <div className="flex-1">
                     <h3 className="mb-3 text-xl font-bold text-gray-900">Contact Us Anytime</h3>
                     <p className="text-gray-700">
-                      Call <a href={`tel:${COMPANY_INFO.phone}`} className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">{COMPANY_INFO.phone}</a>, <Link href="/contact" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">email</Link>, or use chat support. We'll assess the situation and determine urgency.
+                      Call <a href={`tel:${COMPANY_INFO.phone}`} className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">{COMPANY_INFO.phone}</a>, <Link href="/contact" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">email</Link>, or use chat support. We'll assess the situation and determine urgency.
                     </p>
                   </div>
                 </div>
@@ -251,7 +251,7 @@ export default function Support24_7Page() {
                   <div className="flex-1">
                     <h3 className="mb-3 text-xl font-bold text-gray-900">Immediate Guidance</h3>
                     <p className="text-gray-700">
-                      We walk you through what's happening and provide expert recommendations you can trust — even before we arrive onsite. Our <Link href="/gaf-master-elite-contractor" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">GAF Master Elite</Link> certified team offers professional guidance 24/7.
+                      We walk you through what's happening and provide expert recommendations you can trust — even before we arrive onsite. Our <Link href="/gaf-master-elite-contractor" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">GAF Master Elite</Link> certified team offers professional guidance 24/7.
                     </p>
                   </div>
                 </div>
@@ -263,7 +263,7 @@ export default function Support24_7Page() {
                   <div className="flex-1">
                     <h3 className="mb-3 text-xl font-bold text-gray-900">In-Person Emergency Visit (If Needed)</h3>
                     <p className="text-gray-700 mb-4">
-                      If the issue requires onsite review or physical repair, we dispatch a technician as soon as possible to your location in <Link href="/service-areas" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">Minnesota or Wisconsin</Link>.
+                      If the issue requires onsite review or physical repair, we dispatch a technician as soon as possible to your location in <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota or Wisconsin</Link>.
                     </p>
                     <div className="rounded-lg border-2 border-yellow-200 bg-yellow-50 p-4">
                       <p className="font-semibold text-gray-900 mb-2">Onsite Visit Fee</p>

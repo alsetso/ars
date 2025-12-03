@@ -133,7 +133,7 @@ export function Header() {
           <div className="flex items-center gap-4">
             <a
               href={`tel:${COMPANY_INFO.phone}`}
-              className="hidden items-center gap-2 rounded-lg bg-brand-primary px-4 py-2 text-white transition-colors hover:bg-red-700 sm:flex sm:px-6 sm:py-3"
+              className="hidden items-center gap-2 rounded-lg bg-brand-primary px-4 py-2 text-white transition-colors hover:bg-red-800 sm:flex sm:px-6 sm:py-3"
             >
               <Phone className="h-4 w-4 sm:h-5 sm:w-5" />
               <span className="text-sm font-semibold sm:text-base">{COMPANY_INFO.phone}</span>
@@ -230,7 +230,7 @@ export function Header() {
                 })}
                 <a
                   href={`tel:${COMPANY_INFO.phone}`}
-                  className="mt-4 flex items-center justify-center gap-2 rounded-lg bg-brand-primary px-4 py-3 text-white transition-colors hover:bg-red-700"
+                  className="mt-4 flex items-center justify-center gap-2 rounded-lg bg-brand-primary px-4 py-3 text-white transition-colors hover:bg-red-800"
                 >
                   <Phone className="h-5 w-5" />
                   <span className="font-semibold">{COMPANY_INFO.phone}</span>

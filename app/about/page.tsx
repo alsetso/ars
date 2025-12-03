@@ -46,8 +46,8 @@ export default function AboutPage() {
             <Card className="mb-8">
               <div className="prose prose-lg max-w-none">
                 <p className="text-lg text-gray-700">
-                  Advanced Roofing & Siding Inc. has been a trusted name in <Link href="/service-areas" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">Minnesota and Wisconsin</Link>
-                  for over 30 years.                   As a <Link href="/services/roofing" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">GAF Master Elite contractor</Link>, we represent the top 2% of
+                  Advanced Roofing & Siding Inc. has been a trusted name in <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota and Wisconsin</Link>
+                  for over 30 years.                   As a <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">GAF Master Elite contractor</Link>, we represent the top 2% of
                   roofing contractors nationwide, bringing unparalleled expertise and quality to
                   every project.
                 </p>
@@ -58,8 +58,8 @@ export default function AboutPage() {
                   business practices.
                 </p>
                 <p className="text-lg text-gray-700">
-                  From residential <Link href="/services/roofing" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">roofing</Link> and <Link href="/services/siding" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">siding</Link> to <Link href="/services/windows" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">window installation</Link> and <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">storm restoration</Link>,
-                  we provide comprehensive <Link href="/services" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">exterior solutions</Link> backed by <Link href="/warranties" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">industry-leading warranties</Link>
+                  From residential <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roofing</Link> and <Link href="/services/siding" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">siding</Link> to <Link href="/services/windows" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">window installation</Link> and <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">storm restoration</Link>,
+                  we provide comprehensive <Link href="/services" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">exterior solutions</Link> backed by <Link href="/warranties" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">industry-leading warranties</Link>
                   and decades of experience.
                 </p>
               </div>
@@ -134,22 +134,22 @@ export default function AboutPage() {
                     <div className="flex items-start gap-3">
                       <CheckCircle className="h-5 w-5 flex-shrink-0 text-brand-primary mt-0.5" />
                       <div>
-                        <p className="font-semibold text-gray-900">Complete <Link href="/services/roofing" className="text-brand-primary hover:text-red-700 underline underline-offset-2">Roofing Systems</Link></p>
-                        <p className="text-gray-600"><Link href="/services/roofing" className="text-brand-primary hover:text-red-700 underline underline-offset-2">GAF Master Elite certified installations</Link> with <Link href="/warranties" className="text-brand-primary hover:text-red-700 underline underline-offset-2">industry-leading warranties</Link> for residential properties</p>
+                        <p className="font-semibold text-gray-900">Complete <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 underline underline-offset-2">Roofing Systems</Link></p>
+                        <p className="text-gray-600"><Link href="/services/roofing" className="text-brand-primary hover:text-red-800 underline underline-offset-2">GAF Master Elite certified installations</Link> with <Link href="/warranties" className="text-brand-primary hover:text-red-800 underline underline-offset-2">industry-leading warranties</Link> for residential properties</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <CheckCircle className="h-5 w-5 flex-shrink-0 text-brand-primary mt-0.5" />
                       <div>
-                        <p className="font-semibold text-gray-900"><Link href="/services/siding" className="text-brand-primary hover:text-red-700 underline underline-offset-2">Siding</Link> & <Link href="/services/windows" className="text-brand-primary hover:text-red-700 underline underline-offset-2">Windows</Link></p>
-                        <p className="text-gray-600">Transform your home's exterior with durable <Link href="/services/siding" className="text-brand-primary hover:text-red-700 underline underline-offset-2">siding</Link> and <Link href="/services/windows" className="text-brand-primary hover:text-red-700 underline underline-offset-2">energy-efficient windows</Link></p>
+                        <p className="font-semibold text-gray-900"><Link href="/services/siding" className="text-brand-primary hover:text-red-800 underline underline-offset-2">Siding</Link> & <Link href="/services/windows" className="text-brand-primary hover:text-red-800 underline underline-offset-2">Windows</Link></p>
+                        <p className="text-gray-600">Transform your home's exterior with durable <Link href="/services/siding" className="text-brand-primary hover:text-red-800 underline underline-offset-2">siding</Link> and <Link href="/services/windows" className="text-brand-primary hover:text-red-800 underline underline-offset-2">energy-efficient windows</Link></p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <CheckCircle className="h-5 w-5 flex-shrink-0 text-brand-primary mt-0.5" />
                       <div>
-                        <p className="font-semibold text-gray-900"><Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-700 underline underline-offset-2">Storm Damage Restoration</Link></p>
-                        <p className="text-gray-600">Expert assessment and restoration services with seamless <Link href="/insurance-claims" className="text-brand-primary hover:text-red-700 underline underline-offset-2">insurance claim support</Link></p>
+                        <p className="font-semibold text-gray-900"><Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-800 underline underline-offset-2">Storm Damage Restoration</Link></p>
+                        <p className="text-gray-600">Expert assessment and restoration services with seamless <Link href="/insurance-claims" className="text-brand-primary hover:text-red-800 underline underline-offset-2">insurance claim support</Link></p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
@@ -183,7 +183,7 @@ export default function AboutPage() {
                 </div>
                 <div className="prose prose-lg max-w-none space-y-4">
                   <p className="text-gray-700">
-                    Our commercial division brings the same <Link href="/services/roofing" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">GAF Master Elite quality</Link> and attention to detail to businesses, property management companies, and <Link href="/cities-program" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">municipal projects</Link>. We understand the unique needs of commercial properties and work efficiently to minimize disruption.
+                    Our commercial division brings the same <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">GAF Master Elite quality</Link> and attention to detail to businesses, property management companies, and <Link href="/cities-program" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">municipal projects</Link>. We understand the unique needs of commercial properties and work efficiently to minimize disruption.
                   </p>
                   <div className="space-y-3">
                     <div className="flex items-start gap-3">
@@ -203,7 +203,7 @@ export default function AboutPage() {
                     <div className="flex items-start gap-3">
                       <CheckCircle className="h-5 w-5 flex-shrink-0 text-brand-primary mt-0.5" />
                       <div>
-                        <p className="font-semibold text-gray-900"><Link href="/cities-program" className="text-brand-primary hover:text-red-700 underline underline-offset-2">Municipal & City Projects</Link></p>
+                        <p className="font-semibold text-gray-900"><Link href="/cities-program" className="text-brand-primary hover:text-red-800 underline underline-offset-2">Municipal & City Projects</Link></p>
                         <p className="text-gray-600">Fully licensed and bonded for city contracts, with experience navigating municipal requirements</p>
                       </div>
                     </div>
@@ -211,7 +211,7 @@ export default function AboutPage() {
                       <CheckCircle className="h-5 w-5 flex-shrink-0 text-brand-primary mt-0.5" />
                       <div>
                         <p className="font-semibold text-gray-900">Commercial Expertise</p>
-                        <p className="text-gray-600"><Link href="/services/roofing" className="text-brand-primary hover:text-red-700 underline underline-offset-2">Roofing</Link>, <Link href="/services/siding" className="text-brand-primary hover:text-red-700 underline underline-offset-2">siding</Link>, and <Link href="/services/windows" className="text-brand-primary hover:text-red-700 underline underline-offset-2">window solutions</Link> for office buildings, retail centers, and commercial facilities</p>
+                        <p className="text-gray-600"><Link href="/services/roofing" className="text-brand-primary hover:text-red-800 underline underline-offset-2">Roofing</Link>, <Link href="/services/siding" className="text-brand-primary hover:text-red-800 underline underline-offset-2">siding</Link>, and <Link href="/services/windows" className="text-brand-primary hover:text-red-800 underline underline-offset-2">window solutions</Link> for office buildings, retail centers, and commercial facilities</p>
                       </div>
                     </div>
                   </div>

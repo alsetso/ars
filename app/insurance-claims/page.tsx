@@ -167,7 +167,7 @@ export default function InsuranceClaimsPage() {
                   How Roofing Insurance Claims Work (Minnesota Reality Check)
                 </h2>
                 <p className="text-lg text-gray-700">
-                  Most homeowners don't know the process, which is why <Link href="/service-areas" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">Minnesota</Link> is full of
+                  Most homeowners don't know the process, which is why <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota</Link> is full of
                   underpaid claims, denied repairs, or low-quality contractors taking advantage of
                   the system.
                 </p>
@@ -384,7 +384,7 @@ export default function InsuranceClaimsPage() {
                   </h3>
                   <p className="mb-3 text-gray-700">
                     Covers defects in shingles or siding materials (typically 25–50 years depending
-                    on brand). AR&S installs brands like: Learn more about our <Link href="/warranties" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">comprehensive warranty coverage</Link>.
+                    on brand). AR&S installs brands like: Learn more about our <Link href="/warranties" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">comprehensive warranty coverage</Link>.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {['Owens Corning', 'GAF', 'LP', 'Mastic', 'James Hardie'].map((brand) => (
@@ -403,10 +403,10 @@ export default function InsuranceClaimsPage() {
                     Workmanship Warranty (AR&S Warranty)
                   </h3>
                   <p className="text-gray-700">
-                    Covers the labor — how the <Link href="/services/roofing" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">roof</Link> or <Link href="/services/siding" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">siding</Link> was installed. Most Minnesota
+                    Covers the labor — how the <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roof</Link> or <Link href="/services/siding" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">siding</Link> was installed. Most Minnesota
                     contractors offer 1–5 years. AR&S offers longer workmanship warranties
                     depending on the installation and materials. This is the safety net that
-                    protects you even if a shingle lifts or a seam fails due to installation error. See our <Link href="/warranties" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">full warranty details</Link>.
+                    protects you even if a shingle lifts or a seam fails due to installation error. See our <Link href="/warranties" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">full warranty details</Link>.
                   </p>
                 </div>
               </div>

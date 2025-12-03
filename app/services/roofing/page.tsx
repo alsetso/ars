@@ -111,19 +111,19 @@ export default function RoofingPage() {
           <Card className="mb-8">
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-gray-700 mb-4">
-                As a <Link href="/gaf-master-elite-contractor" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">GAF Master Elite contractor</Link>, Advanced Roofing & Siding Inc. represents the
+                As a <Link href="/gaf-master-elite-contractor" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">GAF Master Elite contractor</Link>, Advanced Roofing & Siding Inc. represents the
                 top 3% of roofing professionals nationwide. This prestigious certification means we
                 have access to the highest quality materials, comprehensive training, and
-                <Link href="/warranties" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2"> industry-leading warranties</Link> that protect your investment for decades.
+                <Link href="/warranties" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2"> industry-leading warranties</Link> that protect your investment for decades.
               </p>
               <p className="text-lg text-gray-700 mb-4">
                 Our expert team handles everything from complete roof replacements to repairs,
                 maintenance, and emergency services. We work with premium materials including GAF
                 shingles, metal roofing, and flat roof systems, ensuring your home is protected
-                against <Link href="/service-areas" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">Minnesota's harsh weather conditions</Link>. For storm damage, we also provide <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">storm restoration services</Link> with <Link href="/insurance-claims" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">insurance claim assistance</Link>.
+                against <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota's harsh weather conditions</Link>. For storm damage, we also provide <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">storm restoration services</Link> with <Link href="/insurance-claims" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">insurance claim assistance</Link>.
               </p>
               <p className="text-lg text-gray-700">
-                Whether you need a complete roof replacement, emergency roof repair, or routine roof maintenance, our <Link href="/about" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">30+ years of experience</Link> serving <Link href="/service-areas" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">Minnesota and Wisconsin homeowners</Link> ensures you receive professional service, quality craftsmanship, and lasting results. We specialize in residential roofing and commercial roofing projects, providing comprehensive solutions from initial inspection to final installation.
+                Whether you need a complete roof replacement, emergency roof repair, or routine roof maintenance, our <Link href="/about" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">30+ years of experience</Link> serving <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota and Wisconsin homeowners</Link> ensures you receive professional service, quality craftsmanship, and lasting results. We specialize in residential roofing and commercial roofing projects, providing comprehensive solutions from initial inspection to final installation.
               </p>
             </div>
           </Card>
@@ -141,7 +141,7 @@ export default function RoofingPage() {
                   <CheckCircle className="h-6 w-6 flex-shrink-0 text-brand-primary" />
                   <span className="text-gray-700">
                     {feature.link ? (
-                      <Link href={feature.link} className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">
+                      <Link href={feature.link} className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">
                         {feature.text}
                       </Link>
                     ) : (
@@ -207,7 +207,7 @@ export default function RoofingPage() {
                 >
                   <Card className="border-2 border-gray-100">
                     <div className="flex gap-4 md:gap-6">
-                      <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-red-600 to-red-700 text-white text-xl font-bold md:h-14 md:w-14">
+                      <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-red-700 to-red-800 text-white text-xl font-bold md:h-14 md:w-14">
                         {step.step}
                       </div>
                       <div className="flex-1">
@@ -323,7 +323,7 @@ export default function RoofingPage() {
                 Ready to Protect Your Home with a New Roof?
               </h2>
               <p className="mb-6 text-base text-gray-700 md:text-lg max-w-2xl mx-auto">
-                Get your free estimate from a GAF Master Elite contractor. We serve <Link href="/service-areas" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">Minnesota and Wisconsin</Link> with expert roofing services backed by industry-leading warranties.
+                Get your free estimate from a GAF Master Elite contractor. We serve <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota and Wisconsin</Link> with expert roofing services backed by industry-leading warranties.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
                 <Link href="/contact">

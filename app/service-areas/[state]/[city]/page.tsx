@@ -114,7 +114,7 @@ export default function CityServiceAreaPage({
                   </h2>
                   <div className="prose prose-lg max-w-none space-y-6">
                     <p className="text-lg leading-relaxed text-gray-700">
-                      {cityContent.intro} Advanced Roofing & Siding Inc. provides comprehensive <Link href="/services" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">exterior services</Link> including <Link href="/services/roofing" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">roofing</Link>, <Link href="/services/siding" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">siding</Link>, <Link href="/services/windows" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">windows</Link>, and <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">storm restoration</Link>.
+                      {cityContent.intro} Advanced Roofing & Siding Inc. provides comprehensive <Link href="/services" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">exterior services</Link> including <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roofing</Link>, <Link href="/services/siding" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">siding</Link>, <Link href="/services/windows" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">windows</Link>, and <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">storm restoration</Link>.
                     </p>
                     
                     <div>
@@ -122,7 +122,7 @@ export default function CityServiceAreaPage({
                         Understanding {cityName}'s Unique Weather Challenges
                       </h3>
                       <p className="text-lg leading-relaxed text-gray-700">
-                        {cityContent.weatherContent} For storm damage concerns, we offer <Link href="/insurance-claims" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">insurance claim assistance</Link> and <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">storm restoration services</Link>.
+                        {cityContent.weatherContent} For storm damage concerns, we offer <Link href="/insurance-claims" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">insurance claim assistance</Link> and <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">storm restoration services</Link>.
                       </p>
                     </div>
 
@@ -131,7 +131,7 @@ export default function CityServiceAreaPage({
                         Comprehensive Exterior Services for {cityName} Homeowners
                       </h3>
                       <p className="text-lg leading-relaxed text-gray-700">
-                        {cityContent.servicesContent} Explore our full range of <Link href="/services" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">services</Link> and learn about our <Link href="/warranties" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">industry-leading warranties</Link>.
+                        {cityContent.servicesContent} Explore our full range of <Link href="/services" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">services</Link> and learn about our <Link href="/warranties" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">industry-leading warranties</Link>.
                       </p>
                     </div>
 
@@ -140,7 +140,7 @@ export default function CityServiceAreaPage({
                         Why {cityName} Residents Choose Advanced Roofing & Siding Inc.
                       </h3>
                       <p className="text-lg leading-relaxed text-gray-700">
-                        {cityContent.localBenefits} As a <Link href="/about" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">GAF Master Elite contractor</Link> with 30+ years of experience, we're committed to excellence. Learn more <Link href="/about" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">about us</Link>.
+                        {cityContent.localBenefits} As a <Link href="/about" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">GAF Master Elite contractor</Link> with 30+ years of experience, we're committed to excellence. Learn more <Link href="/about" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">about us</Link>.
                       </p>
                     </div>
 
@@ -180,7 +180,7 @@ export default function CityServiceAreaPage({
                           <p className="font-semibold text-gray-900">Phone</p>
                           <a
                             href={`tel:${COMPANY_INFO.phone}`}
-                            className="text-brand-primary hover:text-red-700"
+                            className="text-brand-primary hover:text-red-800"
                           >
                             {COMPANY_INFO.phone}
                           </a>
@@ -193,7 +193,7 @@ export default function CityServiceAreaPage({
                           <p className="font-semibold text-gray-900">Email</p>
                           <a
                             href={`mailto:${COMPANY_INFO.email}`}
-                            className="text-brand-primary hover:text-red-700"
+                            className="text-brand-primary hover:text-red-800"
                           >
                             {COMPANY_INFO.email}
                           </a>
@@ -244,7 +244,7 @@ export default function CityServiceAreaPage({
               </h2>
               <div className="prose prose-lg max-w-none space-y-6">
                   <p className="text-lg leading-relaxed text-gray-700">
-                    Advanced Roofing & Siding Inc. is committed to serving {cityName}, {stateAbbr} not only as a trusted residential contractor but also as a potential partner for municipal projects, commercial buildings, and public facilities. We're interested in collaborating with {cityName} city council members, city officials, and community leaders to discuss how we can contribute to the exterior maintenance and improvement needs of {cityName} city buildings and public facilities. Learn more about our <Link href="/cities-program" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">Cities Partnership Program</Link>.
+                    Advanced Roofing & Siding Inc. is committed to serving {cityName}, {stateAbbr} not only as a trusted residential contractor but also as a potential partner for municipal projects, commercial buildings, and public facilities. We're interested in collaborating with {cityName} city council members, city officials, and community leaders to discuss how we can contribute to the exterior maintenance and improvement needs of {cityName} city buildings and public facilities. Learn more about our <Link href="/cities-program" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Cities Partnership Program</Link>.
                   </p>
                 
                 <div>
@@ -252,7 +252,7 @@ export default function CityServiceAreaPage({
                     Municipal & City Projects in {cityName}
                   </h3>
                   <p className="text-lg leading-relaxed text-gray-700">
-                    We understand the unique requirements and regulations that come with municipal projects in {cityName}. Our team is prepared to work with {cityName} city officials and navigate city permitting processes, meet municipal building codes, and work within city project timelines and budgets. Whether it's <Link href="/services/roofing" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">roofing</Link> for {cityName} public buildings, <Link href="/services/siding" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">siding</Link> for municipal facilities, or comprehensive exterior renovations for city-owned properties, we're ready to bring the same <Link href="/about" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">GAF Master Elite quality</Link> and attention to detail that we provide to residential customers. We welcome the opportunity to discuss potential collaboration on {cityName} city projects with city council members and town hall attendees. See our <Link href="/cities-program" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">Cities Program</Link> for details.
+                    We understand the unique requirements and regulations that come with municipal projects in {cityName}. Our team is prepared to work with {cityName} city officials and navigate city permitting processes, meet municipal building codes, and work within city project timelines and budgets. Whether it's <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roofing</Link> for {cityName} public buildings, <Link href="/services/siding" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">siding</Link> for municipal facilities, or comprehensive exterior renovations for city-owned properties, we're ready to bring the same <Link href="/about" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">GAF Master Elite quality</Link> and attention to detail that we provide to residential customers. We welcome the opportunity to discuss potential collaboration on {cityName} city projects with city council members and town hall attendees. See our <Link href="/cities-program" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Cities Program</Link> for details.
                   </p>
                 </div>
 
@@ -324,7 +324,7 @@ export default function CityServiceAreaPage({
                     <p className="mb-4 text-gray-600">{service.description}</p>
                     <a
                       href={`/services/${service.id === 'restoration' ? 'storm-restoration' : service.id}`}
-                      className="text-sm font-semibold text-brand-primary hover:text-red-700"
+                      className="text-sm font-semibold text-brand-primary hover:text-red-800"
                     >
                       Learn More →
                     </a>

@@ -45,11 +45,11 @@ export default function GAFMasterElitePage() {
                 </div>
                 
                 <p className="text-xl leading-relaxed text-gray-700 mb-6">
-                  Only <strong>2% of roofing contractors in North America</strong> earn GAF's Master Elite® certification — and <Link href="/about" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">Advanced Roofing & Siding</Link> is one of them.
+                  Only <strong>2% of roofing contractors in North America</strong> earn GAF's Master Elite® certification — and <Link href="/about" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Advanced Roofing & Siding</Link> is one of them.
                 </p>
 
                 <p className="text-lg leading-relaxed text-gray-700 mb-6">
-                  When you hire a Master Elite contractor in <Link href="/service-areas" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">Minnesota or Wisconsin</Link>, you're choosing elite workmanship, proven reliability, and the strongest <Link href="/warranties" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">roofing warranties</Link> in the industry.
+                  When you hire a Master Elite contractor in <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota or Wisconsin</Link>, you're choosing elite workmanship, proven reliability, and the strongest <Link href="/warranties" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roofing warranties</Link> in the industry.
                 </p>
 
                 <p className="text-lg leading-relaxed text-gray-700 font-semibold">
@@ -98,7 +98,7 @@ export default function GAFMasterElitePage() {
                   <CheckCircle className="h-6 w-6 flex-shrink-0 text-brand-primary mt-0.5" />
                   <div>
                     <p className="font-semibold text-gray-900">Proven Reputation for Quality</p>
-                    <p className="text-gray-600">30+ years of excellence in <Link href="/service-areas" className="text-brand-primary hover:text-red-700 underline underline-offset-2">Minnesota and Wisconsin</Link></p>
+                    <p className="text-gray-600">30+ years of excellence in <Link href="/service-areas" className="text-brand-primary hover:text-red-800 underline underline-offset-2">Minnesota and Wisconsin</Link></p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -155,21 +155,21 @@ export default function GAFMasterElitePage() {
                   <CheckCircle className="h-6 w-6 flex-shrink-0 text-brand-primary mt-0.5" />
                   <div>
                     <p className="font-semibold text-gray-900">Advanced Leak Barriers</p>
-                    <p className="text-gray-600">Superior protection against water intrusion and ice dams common in <Link href="/service-areas" className="text-brand-primary hover:text-red-700 underline underline-offset-2">Minnesota and Wisconsin</Link></p>
+                    <p className="text-gray-600">Superior protection against water intrusion and ice dams common in <Link href="/service-areas" className="text-brand-primary hover:text-red-800 underline underline-offset-2">Minnesota and Wisconsin</Link></p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-6 w-6 flex-shrink-0 text-brand-primary mt-0.5" />
                   <div>
                     <p className="font-semibold text-gray-900">High-Performance Underlayments</p>
-                    <p className="text-gray-600">Extra layer of protection for your <Link href="/services/roofing" className="text-brand-primary hover:text-red-700 underline underline-offset-2">roofing system</Link></p>
+                    <p className="text-gray-600">Extra layer of protection for your <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 underline underline-offset-2">roofing system</Link></p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-6 w-6 flex-shrink-0 text-brand-primary mt-0.5" />
                   <div>
                     <p className="font-semibold text-gray-900">Lifetime Roofing Systems</p>
-                    <p className="text-gray-600">Enhanced wind resistance perfect for <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-700 underline underline-offset-2">storm-prone areas</Link> in Minnesota and Wisconsin</p>
+                    <p className="text-gray-600">Enhanced wind resistance perfect for <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-800 underline underline-offset-2">storm-prone areas</Link> in Minnesota and Wisconsin</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -204,7 +204,7 @@ export default function GAFMasterElitePage() {
               </div>
               
               <p className="text-lg text-gray-700 mb-6">
-                Only Master Elite® contractors can offer the <Link href="/warranties" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">GAF Golden Pledge® Warranty</Link>, which includes:
+                Only Master Elite® contractors can offer the <Link href="/warranties" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">GAF Golden Pledge® Warranty</Link>, which includes:
               </p>
 
               <div className="space-y-6">
@@ -214,7 +214,7 @@ export default function GAFMasterElitePage() {
                     <h4 className="text-xl font-bold text-gray-900">50-Year Material Warranty</h4>
                   </div>
                   <p className="text-gray-700">
-                    Covers manufacturing defects for the lifetime of the roof. This comprehensive protection is exclusive to <Link href="/about" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">GAF Master Elite contractors</Link> in Minnesota and Wisconsin.
+                    Covers manufacturing defects for the lifetime of the roof. This comprehensive protection is exclusive to <Link href="/about" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">GAF Master Elite contractors</Link> in Minnesota and Wisconsin.
                   </p>
                 </div>
 
@@ -224,7 +224,7 @@ export default function GAFMasterElitePage() {
                     <h4 className="text-xl font-bold text-gray-900">25-Year Workmanship Warranty</h4>
                   </div>
                   <p className="text-gray-700">
-                    Covers installation errors — a level of protection most homeowners in Minnesota and Wisconsin never get. This warranty ensures your <Link href="/services/roofing" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">roofing installation</Link> is protected for decades.
+                    Covers installation errors — a level of protection most homeowners in Minnesota and Wisconsin never get. This warranty ensures your <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roofing installation</Link> is protected for decades.
                   </p>
                 </div>
 
@@ -234,7 +234,7 @@ export default function GAFMasterElitePage() {
                     <h4 className="text-xl font-bold text-gray-900">Independent, Third-Party Inspection</h4>
                   </div>
                   <p className="text-gray-700">
-                    GAF sends a certified inspector to review your finished roof to ensure it meets their standards. This quality assurance process is only available through <Link href="/gaf-master-elite-contractor" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">Master Elite contractors</Link>.
+                    GAF sends a certified inspector to review your finished roof to ensure it meets their standards. This quality assurance process is only available through <Link href="/gaf-master-elite-contractor" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Master Elite contractors</Link>.
                   </p>
                 </div>
               </div>
@@ -284,7 +284,7 @@ export default function GAFMasterElitePage() {
                   <CheckCircle className="h-6 w-6 flex-shrink-0 text-brand-primary mt-0.5" />
                   <div>
                     <p className="font-semibold text-gray-900">Greater Storm Resistance</p>
-                    <p className="text-gray-600">Enhanced protection against wind, hail, and storms common in <Link href="/service-areas" className="text-brand-primary hover:text-red-700 underline underline-offset-2">Minnesota and Wisconsin</Link></p>
+                    <p className="text-gray-600">Enhanced protection against wind, hail, and storms common in <Link href="/service-areas" className="text-brand-primary hover:text-red-800 underline underline-offset-2">Minnesota and Wisconsin</Link></p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">

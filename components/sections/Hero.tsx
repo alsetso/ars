@@ -133,15 +133,15 @@ export function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.5 }}
           >
-            <div className="flex items-center gap-2 rounded-lg bg-white/20 backdrop-blur-sm px-3 py-1.5 shadow-md md:px-4 md:py-2">
+            <div className="flex items-center gap-2 rounded-lg bg-white/20 backdrop-blur-sm px-3 py-1.5  md:px-4 md:py-2">
               <Shield className="h-4 w-4 text-white md:h-5 md:w-5" />
               <span className="text-xs font-semibold text-white md:text-sm">GAF Master Elite</span>
             </div>
-            <div className="flex items-center gap-2 rounded-lg bg-white/20 backdrop-blur-sm px-3 py-1.5 shadow-md md:px-4 md:py-2">
+            <div className="flex items-center gap-2 rounded-lg bg-white/20 backdrop-blur-sm px-3 py-1.5  md:px-4 md:py-2">
               <Award className="h-4 w-4 text-white md:h-5 md:w-5" />
               <span className="text-xs font-semibold text-white md:text-sm">30+ Years</span>
             </div>
-            <div className="flex items-center gap-2 rounded-lg bg-white/20 backdrop-blur-sm px-3 py-1.5 shadow-md md:px-4 md:py-2">
+            <div className="flex items-center gap-2 rounded-lg bg-white/20 backdrop-blur-sm px-3 py-1.5  md:px-4 md:py-2">
               <BadgeCheck className="h-4 w-4 text-white md:h-5 md:w-5" />
               <span className="text-xs font-semibold text-white md:text-sm">A+ BBB Rating</span>
             </div>

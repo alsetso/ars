@@ -41,18 +41,18 @@ export default function WarrantiesPage() {
 
               <div className="prose prose-lg max-w-none space-y-6">
                 <p className="text-lg leading-relaxed text-gray-700">
-                  Because of our status as a <Link href="/about" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2"><strong>GAF Master Elite Contractor</strong></Link>, Advanced
+                  Because of our status as a <Link href="/about" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2"><strong>GAF Master Elite Contractor</strong></Link>, Advanced
                   Roofing & Siding is able to offer you the best of the best when it comes to
                   warranties. The <strong>GAF Golden Pledge Warranty</strong> provides homeowners
                   exceptional <strong>50-year coverage at no additional cost</strong>. This coverage
-                  continues even in the unlikely event that Advanced goes out of business! Learn more about our <Link href="/services/roofing" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">roofing services</Link>.
+                  continues even in the unlikely event that Advanced goes out of business! Learn more about our <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roofing services</Link>.
                 </p>
 
                 <p className="text-lg leading-relaxed text-gray-700">
                   While our warranties cover a comprehensive range of issues, we do not warranty
                   repairs – only full replacements. Our sales team is happy to discuss the pros and
-                  cons of replacing versus repairing your <Link href="/services/roofing" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">roof</Link>, and we'll only make a recommendation
-                  that we think your home really needs. <Link href="/contact" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">Contact us</Link> for a free consultation.
+                  cons of replacing versus repairing your <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roof</Link>, and we'll only make a recommendation
+                  that we think your home really needs. <Link href="/contact" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Contact us</Link> for a free consultation.
                 </p>
 
                 <p className="text-lg leading-relaxed text-gray-700">
@@ -96,7 +96,7 @@ export default function WarrantiesPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="h-5 w-5 flex-shrink-0 text-brand-primary mt-0.5" />
-                    <span className="text-gray-700">Covers materials and workmanship for <Link href="/services/roofing" className="text-brand-primary hover:text-red-700 underline underline-offset-2">roofing</Link> and <Link href="/services/siding" className="text-brand-primary hover:text-red-700 underline underline-offset-2">siding</Link></span>
+                    <span className="text-gray-700">Covers materials and workmanship for <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 underline underline-offset-2">roofing</Link> and <Link href="/services/siding" className="text-brand-primary hover:text-red-800 underline underline-offset-2">siding</Link></span>
                   </li>
                 </ul>
               </Card>
@@ -116,7 +116,7 @@ export default function WarrantiesPage() {
                 <ul className="space-y-3">
                   <li className="flex items-start gap-2">
                     <CheckCircle className="h-5 w-5 flex-shrink-0 text-brand-primary mt-0.5" />
-                    <span className="text-gray-700">Full <Link href="/services/roofing" className="text-brand-primary hover:text-red-700 underline underline-offset-2">roof replacements</Link> only</span>
+                    <span className="text-gray-700">Full <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 underline underline-offset-2">roof replacements</Link> only</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="h-5 w-5 flex-shrink-0 text-brand-primary mt-0.5" />

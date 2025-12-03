@@ -51,13 +51,13 @@ export default function CitiesProgramPage() {
               <div className="prose prose-lg max-w-none">
                 <p className="text-lg leading-relaxed text-gray-700">
                   Advanced Roofing & Siding Inc. is committed to partnering with cities, municipalities, 
-                  and local governments across <Link href="/service-areas" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">Minnesota and Wisconsin</Link> to address exterior service needs 
+                  and local governments across <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota and Wisconsin</Link> to address exterior service needs 
                   for city buildings, public facilities, and large-scale municipal projects.
                 </p>
                 <p className="text-lg leading-relaxed text-gray-700">
                   Whether you're a city council member, town hall attendee, facilities manager, or city 
-                  administrator, we're here to discuss how our <Link href="/about" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">GAF Master Elite expertise</Link> and 30+ years 
-                  of experience can support your city's exterior maintenance and improvement goals. We provide <Link href="/services/roofing" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">roofing</Link>, <Link href="/services/siding" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">siding</Link>, and <Link href="/services" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">comprehensive exterior services</Link>.
+                  administrator, we're here to discuss how our <Link href="/about" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">GAF Master Elite expertise</Link> and 30+ years 
+                  of experience can support your city's exterior maintenance and improvement goals. We provide <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roofing</Link>, <Link href="/services/siding" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">siding</Link>, and <Link href="/services" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">comprehensive exterior services</Link>.
                 </p>
               </div>
             </Card>
@@ -154,9 +154,9 @@ export default function CitiesProgramPage() {
                   <h3 className="text-xl font-bold text-gray-900">City Building Roofing</h3>
                 </div>
                 <p className="text-gray-700">
-                  Complete <Link href="/services/roofing" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">roofing solutions</Link> for city buildings, public facilities, and municipal 
-                  structures. Our <Link href="/about" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">GAF Master Elite certification</Link> ensures access to premium materials 
-                  and <Link href="/warranties" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">comprehensive warranties</Link> that protect your city's investments.
+                  Complete <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roofing solutions</Link> for city buildings, public facilities, and municipal 
+                  structures. Our <Link href="/about" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">GAF Master Elite certification</Link> ensures access to premium materials 
+                  and <Link href="/warranties" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">comprehensive warranties</Link> that protect your city's investments.
                 </p>
                 <ul className="mt-4 space-y-2">
                   <li className="flex items-start gap-2">
@@ -189,7 +189,7 @@ export default function CitiesProgramPage() {
                   <h3 className="text-xl font-bold text-gray-900">Siding & Exterior Systems</h3>
                 </div>
                 <p className="text-gray-700">
-                  Professional <Link href="/services/siding" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">siding installation and replacement</Link> for city buildings, ensuring 
+                  Professional <Link href="/services/siding" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">siding installation and replacement</Link> for city buildings, ensuring 
                   weather resistance, energy efficiency, and enhanced curb appeal for municipal 
                   facilities.
                 </p>
@@ -259,8 +259,8 @@ export default function CitiesProgramPage() {
                   <h3 className="text-xl font-bold text-gray-900">Storm Damage Restoration</h3>
                 </div>
                 <p className="text-gray-700">
-                  Expert <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">storm damage assessment and restoration services</Link> for city buildings and 
-                  public facilities, with experience working with <Link href="/insurance-claims" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">insurance claims</Link> and emergency 
+                  Expert <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">storm damage assessment and restoration services</Link> for city buildings and 
+                  public facilities, with experience working with <Link href="/insurance-claims" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">insurance claims</Link> and emergency 
                   response protocols.
                 </p>
                 <ul className="mt-4 space-y-2">
@@ -302,9 +302,9 @@ export default function CitiesProgramPage() {
                 <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-red-50">
                   <Shield className="h-8 w-8 text-brand-primary" />
                 </div>
-                <h3 className="mb-2 text-lg font-bold text-gray-900"><Link href="/about" className="text-brand-primary hover:text-red-700 underline underline-offset-2">GAF Master Elite</Link></h3>
+                <h3 className="mb-2 text-lg font-bold text-gray-900"><Link href="/about" className="text-brand-primary hover:text-red-800 underline underline-offset-2">GAF Master Elite</Link></h3>
                 <p className="text-sm text-gray-600">
-                  Top 3% of contractors nationwide with access to premium materials and <Link href="/warranties" className="text-brand-primary hover:text-red-700 underline underline-offset-2">comprehensive warranties</Link>
+                  Top 3% of contractors nationwide with access to premium materials and <Link href="/warranties" className="text-brand-primary hover:text-red-800 underline underline-offset-2">comprehensive warranties</Link>
                 </p>
               </Card>
             </AnimatedDiv>

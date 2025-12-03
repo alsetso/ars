@@ -112,16 +112,16 @@ export default function WindowsPage() {
               <p className="text-lg text-gray-700 mb-4">
                 Upgrade your home with energy-efficient windows that reduce utility costs while
                 enhancing comfort and aesthetics. Our expert window installation services help
-                <Link href="/service-areas" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2"> Minnesota and Wisconsin homeowners</Link> save money on heating and cooling while improving their home's
+                <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2"> Minnesota and Wisconsin homeowners</Link> save money on heating and cooling while improving their home's
                 value and appearance.
               </p>
               <p className="text-lg text-gray-700 mb-4">
                 We offer a wide selection of window styles and materials, from traditional double-hung
                 windows to modern casement and picture windows. Our professional installation ensures
-                proper sealing and insulation, maximizing energy efficiency and preventing drafts. For complete exterior renovations, we also provide <Link href="/services/roofing" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">roofing</Link> and <Link href="/services/siding" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">siding services</Link>.
+                proper sealing and insulation, maximizing energy efficiency and preventing drafts. For complete exterior renovations, we also provide <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roofing</Link> and <Link href="/services/siding" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">siding services</Link>.
               </p>
               <p className="text-lg text-gray-700">
-                Whether you need complete window replacement, window repair, or new construction window installation, our <Link href="/about" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">experienced team</Link> provides professional service with energy-efficient options that reduce your carbon footprint and utility bills. We specialize in residential windows and commercial windows, ensuring optimal performance and lasting value for your property.
+                Whether you need complete window replacement, window repair, or new construction window installation, our <Link href="/about" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">experienced team</Link> provides professional service with energy-efficient options that reduce your carbon footprint and utility bills. We specialize in residential windows and commercial windows, ensuring optimal performance and lasting value for your property.
               </p>
             </div>
           </Card>
@@ -139,7 +139,7 @@ export default function WindowsPage() {
                   <CheckCircle className="h-6 w-6 flex-shrink-0 text-brand-primary" />
                   <span className="text-gray-700">
                     {feature.link ? (
-                      <Link href={feature.link} className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">
+                      <Link href={feature.link} className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">
                         {feature.text}
                       </Link>
                     ) : (
@@ -205,7 +205,7 @@ export default function WindowsPage() {
                 >
                   <Card className="border-2 border-gray-100">
                     <div className="flex gap-4 md:gap-6">
-                      <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-red-600 to-red-700 text-white text-xl font-bold md:h-14 md:w-14">
+                      <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-red-700 to-red-800 text-white text-xl font-bold md:h-14 md:w-14">
                         {step.step}
                       </div>
                       <div className="flex-1">
@@ -318,7 +318,7 @@ export default function WindowsPage() {
                 Ready to Upgrade Your Windows?
               </h2>
               <p className="mb-6 text-base text-gray-700 md:text-lg max-w-2xl mx-auto">
-                Get your free estimate for energy-efficient window installation. We serve <Link href="/service-areas" className="text-brand-primary hover:text-red-700 font-semibold underline underline-offset-2">Minnesota and Wisconsin</Link> with expert window services that reduce costs and enhance comfort.
+                Get your free estimate for energy-efficient window installation. We serve <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota and Wisconsin</Link> with expert window services that reduce costs and enhance comfort.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
                 <Link href="/contact">

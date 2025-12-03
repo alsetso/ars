@@ -111,7 +111,7 @@ export default function ServiceAreasPage() {
             </p>
             <a
               href="/contact"
-              className="inline-block rounded-lg bg-brand-primary px-6 py-3 text-white font-semibold transition-colors hover:bg-red-700"
+              className="inline-block rounded-lg bg-brand-primary px-6 py-3 text-white font-semibold transition-colors hover:bg-red-800"
             >
               Contact Us
             </a>

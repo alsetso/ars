@@ -68,7 +68,7 @@ export function Services() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                     
                     {/* Icon Badge */}
-                    <div className="absolute left-3 top-3 rounded-lg bg-white/95 backdrop-blur-sm p-2 shadow-sm transition-transform duration-200 group-hover:scale-105 md:left-4 md:top-4">
+                    <div className="absolute left-3 top-3 rounded-lg bg-white/95 backdrop-blur-sm p-2  transition-transform duration-200 group-hover:scale-105 md:left-4 md:top-4">
                       <Icon className={`h-4 w-4 md:h-5 md:w-5 ${service.id === 'winterization' ? 'text-blue-600' : 'text-brand-primary'}`} strokeWidth={2} />
                     </div>
                   </div>
