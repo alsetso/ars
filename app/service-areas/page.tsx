@@ -1,5 +1,4 @@
 import { PageLayout } from '@/components/layout/PageLayout'
-import { PageHero } from '@/components/ui/PageHero'
 import { Section, SectionHeader } from '@/components/ui/Section'
 import { Card } from '@/components/ui/Card'
 import { AnimatedDiv } from '@/components/ui/AnimatedDiv'
@@ -18,15 +17,10 @@ export const metadata: Metadata = {
 export default function ServiceAreasPage() {
   return (
     <PageLayout>
-      <PageHero
-        title="Service Areas"
-        description="Proudly serving Minnesota and Wisconsin communities"
-        backgroundImage="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=2400"
-      />
       <Section className="bg-white">
         <SectionHeader
           title="Service Areas"
-          description="Proudly serving Minnesota and Wisconsin communities"
+          description="Proudly serving Minnesota and Wisconsin communities. Click on your city below to learn more about our services in your area."
         />
 
         <div className="grid gap-8 lg:grid-cols-2">
