@@ -2,16 +2,25 @@
 
 import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
-import { ReactNode } from 'react'
+import { ReactNode, MouseEventHandler } from 'react'
 
 interface CardProps {
   children: ReactNode
   className?: string
   hover?: boolean
   variant?: 'default' | 'elevated' | 'outlined'
+  onMouseEnter?: MouseEventHandler<HTMLDivElement>
+  onMouseLeave?: MouseEventHandler<HTMLDivElement>
 }
 
-export function Card({ children, className, hover = true, variant = 'default' }: CardProps) {
+export function Card({ 
+  children, 
+  className, 
+  hover = true, 
+  variant = 'default',
+  onMouseEnter,
+  onMouseLeave
+}: CardProps) {
   const Component = hover ? motion.div : 'div'
   
   const variantStyles = {
@@ -24,6 +33,11 @@ export function Card({ children, className, hover = true, variant = 'default' }:
     transition: { type: 'spring', stiffness: 400, damping: 30 },
   } : {}
 
+  const eventHandlers = {
+    ...(onMouseEnter && { onMouseEnter }),
+    ...(onMouseLeave && { onMouseLeave }),
+  }
+
   return (
     <Component
       className={cn(
@@ -32,6 +46,7 @@ export function Card({ children, className, hover = true, variant = 'default' }:
         className
       )}
       {...motionProps}
+      {...eventHandlers}
     >
       {children}
     </Component>

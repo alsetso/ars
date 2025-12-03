@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef, useCallback } from 'react'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
@@ -13,43 +13,29 @@ export function PageOverlay() {
   const [assetsLoaded, setAssetsLoaded] = useState(false)
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
 
-  useEffect(() => {
-    // Check if route is blacklisted
-    if (isBlacklisted(pathname)) {
-      return
-    }
+  const updateProgress = useCallback((loaded: number, total: number) => {
+    const progress = Math.min((loaded / total) * 100, 100)
+    setLoadingProgress(progress)
+  }, [])
 
-    // Check if overlay should show for this route
-    const shouldShow = shouldShowOverlay(pathname, false, 0)
-    if (!shouldShow) {
-      return
-    }
-
-    // Check if we've already shown the overlay for this route in this session
+  const handleDismiss = useCallback(() => {
+    setIsVisible(false)
+    // Store that we've shown overlay for this specific route
     const overlayKey = `page-overlay-shown-${pathname}`
-    const hasShown = sessionStorage.getItem(overlayKey)
-    
-    // Check if user prefers reduced motion
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    
-    // Only show overlay on first visit to this route and if user doesn't prefer reduced motion
-    if (!hasShown && !prefersReducedMotion) {
-      setIsVisible(true)
-      
-      // Small delay to ensure DOM is ready, then track asset loading
-      setTimeout(() => {
-        trackAssetLoading()
-      }, 100)
-    }
-
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current)
-      }
-    }
+    sessionStorage.setItem(overlayKey, 'true')
   }, [pathname])
 
-  const trackAssetLoading = () => {
+  const handleAllAssetsLoaded = useCallback(() => {
+    setAssetsLoaded(true)
+    setLoadingProgress(100)
+    
+    // Small delay to show 100% before fade out
+    setTimeout(() => {
+      handleDismiss()
+    }, 300)
+  }, [handleDismiss])
+
+  const trackAssetLoading = useCallback(() => {
     let loadedCount = 0
     let totalAssets = 2 // Document ready + video (or fallback)
     let documentReady = false
@@ -123,29 +109,43 @@ export function PageOverlay() {
         handleAllAssetsLoaded()
       }
     }, 3000)
-  }
+  }, [assetsLoaded, handleAllAssetsLoaded, updateProgress])
 
-  const updateProgress = (loaded: number, total: number) => {
-    const progress = Math.min((loaded / total) * 100, 100)
-    setLoadingProgress(progress)
-  }
+  useEffect(() => {
+    // Check if route is blacklisted
+    if (isBlacklisted(pathname)) {
+      return
+    }
 
-  const handleAllAssetsLoaded = () => {
-    setAssetsLoaded(true)
-    setLoadingProgress(100)
-    
-    // Small delay to show 100% before fade out
-    setTimeout(() => {
-      handleDismiss()
-    }, 300)
-  }
+    // Check if overlay should show for this route
+    const shouldShow = shouldShowOverlay(pathname, false, 0)
+    if (!shouldShow) {
+      return
+    }
 
-  const handleDismiss = () => {
-    setIsVisible(false)
-    // Store that we've shown overlay for this specific route
+    // Check if we've already shown the overlay for this route in this session
     const overlayKey = `page-overlay-shown-${pathname}`
-    sessionStorage.setItem(overlayKey, 'true')
-  }
+    const hasShown = sessionStorage.getItem(overlayKey)
+    
+    // Check if user prefers reduced motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    
+    // Only show overlay on first visit to this route and if user doesn't prefer reduced motion
+    if (!hasShown && !prefersReducedMotion) {
+      setIsVisible(true)
+      
+      // Small delay to ensure DOM is ready, then track asset loading
+      setTimeout(() => {
+        trackAssetLoading()
+      }, 100)
+    }
+
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+      }
+    }
+  }, [pathname, trackAssetLoading])
 
   // Manual dismiss (click to skip)
   const handleSkip = () => {
