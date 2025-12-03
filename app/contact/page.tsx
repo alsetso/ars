@@ -13,9 +13,25 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Contact Us - Free Estimate | Advanced Roofing & Siding Inc.',
-  description: 'Get your free estimate today! Contact Advanced Roofing & Siding Inc. - GAF Master Elite contractor serving Minnesota & Wisconsin. Call 763-427-3093.',
-  keywords: 'contact roofing contractor, free estimate, Minnesota roofing, Anoka roofing',
+  title: 'Contact Us - Free Estimate | Call 763-427-3093 | Minnesota & Wisconsin',
+  description: 'Get your free estimate today! Contact Advanced Roofing & Siding Inc. - GAF Master Elite contractor serving Minnesota & Wisconsin. Call 763-427-3093 or request online.',
+  keywords: ['contact roofing contractor', 'free estimate', 'Minnesota roofing', 'Anoka roofing', 'roofing contractor near me', 'siding contractor contact', 'window installation estimate'],
+  alternates: {
+    canonical: 'https://advancedroofingmn.com/contact',
+  },
+  openGraph: {
+    title: 'Contact Us - Free Estimate | Advanced Roofing & Siding Inc.',
+    description: 'Get your free estimate today! Contact Advanced Roofing & Siding Inc. - GAF Master Elite contractor serving Minnesota & Wisconsin. Call 763-427-3093.',
+    url: 'https://advancedroofingmn.com/contact',
+    images: [
+      {
+        url: 'https://advancedroofingmn.com/AFS-Logo900.png',
+        width: 1200,
+        height: 630,
+        alt: 'Contact Advanced Roofing & Siding Inc.',
+      },
+    ],
+  },
 }
 
 export default function ContactPage() {
@@ -134,7 +150,7 @@ export default function ContactPage() {
                 </div>
                 <h3 className="mb-1 text-sm font-bold text-gray-900 md:text-base">GAF Master Elite</h3>
                 <p className="text-xs text-gray-600 md:text-sm">Top 3% nationwide</p>
-                <Link href="/gaf-master-elite-contractor" className="mt-2 inline-block text-xs text-brand-primary hover:text-red-800 font-semibold">
+                <Link href="/resources/gaf-master-elite-contractor" className="mt-2 inline-block text-xs text-brand-primary hover:text-red-800 font-semibold">
                   Learn More →
                 </Link>
               </Card>
@@ -154,7 +170,7 @@ export default function ContactPage() {
                 </div>
                 <h3 className="mb-1 text-sm font-bold text-gray-900 md:text-base">A+ BBB Rating</h3>
                 <p className="text-xs text-gray-600 md:text-sm">Accredited since 2007</p>
-                <Link href="/reviews" className="mt-2 inline-block text-xs text-brand-primary hover:text-red-800 font-semibold">
+                <Link href="/resources/reviews" className="mt-2 inline-block text-xs text-brand-primary hover:text-red-800 font-semibold">
                   Read Reviews →
                 </Link>
               </Card>

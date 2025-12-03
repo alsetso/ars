@@ -11,9 +11,25 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Storm Restoration Services - Insurance Claims | Advanced Roofing & Siding',
-  description: 'Expert storm damage assessment and seamless insurance claim support. Fast, professional storm restoration across Minnesota & Wisconsin.',
-  keywords: 'storm damage repair, insurance claims, hail damage, wind damage, roof repair, Minnesota, storm restoration, storm damage contractor, hail damage repair, wind damage repair, insurance claim assistance, storm damage inspection, emergency roof repair, Minnesota storm damage, Wisconsin storm damage, property damage restoration',
+  title: 'Storm Restoration Services - Insurance Claims & Storm Damage Repair',
+  description: 'Expert storm damage assessment and seamless insurance claim support. Fast, professional storm restoration across Minnesota & Wisconsin. 48-hour inspection guarantee!',
+  keywords: ['storm damage repair', 'insurance claims', 'hail damage', 'wind damage', 'roof repair', 'Minnesota storm damage', 'storm restoration', 'storm damage contractor', 'hail damage repair', 'wind damage repair', 'insurance claim assistance', 'storm damage inspection', 'emergency roof repair', 'Wisconsin storm damage', 'property damage restoration'],
+  alternates: {
+    canonical: 'https://advancedroofingmn.com/services/storm-restoration',
+  },
+  openGraph: {
+    title: 'Storm Restoration Services - Insurance Claims & Storm Damage Repair',
+    description: 'Expert storm damage assessment and seamless insurance claim support. Fast, professional storm restoration across Minnesota & Wisconsin.',
+    url: 'https://advancedroofingmn.com/services/storm-restoration',
+    images: [
+      {
+        url: 'https://advancedroofingmn.com/gallery/351499412_645224983741699_6973171527731469674_n.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Storm Restoration Services by Advanced Roofing & Siding Inc.',
+      },
+    ],
+  },
 }
 
 const features = [
@@ -112,14 +128,14 @@ export default function StormRestorationPage() {
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-gray-700 mb-4">
                 When severe weather strikes, you need a trusted partner to help restore your home.
-                Advanced Roofing & Siding Inc. provides comprehensive <Link href="/insurance-claims" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">storm restoration services</Link>,
-                from initial damage assessment to complete repairs and <Link href="/insurance-claims" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">insurance claim assistance</Link> for <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota and Wisconsin homeowners</Link>.
+                Advanced Roofing & Siding Inc. provides comprehensive <Link href="/resources/insurance-claims" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">storm restoration services</Link>,
+                from initial damage assessment to complete repairs and <Link href="/resources/insurance-claims" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">insurance claim assistance</Link> for <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota and Wisconsin homeowners</Link>.
               </p>
               <p className="text-lg text-gray-700 mb-4">
                 Our experienced team understands the insurance process and works directly with your
                 insurance company to ensure you receive the coverage you deserve. We provide
                 detailed documentation, professional estimates, and quality repairs that meet or
-                exceed insurance standards. Learn more about our <Link href="/insurance-claims" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">insurance claims process</Link>.
+                exceed insurance standards. Learn more about our <Link href="/resources/insurance-claims" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">insurance claims process</Link>.
               </p>
               <p className="text-lg text-gray-700">
                 We respond quickly to storm damage emergencies, providing temporary protection when

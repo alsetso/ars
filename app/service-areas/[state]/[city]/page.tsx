@@ -46,14 +46,37 @@ export async function generateMetadata({
   const stateAbbr = cityData.state.toUpperCase()
   const stateName = cityData.stateFull
 
+  const cityUrl = `https://advancedroofingmn.com/service-areas/${cityData.state}/${cityData.slug}`
+
   return {
-    title: `Roofing & Siding in ${cityName}, ${stateAbbr} | Advanced Roofing & Siding Inc.`,
+    title: `Roofing & Siding in ${cityName}, ${stateAbbr} | Free Estimates | Advanced Roofing & Siding`,
     description: `Expert roofing, siding, windows, and storm restoration services in ${cityName}, ${stateName}. GAF Master Elite contractor with 30+ years of experience. Free estimates!`,
-    keywords: `roofing ${cityName}, siding ${cityName}, ${cityName} roofing contractor, ${cityName} ${stateAbbr}, exterior services ${cityName}, ${cityName} ${stateName} roofing`,
+    keywords: [
+      `roofing ${cityName}`,
+      `siding ${cityName}`,
+      `${cityName} roofing contractor`,
+      `${cityName} ${stateAbbr}`,
+      `exterior services ${cityName}`,
+      `${cityName} ${stateName} roofing`,
+      `roof replacement ${cityName}`,
+      `storm damage ${cityName}`,
+    ],
+    alternates: {
+      canonical: cityUrl,
+    },
     openGraph: {
-      title: `Roofing & Siding in ${cityName}, ${stateAbbr}`,
-      description: `Expert exterior services in ${cityName}, ${stateName}. GAF Master Elite certified.`,
+      title: `Roofing & Siding in ${cityName}, ${stateAbbr} | Advanced Roofing & Siding Inc.`,
+      description: `Expert exterior services in ${cityName}, ${stateName}. GAF Master Elite certified with 30+ years of experience. Free estimates!`,
+      url: cityUrl,
       type: 'website',
+      images: [
+        {
+          url: 'https://advancedroofingmn.com/AFS-Logo900.png',
+          width: 1200,
+          height: 630,
+          alt: `Roofing & Siding Services in ${cityName}, ${stateAbbr}`,
+        },
+      ],
     },
   }
 }
@@ -194,7 +217,7 @@ export default function CityServiceAreaPage({
                         Understanding {cityName}'s Unique Weather Challenges
                       </h3>
                       <p className="text-lg leading-relaxed text-gray-700">
-                        {cityContent.weatherContent} For storm damage concerns, we offer <Link href="/insurance-claims" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">insurance claim assistance</Link> and <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">storm restoration services</Link>.
+                        {cityContent.weatherContent} For storm damage concerns, we offer <Link href="/resources/insurance-claims" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">insurance claim assistance</Link> and <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">storm restoration services</Link>.
                       </p>
                     </div>
 

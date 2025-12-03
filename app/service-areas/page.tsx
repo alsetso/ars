@@ -9,9 +9,25 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Service Areas - Minnesota & Wisconsin | Advanced Roofing & Siding',
-  description: 'Proudly serving 50+ cities across Minnesota and Wisconsin. Find out if we service your area for roofing, siding, windows, and storm restoration.',
-  keywords: 'Minnesota roofing, Wisconsin roofing, service areas, Minneapolis, St Paul, Anoka',
+  title: 'Service Areas - 50+ Cities in Minnesota & Wisconsin | Free Estimates',
+  description: 'Proudly serving 50+ cities across Minnesota and Wisconsin. Find out if we service your area for roofing, siding, windows, and storm restoration. Free estimates!',
+  keywords: ['Minnesota roofing', 'Wisconsin roofing', 'service areas', 'Minneapolis roofing', 'St Paul roofing', 'Anoka roofing', 'roofing contractor near me', 'siding contractor service areas'],
+  alternates: {
+    canonical: 'https://advancedroofingmn.com/service-areas',
+  },
+  openGraph: {
+    title: 'Service Areas - 50+ Cities in Minnesota & Wisconsin',
+    description: 'Proudly serving 50+ cities across Minnesota and Wisconsin. Find out if we service your area for roofing, siding, windows, and storm restoration.',
+    url: 'https://advancedroofingmn.com/service-areas',
+    images: [
+      {
+        url: 'https://advancedroofingmn.com/AFS-Logo900.png',
+        width: 1200,
+        height: 630,
+        alt: 'Service Areas - Advanced Roofing & Siding Inc.',
+      },
+    ],
+  },
 }
 
 export default function ServiceAreasPage() {

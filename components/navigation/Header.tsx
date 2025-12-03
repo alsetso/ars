@@ -40,29 +40,38 @@ export function Header() {
     }
   }, [openDropdown])
 
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileMenuOpen(false)
+    setOpenDropdown(null)
+  }, [pathname])
+
   return (
     <motion.header
-      className="sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur-sm"
+      className="sticky top-0 z-50 border-b border-white/20 bg-white/70 backdrop-blur-md shadow-sm"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+      transition={{ type: 'spring', stiffness: 400, damping: 35 }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between py-4">
+        <div className="flex items-center justify-between py-2.5 lg:py-3">
           {/* Logo */}
-          <Link href="/" className="flex items-center flex-shrink-0">
+          <Link 
+            href="/" 
+            className="flex items-center flex-shrink-0 transition-opacity hover:opacity-90"
+          >
             <Image
               src="/AFS-Logo900.png"
               alt="Advanced Roofing & Siding Inc."
               width={200}
               height={80}
-              className="h-12 w-auto sm:h-16"
+              className="h-10 w-auto sm:h-14 lg:h-16"
               priority
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex lg:items-center lg:gap-8">
+          <nav className="hidden lg:flex lg:items-center lg:gap-6 xl:gap-8">
             {NAVIGATION_LINKS.map((link) => {
               const hasSubmenu = 'submenu' in link && link.submenu && link.submenu.length > 0
               const isActive = pathname === link.href || (hasSubmenu && 'submenu' in link && link.submenu?.some(item => pathname === item.href))
@@ -83,43 +92,76 @@ export function Header() {
                     <button
                       type="button"
                       onClick={() => setOpenDropdown(openDropdown === link.href ? null : link.href)}
-                      className={`flex items-center gap-1 text-sm font-semibold transition-colors hover:text-brand-primary ${
-                        isActive ? 'text-brand-primary' : 'text-gray-700'
+                      className={`relative flex items-center gap-1.5 text-sm font-semibold tracking-tight transition-all duration-200 hover:text-brand-primary ${
+                        isActive 
+                          ? 'text-brand-primary' 
+                          : 'text-gray-800'
                       }`}
                     >
-                      {link.label}
-                      <ChevronDown className={`h-4 w-4 transition-transform ${openDropdown === link.href ? 'rotate-180' : ''}`} />
+                      <span>{link.label}</span>
+                      <ChevronDown 
+                        className={`h-3.5 w-3.5 transition-all duration-200 ${
+                          openDropdown === link.href ? 'rotate-180' : ''
+                        }`} 
+                      />
+                      {isActive && (
+                        <motion.div
+                          layoutId="activeIndicator"
+                          className="absolute -bottom-1 left-0 right-0 h-0.5 bg-brand-primary rounded-full"
+                          initial={false}
+                          transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+                        />
+                      )}
                     </button>
                   ) : (
                     <Link
                       href={link.href}
-                      className={`text-sm font-semibold transition-colors hover:text-brand-primary ${
-                        isActive ? 'text-brand-primary' : 'text-gray-700'
+                      className={`relative block text-sm font-semibold tracking-tight transition-all duration-200 hover:text-brand-primary ${
+                        isActive 
+                          ? 'text-brand-primary' 
+                          : 'text-gray-800'
                       }`}
                     >
-                      {link.label}
+                      <span>{link.label}</span>
+                      {isActive && (
+                        <motion.div
+                          layoutId="activeIndicator"
+                          className="absolute -bottom-1 left-0 right-0 h-0.5 bg-brand-primary rounded-full"
+                          initial={false}
+                          transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+                        />
+                      )}
                     </Link>
                   )}
                   
                   {hasSubmenu && openDropdown === link.href && (
                     <motion.div
-                      initial={{ opacity: 0, y: -10 }}
+                      initial={{ opacity: 0, y: -8 }}
                       animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      className="absolute left-0 top-full pt-2 w-56 z-[60] pointer-events-auto"
+                      exit={{ opacity: 0, y: -8 }}
+                      transition={{ duration: 0.15, ease: [0.4, 0, 0.2, 1] }}
+                      className="absolute left-0 top-full pt-3 w-56 z-[60] pointer-events-auto"
                     >
-                      <div className="rounded-lg bg-white shadow-lg border border-gray-200 py-2 pointer-events-auto">
-                        {link.submenu?.map((item) => (
-                          <Link
+                      <div className="rounded-xl bg-white shadow-xl border border-gray-100 py-1.5 pointer-events-auto overflow-hidden">
+                        {link.submenu?.map((item, index) => (
+                          <motion.div
                             key={item.href}
-                            href={item.href}
-                            onClick={() => setOpenDropdown(null)}
-                            className={`block px-4 py-2 text-sm font-semibold transition-colors hover:bg-gray-50 hover:text-brand-primary cursor-pointer ${
-                              pathname === item.href ? 'text-brand-primary bg-red-50' : 'text-gray-700'
-                            }`}
+                            initial={{ opacity: 0, x: -8 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: index * 0.02 }}
                           >
-                            {item.label}
-                          </Link>
+                            <Link
+                              href={item.href}
+                              onClick={() => setOpenDropdown(null)}
+                              className={`block px-4 py-2.5 text-sm font-semibold tracking-tight transition-all duration-150 hover:bg-gray-50 hover:text-brand-primary cursor-pointer ${
+                                pathname === item.href 
+                                  ? 'text-brand-primary bg-red-50/50' 
+                                  : 'text-gray-700'
+                              }`}
+                            >
+                              {item.label}
+                            </Link>
+                          </motion.div>
                         ))}
                       </div>
                     </motion.div>
@@ -130,25 +172,25 @@ export function Header() {
           </nav>
 
           {/* Desktop CTA & Mobile Menu Button */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <a
               href={`tel:${COMPANY_INFO.phone}`}
-              className="hidden items-center gap-2 rounded-lg bg-brand-primary px-4 py-2 text-white transition-colors hover:bg-red-800 sm:flex sm:px-6 sm:py-3"
+              className="hidden items-center gap-2 rounded-lg bg-brand-primary px-4 py-2 text-white text-sm font-semibold tracking-tight transition-all duration-200 hover:bg-red-800 hover:shadow-md active:scale-[0.98] sm:flex"
             >
-              <Phone className="h-4 w-4 sm:h-5 sm:w-5" />
-              <span className="text-sm font-semibold sm:text-base">{COMPANY_INFO.phone}</span>
+              <Phone className="h-4 w-4" />
+              <span>Contact</span>
             </a>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden"
+              className="lg:hidden p-2 rounded-lg transition-colors hover:bg-gray-100 active:bg-gray-200"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? (
-                <X className="h-6 w-6 text-gray-900" />
+                <X className="h-5 w-5 text-gray-900" />
               ) : (
-                <Menu className="h-6 w-6 text-gray-900" />
+                <Menu className="h-5 w-5 text-gray-900" />
               )}
             </button>
           </div>
@@ -161,10 +203,10 @@ export function Header() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.2 }}
-              className="overflow-hidden lg:hidden"
+              transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
+              className="overflow-hidden lg:hidden border-t border-gray-200/80"
             >
-              <div className="border-t border-gray-200 py-4">
+              <div className="py-3">
                 {NAVIGATION_LINKS.map((link) => {
                   const hasSubmenu = 'submenu' in link && link.submenu && link.submenu.length > 0
                   const isActive = pathname === link.href || (hasSubmenu && 'submenu' in link && link.submenu?.some(item => pathname === item.href))
@@ -176,12 +218,16 @@ export function Header() {
                           <button
                             type="button"
                             onClick={() => setOpenDropdown(openDropdown === link.href ? null : link.href)}
-                            className={`flex w-full items-center justify-between py-3 text-base font-semibold transition-colors hover:text-brand-primary ${
-                              isActive ? 'text-brand-primary' : 'text-gray-700'
+                            className={`flex w-full items-center justify-between py-2.5 px-1 text-sm font-semibold tracking-tight transition-colors hover:text-brand-primary ${
+                              isActive ? 'text-brand-primary' : 'text-gray-800'
                             }`}
                           >
                             {link.label}
-                            <ChevronDown className={`h-4 w-4 transition-transform ${openDropdown === link.href ? 'rotate-180' : ''}`} />
+                            <ChevronDown 
+                              className={`h-4 w-4 transition-transform duration-200 ${
+                                openDropdown === link.href ? 'rotate-180' : ''
+                              }`} 
+                            />
                           </button>
                           <AnimatePresence>
                             {openDropdown === link.href && (
@@ -189,6 +235,7 @@ export function Header() {
                                 initial={{ opacity: 0, height: 0 }}
                                 animate={{ opacity: 1, height: 'auto' }}
                                 exit={{ opacity: 0, height: 0 }}
+                                transition={{ duration: 0.15 }}
                                 className="overflow-hidden pl-4"
                               >
                                 {link.submenu?.map((item) => (
@@ -199,7 +246,7 @@ export function Header() {
                                       setMobileMenuOpen(false)
                                       setOpenDropdown(null)
                                     }}
-                                    className={`block py-2 text-sm font-semibold transition-colors hover:text-brand-primary ${
+                                    className={`block py-2 text-sm font-semibold tracking-tight transition-colors hover:text-brand-primary ${
                                       pathname === item.href
                                         ? 'text-brand-primary'
                                         : 'text-gray-600'
@@ -216,10 +263,10 @@ export function Header() {
                         <Link
                           href={link.href}
                           onClick={() => setMobileMenuOpen(false)}
-                          className={`block py-3 text-base font-semibold transition-colors hover:text-brand-primary ${
+                          className={`block py-2.5 px-1 text-sm font-semibold tracking-tight transition-colors hover:text-brand-primary ${
                             pathname === link.href
                               ? 'text-brand-primary'
-                              : 'text-gray-700'
+                              : 'text-gray-800'
                           }`}
                         >
                           {link.label}
@@ -230,10 +277,10 @@ export function Header() {
                 })}
                 <a
                   href={`tel:${COMPANY_INFO.phone}`}
-                  className="mt-4 flex items-center justify-center gap-2 rounded-lg bg-brand-primary px-4 py-3 text-white transition-colors hover:bg-red-800"
+                  className="mt-3 flex items-center justify-center gap-2 rounded-lg bg-brand-primary px-4 py-2.5 text-white text-sm font-semibold tracking-tight transition-all duration-200 hover:bg-red-800 active:scale-[0.98]"
                 >
-                  <Phone className="h-5 w-5" />
-                  <span className="font-semibold">{COMPANY_INFO.phone}</span>
+                  <Phone className="h-4 w-4" />
+                  <span>Contact</span>
                 </a>
               </div>
             </motion.nav>

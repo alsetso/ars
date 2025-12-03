@@ -14,12 +14,12 @@ export const metadata: Metadata = {
   description: `Read ${TOTAL_REVIEWS}+ customer reviews for Advanced Roofing & Siding Inc. ${AVERAGE_RATING.toFixed(1)}-star rating from satisfied customers across Minnesota and Wisconsin.`,
   keywords: ['roofing reviews', 'siding reviews', 'Minnesota roofing company reviews', 'customer testimonials', 'roofing contractor reviews', 'exterior contractor reviews'],
   alternates: {
-    canonical: 'https://advancedroofingmn.com/reviews',
+    canonical: 'https://advancedroofingmn.com/resources/reviews',
   },
   openGraph: {
     title: `Customer Reviews - ${AVERAGE_RATING.toFixed(1)} Stars | Advanced Roofing & Siding Inc.`,
     description: `Read ${TOTAL_REVIEWS}+ verified customer reviews from satisfied homeowners and businesses across Minnesota and Wisconsin.`,
-    url: 'https://advancedroofingmn.com/reviews',
+    url: 'https://advancedroofingmn.com/resources/reviews',
     images: [
       {
         url: 'https://advancedroofingmn.com/AFS-Logo900.png',

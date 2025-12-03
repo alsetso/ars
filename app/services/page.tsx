@@ -9,9 +9,25 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Our Services - Advanced Roofing & Siding Inc. | Minnesota',
-  description: 'Comprehensive exterior solutions: Premium Roofing, Siding, Windows, and Storm Restoration. GAF Master Elite certified installations across Minnesota & Wisconsin.',
-  keywords: 'roofing services, siding installation, window replacement, storm damage repair, Minnesota',
+  title: 'Our Services - Premium Roofing, Siding, Windows & Storm Restoration',
+  description: 'Comprehensive exterior solutions: Premium Roofing, Siding, Windows, and Storm Restoration. GAF Master Elite certified installations across Minnesota & Wisconsin. Free estimates!',
+  keywords: ['roofing services', 'siding installation', 'window replacement', 'storm damage repair', 'Minnesota roofing', 'Wisconsin roofing', 'exterior contractor', 'GAF Master Elite'],
+  alternates: {
+    canonical: 'https://advancedroofingmn.com/services',
+  },
+  openGraph: {
+    title: 'Our Services - Premium Roofing, Siding, Windows & Storm Restoration',
+    description: 'Comprehensive exterior solutions: Premium Roofing, Siding, Windows, and Storm Restoration. GAF Master Elite certified installations across Minnesota & Wisconsin.',
+    url: 'https://advancedroofingmn.com/services',
+    images: [
+      {
+        url: 'https://advancedroofingmn.com/AFS-Logo900.png',
+        width: 1200,
+        height: 630,
+        alt: 'Advanced Roofing & Siding Inc. Services',
+      },
+    ],
+  },
 }
 
 const iconMap = {

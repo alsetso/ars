@@ -10,9 +10,25 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Window Installation - Energy Efficient Windows | Advanced Roofing & Siding',
-  description: 'Energy-efficient windows that reduce costs and enhance comfort. Expert window replacement and installation across Minnesota & Wisconsin.',
-  keywords: 'window replacement, energy efficient windows, window installation, Minnesota windows, window contractor, replacement windows, double pane windows, vinyl windows, window repair, Minnesota window installation, Wisconsin windows, residential windows, commercial windows, window replacement cost, energy star windows',
+  title: 'Window Installation - Energy Efficient Windows | Minnesota & Wisconsin',
+  description: 'Energy-efficient windows that reduce costs and enhance comfort. Expert window replacement and installation across Minnesota & Wisconsin. Free in-home consultations!',
+  keywords: ['window replacement', 'energy efficient windows', 'window installation', 'Minnesota windows', 'window contractor', 'replacement windows', 'double pane windows', 'vinyl windows', 'window repair', 'Minnesota window installation', 'Wisconsin windows', 'residential windows', 'commercial windows', 'energy star windows'],
+  alternates: {
+    canonical: 'https://advancedroofingmn.com/services/windows',
+  },
+  openGraph: {
+    title: 'Window Installation - Energy Efficient Windows',
+    description: 'Energy-efficient windows that reduce costs and enhance comfort. Expert window replacement and installation across Minnesota & Wisconsin.',
+    url: 'https://advancedroofingmn.com/services/windows',
+    images: [
+      {
+        url: 'https://advancedroofingmn.com/gallery/315336128_671806221088568_2626046884352502994_n.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Window Installation Services by Advanced Roofing & Siding Inc.',
+      },
+    ],
+  },
 }
 
 const features = [

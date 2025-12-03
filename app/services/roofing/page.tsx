@@ -11,9 +11,25 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Premium Roofing Services - GAF Master Elite | Advanced Roofing & Siding',
-  description: 'GAF Master Elite certified roofing installations with industry-leading warranties. Expert roof replacement, repair, and maintenance across Minnesota & Wisconsin.',
-  keywords: 'roofing contractor, roof replacement, roof repair, GAF Master Elite, Minnesota roofing, residential roofing, commercial roofing, asphalt shingles, metal roofing, roof installation, roof maintenance, roof inspection, Minnesota roofers, Wisconsin roofing, storm damage roof repair, roof warranty, GAF certified contractor',
+  title: 'Premium Roofing Services - GAF Master Elite Certified | Minnesota & Wisconsin',
+  description: 'GAF Master Elite certified roofing installations with industry-leading warranties. Expert roof replacement, repair, and maintenance across Minnesota & Wisconsin. Free estimates!',
+  keywords: ['roofing contractor', 'roof replacement', 'roof repair', 'GAF Master Elite', 'Minnesota roofing', 'residential roofing', 'commercial roofing', 'asphalt shingles', 'metal roofing', 'roof installation', 'Minnesota roofers', 'Wisconsin roofing', 'storm damage roof repair', 'roof warranty'],
+  alternates: {
+    canonical: 'https://advancedroofingmn.com/services/roofing',
+  },
+  openGraph: {
+    title: 'Premium Roofing Services - GAF Master Elite Certified',
+    description: 'GAF Master Elite certified roofing installations with industry-leading warranties. Expert roof replacement, repair, and maintenance across Minnesota & Wisconsin.',
+    url: 'https://advancedroofingmn.com/services/roofing',
+    images: [
+      {
+        url: 'https://advancedroofingmn.com/gallery/340661788_241238031731100_708703886642482358_n.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Premium Roofing Services by Advanced Roofing & Siding Inc.',
+      },
+    ],
+  },
 }
 
 const features = [
@@ -111,7 +127,7 @@ export default function RoofingPage() {
           <Card className="mb-8">
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-gray-700 mb-4">
-                As a <Link href="/gaf-master-elite-contractor" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">GAF Master Elite contractor</Link>, Advanced Roofing & Siding Inc. represents the
+                As a <Link href="/resources/gaf-master-elite-contractor" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">GAF Master Elite contractor</Link>, Advanced Roofing & Siding Inc. represents the
                 top 3% of roofing professionals nationwide. This prestigious certification means we
                 have access to the highest quality materials, comprehensive training, and
                 <Link href="/warranties" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2"> industry-leading warranties</Link> that protect your investment for decades.
@@ -120,7 +136,7 @@ export default function RoofingPage() {
                 Our expert team handles everything from complete roof replacements to repairs,
                 maintenance, and emergency services. We work with premium materials including GAF
                 shingles, metal roofing, and flat roof systems, ensuring your home is protected
-                against <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota's harsh weather conditions</Link>. For storm damage, we also provide <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">storm restoration services</Link> with <Link href="/insurance-claims" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">insurance claim assistance</Link>.
+                against <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota's harsh weather conditions</Link>. For storm damage, we also provide <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">storm restoration services</Link> with <Link href="/resources/insurance-claims" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">insurance claim assistance</Link>.
               </p>
               <p className="text-lg text-gray-700">
                 Whether you need a complete roof replacement, emergency roof repair, or routine roof maintenance, our <Link href="/about" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">30+ years of experience</Link> serving <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota and Wisconsin homeowners</Link> ensures you receive professional service, quality craftsmanship, and lasting results. We specialize in residential roofing and commercial roofing projects, providing comprehensive solutions from initial inspection to final installation.

@@ -37,7 +37,7 @@ export function InsuranceClaimsCTA({ variant = 'default', showTitle = true }: In
             </div>
           </div>
           <div className="flex flex-col gap-2 sm:flex-row">
-            <Link href="/insurance-claims">
+            <Link href="/resources/insurance-claims">
               <Button variant="primary" size="md">
                 Learn More
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -96,7 +96,7 @@ export function InsuranceClaimsCTA({ variant = 'default', showTitle = true }: In
                 </ul>
 
                 <div className="flex flex-col gap-3 sm:flex-row">
-                  <Link href="/insurance-claims">
+                  <Link href="/resources/insurance-claims">
                     <Button variant="primary" size="lg" className="w-full sm:w-auto">
                       Learn About Our Process
                       <ArrowRight className="ml-2 h-5 w-5" />

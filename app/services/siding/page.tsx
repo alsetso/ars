@@ -10,9 +10,25 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Siding Solutions - Advanced Roofing & Siding Inc. | Minnesota',
-  description: 'Transform your exterior with durable, weather-resistant siding systems. Expert installation of vinyl, fiber cement, and wood siding across Minnesota & Wisconsin.',
-  keywords: 'siding installation, vinyl siding, fiber cement siding, exterior remodeling, Minnesota, siding contractor, siding replacement, house siding, exterior siding, James Hardie siding, LP siding, Minnesota siding contractor, Wisconsin siding, residential siding, commercial siding, siding repair, siding maintenance',
+  title: 'Siding Solutions - Vinyl, Fiber Cement & Wood Siding Installation',
+  description: 'Transform your exterior with durable, weather-resistant siding systems. Expert installation of vinyl, fiber cement, and wood siding across Minnesota & Wisconsin. Free consultations!',
+  keywords: ['siding installation', 'vinyl siding', 'fiber cement siding', 'exterior remodeling', 'Minnesota siding', 'siding contractor', 'siding replacement', 'James Hardie siding', 'LP siding', 'Minnesota siding contractor', 'Wisconsin siding', 'residential siding', 'commercial siding', 'siding repair'],
+  alternates: {
+    canonical: 'https://advancedroofingmn.com/services/siding',
+  },
+  openGraph: {
+    title: 'Siding Solutions - Vinyl, Fiber Cement & Wood Siding Installation',
+    description: 'Transform your exterior with durable, weather-resistant siding systems. Expert installation of vinyl, fiber cement, and wood siding across Minnesota & Wisconsin.',
+    url: 'https://advancedroofingmn.com/services/siding',
+    images: [
+      {
+        url: 'https://advancedroofingmn.com/gallery/310571525_636102627992261_6745535343486299305_n.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Siding Solutions by Advanced Roofing & Siding Inc.',
+      },
+    ],
+  },
 }
 
 const features = [

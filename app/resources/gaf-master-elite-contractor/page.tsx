@@ -13,12 +13,12 @@ export const metadata: Metadata = {
   description: 'Only 2% of roofing contractors earn GAF Master Elite® certification. Advanced Roofing & Siding is Minnesota and Wisconsin\'s trusted Master Elite contractor offering the strongest warranties and premium roofing systems.',
   keywords: ['GAF Master Elite contractor', 'GAF Master Elite Minnesota', 'GAF Master Elite Wisconsin', 'top 2% roofing contractor', 'GAF Golden Pledge warranty', 'Master Elite certified', 'Minnesota roofing contractor', 'Wisconsin roofing contractor', 'premium roofing systems', 'GAF certified installer'],
   alternates: {
-    canonical: 'https://advancedroofingmn.com/gaf-master-elite-contractor',
+    canonical: 'https://advancedroofingmn.com/resources/gaf-master-elite-contractor',
   },
   openGraph: {
     title: 'GAF Master Elite® Contractor - Minnesota & Wisconsin | Advanced Roofing & Siding',
     description: 'Top 2% of roofing contractors nationwide. Elite workmanship, proven reliability, and the strongest roofing warranties in Minnesota and Wisconsin.',
-    url: 'https://advancedroofingmn.com/gaf-master-elite-contractor',
+    url: 'https://advancedroofingmn.com/resources/gaf-master-elite-contractor',
     type: 'website',
     images: [
       {
@@ -246,7 +246,7 @@ export default function GAFMasterElitePage() {
                     <h4 className="text-xl font-bold text-gray-900">Independent, Third-Party Inspection</h4>
                   </div>
                   <p className="text-gray-700">
-                    GAF sends a certified inspector to review your finished roof to ensure it meets their standards. This quality assurance process is only available through <Link href="/gaf-master-elite-contractor" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Master Elite contractors</Link>.
+                    GAF sends a certified inspector to review your finished roof to ensure it meets their standards. This quality assurance process is only available through <Link href="/resources/gaf-master-elite-contractor" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Master Elite contractors</Link>.
                   </p>
                 </div>
               </div>

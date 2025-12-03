@@ -378,23 +378,19 @@ export default function ServiceFormPage() {
               Service Areas
             </Link>
             <span className="text-gray-400">•</span>
-            <Link href="/insurance-claims" className="transition-colors hover:text-brand-primary whitespace-nowrap">
+            <Link href="/resources/insurance-claims" className="transition-colors hover:text-brand-primary whitespace-nowrap">
               Insurance Claims
             </Link>
             <span className="text-gray-400">•</span>
-            <Link href="/cities-program" className="transition-colors hover:text-brand-primary whitespace-nowrap">
-              Cities Program
-            </Link>
-            <span className="text-gray-400">•</span>
-            <Link href="/gaf-master-elite-contractor" className="transition-colors hover:text-brand-primary whitespace-nowrap">
+            <Link href="/resources/gaf-master-elite-contractor" className="transition-colors hover:text-brand-primary whitespace-nowrap">
               GAF Master Elite
             </Link>
             <span className="text-gray-400">•</span>
-            <Link href="/24-7-support" className="transition-colors hover:text-brand-primary whitespace-nowrap">
+            <Link href="/resources/24-7-support" className="transition-colors hover:text-brand-primary whitespace-nowrap">
               24/7 Support
             </Link>
             <span className="text-gray-400">•</span>
-            <Link href="/reviews" className="transition-colors hover:text-brand-primary whitespace-nowrap">
+            <Link href="/resources/reviews" className="transition-colors hover:text-brand-primary whitespace-nowrap">
               Reviews
             </Link>
             <span className="text-gray-400">•</span>

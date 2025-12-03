@@ -14,12 +14,12 @@ export const metadata: Metadata = {
   description: '24/7 emergency roofing and siding support for Minnesota and Wisconsin homeowners. Available day, night, weekends, and holidays. Fast response for roof leaks, storm damage, and urgent exterior repairs.',
   keywords: ['24/7 roofing support', 'emergency roofing Minnesota', 'emergency roofing Wisconsin', '24 hour roofing contractor', 'emergency roof repair', 'storm damage response', 'after hours roofing', 'weekend roofing service', 'emergency siding repair', 'Minnesota emergency contractor', 'Wisconsin emergency contractor', 'urgent roof leak repair'],
   alternates: {
-    canonical: 'https://advancedroofingmn.com/24-7-support',
+    canonical: 'https://advancedroofingmn.com/resources/24-7-support',
   },
   openGraph: {
     title: '24/7 Emergency Support - Minnesota & Wisconsin | Advanced Roofing & Siding',
     description: 'Always available. Always ready. Real help when you need it most - 24/7 emergency roofing and siding support.',
-    url: 'https://advancedroofingmn.com/24-7-support',
+    url: 'https://advancedroofingmn.com/resources/24-7-support',
     type: 'website',
     images: [
       {
@@ -263,7 +263,7 @@ export default function Support24_7Page() {
                   <div className="flex-1">
                     <h3 className="mb-3 text-xl font-bold text-gray-900">Immediate Guidance</h3>
                     <p className="text-gray-700">
-                      We walk you through what's happening and provide expert recommendations you can trust — even before we arrive onsite. Our <Link href="/gaf-master-elite-contractor" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">GAF Master Elite</Link> certified team offers professional guidance 24/7.
+                      We walk you through what's happening and provide expert recommendations you can trust — even before we arrive onsite. Our <Link href="/resources/gaf-master-elite-contractor" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">GAF Master Elite</Link> certified team offers professional guidance 24/7.
                     </p>
                   </div>
                 </div>

@@ -26,12 +26,12 @@ export const metadata: Metadata = {
   description: 'Expert insurance claim assistance for storm damage in Minnesota. Free inspections, adjuster meeting representation, and full claim support. 48-hour inspection guarantee!',
   keywords: ['insurance claims', 'storm damage', 'hail damage', 'insurance adjuster', 'roof insurance claim', 'Minnesota roofing insurance', 'insurance claim assistance', 'storm damage insurance', 'hail damage claim', 'wind damage claim'],
   alternates: {
-    canonical: 'https://advancedroofingmn.com/insurance-claims',
+    canonical: 'https://advancedroofingmn.com/resources/insurance-claims',
   },
   openGraph: {
     title: 'Insurance Claims Assistance - Storm Damage Experts',
     description: 'Expert insurance claim assistance for storm damage in Minnesota. Free inspections, adjuster meeting representation, and full claim support. 48-hour guarantee.',
-    url: 'https://advancedroofingmn.com/insurance-claims',
+    url: 'https://advancedroofingmn.com/resources/insurance-claims',
     images: [
       {
         url: 'https://advancedroofingmn.com/gallery/380156327_905711167698071_326976560032986429_n.webp',

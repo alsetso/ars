@@ -11,9 +11,25 @@ import { Button } from '@/components/ui/Button'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'About Us - Advanced Roofing & Siding Inc. | Minnesota Roofing Experts Since 2001',
-  description: 'Learn about Advanced Roofing & Siding Inc. - GAF Master Elite contractor with 30+ years of experience serving Minnesota and Wisconsin. Family-owned, A+ BBB rated, community-focused roofing company based in Anoka, MN.',
-  keywords: 'about advanced roofing, Minnesota roofing company, GAF Master Elite, family owned roofing, Anoka MN roofing contractor, Minnesota exterior contractor, Wisconsin roofing company, community roofing contractor',
+  title: 'About Us - Minnesota Roofing Experts Since 2001 | GAF Master Elite',
+  description: 'Learn about Advanced Roofing & Siding Inc. - GAF Master Elite contractor with 30+ years of experience serving Minnesota and Wisconsin. Family-owned, A+ BBB rated, community-focused.',
+  keywords: ['about advanced roofing', 'Minnesota roofing company', 'GAF Master Elite', 'family owned roofing', 'Anoka MN roofing contractor', 'Minnesota exterior contractor', 'Wisconsin roofing company', 'community roofing contractor'],
+  alternates: {
+    canonical: 'https://advancedroofingmn.com/about',
+  },
+  openGraph: {
+    title: 'About Us - Minnesota Roofing Experts Since 2001',
+    description: 'Learn about Advanced Roofing & Siding Inc. - GAF Master Elite contractor with 30+ years of experience serving Minnesota and Wisconsin. Family-owned, A+ BBB rated.',
+    url: 'https://advancedroofingmn.com/about',
+    images: [
+      {
+        url: 'https://advancedroofingmn.com/AFS-Logo900.png',
+        width: 1200,
+        height: 630,
+        alt: 'About Advanced Roofing & Siding Inc.',
+      },
+    ],
+  },
 }
 
 const iconMap = {
@@ -49,7 +65,7 @@ export default function AboutPage() {
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story: Three Decades of Excellence</h2>
                 <p className="text-lg text-gray-700 mb-4">
                   Established in 2001, Advanced Roofing & Siding Inc. has been a trusted name in <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota and Wisconsin</Link>
-                  for over 30 years. As a <Link href="/gaf-master-elite-contractor" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">GAF Master Elite contractor</Link>, we represent the top 2% of
+                  for over 30 years. As a <Link href="/resources/gaf-master-elite-contractor" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">GAF Master Elite contractor</Link>, we represent the top 2% of
                   roofing contractors nationwide, bringing unparalleled expertise and quality to
                   every project.
                 </p>
@@ -160,7 +176,7 @@ export default function AboutPage() {
                       <CheckCircle className="h-5 w-5 flex-shrink-0 text-brand-primary mt-0.5" />
                       <div>
                         <p className="font-semibold text-gray-900"><Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-800 underline underline-offset-2">Storm Damage Restoration</Link></p>
-                        <p className="text-gray-600">Expert assessment and restoration services with seamless <Link href="/insurance-claims" className="text-brand-primary hover:text-red-800 underline underline-offset-2">insurance claim support</Link></p>
+                        <p className="text-gray-600">Expert assessment and restoration services with seamless <Link href="/resources/insurance-claims" className="text-brand-primary hover:text-red-800 underline underline-offset-2">insurance claim support</Link></p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">

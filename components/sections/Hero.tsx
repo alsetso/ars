@@ -124,6 +124,15 @@ export function Hero() {
                 Get Free Estimate
               </Button>
             </Link>
+            <Link href="/about">
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="border-white text-white bg-white/10 hover:bg-white/20 hover:border-white/80"
+              >
+                Learn More
+              </Button>
+            </Link>
           </motion.div>
 
           {/* Badges */}

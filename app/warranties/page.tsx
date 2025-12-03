@@ -9,9 +9,25 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Warranties - GAF Golden Pledge 50-Year Coverage | Advanced Roofing & Siding',
+  title: 'Warranties - GAF Golden Pledge 50-Year Coverage | No Additional Cost',
   description: 'Industry-leading GAF warranties including the Golden Pledge 50-year warranty at no additional cost. GAF Master Elite contractor protection for your investment.',
-  keywords: 'GAF warranties, Golden Pledge warranty, roofing warranties, 50-year warranty, GAF Master Elite',
+  keywords: ['GAF warranties', 'Golden Pledge warranty', 'roofing warranties', '50-year warranty', 'GAF Master Elite', 'roof warranty', 'siding warranty', 'workmanship warranty'],
+  alternates: {
+    canonical: 'https://advancedroofingmn.com/warranties',
+  },
+  openGraph: {
+    title: 'Warranties - GAF Golden Pledge 50-Year Coverage',
+    description: 'Industry-leading GAF warranties including the Golden Pledge 50-year warranty at no additional cost. GAF Master Elite contractor protection for your investment.',
+    url: 'https://advancedroofingmn.com/warranties',
+    images: [
+      {
+        url: 'https://advancedroofingmn.com/GOLDEN_PLEDGE.webp',
+        width: 1200,
+        height: 630,
+        alt: 'GAF Golden Pledge Warranty - Advanced Roofing & Siding Inc.',
+      },
+    ],
+  },
 }
 
 export default function WarrantiesPage() {

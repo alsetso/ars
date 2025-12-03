@@ -9,13 +9,25 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Home Winterization Services - Minnesota & Wisconsin | Advanced Roofing & Siding',
+  title: 'Home Winterization Services - Minnesota & Wisconsin | Reduce Heating Costs',
   description: 'Professional winterization services for Minnesota and Wisconsin homes. Reduce heating costs, eliminate drafts, and protect your property with custom winterization packages. Expert garage and home winterization.',
-  keywords: 'winterization services, home winterization Minnesota, home winterization Wisconsin, garage winterization, reduce heating costs, draft prevention, property winterization, Minnesota home winterization, Wisconsin home winterization, energy efficiency winter, home weatherization',
+  keywords: ['winterization services', 'home winterization Minnesota', 'home winterization Wisconsin', 'garage winterization', 'reduce heating costs', 'draft prevention', 'property winterization', 'Minnesota home winterization', 'Wisconsin home winterization', 'energy efficiency winter', 'home weatherization'],
+  alternates: {
+    canonical: 'https://advancedroofingmn.com/services/winterization',
+  },
   openGraph: {
     title: 'Home Winterization Services - Minnesota & Wisconsin | Advanced Roofing & Siding',
     description: 'Custom winterization packages to protect your Minnesota and Wisconsin home and reduce heating costs. Expert service for leaving properties, draft prevention, and garage winterization.',
+    url: 'https://advancedroofingmn.com/services/winterization',
     type: 'website',
+    images: [
+      {
+        url: 'https://advancedroofingmn.com/AFS-Logo900.png',
+        width: 1200,
+        height: 630,
+        alt: 'Home Winterization Services - Advanced Roofing & Siding Inc.',
+      },
+    ],
   },
 }
 

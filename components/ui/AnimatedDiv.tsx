@@ -6,9 +6,9 @@ import { ReactNode } from 'react'
 interface AnimatedDivProps {
   children: ReactNode
   className?: string
-  initial?: { opacity?: number; y?: number; x?: number }
-  animate?: { opacity?: number; y?: number; x?: number }
-  whileInView?: { opacity?: number; y?: number; x?: number }
+  initial?: { opacity?: number; y?: number; x?: number; scale?: number }
+  animate?: { opacity?: number; y?: number; x?: number; scale?: number }
+  whileInView?: { opacity?: number; y?: number; x?: number; scale?: number }
   viewport?: { once?: boolean }
   transition?: { duration?: number; delay?: number }
 }
