@@ -187,3 +187,4 @@ export function generateProblemSolutionContent(
   return `${baseContent} Our team understands the specific challenges ${cityName} homeowners face, including ${weather.challenges[0]} and ${weather.challenges[1]}. We use only premium materials and proven techniques to ensure your home is protected against ${stateFull} weather conditions. As a GAF Master Elite contractor with an A+ BBB rating, we bring over 30 years of experience to every ${cityName} project. Contact us today for your free estimate and discover why ${cityName} residents trust Advanced Roofing & Siding Inc. for all their exterior needs.`
 }
 
+

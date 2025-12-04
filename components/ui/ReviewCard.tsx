@@ -49,3 +49,4 @@ export function ReviewCard({ author, rating, text, date, source, index = 0 }: Re
   )
 }
 
+
