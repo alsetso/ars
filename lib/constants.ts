@@ -1,7 +1,7 @@
 export const COMPANY_INFO = {
   name: 'Advanced Roofing & Siding Inc.',
   phone: '763-427-3093',
-  email: 'info@advancedroofing.com',
+  email: 'stacylehn@gmail.com',
   location: 'Anoka, MN',
   license: 'BC630441',
   tagline: 'GAF Master Elite Contractor',

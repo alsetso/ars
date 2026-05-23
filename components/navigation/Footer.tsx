@@ -253,7 +253,7 @@ export function Footer() {
               <p className="mb-1">
                 <a href="tel:763-427-3093" className="transition-colors hover:text-brand-primary">763-427-3093</a>
                 {' • '}
-                <a href="mailto:StacyLehn@GMail.com" className="transition-colors hover:text-brand-primary">StacyLehn@GMail.com</a>
+                <a href={`mailto:${COMPANY_INFO.email}`} className="transition-colors hover:text-brand-primary">{COMPANY_INFO.email}</a>
               </p>
               <p className="mt-2 italic">
                 Prices & Availability Subject To Change Without Notice

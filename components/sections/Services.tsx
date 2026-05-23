@@ -54,8 +54,8 @@ export function Services() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
             >
-              <Link href={slug}>
-                <Card className="group h-full cursor-pointer overflow-hidden p-0 border-0 shadow-none hover:shadow-lg transition-shadow duration-300" variant="elevated">
+              <Card className="h-full overflow-hidden p-0 border-0 shadow-none transition-shadow duration-300 hover:shadow-lg" variant="elevated">
+                <Link href={slug} className="group block h-full cursor-pointer">
                   {/* Service Image */}
                   <div className="relative h-32 overflow-hidden md:h-40">
                     <Image
@@ -77,8 +77,8 @@ export function Services() {
                     <h3 className="mb-1 text-base font-bold tracking-tight text-gray-900 md:mb-1.5 md:text-lg group-hover:text-brand-primary transition-colors duration-200">{service.title}</h3>
                     <p className="text-xs text-gray-600 leading-snug md:text-sm">{service.description}</p>
                   </div>
-                </Card>
-              </Link>
+                </Link>
+              </Card>
             </motion.div>
           )
         })}
