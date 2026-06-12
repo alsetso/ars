@@ -114,6 +114,7 @@ interface StaffPopupPos {
 }
 
 // ── Prospect type (map layer) ─────────────────────────────────────────────────
+// Sourced from pipeline (stage=prospect) joined with properties
 
 interface Prospect {
   id: string
@@ -121,12 +122,9 @@ interface Prospect {
   lat: number
   lng: number
   visible_issues: string[]
-  service_type: string | null
-  status: string
+  services: string[]
+  stage: string
   notes: string | null
-  name: string | null
-  phone: string | null
-  email: string | null
 }
 
 // ── Component ─────────────────────────────────────────────────────────────────
@@ -219,12 +217,12 @@ export default function MapView() {
             id:             p.id,
             full_address:   p.full_address ?? '',
             visible_issues: (p.visible_issues ?? []).join(', '),
-            service_type:   p.service_type ?? '—',
-            status:         p.status,
+            service_type:   p.services?.[0] ?? '—',
+            status:         p.stage,
             notes:          p.notes ?? '',
-            name:           p.name ?? '',
-            phone:          p.phone ?? '',
-            email:          p.email ?? '',
+            name:           '',
+            phone:          '',
+            email:          '',
           },
         })),
     }
@@ -263,6 +261,35 @@ export default function MapView() {
       },
     })
   }, [])
+
+  // ── Fetch prospects from pipeline and apply to map ────────────────────────
+
+  const fetchAndApplyProspects = useCallback(async (map: mapboxgl.Map) => {
+    const supabase = createClient()
+    const { data: raw } = await supabase
+      .from('pipeline')
+      .select(`
+        id, stage, visible_issues, services, notes,
+        properties!pipeline_property_id_fkey ( full_address, lat, lng )
+      `)
+      .eq('stage', 'prospect')
+
+    const prospects: Prospect[] = (raw ?? [])
+      .filter((r: any) => r.properties?.lat != null && r.properties?.lng != null)
+      .map((r: any) => ({
+        id:             r.id,
+        full_address:   r.properties?.full_address ?? null,
+        lat:            r.properties.lat as number,
+        lng:            r.properties.lng as number,
+        visible_issues: r.visible_issues ?? [],
+        services:       r.services ?? [],
+        stage:          r.stage,
+        notes:          r.notes ?? null,
+      }))
+
+    setProspectCount(prospects.length)
+    applyProspectsLayer(map, prospects)
+  }, [applyProspectsLayer])
 
   // ── Map init ────────────────────────────────────────────────────────────────
 
@@ -369,15 +396,8 @@ export default function MapView() {
         setPinScreenPos({ x: pt.x, y: pt.y })
       })
 
-      // ── Load prospects ─────────────────────────────────────────────────────
-      const { data: rawProspects } = await supabase
-        .from('prospects')
-        .select('id, full_address, lat, lng, visible_issues, service_type, status, notes, name, phone, email')
-        .neq('status', 'promoted')
-
-      const prospects: Prospect[] = (rawProspects ?? []) as Prospect[]
-      setProspectCount(prospects.filter((p) => p.lat != null).length)
-      applyProspectsLayer(map, prospects)
+      // ── Load prospects from pipeline ───────────────────────────────────────
+      await fetchAndApplyProspects(map)
 
       // ── Prospect pin hover ─────────────────────────────────────────────────
       map.on('mouseenter', 'prospects-circles', () => {
@@ -471,7 +491,7 @@ export default function MapView() {
       map.remove()
       mapRef.current = null
     }
-  }, [applyLeadsLayer, applyProspectsLayer])
+  }, [applyLeadsLayer, applyProspectsLayer, fetchAndApplyProspects])
 
   // ── Sync layer visibility ───────────────────────────────────────────────────
 
@@ -684,6 +704,7 @@ export default function MapView() {
           onClose={() => setProspectPanel(null)}
           onSaved={() => {
             setProspectPanel(null)
+            if (mapRef.current) fetchAndApplyProspects(mapRef.current)
           }}
         />
       )}

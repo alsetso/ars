@@ -236,18 +236,10 @@ function ProspectPopover({
       <div className="border-t border-gray-100 px-3.5 py-2 space-y-1.5">
         <div className="flex items-center justify-between">
           <a
-            href="/admin/prospects"
+            href={`/admin/pipeline/${data.id}`}
             className="flex items-center gap-1 text-[11px] font-semibold text-orange-500 transition-opacity hover:opacity-75"
           >
-            View Prospect <ArrowUpRight className="h-3 w-3" />
-          </a>
-          <a
-            href={`https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${data.full_address}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1 text-[11px] text-gray-400 transition-colors hover:text-gray-700"
-          >
-            Street View <ExternalLink className="h-2.5 w-2.5" />
+            View in Pipeline <ArrowUpRight className="h-3 w-3" />
           </a>
         </div>
         {onSkipTrace && (

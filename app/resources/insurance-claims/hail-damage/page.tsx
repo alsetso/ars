@@ -16,6 +16,9 @@ import {
   Eye,
   HelpCircle,
   Phone,
+  Building2,
+  Award,
+  Users,
 } from 'lucide-react'
 import Link from 'next/link'
 import type { Metadata } from 'next'

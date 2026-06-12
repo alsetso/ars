@@ -72,7 +72,7 @@ const breadcrumbs = [
 export default function MinnesotaServiceAreasPage() {
   return (
     <>
-      <BreadcrumbSchema breadcrumbs={breadcrumbs} />
+      <BreadcrumbSchema items={breadcrumbs} />
       <PageLayout>
 
         {/* Hero */}

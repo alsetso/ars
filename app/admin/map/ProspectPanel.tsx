@@ -55,9 +55,6 @@ export function ProspectPanel({ initAddress, initLat, initLng, onClose, onSaved 
   const [selectedIssues, setSelectedIssues] = useState<Set<string>>(new Set())
   const [serviceType, setServiceType] = useState('')
   const [notes,       setNotes]       = useState('')
-  const [name,        setName]        = useState('')
-  const [phone,       setPhone]       = useState('')
-  const [email,       setEmail]       = useState('')
 
   function toggleIssue(v: string) {
     setSelectedIssues((prev) => {
@@ -90,9 +87,6 @@ export function ProspectPanel({ initAddress, initLat, initLng, onClose, onSaved 
           visible_issues: Array.from(selectedIssues),
           services:      serviceType ? [serviceType] : [],
           notes:         notes || null,
-          name:          name  || null,
-          phone:         phone || null,
-          email:         email || null,
         })
         setSavedId(result.pipelineId)
         setSaved(true)
@@ -198,29 +192,6 @@ export function ProspectPanel({ initAddress, initLat, initLng, onClose, onSaved 
               placeholder="Additional observations…"
               className="w-full resize-none rounded-lg border border-gray-200 px-3 py-2 text-xs text-gray-700 placeholder-gray-300 focus:border-brand-primary focus:outline-none focus:ring-1 focus:ring-brand-primary"
             />
-          </div>
-
-          {/* Optional contact */}
-          <div>
-            <p className="mb-2 text-[10px] font-bold uppercase tracking-widest text-gray-400">
-              Contact Info <span className="font-normal normal-case text-gray-300">(optional)</span>
-            </p>
-            <div className="space-y-2">
-              {[
-                { value: name,  setter: setName,  placeholder: 'Owner name', type: 'text'  },
-                { value: phone, setter: setPhone, placeholder: 'Phone',      type: 'tel'   },
-                { value: email, setter: setEmail, placeholder: 'Email',      type: 'email' },
-              ].map(({ value, setter, placeholder, type }) => (
-                <input
-                  key={placeholder}
-                  type={type}
-                  value={value}
-                  onChange={(e) => setter(e.target.value)}
-                  placeholder={placeholder}
-                  className="w-full rounded-lg border border-gray-200 px-3 py-2 text-xs text-gray-700 placeholder-gray-300 focus:border-brand-primary focus:outline-none focus:ring-1 focus:ring-brand-primary"
-                />
-              ))}
-            </div>
           </div>
 
           {error && (

@@ -55,7 +55,7 @@ const breadcrumbs = [
 export default function WisconsinServiceAreasPage() {
   return (
     <>
-      <BreadcrumbSchema breadcrumbs={breadcrumbs} />
+      <BreadcrumbSchema items={breadcrumbs} />
       <PageLayout>
 
         {/* Hero */}
