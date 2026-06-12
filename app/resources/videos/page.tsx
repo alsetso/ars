@@ -5,6 +5,7 @@ import { Card } from '@/components/ui/Card'
 import { AnimatedDiv } from '@/components/ui/AnimatedDiv'
 import { PlayCircle, Calendar, MapPin, Camera, Video, MessageSquare, Mail, Star } from 'lucide-react'
 import type { Metadata } from 'next'
+import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -47,6 +48,11 @@ const VIDEOS = [
 export default function VideosPage() {
   return (
     <PageLayout>
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: '/' },
+        { name: 'Resources', url: '/resources' },
+        { name: 'Project Videos', url: '/resources/videos' },
+      ]} />
       <PageHero
         title="Our Project Videos"
         description="Watch Advanced Roofing & Siding Inc. in action across Minnesota and Wisconsin"

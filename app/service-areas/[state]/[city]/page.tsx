@@ -5,9 +5,10 @@ import { Card } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { AnimatedDiv } from '@/components/ui/AnimatedDiv'
 import { LocalBusinessSchema } from '@/components/seo/LocalBusinessSchema'
-import { RelatedCities } from '@/components/seo/RelatedCities'
+import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema'
+import { ServiceAreaCities } from '@/components/seo/ServiceAreaCities'
 import { InsuranceClaimsCTA } from '@/components/sections/InsuranceClaimsCTA'
-import { CityContactForm } from '@/components/forms/CityContactForm'
+import { EstimateForm } from '@/components/forms/EstimateForm'
 import { COMPANY_INFO, SERVICES } from '@/lib/constants'
 import { getAllCityData, slugToCity } from '@/lib/city-utils'
 import { generateCityContent } from '@/lib/content-generator'
@@ -52,14 +53,21 @@ export async function generateMetadata({
     title: `Roofing & Siding in ${cityName}, ${stateAbbr} | Free Estimates | Advanced Roofing & Siding`,
     description: `Expert roofing, siding, windows, and storm restoration services in ${cityName}, ${stateName}. GAF Master Elite contractor with 30+ years of experience. Free estimates!`,
     keywords: [
-      `roofing ${cityName}`,
-      `siding ${cityName}`,
+      `roofing contractor ${cityName} ${stateAbbr}`,
+      `siding contractor ${cityName} ${stateAbbr}`,
       `${cityName} roofing contractor`,
-      `${cityName} ${stateAbbr}`,
-      `exterior services ${cityName}`,
-      `${cityName} ${stateName} roofing`,
-      `roof replacement ${cityName}`,
-      `storm damage ${cityName}`,
+      `roof replacement ${cityName} ${stateAbbr}`,
+      `siding installation ${cityName} ${stateAbbr}`,
+      `window replacement ${cityName} ${stateAbbr}`,
+      `gutter installation ${cityName}`,
+      `storm damage repair ${cityName}`,
+      `hail damage ${cityName} ${stateAbbr}`,
+      `GAF roofing contractor ${cityName}`,
+      `exterior remodeling ${cityName} ${stateAbbr}`,
+      `licensed roofer ${cityName} ${stateAbbr}`,
+      `roofing company ${cityName}`,
+      `free estimate roofing ${cityName}`,
+      `Advanced Roofing Siding ${cityName}`,
     ],
     alternates: {
       canonical: cityUrl,
@@ -113,6 +121,13 @@ export default function CityServiceAreaPage({
   return (
     <>
       <LocalBusinessSchema city={cityName} state={stateAbbr} stateFull={stateName} />
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Service Areas', url: '/service-areas' },
+          { name: `${cityName}, ${stateAbbr}`, url: `/service-areas/${cityData.state}/${cityData.slug}` },
+        ]}
+      />
       <PageLayout>
         <PageHero
         title={`Roofing & Siding in ${cityName}, ${stateAbbr}`}
@@ -139,7 +154,7 @@ export default function CityServiceAreaPage({
                     Fill out the form below and we'll contact you within 24 hours to schedule your free
                     estimate.
                   </p>
-                  <CityContactForm cityName={cityName} stateAbbr={stateAbbr} />
+                  <EstimateForm cityName={cityName} stateAbbr={stateAbbr} />
 
                   <div className="mt-6 border-t border-gray-200 pt-6">
                     <h3 className="mb-4 text-xl font-bold text-gray-900">Contact Information</h3>
@@ -346,10 +361,10 @@ export default function CityServiceAreaPage({
                     <h3 className="mb-2 text-xl font-bold text-gray-900">{service.title}</h3>
                     <p className="mb-4 text-gray-600">{service.description}</p>
                     <a
-                      href={`/services/${service.id === 'restoration' ? 'storm-restoration' : service.id}`}
+                      href={`/services/${service.id === 'restoration' ? 'storm-restoration' : service.id}/${cityData.state}/${cityData.slug}`}
                       className="text-sm font-semibold text-brand-primary hover:text-red-800"
                     >
-                      Learn More →
+                      {service.title} in {cityName} →
                     </a>
                   </Card>
                 </AnimatedDiv>
@@ -401,7 +416,11 @@ export default function CityServiceAreaPage({
         </div>
         
         {/* Related Cities */}
-        <RelatedCities currentCity={cityName} currentState={stateAbbr} />
+        <ServiceAreaCities
+            linkBase="/service-areas"
+            title="Also Serving These Areas"
+            subtitle="We serve homeowners across Minnesota and Wisconsin. Select your city to learn more."
+          />
       </Section>
       </PageLayout>
     </>

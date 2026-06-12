@@ -1,11 +1,19 @@
 import { PageLayout } from '@/components/layout/PageLayout'
 import { PageHero } from '@/components/ui/PageHero'
-import { Section, SectionHeader } from '@/components/ui/Section'
-import { Card } from '@/components/ui/Card'
+import { Section } from '@/components/ui/Section'
 import { Button } from '@/components/ui/Button'
 import { AnimatedDiv } from '@/components/ui/AnimatedDiv'
+import { ServiceProcess } from '@/components/sections/ServiceProcess'
+import { ServiceHighlights } from '@/components/sections/ServiceHighlights'
+import { ServiceCapabilities } from '@/components/sections/ServiceCapabilities'
+import { ServiceFAQ } from '@/components/sections/ServiceFAQ'
+import { RelatedServices } from '@/components/sections/RelatedServices'
 import { FAQSchema } from '@/components/seo/FAQSchema'
-import { CheckCircle, PaintBucket, Home, Shield, ArrowRight, Wrench, FileCheck, Square, CloudRain } from 'lucide-react'
+import { ServiceAreaCities } from '@/components/seo/ServiceAreaCities'
+import { ServiceSchema } from '@/components/seo/ServiceSchema'
+import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema'
+import { LocalBusinessSchema } from '@/components/seo/LocalBusinessSchema'
+import { ArrowRight } from 'lucide-react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
@@ -40,51 +48,6 @@ const features = [
   { text: '30+ Years of Experience', link: '/about' },
 ]
 
-const sidingTypes = [
-  {
-    title: 'Vinyl Siding',
-    description: 'Affordable, low-maintenance vinyl siding that resists fading, cracking, and warping. Available in numerous colors and styles to match your home\'s aesthetic.',
-    icon: PaintBucket,
-  },
-  {
-    title: 'Fiber Cement Siding',
-    description: 'Durable fiber cement siding offers exceptional weather resistance and longevity. Perfect for Minnesota homes requiring superior protection against harsh elements.',
-    icon: Shield,
-  },
-  {
-    title: 'Wood Siding',
-    description: 'Classic wood siding provides natural beauty and timeless appeal. We offer expert installation and maintenance for cedar, pine, and other premium wood options.',
-    icon: Home,
-  },
-]
-
-const processSteps = [
-  {
-    step: 1,
-    title: 'Exterior Assessment & Consultation',
-    description: 'We evaluate your current siding condition, discuss your goals, and recommend the best materials and styles for your home and budget.',
-    icon: FileCheck,
-  },
-  {
-    step: 2,
-    title: 'Material Selection & Estimate',
-    description: 'Choose from premium siding options including vinyl, fiber cement, and wood. Receive a detailed estimate with material specifications and timeline.',
-    icon: FileCheck,
-  },
-  {
-    step: 3,
-    title: 'Professional Installation',
-    description: 'Our skilled craftsmen perform expert installation with proper insulation, moisture barriers, and finishing details to ensure lasting protection and beauty.',
-    icon: Wrench,
-  },
-  {
-    step: 4,
-    title: 'Final Inspection & Warranty',
-    description: 'Complete quality inspection ensures perfect installation. Your new siding comes with manufacturer warranties and our workmanship guarantee.',
-    icon: Shield,
-  },
-]
-
 const faqs = [
   {
     question: 'How long does siding installation take?',
@@ -116,244 +79,97 @@ export default function SidingPage() {
   return (
     <PageLayout>
       <FAQSchema faqs={faqs} />
+      <ServiceSchema
+        serviceName="Siding"
+        serviceDescription="Durable, weather-resistant siding systems built for Minnesota's climate"
+        serviceUrl="/services/siding"
+      />
+      <LocalBusinessSchema pageUrl="/services/siding" />
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Services', url: '/services' },
+          { name: 'Siding', url: '/services/siding' },
+        ]}
+      />
       <PageHero
         title="Siding Solutions"
         description="Transform your exterior with durable, weather-resistant siding systems"
         backgroundImage="/gallery/310571525_636102627992261_6745535343486299305_n.webp"
+        showForm
+        formServiceSlug="siding"
       />
+
+      {/* Intro */}
       <Section className="bg-white">
         <div className="mx-auto max-w-4xl">
-          <Card className="mb-6 p-4 md:mb-8 md:p-6">
-            <div className="prose prose-lg max-w-none">
-              <p className="text-sm text-gray-700 mb-3 md:text-lg md:mb-4">
-                Your home's siding is its first line of defense against the elements. At Advanced
-                Roofing & Siding Inc., we offer comprehensive siding solutions that combine
-                durability, aesthetics, and energy efficiency for <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota and Wisconsin homes</Link>.
-              </p>
-              <p className="text-sm text-gray-700 mb-3 md:text-lg md:mb-4">
-                We work with premium materials including vinyl siding, fiber cement siding, and wood siding,
-                helping you choose the perfect option for your home's style and budget. Our expert
-                installation ensures your siding will withstand <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota's extreme weather
-                conditions</Link> while enhancing your home's curb appeal and value. For complete exterior solutions, we also offer <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roofing</Link> and <Link href="/services/windows" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">window installation</Link> services.
-              </p>
-              <p className="text-sm text-gray-700 md:text-lg">
-                Whether you need complete siding replacement, siding repair, or new construction siding installation, our <Link href="/about" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">experienced team</Link> provides professional service backed by quality materials and expert craftsmanship. We specialize in residential siding and commercial siding projects, ensuring your property is protected and beautiful for years to come.
-              </p>
-            </div>
-          </Card>
-
-          <div className="mb-6 grid gap-3 md:mb-8 md:gap-6 md:grid-cols-2">
-            {features.map((feature, index) => (
-              <AnimatedDiv
-                key={feature.text}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <div className="flex items-start gap-2 md:gap-3">
-                  <CheckCircle className="h-5 w-5 flex-shrink-0 text-brand-primary md:h-6 md:w-6" />
-                  <span className="text-sm text-gray-700 md:text-base">
-                    {feature.link ? (
-                      <Link href={feature.link} className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">
-                        {feature.text}
-                      </Link>
-                    ) : (
-                      feature.text
-                    )}
-                  </span>
-                </div>
-              </AnimatedDiv>
-            ))}
+          <div className="prose prose-lg max-w-none">
+            <p className="mb-3 text-sm text-gray-700 md:mb-4 md:text-lg">
+              Your home's siding is its first line of defense against the elements. At Advanced
+              Roofing & Siding Inc., we offer comprehensive siding solutions that combine
+              durability, aesthetics, and energy efficiency for <Link href="/service-areas" className="font-semibold text-brand-primary underline underline-offset-2 hover:text-red-800">Minnesota and Wisconsin homes</Link>.
+            </p>
+            <p className="mb-3 text-sm text-gray-700 md:mb-4 md:text-lg">
+              We work with premium materials including vinyl, fiber cement, and wood siding —
+              helping you choose the right option for your home's style, budget, and the demands of{' '}
+              <Link href="/service-areas" className="font-semibold text-brand-primary underline underline-offset-2 hover:text-red-800">Minnesota's climate</Link>. For complete exterior solutions, we also offer{' '}
+              <Link href="/services/roofing" className="font-semibold text-brand-primary underline underline-offset-2 hover:text-red-800">roofing</Link> and{' '}
+              <Link href="/services/windows" className="font-semibold text-brand-primary underline underline-offset-2 hover:text-red-800">window installation</Link>.
+            </p>
+            <p className="text-sm text-gray-700 md:text-lg">
+              Whether you need complete siding replacement or targeted repairs, our <Link href="/about" className="font-semibold text-brand-primary underline underline-offset-2 hover:text-red-800">experienced team</Link> delivers professional service backed by quality materials and expert craftsmanship.
+            </p>
           </div>
+          <ServiceHighlights highlights={features} />
         </div>
       </Section>
 
-      {/* Siding Types Section */}
-      <Section className="bg-gray-50">
-        <div className="mx-auto max-w-4xl">
-          <SectionHeader
-            title="Siding Materials & Options"
-            description="Premium siding solutions designed for Minnesota and Wisconsin homes"
-          />
-          <div className="grid grid-cols-2 gap-3 md:gap-4 md:grid-cols-3 mb-6 md:mb-8">
-            {sidingTypes.map((type, index) => {
-              const Icon = type.icon
-              return (
-                <AnimatedDiv
-                  key={type.title}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                >
-                  <Card className="h-full text-center p-3 md:p-5">
-                    <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100 md:mb-4 md:h-12 md:w-12">
-                      <Icon className="h-5 w-5 text-brand-primary md:h-6 md:w-6" strokeWidth={2} />
-                    </div>
-                    <h3 className="mb-1 text-sm font-bold text-gray-900 md:mb-2 md:text-lg">{type.title}</h3>
-                    <p className="text-xs text-gray-600 md:text-sm">{type.description}</p>
-                  </Card>
-                </AnimatedDiv>
-              )
-            })}
-          </div>
-        </div>
-      </Section>
+      <ServiceCapabilities serviceSlug="siding" />
 
-      {/* Process Section */}
+      <ServiceProcess serviceSlug="siding" />
+
+      <ServiceFAQ faqs={faqs} description="Common questions about our siding services" />
+
+      <RelatedServices serviceSlug="siding" />
+
+      {/* Service Areas by City */}
       <Section className="bg-white">
         <div className="mx-auto max-w-4xl">
-          <SectionHeader
-            title="Our Siding Installation Process"
-            description="A proven 4-step approach to quality siding installation"
-          />
-          <div className="space-y-4 mb-6 md:space-y-6 md:mb-8">
-            {processSteps.map((step, index) => {
-              const Icon = step.icon
-              return (
-                <AnimatedDiv
-                  key={step.step}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                >
-                  <Card className="border-2 border-gray-100 p-3 md:p-5">
-                    <div className="flex gap-3 md:gap-6">
-                      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-red-700 to-red-800 text-white text-lg font-bold md:h-14 md:w-14 md:text-xl">
-                        {step.step}
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="mb-1 text-base font-bold text-gray-900 md:mb-2 md:text-2xl">{step.title}</h3>
-                        <p className="text-sm text-gray-700 md:text-lg">{step.description}</p>
-                      </div>
-                    </div>
-                  </Card>
-                </AnimatedDiv>
-              )
-            })}
-          </div>
+          <ServiceAreaCities serviceSlug="siding" serviceTitle="Siding" />
         </div>
       </Section>
 
-      {/* FAQ Section */}
-      <Section className="bg-gray-50">
-        <div className="mx-auto max-w-4xl">
-          <SectionHeader
-            title="Frequently Asked Questions"
-            description="Common questions about our siding services"
-          />
-          <div className="space-y-3 mb-6 md:space-y-4 md:mb-8">
-            {faqs.map((faq, index) => (
-              <AnimatedDiv
-                key={faq.question}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-              >
-                <Card className="p-3 md:p-5">
-                  <h3 className="mb-1.5 text-sm font-bold text-gray-900 md:mb-2 md:text-lg">{faq.question}</h3>
-                  <p className="text-xs text-gray-700 md:text-base">{faq.answer}</p>
-                </Card>
-              </AnimatedDiv>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      {/* Related Services */}
-      <Section className="bg-white">
-        <div className="mx-auto max-w-4xl">
-          <SectionHeader
-            title="Complete Exterior Solutions"
-            description="We offer comprehensive exterior services for your Minnesota or Wisconsin home"
-          />
-          <div className="grid grid-cols-2 gap-3 md:gap-4 md:grid-cols-3 mb-6 md:mb-8">
-            <AnimatedDiv
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4 }}
-            >
-              <Link href="/services/roofing">
-                <Card className="h-full cursor-pointer text-center p-3 md:p-5">
-                  <Home className="mx-auto mb-2 h-8 w-8 text-brand-primary md:mb-3 md:h-10 md:w-10" />
-                  <h3 className="mb-1 text-sm font-bold text-gray-900 md:mb-2 md:text-base">Premium Roofing</h3>
-                  <p className="mb-2 text-xs text-gray-600 md:mb-3 md:text-sm">GAF Master Elite certified</p>
-                  <span className="text-xs font-semibold text-brand-primary">Learn More →</span>
-                </Card>
-              </Link>
-            </AnimatedDiv>
-            <AnimatedDiv
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.1 }}
-            >
-              <Link href="/services/windows">
-                <Card className="h-full cursor-pointer text-center p-3 md:p-5">
-                  <Square className="mx-auto mb-2 h-8 w-8 text-brand-primary md:mb-3 md:h-10 md:w-10" />
-                  <h3 className="mb-1 text-sm font-bold text-gray-900 md:mb-2 md:text-base">Window Installation</h3>
-                  <p className="mb-2 text-xs text-gray-600 md:mb-3 md:text-sm">Energy-efficient windows</p>
-                  <span className="text-xs font-semibold text-brand-primary">Learn More →</span>
-                </Card>
-              </Link>
-            </AnimatedDiv>
-            <AnimatedDiv
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.2 }}
-            >
-              <Link href="/services/storm-restoration">
-                <Card className="h-full cursor-pointer text-center p-3 md:p-5">
-                  <CloudRain className="mx-auto mb-2 h-8 w-8 text-brand-primary md:mb-3 md:h-10 md:w-10" />
-                  <h3 className="mb-1 text-sm font-bold text-gray-900 md:mb-2 md:text-base">Storm Restoration</h3>
-                  <p className="mb-2 text-xs text-gray-600 md:mb-3 md:text-sm">Expert damage repair</p>
-                  <span className="text-xs font-semibold text-brand-primary">Learn More →</span>
-                </Card>
-              </Link>
-            </AnimatedDiv>
-          </div>
-        </div>
-      </Section>
-
-      {/* CTA Section */}
+      {/* CTA */}
       <Section className="bg-gradient-to-br from-red-50 to-white">
-        <div className="mx-auto max-w-4xl text-center">
+        <div className="mx-auto max-w-3xl text-center">
           <AnimatedDiv
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
           >
-            <Card className="bg-white border-2 border-red-100 p-4 md:p-6">
-              <h2 className="mb-2 text-lg font-bold text-gray-900 md:mb-3 md:text-3xl">
-                Ready to Transform Your Home's Exterior?
-              </h2>
-              <p className="mb-4 text-sm text-gray-700 md:mb-6 md:text-lg max-w-2xl mx-auto">
-                Get your free estimate for premium siding installation. We serve <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota and Wisconsin</Link> with expert siding services backed by quality materials and professional installation.
-              </p>
-              <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
-                <Link href="/services/free-estimate">
-                  <Button variant="primary" size="md" className="w-full sm:w-auto md:size-lg">
-                    Get Free Estimate
-                    <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
-                  </Button>
-                </Link>
-                <Link href="/services">
-                  <Button variant="outline" size="md" className="w-full sm:w-auto md:size-lg">
-                    View All Services
-                  </Button>
-                </Link>
-              </div>
-            </Card>
+            <h2 className="mb-3 text-2xl font-bold text-gray-900 md:text-3xl">
+              Ready to Transform Your Home's Exterior?
+            </h2>
+            <p className="mb-6 text-sm text-gray-600 md:text-base">
+              Free estimate for premium siding installation. We serve <Link href="/service-areas" className="font-semibold text-brand-primary hover:text-red-800 underline underline-offset-2">Minnesota and Wisconsin</Link> with expert siding backed by quality materials and professional installation.
+            </p>
+            <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
+              <Link href="/services/free-estimate">
+                <Button variant="primary" size="md" className="w-full sm:w-auto md:size-lg">
+                  Get Free Estimate
+                  <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
+                </Button>
+              </Link>
+              <Link href="/services">
+                <Button variant="outline" size="md" className="w-full sm:w-auto md:size-lg">
+                  View All Services
+                </Button>
+              </Link>
+            </div>
           </AnimatedDiv>
         </div>
       </Section>
     </PageLayout>
   )
 }
-

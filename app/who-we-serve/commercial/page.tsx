@@ -1,360 +1,217 @@
 import { PageLayout } from '@/components/layout/PageLayout'
 import { PageHero } from '@/components/ui/PageHero'
-import { Section, SectionHeader } from '@/components/ui/Section'
-import { Card } from '@/components/ui/Card'
+import { ReviewsBanner } from '@/components/sections/ReviewsBanner'
+import { InsuranceClaimsCTA } from '@/components/sections/InsuranceClaimsCTA'
 import { AnimatedDiv } from '@/components/ui/AnimatedDiv'
-import { Button } from '@/components/ui/Button'
-import { Building2, Shield, ArrowRight, Clock, Award, Users, FileCheck, TrendingUp, ArrowLeft, HelpCircle } from 'lucide-react'
+import { Building2, Shield, Clock, Award, FileCheck, CheckCircle, ArrowRight, Phone } from 'lucide-react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { FAQSchema } from '@/components/seo/FAQSchema'
+import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema'
+import { COMPANY_INFO } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'Commercial Roofing Contractor | Minnesota & Wisconsin | Flat Roofs, TPO, EPDM',
-  description: 'Advanced Roofing & Siding provides commercial roofing, flat roof repair, TPO/EPDM installation, storm restoration, and exterior services for businesses across Minnesota & Wisconsin. Schedule a commercial roof inspection.',
+  title: 'Commercial Roofing & Exterior Services | Minnesota & Wisconsin | Advanced Roofing & Siding',
+  description: 'Advanced Roofing & Siding provides certified commercial roofing (TPO, EPDM, flat roof), siding, and storm restoration for businesses across Minnesota and Wisconsin. Free inspections.',
   keywords: [
-    'commercial roofing contractor Minnesota',
-    'commercial roofing contractor Wisconsin',
-    'flat roofing Minnesota',
-    'TPO roofing contractor MN',
-    'commercial roof replacement Minneapolis',
-    'commercial roof repair Twin Cities',
-    'industrial roofing services MN',
-    'commercial roof maintenance plans Minnesota',
-    'commercial roof inspection MN',
-    'commercial exterior contractor Minnesota',
-    'commercial siding contractor MN',
+    'commercial roofing Minnesota',
+    'flat roof contractor MN',
+    'TPO roofing contractor Minnesota',
     'EPDM roofing Minnesota',
-    'business roofing services Wisconsin',
-    'commercial roofing near me MN',
-    'Twin Cities commercial roofers',
-    'commercial storm damage Minnesota',
-    'commercial roof insurance claims MN',
-    'commercial building exterior repair',
-    'retail building roofing MN',
-    'apartment building roofing MN',
-    'warehouse roof replacement MN',
-    'office building roof repair Minnesota',
-    'school, church & municipal roofing services',
+    'commercial roof replacement Minneapolis',
+    'commercial siding contractor MN',
+    'commercial storm damage restoration MN',
+    'business roofing contractor Minnesota',
+    'commercial roofing Wisconsin',
+    'office building roofing MN',
+    'warehouse roofing contractor Minnesota',
+    'commercial roof inspection MN',
+    'commercial exterior contractor Twin Cities',
+    'low slope roofing MN',
+    'commercial insurance claim roofing MN',
   ],
-  alternates: {
-    canonical: 'https://advancedroofingmn.com/who-we-serve/commercial',
-  },
+  alternates: { canonical: 'https://advancedroofingmn.com/who-we-serve/commercial' },
   openGraph: {
-    title: 'Commercial Roofing & Exterior Services for Minnesota & Wisconsin Businesses',
-    description: 'Trusted commercial roofing contractor for flat roofs, low-slope systems, storm repairs, and building exterior upgrades. Serving Minnesota & Wisconsin businesses since 2001.',
+    title: 'Commercial Roofing & Exterior Services in Minnesota & Wisconsin',
+    description: 'TPO, EPDM, flat roof, siding, and storm restoration for commercial properties. Serving MN & WI businesses.',
     url: 'https://advancedroofingmn.com/who-we-serve/commercial',
     type: 'website',
-    images: [
-      {
-        url: 'https://advancedroofingmn.com/AFS-Logo900.png',
-        width: 1200,
-        height: 630,
-        alt: 'Commercial Roofing & Siding Services - Advanced Roofing & Siding Inc.',
-      },
-    ],
+    images: [{ url: 'https://advancedroofingmn.com/AFS-Logo900.png', width: 1200, height: 630, alt: 'Commercial Roofing Services - Advanced Roofing & Siding Inc.' }],
   },
 }
 
-const roofingServices = [
-  {
-    title: 'Flat Roof Replacement & Repair (TPO, EPDM, Mod-Bit)',
-    description: 'Complete system installation using TPO, EPDM, modified bitumen, and other commercial roofing materials. We diagnose membrane failures, seam separations, ponding water, and drainage issues with detailed inspections and photo documentation.',
-    icon: Building2,
-  },
-  {
-    title: 'Low-Slope Roofing Systems for Commercial Buildings',
-    description: 'Expert installation and repair of low-slope roofing systems for office buildings, retail spaces, warehouses, and industrial facilities. We ensure code-compliant, durable solutions that stand up to Minnesota\'s extreme weather.',
-    icon: Shield,
-  },
-  {
-    title: 'Commercial Storm Damage Restoration',
-    description: 'Fast response for storm-related deterioration, hail impacts, wind uplift, and ongoing leaks. We assist with insurance claims, helping building owners navigate coverage, documentation, and approved repair scopes.',
-    icon: Clock,
-  },
-]
-
-const exteriorServices = [
-  {
-    title: 'Commercial Siding Installation',
-    description: 'Professional exterior siding replacement and installation for commercial buildings, maintaining your business\'s professional appearance and protecting your investment from weather damage.',
-    icon: Shield,
-  },
-  {
-    title: 'Window Replacement & Building Envelope Upgrades',
-    description: 'Complete window upgrades and building envelope improvements to enhance energy efficiency, reduce operating costs, and improve the overall performance of your commercial property.',
-    icon: FileCheck,
-  },
-  {
-    title: 'Ice Dams, Drainage Issues & Seasonal Maintenance',
-    description: 'Comprehensive solutions for ice dam mitigation, drainage problems, and long-term maintenance planning. Regular inspections help extend the lifespan of your commercial roof and prevent costly repairs.',
-    icon: Building2,
-  },
-]
-
-const faqs = [
-  {
-    question: 'What commercial roofing materials do you install?',
-    answer: 'We install TPO, EPDM, modified bitumen, asphalt shingles, and metal roofing systems for commercial and industrial buildings.',
-  },
-  {
-    question: 'Can you repair leaks on flat or low-slope roofs?',
-    answer: 'Yes. We specialize in diagnosing membrane failures, seam separations, ponding water, and drainage issues on flat and low-slope roofs.',
-  },
-  {
-    question: 'Do you work with property managers and multi-building portfolios?',
-    answer: 'Yes. We provide roofing, siding, and exterior services for multifamily properties, HOAs, retail buildings, office facilities, and warehouses.',
-  },
-  {
-    question: 'Can you help with commercial insurance claims?',
-    answer: 'Yes. We assist with photo documentation, reporting, and adjuster coordination to ensure accurate coverage evaluations for commercial buildings.',
-  },
-  {
-    question: 'How do you minimize business disruption during roofing?',
-    answer: 'We work around your operating hours, maintain clean job sites, and implement safety protocols to avoid downtime for employees and customers.',
-  },
-  {
-    question: 'How often should a commercial roof be inspected?',
-    answer: 'Inspection is recommended twice a year — spring and fall — to detect early signs of membrane wear, drainage issues, or storm damage.',
-  },
+const services = [
+  { title: 'Flat Roof Replacement & Repair (TPO, EPDM, Mod-Bit)', href: '/services/roofing', icon: Building2, desc: 'Membrane installs and repairs. We diagnose seam failures, ponding water, and drainage issues with photo documentation.' },
+  { title: 'Low-Slope Roofing Systems', href: '/services/roofing', icon: Shield, desc: 'Office buildings, warehouses, retail centers — code-compliant, durable systems built for MN weather extremes.' },
+  { title: 'Commercial Storm Damage Restoration', href: '/resources/insurance-claims', icon: Clock, desc: 'Hail, wind, and uplift assessments with full insurance claim coordination and adjuster support.' },
+  { title: 'Commercial Siding Installation', href: '/services/siding', icon: Shield, desc: 'Exterior siding replacement for commercial buildings — professional appearance, long-term weather protection.' },
+  { title: 'Window & Building Envelope Upgrades', href: '/services/windows', icon: FileCheck, desc: 'Energy-efficient window systems and envelope improvements that reduce operating costs and improve building performance.' },
+  { title: 'Ice Dam Mitigation & Seasonal Maintenance', href: '/services/storm-restoration', icon: Building2, desc: 'Drainage solutions and maintenance plans to extend roof life and prevent costly repairs from MN winters.' },
 ]
 
 const whyChoose = [
-  {
-    icon: Clock,
-    title: 'Minimal Disruption to Operations',
-    description: 'We schedule work around your operating hours, create designated safety zones, and maintain a clean, organized site to avoid downtime for employees and customers.',
-  },
-  {
-    icon: Award,
-    title: 'Certified Installers & Long-Term Warranties',
-    description: 'As a certified, five-star rated contractor with decades of local experience, we provide reliable workmanship and industry-leading warranties for commercial properties.',
-  },
-  {
-    icon: Shield,
-    title: 'Insurance Claim Support for Commercial Properties',
-    description: 'We assist with photo documentation, reporting, and adjuster coordination to ensure accurate coverage evaluations and approved repair scopes for commercial buildings.',
-  },
+  { text: 'Minimal disruption — we schedule around your operating hours', href: '/contact' },
+  { text: 'GAF Master Elite® Certified — top 3% of contractors nationwide', href: '/resources/gaf-master-elite-contractor' },
+  { text: 'Full insurance claim documentation and adjuster coordination', href: '/resources/insurance-claims' },
+  { text: 'TPO, EPDM, modified bitumen, asphalt, and metal roofing expertise', href: '/services/roofing' },
+  { text: '160+ five-star reviews from MN & WI commercial clients', href: '/resources/reviews' },
+  { text: 'Serving the Twin Cities metro and greater Minnesota & Wisconsin', href: '/service-areas' },
 ]
 
+const faqs = [
+  { question: 'What commercial roofing systems do you install?', answer: 'We install TPO, EPDM, modified bitumen, architectural asphalt shingles, and metal roofing — selected based on your building\'s slope, structure, and budget requirements.' },
+  { question: 'Can you repair leaks on flat or low-slope roofs?', answer: 'Yes. We specialize in diagnosing membrane failures, seam separations, ponding water, and drainage issues on flat and low-slope commercial roofs.' },
+  { question: 'Do you assist with commercial insurance claims?', answer: 'Yes. We provide photo documentation, reporting, and adjuster coordination to ensure accurate coverage evaluations and approved repair scopes for commercial buildings.' },
+  { question: 'How do you minimize disruption during commercial roofing?', answer: 'We schedule around operating hours, maintain clean job sites, designate safety zones, and implement communication plans to avoid downtime for employees and customers.' },
+  { question: 'Do you serve multi-building portfolios and property managers?', answer: 'Yes. We provide roofing, siding, and exterior services for multi-building portfolios, HOAs, retail strips, office parks, and warehouse facilities.' },
+  { question: 'How often should a commercial roof be inspected?', answer: 'Twice yearly — spring and fall — to detect early signs of membrane wear, drainage problems, or storm damage before they become major failures.' },
+]
 
 export default function CommercialWhoWeServePage() {
   return (
     <>
       <FAQSchema faqs={faqs} />
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: '/' },
+        { name: 'Who We Serve', url: '/who-we-serve' },
+        { name: 'Commercial', url: '/who-we-serve/commercial' },
+      ]} />
       <PageLayout>
-      <PageHero
-        title="Commercial Services"
-        description="Expert commercial exterior services for business owners and managers. Professional roofing, siding, and building maintenance for commercial properties"
-      />
+        <PageHero
+          title="Commercial Services"
+          description="Expert commercial exterior services for business owners and managers. Professional roofing, siding, and building maintenance for commercial properties"
+          showForm
+          theme="dark"
+          backHref="/who-we-serve"
+          backLabel="Who We Serve"
+        />
 
-      {/* Back Button */}
-      <Section className="bg-white py-4">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <Link href="/who-we-serve">
-            <Button variant="outline" size="md" className="group">
-              <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
-              Back to Who We Serve
-            </Button>
-          </Link>
-        </div>
-      </Section>
+        <ReviewsBanner />
 
-      {/* Introduction - SEO Content */}
-      <Section className="bg-white">
-        <div className="mx-auto max-w-4xl">
-          <Card>
-            <div className="prose prose-lg max-w-none">
-              <p className="text-lg text-gray-700 mb-4">
-                Your building is an asset, and downtime is expensive. Advanced Roofing & Siding provides professional commercial roofing and exterior services across <Link href="/service-areas/minnesota" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota</Link> and <Link href="/service-areas/wisconsin" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Western Wisconsin</Link>, helping businesses protect their investments with durable, code-compliant, and long-lasting solutions. From retail stores and office buildings to warehouses, multifamily properties, restaurants, and industrial facilities, we deliver certified commercial <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roofing systems</Link> that stand up to the region's extreme weather. Our team brings more than 20 years of experience working with complex commercial structures, flat roofs, low-slope roofs, and multi-unit exterior upgrades. As a <Link href="/resources/gaf-master-elite-contractor" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">GAF Master Elite® contractor</Link>, we provide <Link href="/warranties" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">industry-leading warranties</Link> that protect your commercial investment.
-              </p>
-              <p className="text-lg text-gray-700 mb-4">
-                Commercial roofing requires specialized expertise, and we offer complete system installation using TPO, EPDM, modified bitumen, asphalt shingles, and metal roofing, depending on your building's needs. Whether you're experiencing ongoing leaks, aging membranes, poor drainage, or storm-related deterioration, we begin with a detailed <Link href="/services/free-inspection" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">inspection</Link>, photo documentation, and full condition report. Our team ensures your business receives the correct scope of work — not inflated repairs, not temporary fixes. We also assist with <Link href="/resources/insurance-claims" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">insurance claims</Link>, helping building owners and managers navigate coverage, documentation, and approved repair scopes. Our <Link href="/resources/24-7-support" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">24/7 support</Link> ensures you have help when emergency situations arise.
-              </p>
-              <p className="text-lg text-gray-700 mb-4">
-                In addition to <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roofing</Link>, our commercial exterior services include <Link href="/services/siding" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">siding replacement</Link>, <Link href="/services/windows" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">window upgrades</Link>, ice dam mitigation, <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">storm restoration</Link>, and long-term maintenance planning. Minnesota's climate creates challenges like ponding water, freeze-thaw expansion, UV degradation, hail impacts, and wind uplift — making regular inspections essential for extending the lifespan of your commercial roof. Our professional crews minimize disruption, maintain a clean work site, and schedule around your business operations to avoid downtime. We serve commercial properties throughout the <Link href="/service-areas/minnesota/minneapolis" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Twin Cities</Link>, <Link href="/service-areas/minnesota/st-paul" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">St. Paul</Link>, and surrounding areas.
-              </p>
-              <p className="text-lg text-gray-700">
-                As a certified, five-star rated contractor with <Link href="/about" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">decades of local experience</Link> and <Link href="/resources/reviews" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">160+ five-star reviews</Link>, we understand that commercial property owners need reliability, transparency, and long-term value. Whether you own a single building or manage a portfolio of properties, Advanced Roofing & Siding provides scalable solutions, fast response times, and the workmanship required to keep your building operating safely and efficiently. We also work with <Link href="/who-we-serve/property-manager" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">property managers</Link> and <Link href="/who-we-serve/hoa" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">HOAs</Link> for multi-building projects. <Link href="/contact" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Request a commercial roof inspection today</Link> and protect your business with Minnesota's trusted exterior experts.
-              </p>
+        {/* Introduction */}
+        <section className="bg-white py-12 md:py-14">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
+              <AnimatedDiv initial={{ opacity: 0, x: -16 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.45 }}>
+                <p className="text-xs font-semibold uppercase tracking-widest text-brand-primary mb-3">Commercial</p>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4 md:text-3xl">
+                  Your Building Is an Asset. Protect It.
+                </h2>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Advanced Roofing & Siding provides certified commercial roofing and exterior services for businesses across{' '}
+                  <Link href="/service-areas/minnesota" className="text-brand-primary hover:underline font-medium">Minnesota</Link>{' '}
+                  and{' '}
+                  <Link href="/service-areas/wisconsin" className="text-brand-primary hover:underline font-medium">Western Wisconsin</Link>.
+                  From retail centers and office buildings to warehouses and multi-unit facilities, we deliver TPO, EPDM, and flat roofing systems built to handle Minnesota's extreme climate — hail, UV degradation, freeze-thaw, and wind uplift.
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  We begin every project with a detailed{' '}
+                  <Link href="/services/free-estimate" className="text-brand-primary hover:underline font-medium">inspection and photo report</Link>,
+                  and assist with{' '}
+                  <Link href="/resources/insurance-claims" className="text-brand-primary hover:underline font-medium">insurance claims</Link>{' '}
+                  from documentation through adjuster sign-off. No inflated scopes, no temporary fixes — just durable, code-compliant solutions backed by{' '}
+                  <Link href="/resources/warranties" className="text-brand-primary hover:underline font-medium">industry-leading warranties</Link>.
+                </p>
+              </AnimatedDiv>
+
+              <AnimatedDiv initial={{ opacity: 0, x: 16 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.45, delay: 0.1 }}>
+                <p className="text-sm font-semibold text-gray-900 mb-4">Why commercial clients choose us:</p>
+                <ul className="space-y-3">
+                  {whyChoose.map(({ text, href }) => (
+                    <li key={text} className="flex items-start gap-3">
+                      <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-primary" />
+                      <Link href={href} className="text-sm text-gray-700 hover:text-brand-primary transition-colors">{text}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </AnimatedDiv>
             </div>
-          </Card>
-        </div>
-      </Section>
-
-      {/* Commercial Roofing Services */}
-      <Section className="bg-gray-50">
-        <SectionHeader
-          title="Commercial Roofing Services in Minnesota & Wisconsin"
-          description="Flat roof replacement, low-slope systems, and storm damage restoration for commercial buildings"
-        />
-        <div className="mx-auto max-w-6xl">
-          <div className="grid gap-6 md:grid-cols-3">
-            {roofingServices.map((service, index) => {
-              const Icon = service.icon
-              return (
-                <AnimatedDiv
-                  key={service.title}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                >
-                  <Card className="h-full">
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100">
-                      <Icon className="h-6 w-6 text-brand-primary" strokeWidth={2} />
-                    </div>
-                    <h3 className="mb-2 text-xl font-bold text-gray-900">{service.title}</h3>
-                    <p className="text-gray-600">{service.description}</p>
-                    <div className="mt-4">
-                      <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold text-sm underline underline-offset-2">
-                        Learn more about commercial roofing →
-                      </Link>
-                    </div>
-                  </Card>
-                </AnimatedDiv>
-              )
-            })}
           </div>
-        </div>
-      </Section>
+        </section>
 
-      {/* Exterior Services for Commercial Properties */}
-      <Section className="bg-white">
-        <SectionHeader
-          title="Exterior Services for Commercial Properties"
-          description="Siding, windows, ice dam mitigation, and seasonal maintenance for commercial buildings"
-        />
-        <div className="mx-auto max-w-6xl">
-          <div className="grid gap-6 md:grid-cols-3">
-            {exteriorServices.map((service, index) => {
-              const Icon = service.icon
-              const serviceLink = service.title.includes('Siding') ? '/services/siding' : service.title.includes('Window') ? '/services/windows' : '/services/storm-restoration'
-              return (
-                <AnimatedDiv
-                  key={service.title}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                >
-                  <Card className="h-full">
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100">
-                      <Icon className="h-6 w-6 text-brand-primary" strokeWidth={2} />
+        {/* Services */}
+        <section className="bg-gray-50 py-12 md:py-14">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <AnimatedDiv initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} className="mb-8">
+              <p className="text-xs font-semibold uppercase tracking-widest text-brand-primary mb-2">Services</p>
+              <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">Commercial Roofing & Exterior Services</h2>
+              <p className="mt-2 text-sm text-gray-500 max-w-xl">Full-scope exterior services for commercial properties — roofing systems, siding, windows, and storm restoration.</p>
+            </AnimatedDiv>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {services.map(({ title, href, icon: Icon, desc }, i) => (
+                <AnimatedDiv key={title} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.35, delay: i * 0.05 }}>
+                  <Link href={href} className="group flex h-full flex-col gap-3 rounded-xl border border-gray-200 bg-white p-5 transition hover:border-brand-primary hover:shadow-md">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-primary-light text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition">
+                      <Icon className="h-4 w-4" />
+                    </span>
+                    <div>
+                      <h3 className="mb-1 text-sm font-semibold text-gray-900 group-hover:text-brand-primary transition">{title}</h3>
+                      <p className="text-xs leading-relaxed text-gray-500">{desc}</p>
                     </div>
-                    <h3 className="mb-2 text-xl font-bold text-gray-900">{service.title}</h3>
-                    <p className="text-gray-600">{service.description}</p>
-                    <div className="mt-4">
-                      <Link href={serviceLink} className="text-brand-primary hover:text-red-800 font-semibold text-sm underline underline-offset-2">
-                        Learn more →
-                      </Link>
-                    </div>
-                  </Card>
-                </AnimatedDiv>
-              )
-            })}
-          </div>
-        </div>
-      </Section>
-
-      {/* Why Businesses Choose Advanced Roofing & Siding */}
-      <Section className="bg-gray-50">
-        <SectionHeader
-          title="Why Businesses Choose Advanced Roofing & Siding"
-          description="Minimal disruption, certified installers, and comprehensive insurance claim support"
-        />
-        <div className="mx-auto max-w-6xl">
-          <div className="grid gap-6 md:grid-cols-3">
-            {whyChoose.map((item, index) => {
-              const Icon = item.icon
-              return (
-                <AnimatedDiv
-                  key={item.title}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                >
-                  <Card className="h-full text-center">
-                    <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100">
-                      <Icon className="h-6 w-6 text-brand-primary" strokeWidth={2} />
-                    </div>
-                    <h3 className="mb-2 text-lg font-bold text-gray-900">{item.title}</h3>
-                    <p className="text-sm text-gray-600">{item.description}</p>
-                  </Card>
-                </AnimatedDiv>
-              )
-            })}
-          </div>
-        </div>
-      </Section>
-
-      {/* FAQ Section */}
-      <Section className="bg-white">
-        <SectionHeader
-          title="Frequently Asked Questions About Commercial Services"
-          description="Common questions from Minnesota and Wisconsin business owners and property managers"
-        />
-        <div className="mx-auto max-w-4xl">
-          <Card>
-            <div className="space-y-6">
-              {faqs.map((faq, index) => (
-                <AnimatedDiv
-                  key={index}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                >
-                  <div className="border-b border-gray-200 pb-6 last:border-b-0 last:pb-0">
-                    <div className="flex items-start gap-3 mb-2">
-                      <HelpCircle className="h-6 w-6 flex-shrink-0 text-brand-primary mt-0.5" />
-                      <h3 className="text-lg font-bold text-gray-900">{faq.question}</h3>
-                    </div>
-                    <p className="text-gray-700 ml-9">{faq.answer}</p>
-                  </div>
+                    <span className="mt-auto flex items-center gap-1 text-xs font-medium text-brand-primary opacity-0 group-hover:opacity-100 transition">
+                      Learn more <ArrowRight className="h-3 w-3" />
+                    </span>
+                  </Link>
                 </AnimatedDiv>
               ))}
             </div>
-          </Card>
-        </div>
-      </Section>
+          </div>
+        </section>
 
-      {/* Schedule a Commercial Roof Inspection */}
-      <Section className="bg-gradient-to-br from-red-50 to-white">
-        <div className="mx-auto max-w-4xl text-center">
-          <AnimatedDiv
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
-          >
-            <Card className="bg-white border-2 border-red-100">
-              <h2 className="mb-3 text-2xl font-bold text-gray-900 md:text-3xl">
-                Schedule a Commercial Roof Inspection
-              </h2>
-              <p className="mb-6 text-base text-gray-700 md:text-lg max-w-2xl mx-auto">
-                Request a commercial roof inspection today and protect your business with Minnesota's trusted exterior experts. We serve businesses across <Link href="/service-areas/minnesota/minneapolis" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minneapolis</Link>, <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Brooklyn Park</Link>, <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Maple Grove</Link>, <Link href="/service-areas/minnesota/st-paul" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">St. Paul</Link>, <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Blaine</Link>, and <Link href="/service-areas/wisconsin" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Western Wisconsin</Link> with expert commercial roofing and exterior services.
+        {/* FAQ */}
+        <section className="bg-white py-12 md:py-14">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            <AnimatedDiv initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} className="mb-8">
+              <p className="text-xs font-semibold uppercase tracking-widest text-brand-primary mb-2">FAQ</p>
+              <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">Commercial Roofing Questions</h2>
+            </AnimatedDiv>
+            <div className="divide-y divide-gray-100">
+              {faqs.map((faq, i) => (
+                <AnimatedDiv key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.04 }} className="py-5">
+                  <h3 className="mb-2 text-sm font-semibold text-gray-900">{faq.question}</h3>
+                  <p className="text-sm leading-relaxed text-gray-600">{faq.answer}</p>
+                </AnimatedDiv>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Closing CTA */}
+        <section className="bg-brand-secondary py-14 md:py-16">
+          <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+            <AnimatedDiv initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
+              <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-brand-primary">Free Commercial Inspection</p>
+              <h2 className="mb-3 text-2xl font-bold text-white md:text-3xl">Schedule a Commercial Roof Inspection</h2>
+              <p className="mb-7 mx-auto max-w-xl text-sm text-white/70 md:text-base">
+                Serving businesses across{' '}
+                <Link href="/service-areas/mn/minneapolis" className="text-white/90 underline underline-offset-2 hover:text-white">Minneapolis</Link>,{' '}
+                <Link href="/service-areas/mn/st-paul" className="text-white/90 underline underline-offset-2 hover:text-white">St. Paul</Link>,{' '}
+                and throughout{' '}
+                <Link href="/service-areas" className="text-white/90 underline underline-offset-2 hover:text-white">Minnesota & Wisconsin</Link>{' '}
+                with certified commercial roofing and exterior solutions. Free inspection, same-day response.
               </p>
-              <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
+              <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
                 <Link href="/contact">
-                  <Button variant="primary" size="lg">
-                    Schedule Inspection
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
+                  <button className="inline-flex items-center gap-2 rounded-xl bg-brand-primary px-6 py-3 text-sm font-bold text-white transition hover:bg-brand-primary-dark">
+                    Schedule Inspection <ArrowRight className="h-4 w-4" />
+                  </button>
                 </Link>
-                <Link href="/services/free-inspection">
-                  <Button variant="outline" size="lg">
-                    Learn About Inspections
-                  </Button>
-                </Link>
+                <a href={`tel:${COMPANY_INFO.phone}`} className="inline-flex items-center gap-2 rounded-xl border border-white/20 px-6 py-3 text-sm font-bold text-white transition hover:border-white/40">
+                  <Phone className="h-4 w-4" /> {COMPANY_INFO.phone}
+                </a>
               </div>
-            </Card>
-          </AnimatedDiv>
-        </div>
-      </Section>
-    </PageLayout>
+              <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 border-t border-white/10 pt-6 text-xs text-white/50">
+                <Link href="/who-we-serve/residential" className="hover:text-white/80 transition">Residential →</Link>
+                <Link href="/who-we-serve/hoa" className="hover:text-white/80 transition">HOA & Condo →</Link>
+                <Link href="/who-we-serve/property-manager" className="hover:text-white/80 transition">Property Managers →</Link>
+                <Link href="/who-we-serve/municipal" className="hover:text-white/80 transition">Municipal →</Link>
+              </div>
+            </AnimatedDiv>
+          </div>
+        </section>
+
+        <InsuranceClaimsCTA variant="compact" />
+      </PageLayout>
     </>
   )
 }
-

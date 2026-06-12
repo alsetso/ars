@@ -1,5 +1,6 @@
 import { PageLayout } from '@/components/layout/PageLayout'
 import { PageHero } from '@/components/ui/PageHero'
+import { StormDamageBanner } from '@/components/sections/StormDamageBanner'
 import { Section } from '@/components/ui/Section'
 import { Card } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
@@ -15,12 +16,11 @@ import {
   AlertCircle,
   Phone,
   Calendar,
-  Download,
-  Play,
   ArrowRight,
 } from 'lucide-react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema'
 
 export const metadata: Metadata = {
   title: 'Insurance Claims Assistance - Storm Damage Experts | 48-Hour Guarantee',
@@ -164,11 +164,77 @@ const faqs = [
 export default function InsuranceClaimsPage() {
   return (
     <PageLayout>
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: '/' },
+        { name: 'Resources', url: '/resources' },
+        { name: 'Insurance Claims Assistance', url: '/resources/insurance-claims' },
+      ]} />
       <PageHero
         title="Insurance Claims Assistance"
         description="Expert storm damage claim support. Free inspections, adjuster representation, and full claim management. 48-hour guarantee."
         backgroundImage="/gallery/380156327_905711167698071_326976560032986429_n.webp"
+        showForm
+        formServiceSlug="storm-restoration"
       />
+
+      <StormDamageBanner variant="bar" />
+
+      {/* Storm damage type quick-links */}
+      <section className="bg-white border-b border-gray-100">
+        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+          <p className="mb-4 text-[11px] font-semibold uppercase tracking-widest text-gray-400">
+            Storm Damage Resources
+          </p>
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+            {[
+              {
+                label: 'Hail Damage',
+                sub: 'Most common in MN',
+                href: '/resources/insurance-claims/hail-damage',
+                icon: '🌨️',
+              },
+              {
+                label: 'Wind Damage',
+                sub: 'Lifted shingles & siding',
+                href: '/resources/insurance-claims/wind-damage',
+                icon: '💨',
+              },
+              {
+                label: 'Ice Dam & Snow',
+                sub: 'Winter interior leaks',
+                href: '/resources/insurance-claims/ice-dam-snow-damage-claims',
+                icon: '❄️',
+              },
+              {
+                label: 'Tree Damage',
+                sub: 'Impact & structural',
+                href: '/resources/insurance-claims/tree-damage',
+                icon: '🌳',
+              },
+              {
+                label: 'Old Roof Claims',
+                sub: 'Age + storm combo',
+                href: '/resources/insurance-claims/old-roof',
+                icon: '🏠',
+              },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="group flex items-start gap-3 rounded-xl border border-gray-100 bg-gray-50 p-4 transition hover:border-brand-primary/30 hover:bg-brand-primary/5"
+              >
+                <span className="text-2xl leading-none">{item.icon}</span>
+                <div>
+                  <p className="text-sm font-bold text-gray-900 group-hover:text-brand-primary transition-colors">
+                    {item.label}
+                  </p>
+                  <p className="mt-0.5 text-[11px] text-gray-500">{item.sub}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Section 1: How Roofing Insurance Claims Work */}
       <Section className="bg-white">
@@ -218,165 +284,85 @@ export default function InsuranceClaimsPage() {
         </div>
       </Section>
 
-      {/* Section 2: Residential Insurance Claims */}
+      {/* Who We Serve — Residential + Commercial combined */}
       <Section className="bg-gray-50">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl">
           <AnimatedDiv
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-8 text-center"
+            transition={{ duration: 0.5 }}
           >
-            <h2 className="mb-4 text-3xl font-bold text-gray-900">
-              Residential Insurance Claims
-            </h2>
-            <p className="mx-auto max-w-3xl text-lg text-gray-700">
-              Minnesota Residential Claims Are What AR&S Does Best
-            </p>
-          </AnimatedDiv>
+            <div className="mb-6">
+              <p className="mb-1.5 text-xs font-semibold uppercase tracking-widest text-brand-primary">Who We Help</p>
+              <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">
+                Residential & Commercial Claims Across Minnesota & Wisconsin
+              </h2>
+              <p className="mt-2 max-w-2xl text-sm text-gray-600 md:text-base">
+                Whether you're a homeowner in <Link href="/service-areas/mn/anoka" className="text-brand-primary hover:underline font-medium">Anoka</Link>,{' '}
+                <Link href="/service-areas/mn/minneapolis" className="text-brand-primary hover:underline font-medium">Minneapolis</Link>, or{' '}
+                <Link href="/service-areas/wisconsin" className="text-brand-primary hover:underline font-medium">western Wisconsin</Link>,
+                or a property manager overseeing a commercial portfolio, AR&S handles the full claim.
+              </p>
+            </div>
 
-          <div className="mb-8 grid gap-6 md:grid-cols-2">
-            <Card>
-              <h3 className="mb-4 text-xl font-bold text-gray-900">
-                Minnesota homes face extreme weather:
-              </h3>
-              <ul className="space-y-3">
-                <li className="flex items-center gap-2">
-                  <span className="text-2xl">❄️</span>
-                  <span className="text-gray-700">Winter storms</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-2xl">🌧️</span>
-                  <span className="text-gray-700">Spring hail</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-2xl">🌬️</span>
-                  <span className="text-gray-700">High winds</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-2xl">☀️</span>
-                  <span className="text-gray-700">Heat cycles that crack shingles</span>
-                </li>
-              </ul>
-            </Card>
-
-            <Card>
-              <h3 className="mb-4 text-xl font-bold text-gray-900">
-                Homeowners often don't realize:
-              </h3>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-5 w-5 flex-shrink-0 text-brand-primary mt-0.5" />
-                  <span className="text-gray-700">Storm damage is often fully covered</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-5 w-5 flex-shrink-0 text-brand-primary mt-0.5" />
-                  <span className="text-gray-700">
-                    Insurance typically pays for roof, siding, gutters, windows
-                  </span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-5 w-5 flex-shrink-0 text-brand-primary mt-0.5" />
-                  <span className="text-gray-700">You only owe your deductible</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-5 w-5 flex-shrink-0 text-brand-primary mt-0.5" />
-                  <span className="text-gray-700">
-                    Claims can be reopened if damage wasn't documented properly
-                  </span>
-                </li>
-              </ul>
-            </Card>
-          </div>
-
-          <Card className="mb-6">
-            <h3 className="mb-4 text-xl font-bold text-gray-900">
-              Residential Claim Services AR&S Handles
-            </h3>
-            <div className="grid gap-3 md:grid-cols-2">
-              {residentialServices.map((service) => (
-                <div key={service} className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 flex-shrink-0 text-brand-primary" />
-                  <span className="text-gray-700">{service}</span>
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {/* Residential */}
+              <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-soft lg:col-span-1">
+                <div className="mb-3 flex items-center gap-2.5">
+                  <Users className="h-5 w-5 text-brand-primary" />
+                  <h3 className="text-base font-bold text-gray-900">
+                    <Link href="/who-we-serve/residential" className="hover:text-brand-primary transition-colors">Residential Homeowners</Link>
+                  </h3>
                 </div>
-              ))}
-            </div>
-          </Card>
+                <ul className="space-y-1.5">
+                  {residentialServices.map((s) => (
+                    <li key={s} className="flex items-start gap-2 text-sm text-gray-600">
+                      <CheckCircle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-brand-primary" />
+                      {s}
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-          <Card className="bg-gradient-to-br from-red-50 to-red-100">
-            <div className="flex items-center gap-3">
-              <Users className="h-8 w-8 text-brand-primary" />
-              <div>
-                <h4 className="text-lg font-bold text-gray-900">Residential Advantage:</h4>
-                <p className="text-gray-700">Same-day assessments + adjuster meeting representation.</p>
+              {/* Commercial */}
+              <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-soft lg:col-span-1">
+                <div className="mb-3 flex items-center gap-2.5">
+                  <Building2 className="h-5 w-5 text-brand-primary" />
+                  <h3 className="text-base font-bold text-gray-900">
+                    <Link href="/who-we-serve/commercial" className="hover:text-brand-primary transition-colors">Commercial Properties</Link>
+                  </h3>
+                </div>
+                <ul className="space-y-1.5">
+                  {[...commercialBuildings.slice(0, 5), ...commercialExpertise.slice(0, 2)].map((s) => (
+                    <li key={s} className="flex items-start gap-2 text-sm text-gray-600">
+                      <CheckCircle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-brand-primary" />
+                      {s}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* What you didn't know */}
+              <div className="rounded-xl border border-brand-primary/20 bg-brand-primary/5 p-5 shadow-soft lg:col-span-1">
+                <h3 className="mb-3 text-base font-bold text-gray-900">What Most Homeowners Don't Know</h3>
+                <ul className="space-y-2">
+                  {[
+                    'Storm damage is usually fully covered',
+                    'You only pay your deductible',
+                    'Insurance covers roof, siding, gutters & windows',
+                    'Denied claims can be reopened with proper documentation',
+                    'MN law protects your right to choose your own contractor',
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-gray-700">
+                      <CheckCircle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-brand-primary" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
-          </Card>
-        </div>
-      </Section>
-
-      {/* Section 3: Commercial Insurance Claims */}
-      <Section className="bg-white">
-        <div className="mx-auto max-w-6xl">
-          <AnimatedDiv
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-8 text-center"
-          >
-            <h2 className="mb-4 text-3xl font-bold text-gray-900">Commercial Insurance Claims</h2>
-            <p className="mx-auto max-w-3xl text-lg text-gray-700">
-              Minnesota commercial property owners want speed, accuracy, and disruption-free
-              replacements.
-            </p>
           </AnimatedDiv>
-
-          <div className="grid gap-6 md:grid-cols-2">
-            <Card>
-              <div className="mb-4 flex items-center gap-3">
-                <Building2 className="h-6 w-6 text-brand-primary" />
-                <h3 className="text-xl font-bold text-gray-900">Types of Buildings AR&S Serves</h3>
-              </div>
-              <ul className="space-y-2">
-                {commercialBuildings.map((building) => (
-                  <li key={building} className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 flex-shrink-0 text-brand-primary" />
-                    <span className="text-gray-700">{building}</span>
-                  </li>
-                ))}
-              </ul>
-            </Card>
-
-            <Card>
-              <div className="mb-4 flex items-center gap-3">
-                <Shield className="h-6 w-6 text-brand-primary" />
-                <h3 className="text-xl font-bold text-gray-900">Commercial Claim Expertise</h3>
-              </div>
-              <ul className="space-y-2">
-                {commercialExpertise.map((expertise) => (
-                  <li key={expertise} className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 flex-shrink-0 text-brand-primary" />
-                    <span className="text-gray-700">{expertise}</span>
-                  </li>
-                ))}
-              </ul>
-            </Card>
-          </div>
-
-          <Card className="mt-6 bg-gradient-to-br from-blue-50 to-blue-100">
-            <div className="flex items-center gap-3">
-              <Building2 className="h-8 w-8 text-brand-primary" />
-              <div>
-                <h4 className="text-lg font-bold text-gray-900">Commercial Advantage:</h4>
-                <p className="text-gray-700">
-                  AR&S gives you a project manager + insurance liaison + crew coordination under one
-                  roof.
-                </p>
-              </div>
-            </div>
-          </Card>
         </div>
       </Section>
 
@@ -499,52 +485,7 @@ export default function InsuranceClaimsPage() {
         </div>
       </Section>
 
-      {/* Section 6: The AR&S Insurance Process */}
-      <Section className="bg-gradient-to-br from-gray-50 to-gray-100">
-        <div className="mx-auto max-w-6xl">
-          <AnimatedDiv
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-8 text-center"
-          >
-            <h2 className="mb-4 text-3xl font-bold text-gray-900">
-              The 6-Step AR&S Claim System
-            </h2>
-          </AnimatedDiv>
-
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {[
-              'Free Inspection',
-              'Documentation + Storm Event Matching',
-              'Claim Filing Support',
-              'Adjuster Meeting Representation',
-              'Build Scheduling + Completion',
-              'Final Payment + Warranty Registration',
-            ].map((step, index) => (
-              <AnimatedDiv
-                key={step}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Card className="h-full text-center">
-                  <div className="mb-4 flex justify-center">
-                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-primary text-2xl font-bold text-white">
-                      {index + 1}
-                    </div>
-                  </div>
-                  <h3 className="font-semibold text-gray-900">{step}</h3>
-                </Card>
-              </AnimatedDiv>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      {/* Section 7: Deductible Education */}
+      {/* Deductible Education */}
       <Section className="bg-white">
         <div className="mx-auto max-w-4xl">
           <AnimatedDiv
@@ -580,62 +521,7 @@ export default function InsuranceClaimsPage() {
         </div>
       </Section>
 
-      {/* Related Resources Section */}
-      <Section className="bg-white">
-        <div className="mx-auto max-w-6xl">
-          <AnimatedDiv
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <Card className="bg-gradient-to-br from-red-50 to-red-100 border-2 border-red-200">
-              <div className="text-center mb-6">
-                <h2 className="mb-3 text-2xl font-bold text-gray-900 md:text-3xl">
-                  Learn More About Specific Storm Damage Types
-                </h2>
-                <p className="text-lg text-gray-700">
-                  Get detailed information about specific types of storm damage and insurance claims
-                </p>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-                <Link href="/resources/insurance-claims/hail-damage">
-                  <Button variant="primary" size="lg" className="group w-full">
-                    Hail Damage Claims Guide
-                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </Button>
-                </Link>
-                <Link href="/resources/insurance-claims/wind-damage">
-                  <Button variant="primary" size="lg" className="group w-full">
-                    Wind Damage Claims Guide
-                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </Button>
-                </Link>
-                <Link href="/resources/insurance-claims/ice-dam-snow-damage-claims">
-                  <Button variant="primary" size="lg" className="group w-full">
-                    Ice Dam & Snow Damage Guide
-                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </Button>
-                </Link>
-                <Link href="/resources/insurance-claims/tree-damage">
-                  <Button variant="primary" size="lg" className="group w-full">
-                    Tree Damage Claims Guide
-                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </Button>
-                </Link>
-                <Link href="/resources/insurance-claims/old-roof">
-                  <Button variant="primary" size="lg" className="group w-full">
-                    Old Roof Claims Guide
-                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </Button>
-                </Link>
-              </div>
-            </Card>
-          </AnimatedDiv>
-        </div>
-      </Section>
-
-      {/* Section 8: FAQ */}
+      {/* FAQ */}
       <Section className="bg-gray-50">
         <div className="mx-auto max-w-4xl">
           <AnimatedDiv

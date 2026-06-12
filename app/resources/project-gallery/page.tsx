@@ -5,6 +5,7 @@ import { Card } from '@/components/ui/Card'
 import { AnimatedDiv } from '@/components/ui/AnimatedDiv'
 import { Camera, Image as ImageIcon, MapPin, Calendar, Mail, MessageSquare, Video, Star } from 'lucide-react'
 import type { Metadata } from 'next'
+import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -137,6 +138,11 @@ const projectImages = [
 export default function ProjectGalleryPage() {
   return (
     <PageLayout>
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: '/' },
+        { name: 'Resources', url: '/resources' },
+        { name: 'Project Gallery', url: '/resources/project-gallery' },
+      ]} />
       <PageHero
         title="Project Gallery"
         description="Quality craftsmanship across Minnesota and Wisconsin"

@@ -6,6 +6,7 @@ import { AnimatedDiv } from '@/components/ui/AnimatedDiv'
 import { Warranties } from '@/components/sections/Warranties'
 import { Shield, CheckCircle, Award } from 'lucide-react'
 import type { Metadata } from 'next'
+import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -33,11 +34,16 @@ export const metadata: Metadata = {
 export default function WarrantiesPage() {
   return (
     <PageLayout showWarranties={false}>
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: '/' },
+        { name: 'Resources', url: '/resources' },
+        { name: 'Warranties', url: '/resources/warranties' },
+      ]} />
       <PageHero
         title="Warranties are like a safety net"
         description="Industry-leading GAF warranties provide peace of mind that your investment is protected"
         backgroundImage="https://images.unsplash.com/photo-1632495375739-c7876ca4c8b9?q=80&w=2400"
-        showCTA={false}
+        showForm
       />
 
       <Section className="bg-white">

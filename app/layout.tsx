@@ -1,10 +1,7 @@
 import React from 'react'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { Header } from '@/components/navigation/Header'
-import { Footer } from '@/components/navigation/Footer'
-import { SupportBanner } from '@/components/navigation/SupportBanner'
-import { PageOverlay } from '@/components/ui/PageOverlay'
+import { SiteChrome } from '@/components/navigation/SiteChrome'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -75,11 +72,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <PageOverlay />
-        <SupportBanner />
-        <Header />
-        {children}
-        <Footer />
+        <SiteChrome>
+          {children}
+        </SiteChrome>
       </body>
     </html>
   )

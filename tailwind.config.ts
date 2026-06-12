@@ -11,9 +11,13 @@ const config: Config = {
       colors: {
         brand: {
           primary: '#A40F1A',
-          secondary: '#1D3557',
-          accent: '#F1FAEE',
-          dark: '#14213D',
+          'primary-dark': '#8A0D16',
+          'primary-light': '#FEF2F2',
+          secondary: '#1C1C1E',
+          'secondary-dark': '#0F0F0F',
+          'secondary-light': '#F5F5F5',
+          accent: '#F5F5F5',
+          dark: '#111111',
         },
       },
       fontFamily: {

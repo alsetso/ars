@@ -266,6 +266,7 @@ export default function FreeEstimatePage() {
         title="Free Estimate"
         description="No obligation, no pressure — just honest assessment from licensed project managers"
         backgroundImage="/gallery/340661788_241238031731100_708703886642482358_n.webp"
+        showForm
       />
 
       {/* Contact Information Card */}

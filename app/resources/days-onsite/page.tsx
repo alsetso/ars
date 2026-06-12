@@ -24,6 +24,7 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema'
 
 export const metadata: Metadata = {
   title: 'What to Expect During Installation - Days on Site Guide',
@@ -124,6 +125,11 @@ const tipsForBetterExperience = [
 export default function DaysOnSitePage() {
   return (
     <PageLayout>
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: '/' },
+        { name: 'Resources', url: '/resources' },
+        { name: 'What to Expect During Installation', url: '/resources/days-onsite' },
+      ]} />
       <PageHero
         title="What to Expect During Installation"
         description="A guide to your project timeline and how to make your experience even better"

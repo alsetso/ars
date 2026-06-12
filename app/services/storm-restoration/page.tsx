@@ -1,12 +1,21 @@
 import { PageLayout } from '@/components/layout/PageLayout'
 import { PageHero } from '@/components/ui/PageHero'
-import { Section, SectionHeader } from '@/components/ui/Section'
-import { Card } from '@/components/ui/Card'
+import { Section } from '@/components/ui/Section'
 import { Button } from '@/components/ui/Button'
 import { AnimatedDiv } from '@/components/ui/AnimatedDiv'
 import { InsuranceClaimsCTA } from '@/components/sections/InsuranceClaimsCTA'
+import { StormDamageBanner } from '@/components/sections/StormDamageBanner'
+import { ServiceProcess } from '@/components/sections/ServiceProcess'
+import { ServiceHighlights } from '@/components/sections/ServiceHighlights'
+import { ServiceCapabilities } from '@/components/sections/ServiceCapabilities'
+import { ServiceFAQ } from '@/components/sections/ServiceFAQ'
+import { RelatedServices } from '@/components/sections/RelatedServices'
 import { FAQSchema } from '@/components/seo/FAQSchema'
-import { CheckCircle, CloudRain, Home, Shield, ArrowRight, Wrench, FileCheck, Phone, AlertTriangle, Clock, PaintBucket, Square } from 'lucide-react'
+import { ServiceAreaCities } from '@/components/seo/ServiceAreaCities'
+import { ServiceSchema } from '@/components/seo/ServiceSchema'
+import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema'
+import { LocalBusinessSchema } from '@/components/seo/LocalBusinessSchema'
+import { ArrowRight } from 'lucide-react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
@@ -34,56 +43,11 @@ export const metadata: Metadata = {
 
 const features = [
   { text: 'Expert Damage Assessment', link: null },
-  { text: 'Insurance Claim Assistance', link: '/insurance-claims' },
+  { text: 'Insurance Claim Assistance', link: '/resources/insurance-claims' },
   { text: 'Fast Emergency Response', link: null },
   { text: 'Complete Restoration Services', link: null },
   { text: 'Free Inspections', link: '/contact' },
   { text: '30+ Years Experience', link: '/about' },
-]
-
-const damageTypes = [
-  {
-    title: 'Hail Damage',
-    description: 'Hail storms can cause significant damage to roofs, siding, and windows. We provide comprehensive hail damage assessment and repair services.',
-    icon: CloudRain,
-  },
-  {
-    title: 'Wind Damage',
-    description: 'High winds can lift shingles, damage siding, and cause structural issues. Our team quickly assesses and repairs wind-related damage.',
-    icon: AlertTriangle,
-  },
-  {
-    title: 'Storm Damage Inspection',
-    description: 'Free professional inspection to identify all storm-related damage. We document everything needed for your insurance claim.',
-    icon: FileCheck,
-  },
-]
-
-const processSteps = [
-  {
-    step: 1,
-    title: 'Emergency Response & Damage Assessment',
-    description: 'We respond quickly to storm damage emergencies, providing temporary protection when needed. Our certified inspectors conduct thorough damage assessments and document everything for your insurance claim.',
-    icon: Phone,
-  },
-  {
-    step: 2,
-    title: 'Insurance Claim Documentation',
-    description: 'We work directly with your insurance company, providing detailed documentation, professional estimates, and adjuster representation to ensure you receive maximum coverage.',
-    icon: FileCheck,
-  },
-  {
-    step: 3,
-    title: 'Professional Restoration & Repair',
-    description: 'Our experienced team performs quality repairs using premium materials and proven techniques. We restore your property to pre-storm condition or better.',
-    icon: Wrench,
-  },
-  {
-    step: 4,
-    title: 'Final Inspection & Warranty',
-    description: 'Complete quality inspection ensures all work meets our high standards. Your restoration comes with warranties protecting your investment.',
-    icon: Shield,
-  },
 ]
 
 const faqs = [
@@ -117,249 +81,101 @@ export default function StormRestorationPage() {
   return (
     <PageLayout>
       <FAQSchema faqs={faqs} />
+      <ServiceSchema
+        serviceName="Storm Restoration"
+        serviceDescription="Hail and wind damage assessment with full insurance claim support for Minnesota and Wisconsin homeowners"
+        serviceUrl="/services/storm-restoration"
+      />
+      <LocalBusinessSchema pageUrl="/services/storm-restoration" />
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Services', url: '/services' },
+          { name: 'Storm Restoration', url: '/services/storm-restoration' },
+        ]}
+      />
       <PageHero
         title="Storm Restoration"
         description="Expert damage assessment and seamless insurance claim support"
         backgroundImage="/gallery/351499412_645224983741699_6973171527731469674_n.webp"
+        showForm
+        formServiceSlug="storm-restoration"
       />
+
+      <StormDamageBanner variant="bar" />
+
+      {/* Intro */}
       <Section className="bg-white">
         <div className="mx-auto max-w-4xl">
-          <Card className="mb-6 p-4 md:mb-8 md:p-6">
-            <div className="prose prose-lg max-w-none">
-              <p className="text-sm text-gray-700 mb-3 md:text-lg md:mb-4">
-                When severe weather strikes, you need a trusted partner to help restore your home.
-                Advanced Roofing & Siding Inc. provides comprehensive <Link href="/resources/insurance-claims" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">storm restoration services</Link>,
-                from initial damage assessment to complete repairs and <Link href="/resources/insurance-claims" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">insurance claim assistance</Link> for <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota and Wisconsin homeowners</Link>.
-              </p>
-              <p className="text-sm text-gray-700 mb-3 md:text-lg md:mb-4">
-                Our experienced team understands the insurance process and works directly with your
-                insurance company to ensure you receive the coverage you deserve. We provide
-                detailed documentation, professional estimates, and quality repairs that meet or
-                exceed insurance standards. Learn more about our <Link href="/resources/insurance-claims" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">insurance claims process</Link>.
-              </p>
-              <p className="text-sm text-gray-700 md:text-lg">
-                We respond quickly to storm damage emergencies, providing temporary protection when
-                needed and completing permanent repairs with the same quality and craftsmanship you
-                expect from a <Link href="/resources/gaf-master-elite-contractor" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">GAF Master Elite contractor</Link>. Our storm restoration includes <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roof repairs</Link>, <Link href="/services/siding" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">siding replacement</Link>, and <Link href="/services/windows" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">window damage restoration</Link>. With <Link href="/about" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">30+ years of experience</Link> handling storm damage, we know how to navigate the insurance process and restore your property efficiently.
-              </p>
-            </div>
-          </Card>
-
-          <div className="mb-6 grid gap-3 md:mb-8 md:gap-6 md:grid-cols-2">
-            {features.map((feature, index) => (
-              <AnimatedDiv
-                key={feature.text}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <div className="flex items-start gap-2 md:gap-3">
-                  <CheckCircle className="h-5 w-5 flex-shrink-0 text-brand-primary md:h-6 md:w-6" />
-                  <span className="text-sm text-gray-700 md:text-base">
-                    {feature.link ? (
-                      <Link href={feature.link} className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">
-                        {feature.text}
-                      </Link>
-                    ) : (
-                      feature.text
-                    )}
-                  </span>
-                </div>
-              </AnimatedDiv>
-            ))}
+          <div className="prose prose-lg max-w-none">
+            <p className="mb-3 text-sm text-gray-700 md:mb-4 md:text-lg">
+              When severe weather strikes, you need a trusted partner to restore your home.
+              Advanced Roofing & Siding Inc. provides comprehensive <Link href="/resources/insurance-claims" className="font-semibold text-brand-primary underline underline-offset-2 hover:text-red-800">storm restoration services</Link>,
+              from initial damage assessment to complete repairs and <Link href="/resources/insurance-claims" className="font-semibold text-brand-primary underline underline-offset-2 hover:text-red-800">insurance claim assistance</Link> for <Link href="/service-areas" className="font-semibold text-brand-primary underline underline-offset-2 hover:text-red-800">Minnesota and Wisconsin homeowners</Link>.
+            </p>
+            <p className="mb-3 text-sm text-gray-700 md:mb-4 md:text-lg">
+              Our experienced team understands the insurance process and works directly with your
+              insurance company to ensure you receive the coverage you deserve. We provide
+              detailed documentation, professional estimates, and quality repairs that meet or
+              exceed insurance standards. Learn more about our <Link href="/resources/insurance-claims" className="font-semibold text-brand-primary underline underline-offset-2 hover:text-red-800">insurance claims process</Link>.
+            </p>
+            <p className="text-sm text-gray-700 md:text-lg">
+              As a <Link href="/resources/gaf-master-elite-contractor" className="font-semibold text-brand-primary underline underline-offset-2 hover:text-red-800">GAF Master Elite contractor</Link>, our storm restoration includes <Link href="/services/roofing" className="font-semibold text-brand-primary underline underline-offset-2 hover:text-red-800">roof repairs</Link>, <Link href="/services/siding" className="font-semibold text-brand-primary underline underline-offset-2 hover:text-red-800">siding replacement</Link>, and <Link href="/services/windows" className="font-semibold text-brand-primary underline underline-offset-2 hover:text-red-800">window damage restoration</Link> — all under one roof, one claim, one crew.
+            </p>
           </div>
+          <ServiceHighlights highlights={features} />
         </div>
       </Section>
 
       {/* Insurance Claims CTA - Prominent */}
       <InsuranceClaimsCTA />
 
-      {/* Damage Types Section */}
-      <Section className="bg-gray-50">
-        <div className="mx-auto max-w-4xl">
-          <SectionHeader
-            title="Types of Storm Damage We Repair"
-            description="Comprehensive storm damage restoration services"
-          />
-          <div className="grid grid-cols-2 gap-3 md:gap-4 md:grid-cols-3 mb-6 md:mb-8">
-            {damageTypes.map((type, index) => {
-              const Icon = type.icon
-              return (
-                <AnimatedDiv
-                  key={type.title}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                >
-                  <Card className="h-full text-center p-3 md:p-5">
-                    <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100 md:mb-4 md:h-12 md:w-12">
-                      <Icon className="h-5 w-5 text-brand-primary md:h-6 md:w-6" strokeWidth={2} />
-                    </div>
-                    <h3 className="mb-1 text-sm font-bold text-gray-900 md:mb-2 md:text-lg">{type.title}</h3>
-                    <p className="text-xs text-gray-600 md:text-sm">{type.description}</p>
-                  </Card>
-                </AnimatedDiv>
-              )
-            })}
-          </div>
-        </div>
-      </Section>
+      <ServiceCapabilities serviceSlug="storm-restoration" />
 
-      {/* Process Section */}
+      <ServiceProcess serviceSlug="storm-restoration" />
+
+      <ServiceFAQ faqs={faqs} description="Common questions about our storm restoration services" />
+
+      <RelatedServices serviceSlug="storm-restoration" />
+
+      {/* Service Areas by City */}
       <Section className="bg-white">
         <div className="mx-auto max-w-4xl">
-          <SectionHeader
-            title="Our Storm Restoration Process"
-            description="A proven 4-step approach to storm damage restoration"
-          />
-          <div className="space-y-4 mb-6 md:space-y-6 md:mb-8">
-            {processSteps.map((step, index) => {
-              const Icon = step.icon
-              return (
-                <AnimatedDiv
-                  key={step.step}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                >
-                  <Card className="border-2 border-gray-100 p-3 md:p-5">
-                    <div className="flex gap-3 md:gap-6">
-                      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-red-700 to-red-800 text-white text-lg font-bold md:h-14 md:w-14 md:text-xl">
-                        {step.step}
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="mb-1 text-base font-bold text-gray-900 md:mb-2 md:text-2xl">{step.title}</h3>
-                        <p className="text-sm text-gray-700 md:text-lg">{step.description}</p>
-                      </div>
-                    </div>
-                  </Card>
-                </AnimatedDiv>
-              )
-            })}
-          </div>
+          <ServiceAreaCities serviceSlug="storm-restoration" serviceTitle="Storm Restoration" />
         </div>
       </Section>
 
-      {/* FAQ Section */}
-      <Section className="bg-gray-50">
-        <div className="mx-auto max-w-4xl">
-          <SectionHeader
-            title="Frequently Asked Questions"
-            description="Common questions about our storm restoration services"
-          />
-          <div className="space-y-3 mb-6 md:space-y-4 md:mb-8">
-            {faqs.map((faq, index) => (
-              <AnimatedDiv
-                key={faq.question}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-              >
-                <Card className="p-3 md:p-5">
-                  <h3 className="mb-1.5 text-sm font-bold text-gray-900 md:mb-2 md:text-lg">{faq.question}</h3>
-                  <p className="text-xs text-gray-700 md:text-base">{faq.answer}</p>
-                </Card>
-              </AnimatedDiv>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      {/* Related Services */}
-      <Section className="bg-white">
-        <div className="mx-auto max-w-4xl">
-          <SectionHeader
-            title="Complete Exterior Solutions"
-            description="We offer comprehensive exterior services for your Minnesota or Wisconsin home"
-          />
-          <div className="grid grid-cols-2 gap-3 md:gap-4 md:grid-cols-3 mb-6 md:mb-8">
-            <AnimatedDiv
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4 }}
-            >
-              <Link href="/services/roofing">
-                <Card className="h-full cursor-pointer text-center p-3 md:p-5">
-                  <Home className="mx-auto mb-2 h-8 w-8 text-brand-primary md:mb-3 md:h-10 md:w-10" />
-                  <h3 className="mb-1 text-sm font-bold text-gray-900 md:mb-2 md:text-base">Premium Roofing</h3>
-                  <p className="mb-2 text-xs text-gray-600 md:mb-3 md:text-sm">GAF Master Elite certified</p>
-                  <span className="text-xs font-semibold text-brand-primary">Learn More →</span>
-                </Card>
-              </Link>
-            </AnimatedDiv>
-            <AnimatedDiv
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.1 }}
-            >
-              <Link href="/services/siding">
-                <Card className="h-full cursor-pointer text-center p-3 md:p-5">
-                  <PaintBucket className="mx-auto mb-2 h-8 w-8 text-brand-primary md:mb-3 md:h-10 md:w-10" />
-                  <h3 className="mb-1 text-sm font-bold text-gray-900 md:mb-2 md:text-base">Siding Solutions</h3>
-                  <p className="mb-2 text-xs text-gray-600 md:mb-3 md:text-sm">Transform your exterior</p>
-                  <span className="text-xs font-semibold text-brand-primary">Learn More →</span>
-                </Card>
-              </Link>
-            </AnimatedDiv>
-            <AnimatedDiv
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.2 }}
-            >
-              <Link href="/services/windows">
-                <Card className="h-full cursor-pointer text-center p-3 md:p-5">
-                  <Square className="mx-auto mb-2 h-8 w-8 text-brand-primary md:mb-3 md:h-10 md:w-10" />
-                  <h3 className="mb-1 text-sm font-bold text-gray-900 md:mb-2 md:text-base">Window Installation</h3>
-                  <p className="mb-2 text-xs text-gray-600 md:mb-3 md:text-sm">Energy-efficient windows</p>
-                  <span className="text-xs font-semibold text-brand-primary">Learn More →</span>
-                </Card>
-              </Link>
-            </AnimatedDiv>
-          </div>
-        </div>
-      </Section>
-
-      {/* CTA Section */}
+      {/* CTA */}
       <Section className="bg-gradient-to-br from-red-50 to-white">
-        <div className="mx-auto max-w-4xl text-center">
+        <div className="mx-auto max-w-3xl text-center">
           <AnimatedDiv
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
           >
-            <Card className="bg-white border-2 border-red-100 p-4 md:p-6">
-              <h2 className="mb-2 text-lg font-bold text-gray-900 md:mb-3 md:text-3xl">
-                Need Storm Damage Restoration?
-              </h2>
-              <p className="mb-4 text-sm text-gray-700 md:mb-6 md:text-lg max-w-2xl mx-auto">
-                Get your free storm damage inspection and insurance claim assistance. We serve <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota and Wisconsin</Link> with expert storm restoration services backed by 30+ years of experience.
-              </p>
-              <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
-                <Link href="/contact">
-                  <Button variant="primary" size="md" className="w-full sm:w-auto md:size-lg">
-                    Get Free Inspection
-                    <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
-                  </Button>
-                </Link>
-                <Link href="/resources/insurance-claims">
-                  <Button variant="outline" size="md" className="w-full sm:w-auto md:size-lg">
-                    Learn About Insurance Claims
-                  </Button>
-                </Link>
-              </div>
-            </Card>
+            <h2 className="mb-3 text-2xl font-bold text-gray-900 md:text-3xl">
+              Need Storm Damage Restoration?
+            </h2>
+            <p className="mb-6 text-sm text-gray-600 md:text-base">
+              Free storm damage inspection and insurance claim assistance. We serve <Link href="/service-areas" className="font-semibold text-brand-primary hover:text-red-800 underline underline-offset-2">Minnesota and Wisconsin</Link> with expert storm restoration backed by 30+ years of experience.
+            </p>
+            <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
+              <Link href="/contact">
+                <Button variant="primary" size="md" className="w-full sm:w-auto md:size-lg">
+                  Get Free Inspection
+                  <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
+                </Button>
+              </Link>
+              <Link href="/resources/insurance-claims">
+                <Button variant="outline" size="md" className="w-full sm:w-auto md:size-lg">
+                  Learn About Insurance Claims
+                </Button>
+              </Link>
+            </div>
           </AnimatedDiv>
         </div>
       </Section>
     </PageLayout>
   )
 }
-

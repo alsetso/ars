@@ -20,7 +20,7 @@ const markets = [
     title: 'Municipal & Government',
     description: 'Expert exterior services for cities and municipalities. Supporting public buildings, facilities, and infrastructure projects.',
     icon: Building2,
-    href: '/programs/municipal',
+    href: '/who-we-serve/municipal',
     features: [
       'Expert service for public buildings',
       'Large-scale project management',
@@ -37,7 +37,7 @@ const markets = [
     title: 'Real Estate Professionals',
     description: 'Exclusive solutions for realtors, brokers, investors, and wholesalers. Work with us on 2+ deals per year and unlock special incentives.',
     icon: Users,
-    href: '/programs/agent',
+    href: '/who-we-serve/agent',
     features: [
       'Incentives for 2+ deals per year',
       'Priority scheduling for agents',
@@ -54,7 +54,7 @@ const markets = [
     title: 'Property Management',
     description: 'Comprehensive exterior services for property management companies handling apartment buildings, multi-family properties, group homes, and commercial facilities.',
     icon: Building2,
-    href: '/programs/property-manager',
+    href: '/who-we-serve/property-manager',
     features: [
       'Multi-property management',
       'Apartment & multi-family expertise',
@@ -71,7 +71,7 @@ const markets = [
     title: 'Homeowner Associations',
     description: 'Comprehensive exterior services for HOA boards managing multiple properties, ensuring consistent quality and timely completion.',
     icon: Home,
-    href: '/programs/hoa',
+    href: '/who-we-serve/hoa',
     features: [
       'Multi-property management',
       'Consistent quality across projects',
@@ -88,7 +88,7 @@ const markets = [
     title: 'Commercial Properties',
     description: 'Expert commercial exterior services for business owners and managers. Professional roofing, siding, and building maintenance.',
     icon: Briefcase,
-    href: '/programs/commercial',
+    href: '/who-we-serve/commercial',
     features: [
       'Minimal business disruption',
       'Commercial property expertise',
@@ -143,7 +143,7 @@ export default function ProgramsPage() {
                 Advanced Roofing & Siding Inc. serves diverse markets across Minnesota and Wisconsin, each with unique needs and requirements. Whether you're a city official managing public buildings, a real estate professional working with multiple properties, or a property manager overseeing apartment complexes, we provide specialized solutions tailored to your market.
               </p>
               <p className="text-lg text-gray-700 mb-4">
-                As a <Link href="/gaf-master-elite-contractor" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">GAF Master Elite contractor</Link> with <Link href="/about" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">30+ years of experience</Link>, we understand the unique challenges of each market. Our specialized approach offers priority scheduling, competitive pricing, and the expertise needed to handle complex, multi-property projects.
+                As a <Link href="/resources/gaf-master-elite-contractor" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">GAF Master Elite contractor</Link> with <Link href="/about" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">30+ years of experience</Link>, we understand the unique challenges of each market. Our specialized approach offers priority scheduling, competitive pricing, and the expertise needed to handle complex, multi-property projects.
               </p>
               <p className="text-lg text-gray-700">
                 Each market we serve receives tailored solutions designed to meet specific requirements, ensuring you receive the service level and support your organization needs. From initial consultation to project completion, we work closely with our clients to deliver exceptional results.

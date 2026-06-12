@@ -1,75 +1,79 @@
 'use client'
 
-import { Section, SectionHeader } from '@/components/ui/Section'
+import { Section } from '@/components/ui/Section'
 import { ReviewCard } from '@/components/ui/ReviewCard'
-import { Card } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { AnimatedDiv } from '@/components/ui/AnimatedDiv'
 import { REVIEWS, AVERAGE_RATING, TOTAL_REVIEWS } from '@/lib/reviews'
-import { Star, ExternalLink, MessageSquare } from 'lucide-react'
+import { Star, ExternalLink, ChevronDown } from 'lucide-react'
 import Link from 'next/link'
+import { useState } from 'react'
+
+const GOOGLE_URL =
+  'https://www.google.com/search?q=Advanced+Roofing+%26+Siding+Inc.%2C+3601+211th+Ln+NW%2C+Oak+Grove%2C+MN+55303'
+
+const INITIAL_VISIBLE = 9
+const BATCH_SIZE = 21
+
+// First 30 reviews shown on homepage
+const HOME_REVIEWS = REVIEWS.slice(0, 30)
 
 export function ReviewsPreview() {
-  // Show first 6 reviews
-  const featuredReviews = REVIEWS.slice(0, 6)
+  const [visible, setVisible] = useState(INITIAL_VISIBLE)
+  const showMore = () => setVisible((v) => Math.min(v + BATCH_SIZE, HOME_REVIEWS.length))
+  const hasMore = visible < HOME_REVIEWS.length
 
   return (
     <Section className="bg-gray-50">
       <div className="mx-auto max-w-7xl">
-        {/* Rating Summary */}
+
+        {/* Header row */}
         <AnimatedDiv
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
+          className="mb-10 flex flex-col items-start gap-6 md:flex-row md:items-end md:justify-between"
         >
-          <Card className="bg-gradient-to-br from-red-50 to-red-100 border-2 border-red-200 mb-8 p-4 md:mb-12 md:p-6">
+          <div>
+            <p className="mb-1.5 text-xs font-semibold uppercase tracking-widest text-brand-primary">
+              Customer Reviews
+            </p>
+            <h2 className="text-2xl font-bold text-gray-900 md:text-3xl lg:text-4xl">
+              What Our Customers Say
+            </h2>
+            <p className="mt-2 max-w-xl text-sm text-gray-600 md:text-base">
+              Real feedback from homeowners and businesses across Minnesota and Wisconsin.
+            </p>
+          </div>
+
+          {/* Aggregate rating pill */}
+          <a
+            href={GOOGLE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex shrink-0 items-center gap-3 rounded-xl border border-gray-200 bg-white px-4 py-3 shadow-soft transition-shadow hover:shadow-md"
+          >
             <div className="text-center">
-              <div className="flex items-center justify-center gap-1.5 mb-3 md:gap-2 md:mb-4">
-                <div className="flex items-center">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star
-                      key={i}
-                      className={`h-5 w-5 md:h-8 md:w-8 ${
-                        i < Math.round(AVERAGE_RATING)
-                          ? 'fill-yellow-400 text-yellow-400'
-                          : 'fill-gray-200 text-gray-200'
-                      }`}
-                    />
-                  ))}
-                </div>
-                <span className="text-2xl font-bold text-gray-900 ml-1.5 md:text-3xl md:ml-2">
-                  {AVERAGE_RATING.toFixed(1)}
-                </span>
+              <p className="text-2xl font-bold leading-none text-gray-900">{AVERAGE_RATING.toFixed(1)}</p>
+              <div className="mt-0.5 flex items-center gap-0.5">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="h-3 w-3 fill-yellow-400 text-yellow-400" />
+                ))}
               </div>
-              <p className="text-base text-gray-700 mb-1.5 md:text-xl md:mb-2">
-                Based on {TOTAL_REVIEWS}+ verified customer reviews
-              </p>
-              <p className="text-sm text-gray-600 mb-4 md:text-base md:mb-6">
-                Trusted by homeowners and businesses across Minnesota and Wisconsin
-              </p>
-              <a
-                href="https://www.google.com/search?q=Advanced+Roofing+%26+Siding+Inc.%2C+3601+211th+Ln+NW%2C+Oak+Grove%2C+MN+55303"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2"
-              >
-                <Button variant="primary" size="md" className="group md:size-lg">
-                  Read More Reviews on Google
-                  <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 md:h-5 md:w-5" />
-                </Button>
-              </a>
             </div>
-          </Card>
+            <div className="border-l border-gray-200 pl-3">
+              <p className="text-sm font-semibold text-gray-900">{TOTAL_REVIEWS}+ Reviews</p>
+              <p className="text-[11px] text-gray-500">Google · Verified</p>
+            </div>
+            <ExternalLink className="h-3.5 w-3.5 text-gray-400 transition-transform group-hover:translate-x-0.5" />
+          </a>
         </AnimatedDiv>
 
-        <SectionHeader
-          title="What Our Customers Say"
-          description="Real reviews from real customers who trusted us with their exterior projects"
-        />
-
-        <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {featuredReviews.map((review, index) => (
+        {/* Review grid — first 3 are featured (larger), rest are compact */}
+        <div className="grid gap-4 md:grid-cols-3 md:gap-5">
+          {/* Top 3 — featured variant */}
+          {HOME_REVIEWS.slice(0, 3).map((review, i) => (
             <ReviewCard
               key={review.id}
               author={review.author}
@@ -77,39 +81,57 @@ export function ReviewsPreview() {
               text={review.text}
               date={review.date}
               source={review.source}
-              index={index}
+              index={i}
+              variant="featured"
+            />
+          ))}
+
+          {/* Remaining visible reviews — compact */}
+          {HOME_REVIEWS.slice(3, visible).map((review, i) => (
+            <ReviewCard
+              key={review.id}
+              author={review.author}
+              rating={review.rating}
+              text={review.text}
+              date={review.date}
+              source={review.source}
+              index={i}
+              variant="default"
             />
           ))}
         </div>
 
-        {/* View All Reviews CTA */}
+        {/* Show more / CTAs */}
         <AnimatedDiv
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-12 text-center"
+          transition={{ duration: 0.5, delay: 0.15 }}
+          className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center"
         >
-          <Card className="bg-white p-4 md:p-6">
-            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-red-50 md:mb-6 md:h-16 md:w-16">
-              <MessageSquare className="h-6 w-6 text-brand-primary md:h-8 md:w-8" />
-            </div>
-            <h3 className="mb-3 text-lg font-bold text-gray-900 md:mb-4 md:text-2xl">
+          {hasMore && (
+            <button
+              onClick={showMore}
+              className="inline-flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-5 py-2.5 text-sm font-semibold text-gray-700 shadow-soft transition hover:border-gray-300 hover:shadow-md"
+            >
+              <ChevronDown className="h-4 w-4" />
+              Show more reviews
+            </button>
+          )}
+          <Link href="/resources/reviews">
+            <Button variant="secondary" size="md" className="w-full sm:w-auto">
               Read All {TOTAL_REVIEWS}+ Reviews
-            </h3>
-            <p className="mb-4 text-sm text-gray-700 max-w-2xl mx-auto md:mb-6 md:text-lg">
-              See what hundreds of satisfied customers have to say about their experience with Advanced Roofing & Siding Inc.
-            </p>
-            <Link href="/resources/reviews">
-              <Button variant="primary" size="md" className="group md:size-lg">
-                View All Reviews
-                <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 md:h-5 md:w-5" />
-              </Button>
-            </Link>
-          </Card>
+            </Button>
+          </Link>
+          <a href={GOOGLE_URL} target="_blank" rel="noopener noreferrer">
+            <Button variant="primary" size="md" className="group w-full sm:w-auto">
+              Leave Us a Review
+              <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </Button>
+          </a>
         </AnimatedDiv>
+
       </div>
     </Section>
   )
 }
-

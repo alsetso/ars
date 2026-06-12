@@ -1,90 +1,183 @@
 'use client'
 
-import { Section, SectionHeader } from '@/components/ui/Section'
-import { Card } from '@/components/ui/Card'
-import { SERVICES } from '@/lib/constants'
 import { motion } from 'framer-motion'
-import { Home, PaintBucket, Square, CloudRain, Snowflake } from 'lucide-react'
-import Image from 'next/image'
-import Link from 'next/link'
-
-const iconMap = {
+import {
   Home,
   PaintBucket,
   Square,
   CloudRain,
-  Snowflake,
-}
+  Droplets,
+  Frame,
+  DoorOpen,
+  ArrowRight,
+} from 'lucide-react'
+import Link from 'next/link'
 
-// Service images - All using gallery images
-const serviceImages = [
-  '/gallery/394570286_927694532166401_5050008028973736549_n.webp', // Premium Roofing
-  '/gallery/379307894_905433307725857_336380520310619416_n (1).webp', // Siding Solutions
-  '/gallery/58814576_10155971881765740_7471379444305756160_n.webp', // Window Installation
-  '/gallery/380156327_905711167698071_326976560032986429_n.webp', // Storm Restoration
-  '/gallery/340661788_241238031731100_708703886642482358_n.webp', // Winterization
+const services = [
+  {
+    id: 'roofing',
+    href: '/services/roofing',
+    icon: Home,
+    title: 'Roofing',
+    description:
+      'GAF Master Elite certified roof systems with lifetime warranties — the highest standard available to Minnesota homeowners.',
+  },
+  {
+    id: 'siding',
+    href: '/services/siding',
+    icon: PaintBucket,
+    title: 'Siding',
+    description:
+      "Durable exterior siding systems built for Minnesota's climate — better insulation, weather resistance, and curb appeal.",
+  },
+  {
+    id: 'windows',
+    href: '/services/windows',
+    icon: Square,
+    title: 'Windows',
+    description:
+      'Energy-efficient window replacements that lower heating costs, reduce drafts, and meet Minnesota Energy Code.',
+  },
+  {
+    id: 'restoration',
+    href: '/services/storm-restoration',
+    icon: CloudRain,
+    title: 'Storm Restoration',
+    description:
+      'Hail and wind damage assessment with full insurance claim support. Most homeowners pay only their deductible.',
+  },
+  {
+    id: 'gutters',
+    href: '/services/gutters',
+    icon: Droplets,
+    title: 'Gutters',
+    description:
+      'Seamless aluminum gutter systems with optional protection covers. No joints to fail, no foundation damage.',
+  },
+  {
+    id: 'soffit-fascia',
+    href: '/services/soffit-fascia',
+    icon: Frame,
+    title: 'Soffit & Fascia',
+    description:
+      'The framework your roofline and GAF warranty depend on. Aluminum wraps that never rot, never need paint.',
+  },
+  {
+    id: 'exterior-doors',
+    href: '/services/exterior-doors',
+    icon: DoorOpen,
+    title: 'Exterior Doors',
+    description:
+      'Exterior door replacement built for comfort, security, and energy savings — durable, low-maintenance, and built to handle Minnesota winters.',
+  },
 ]
-
-const serviceSlugs = {
-  roofing: '/services/roofing',
-  siding: '/services/siding',
-  windows: '/services/windows',
-  restoration: '/services/storm-restoration',
-  winterization: '/services/winterization',
-}
 
 export function Services() {
   return (
-    <Section id="services" className="bg-white">
-      <SectionHeader
-        title="Our Services"
-        description="Comprehensive exterior solutions backed by decades of expertise"
-      />
+    <section id="services" className="bg-white border-t border-gray-100 section-padding">
+      <div className="container mx-auto container-padding">
 
-      <div className="grid grid-cols-2 gap-3 md:gap-4 md:grid-cols-2 lg:grid-cols-5">
-        {SERVICES.map((service, index) => {
-          const Icon = iconMap[service.icon as keyof typeof iconMap]
-          const slug = serviceSlugs[service.id as keyof typeof serviceSlugs]
-          
-          return (
-            <motion.div
-              key={service.id}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
-            >
-              <Card className="h-full overflow-hidden p-0 border-0 shadow-none transition-shadow duration-300 hover:shadow-lg" variant="elevated">
-                <Link href={slug} className="group block h-full cursor-pointer">
-                  {/* Service Image */}
-                  <div className="relative h-32 overflow-hidden md:h-40">
-                    <Image
-                      src={serviceImages[index]}
-                      alt={service.title}
-                      fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+        {/* Row header */}
+        <div className="mb-8 flex items-end justify-between gap-6">
+          <div>
+            <p className="mb-1 text-[11px] font-bold uppercase tracking-widest text-brand-primary">
+              What We Do
+            </p>
+            <h2 className="text-2xl font-bold tracking-tight text-gray-900 md:text-3xl">
+              Roofing, Siding &amp; Exterior Services
+            </h2>
+            <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-gray-500 md:text-base">
+              Serving the{' '}
+              <Link href="/service-areas" className="font-medium text-gray-700 hover:text-brand-primary transition-colors">
+                Twin Cities metro and Western Wisconsin
+              </Link>{' '}
+              since the 1990s — fully licensed, GAF Master Elite certified, and A+ BBB rated.
+            </p>
+          </div>
+          <Link
+            href="/services"
+            className="shrink-0 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary hover:text-brand-primary-dark transition-colors duration-200"
+          >
+            View All
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+
+        {/* Service cards — 4 cols desktop, wraps to 4+3 for 7 items */}
+        <div className="grid grid-cols-2 gap-3 md:gap-4 sm:grid-cols-3 lg:grid-cols-4">
+          {services.map((service, index) => {
+            const Icon = service.icon
+            return (
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.35, delay: index * 0.05 }}
+              >
+                <Link
+                  href={service.href}
+                  className="group flex h-full flex-col gap-3 rounded-xl border border-gray-100 bg-white p-4 shadow-soft transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-primary/20 hover:shadow-medium md:p-5"
+                >
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-primary-light transition-colors duration-200 group-hover:bg-brand-primary">
+                    <Icon
+                      className="h-5 w-5 text-brand-primary transition-colors duration-200 group-hover:text-white"
+                      strokeWidth={2}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                    
-                    {/* Icon Badge */}
-                    <div className="absolute left-3 top-3 rounded-lg bg-white/95 backdrop-blur-sm p-2 transition-transform duration-200 group-hover:scale-105 md:left-4 md:top-4">
-                      <Icon className={`h-4 w-4 md:h-5 md:w-5 ${service.id === 'winterization' ? 'text-blue-600' : 'text-brand-primary'}`} strokeWidth={2} />
-                    </div>
                   </div>
 
-                  <div className="pt-3 px-3 pb-3 md:pt-4 md:px-4 md:pb-4">
-                    <h3 className="mb-1 text-base font-bold tracking-tight text-gray-900 md:mb-1.5 md:text-lg group-hover:text-brand-primary transition-colors duration-200">{service.title}</h3>
-                    <p className="text-xs text-gray-600 leading-snug md:text-sm">{service.description}</p>
+                  <div className="flex-1">
+                    <h3 className="text-sm font-bold leading-snug text-gray-900 transition-colors duration-200 group-hover:text-brand-primary md:text-base">
+                      {service.title}
+                    </h3>
+                    <p className="mt-1 text-xs leading-relaxed text-gray-500 md:text-sm">
+                      {service.description}
+                    </p>
                   </div>
+
+                  <span className="flex items-center gap-1 text-xs font-semibold text-brand-primary opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                    Learn more
+                    <ArrowRight className="h-3 w-3" />
+                  </span>
                 </Link>
-              </Card>
-            </motion.div>
-          )
-        })}
+              </motion.div>
+            )
+          })}
+        </div>
+
+        {/* Supporting paragraph */}
+        <motion.p
+          className="mt-8 max-w-3xl text-sm leading-relaxed text-gray-500 md:text-base"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.2 }}
+        >
+          Every project is backed by our{' '}
+          <Link href="/resources/warranties" className="font-medium text-gray-700 hover:text-brand-primary transition-colors">
+            industry-leading warranty coverage
+          </Link>{' '}
+          and managed start-to-finish by our own licensed crews — no subcontracting. Whether you are
+          dealing with{' '}
+          <Link href="/services/storm-restoration" className="font-medium text-gray-700 hover:text-brand-primary transition-colors">
+            storm damage
+          </Link>
+          , planning a full{' '}
+          <Link href="/services/roofing" className="font-medium text-gray-700 hover:text-brand-primary transition-colors">
+            roof replacement
+          </Link>
+          , or upgrading your{' '}
+          <Link href="/services/windows" className="font-medium text-gray-700 hover:text-brand-primary transition-colors">
+            windows
+          </Link>{' '}
+          and{' '}
+          <Link href="/services/exterior-doors" className="font-medium text-gray-700 hover:text-brand-primary transition-colors">
+            exterior doors
+          </Link>{' '}
+          before winter, our team delivers on time and on budget.
+        </motion.p>
+
       </div>
-    </Section>
+    </section>
   )
 }
-
-

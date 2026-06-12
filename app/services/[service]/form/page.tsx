@@ -69,6 +69,11 @@ export default function ServiceFormPage() {
     email: '',
     phone: '',
     service: service === 'storm-restoration' ? 'storm' : service,
+    address: '',
+    city: '',
+    state: 'MN',
+    zip: '',
+    timeline: '',
     message: '',
   })
   
@@ -111,6 +116,11 @@ export default function ServiceFormPage() {
         email: '',
         phone: '',
         service: service === 'storm-restoration' ? 'storm' : service,
+        address: '',
+        city: '',
+        state: 'MN',
+        zip: '',
+        timeline: '',
         message: '',
       })
     } catch (err) {
@@ -237,19 +247,111 @@ export default function ServiceFormPage() {
                       <option value="siding">Siding</option>
                       <option value="windows">Windows</option>
                       <option value="storm">Storm Restoration</option>
+                      <option value="gutters">Gutters</option>
+                      <option value="soffit-fascia">Soffit &amp; Fascia</option>
+                      <option value="exterior-doors">Exterior Doors</option>
                       <option value="winterization">Winterization</option>
                       <option value="other">Other</option>
                     </select>
                   </div>
 
                   <div>
+                    <label htmlFor="address" className="block text-xs font-semibold text-gray-700 mb-1.5">
+                      Property Address *
+                    </label>
+                    <input
+                      type="text"
+                      id="address"
+                      name="address"
+                      required
+                      autoComplete="street-address"
+                      value={formData.address}
+                      onChange={handleChange}
+                      className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/20 transition-colors"
+                      placeholder="123 Main St"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-2">
+                    <div className="col-span-1">
+                      <label htmlFor="city" className="block text-xs font-semibold text-gray-700 mb-1.5">
+                        City *
+                      </label>
+                      <input
+                        type="text"
+                        id="city"
+                        name="city"
+                        required
+                        autoComplete="address-level2"
+                        value={formData.city}
+                        onChange={handleChange}
+                        className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/20 transition-colors"
+                        placeholder="Anoka"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="state" className="block text-xs font-semibold text-gray-700 mb-1.5">
+                        State *
+                      </label>
+                      <select
+                        id="state"
+                        name="state"
+                        required
+                        value={formData.state}
+                        onChange={handleChange}
+                        className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/20 transition-colors bg-white"
+                      >
+                        <option value="MN">MN</option>
+                        <option value="WI">WI</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label htmlFor="zip" className="block text-xs font-semibold text-gray-700 mb-1.5">
+                        ZIP
+                      </label>
+                      <input
+                        type="text"
+                        id="zip"
+                        name="zip"
+                        autoComplete="postal-code"
+                        value={formData.zip}
+                        onChange={handleChange}
+                        className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/20 transition-colors"
+                        placeholder="55303"
+                        maxLength={10}
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="timeline" className="block text-xs font-semibold text-gray-700 mb-1.5">
+                      When do you need this done? *
+                    </label>
+                    <select
+                      id="timeline"
+                      name="timeline"
+                      required
+                      value={formData.timeline}
+                      onChange={handleChange}
+                      className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/20 transition-colors bg-white"
+                    >
+                      <option value="">Select timeline</option>
+                      <option value="urgent">Urgent — within 1 week</option>
+                      <option value="soon">Soon — within 1 month</option>
+                      <option value="planning">Planning — 1–3 months</option>
+                      <option value="exploring">Just exploring options</option>
+                    </select>
+                  </div>
+
+                  <div>
                     <label htmlFor="message" className="block text-xs font-semibold text-gray-700 mb-1.5">
-                      Tell Us About Your Project
+                      Tell Us About Your Project *
                     </label>
                     <textarea
                       id="message"
                       name="message"
                       rows={3}
+                      required
                       value={formData.message}
                       onChange={handleChange}
                       className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/20 transition-colors resize-none"

@@ -1,17 +1,29 @@
 import { COMPANY_INFO } from '@/lib/constants'
 
 interface LocalBusinessSchemaProps {
-  city: string
-  state: string
-  stateFull: string
+  city?: string
+  state?: string
+  stateFull?: string
+  /** The canonical URL for this page's @id — defaults to company homepage */
+  pageUrl?: string
 }
 
-export function LocalBusinessSchema({ city, state, stateFull }: LocalBusinessSchemaProps) {
+export function LocalBusinessSchema({
+  city = 'Anoka',
+  state = 'MN',
+  stateFull = 'Minnesota',
+  pageUrl,
+}: LocalBusinessSchemaProps) {
+  const id = pageUrl
+    ? `https://advancedroofingmn.com${pageUrl}`
+    : `https://advancedroofingmn.com/service-areas/${state.toLowerCase()}/${city.toLowerCase().replace(/\s+/g, '-')}`
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    '@id': `https://advancedroofingmn.com/service-areas/${state}/${city}`,
-    name: `${COMPANY_INFO.name} - ${city}, ${state}`,
+    '@id': id,
+    name: city !== 'Anoka' || state !== 'MN'
+      ? `${COMPANY_INFO.name} - ${city}, ${state}`
+      : COMPANY_INFO.name,
     image: 'https://advancedroofingmn.com/AFS-Logo900.png',
     additionalType: 'https://schema.org/HomeAndGardenBusiness',
     address: {
@@ -24,7 +36,7 @@ export function LocalBusinessSchema({ city, state, stateFull }: LocalBusinessSch
       '@type': 'GeoCoordinates',
       // Coordinates would be added per city if available
     },
-    url: `https://advancedroofingmn.com/service-areas/${state}/${city}`,
+    url: id,
     telephone: COMPANY_INFO.phone,
     priceRange: '$$',
     openingHoursSpecification: [
@@ -106,7 +118,7 @@ export function LocalBusinessSchema({ city, state, stateFull }: LocalBusinessSch
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '4.9',
-      reviewCount: '150',
+      reviewCount: '160',
       bestRating: '5',
       worstRating: '1',
     },

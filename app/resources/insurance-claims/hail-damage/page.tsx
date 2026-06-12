@@ -2,24 +2,20 @@ import { PageLayout } from '@/components/layout/PageLayout'
 import { PageHero } from '@/components/ui/PageHero'
 import { Section, SectionHeader } from '@/components/ui/Section'
 import { Card } from '@/components/ui/Card'
-import { Button } from '@/components/ui/Button'
 import { AnimatedDiv } from '@/components/ui/AnimatedDiv'
+import { StormDamageBanner } from '@/components/sections/StormDamageBanner'
+import { ClaimSubNav } from '@/components/sections/ClaimSubNav'
 import {
   Shield,
   CheckCircle,
   AlertCircle,
-  FileText,
-  Users,
-  Building2,
-  Phone,
-  Calendar,
   CloudRain,
   Home,
   Hammer,
-  Award,
   ArrowRight,
   Eye,
   HelpCircle,
+  Phone,
 } from 'lucide-react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
@@ -265,31 +261,36 @@ export default function HailDamageClaimsPage() {
         backgroundImage="https://images.unsplash.com/photo-1632495375739-c7876ca4c8b9?q=80&w=2400"
       />
 
-      {/* Introduction Section */}
-      <Section className="bg-white">
+      <StormDamageBanner variant="bar" />
+      <ClaimSubNav current="/resources/insurance-claims/hail-damage" />
+
+      {/* Introduction */}
+      <Section className="bg-white pb-0">
         <div className="mx-auto max-w-4xl">
           <AnimatedDiv
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
           >
-            <Card>
-              <div className="prose prose-lg max-w-none">
-                <p className="text-lg leading-relaxed text-gray-700 mb-4">
-                  Hailstorms across Minnesota and Wisconsin can hit with almost no warning—leaving roofs bruised, 
-                  granules displaced, siding cracked, gutters dented, and homeowners unsure what to do next. For 
-                  more than 20 years, Advanced Roofing & Siding has been the trusted partner for thousands of families 
-                  navigating hail damage and the insurance claim process the right way—documented, code-compliant, 
-                  and backed by our <Link href="/resources/gaf-master-elite-contractor" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">GAF Master Elite® certification</Link>.
-                </p>
-                <p className="text-lg leading-relaxed text-gray-700">
-                  Our team understands the exact metrics adjusters use, the building codes Minnesota and Wisconsin 
-                  require, and the documentation insurers expect. We guide homeowners from inspection → claim filing → 
-                  adjuster meeting → approved scope → full replacement or repair—with no shortcuts, no storm-chaser 
-                  tactics, and a service model built on integrity and accuracy.
-                </p>
-              </div>
-            </Card>
+            <p className="mb-1.5 text-xs font-semibold uppercase tracking-widest text-brand-primary">Hail Damage Claims</p>
+            <h2 className="mb-4 text-2xl font-bold text-gray-900 md:text-3xl">
+              Minnesota & Wisconsin Hail Damage — What You Need to Know
+            </h2>
+            <p className="mb-3 text-sm leading-relaxed text-gray-700 md:text-base">
+              Hailstorms across <Link href="/service-areas/minnesota" className="font-semibold text-brand-primary hover:underline">Minnesota</Link> and{' '}
+              <Link href="/service-areas/wisconsin" className="font-semibold text-brand-primary hover:underline">Wisconsin</Link> can hit with almost no warning—leaving{' '}
+              <Link href="/services/roofing" className="font-semibold text-brand-primary hover:underline">roofs</Link> bruised,{' '}
+              <Link href="/services/siding" className="font-semibold text-brand-primary hover:underline">siding</Link> cracked, and{' '}
+              <Link href="/services/gutters" className="font-semibold text-brand-primary hover:underline">gutters</Link> dented.
+              For 30+ years, Advanced Roofing & Siding has helped thousands of families navigate hail damage insurance claims the right way—
+              documented, code-compliant, and backed by our{' '}
+              <Link href="/resources/gaf-master-elite-contractor" className="font-semibold text-brand-primary hover:underline">GAF Master Elite® certification</Link>.
+            </p>
+            <p className="text-sm leading-relaxed text-gray-600 md:text-base">
+              We understand the exact metrics adjusters use, the building codes required, and the documentation insurers expect—guiding you from
+              inspection to final payment with no shortcuts and no storm-chaser tactics.
+            </p>
           </AnimatedDiv>
         </div>
       </Section>
@@ -351,45 +352,38 @@ export default function HailDamageClaimsPage() {
         </div>
       </Section>
 
-      {/* 7-Step Process */}
+      {/* Claim Process — compact numbered list */}
       <Section className="bg-white">
-        <SectionHeader
-          title="Our Hail Damage Insurance Claim Process"
-          description="A proven 7-step system built on documentation, accuracy, and compliance"
-        />
-        <div className="mx-auto max-w-6xl">
-          <div className="space-y-6">
-            {processSteps.map((step, index) => (
+        <div className="mx-auto max-w-4xl">
+          <AnimatedDiv
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-6"
+          >
+            <p className="mb-1.5 text-xs font-semibold uppercase tracking-widest text-brand-primary">Our Process</p>
+            <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">
+              Hail Damage Claim Process — Step by Step
+            </h2>
+          </AnimatedDiv>
+          <div className="space-y-3">
+            {processSteps.map((step, i) => (
               <AnimatedDiv
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                key={step.number}
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.3, delay: i * 0.05 }}
+                className="flex gap-4 rounded-xl border border-gray-100 bg-gray-50 p-4"
               >
-                <Card className="overflow-hidden" variant="elevated">
-                  <div className="grid gap-6 md:grid-cols-4">
-                    <div className="md:col-span-1">
-                      <div className="flex items-center gap-4">
-                        <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100">
-                          <span className="text-2xl font-bold text-brand-primary">{step.number}</span>
-                        </div>
-                        <h3 className="text-xl font-bold text-gray-900">{step.title}</h3>
-                      </div>
-                    </div>
-                    <div className="md:col-span-3">
-                      <p className="mb-4 text-gray-700">{step.description}</p>
-                      <ul className="grid gap-2 sm:grid-cols-2">
-                        {step.features.map((feature, featIndex) => (
-                          <li key={featIndex} className="flex items-start gap-2">
-                            <CheckCircle className="h-5 w-5 flex-shrink-0 text-brand-primary mt-0.5" />
-                            <span className="text-sm text-gray-600">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </Card>
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-primary text-sm font-bold text-white">
+                  {step.number}
+                </div>
+                <div className="min-w-0">
+                  <h3 className="mb-0.5 text-sm font-bold text-gray-900 md:text-base">{step.title}</h3>
+                  <p className="text-xs leading-relaxed text-gray-600 md:text-sm">{step.description}</p>
+                </div>
               </AnimatedDiv>
             ))}
           </div>
@@ -431,40 +425,6 @@ export default function HailDamageClaimsPage() {
                         </li>
                       ))}
                     </ul>
-                  </Card>
-                </AnimatedDiv>
-              )
-            })}
-          </div>
-        </div>
-      </Section>
-
-      {/* Why Choose Us */}
-      <Section className="bg-white">
-        <SectionHeader
-          title="Why Choose Advanced Roofing & Siding for Hail Claims?"
-          description="A 20+ Year Local Company — Not a Storm Chaser"
-        />
-        <div className="mx-auto max-w-6xl">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {whyChooseUs.map((reason, index) => {
-              const Icon = reason.icon
-              return (
-                <AnimatedDiv
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                >
-                  <Card className="h-full text-center" variant="elevated">
-                    <div className="mb-4 flex justify-center">
-                      <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100">
-                        <Icon className="h-7 w-7 text-brand-primary" strokeWidth={2} />
-                      </div>
-                    </div>
-                    <h3 className="mb-2 text-lg font-bold text-gray-900">{reason.title}</h3>
-                    <p className="text-sm leading-relaxed text-gray-600">{reason.description}</p>
                   </Card>
                 </AnimatedDiv>
               )
@@ -551,92 +511,49 @@ export default function HailDamageClaimsPage() {
         </div>
       </Section>
 
-      {/* Related Resources */}
-      <Section className="bg-white">
-        <div className="mx-auto max-w-6xl">
+      {/* Closing CTA + related links */}
+      <Section className="bg-brand-secondary">
+        <div className="mx-auto max-w-4xl text-center">
           <AnimatedDiv
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
           >
-            <Card className="bg-gradient-to-br from-gray-50 to-gray-100 border-2 border-gray-200">
-              <div className="text-center mb-6">
-                <h2 className="mb-3 text-2xl font-bold text-gray-900 md:text-3xl">
-                  Other Storm Damage Resources
-                </h2>
-                <p className="text-lg text-gray-700">
-                  Learn about other types of storm damage and insurance claims
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-4 justify-center">
-                <Link href="/resources/insurance-claims/wind-damage">
-                  <Button variant="outline" size="lg" className="group">
-                    Wind Damage Claims
-                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </Button>
-                </Link>
-                <Link href="/resources/insurance-claims/ice-dam-snow-damage-claims">
-                  <Button variant="outline" size="lg" className="group">
-                    Ice Dam & Snow Damage
-                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </Button>
-                </Link>
-                <Link href="/resources/insurance-claims/tree-damage">
-                  <Button variant="outline" size="lg" className="group">
-                    Tree Damage Claims
-                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </Button>
-                </Link>
-                <Link href="/resources/insurance-claims/old-roof">
-                  <Button variant="outline" size="lg" className="group">
-                    Old Roof Claims
-                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </Button>
-                </Link>
-              </div>
-            </Card>
-          </AnimatedDiv>
-        </div>
-      </Section>
-
-      {/* CTA Section */}
-      <Section className="bg-gradient-to-br from-gray-50 to-gray-100">
-        <div className="mx-auto max-w-4xl">
-          <AnimatedDiv
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <Card className="bg-white border-2 border-gray-200">
-              <div className="text-center">
-                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-red-50">
-                  <CloudRain className="h-8 w-8 text-brand-primary" />
-                </div>
-                <h2 className="mb-4 text-3xl font-bold text-gray-900">
-                  Get a Free Hail Damage Inspection Today
-                </h2>
-                <p className="mb-6 text-lg text-gray-700 max-w-2xl mx-auto">
-                  Advanced Roofing & Siding | Minnesota • Wisconsin<br />
-                  GAF Master Elite® | Insurance Claim Specialists | 20+ Years Experience
-                </p>
-                <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-                  <Link href="/contact">
-                    <Button variant="primary" size="lg" className="group">
-                      Schedule Free Inspection
-                      <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                    </Button>
+            <CloudRain className="mx-auto mb-4 h-10 w-10 text-brand-primary" strokeWidth={1.5} />
+            <h2 className="mb-3 text-2xl font-bold text-white md:text-3xl">
+              Get a Free Hail Damage Inspection — 48-Hour Guarantee
+            </h2>
+            <p className="mb-6 text-sm text-white/70 md:text-base">
+              GAF Master Elite® · 30+ Years in MN & WI · Insurance Claim Specialists
+            </p>
+            <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+              <Link href="/contact">
+                <button className="inline-flex items-center gap-2 rounded-xl bg-brand-primary px-6 py-3 text-sm font-bold text-white transition hover:bg-brand-primary-dark">
+                  <ArrowRight className="h-4 w-4" />
+                  Schedule Free Inspection
+                </button>
+              </Link>
+              <a href="tel:763-427-3093" className="inline-flex items-center gap-2 rounded-xl border border-white/20 px-6 py-3 text-sm font-bold text-white transition hover:border-white/40">
+                <Phone className="h-4 w-4" />
+                763-427-3093
+              </a>
+            </div>
+            <div className="mt-8 border-t border-white/10 pt-6">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-white/40">Other Damage Type Guides</p>
+              <div className="flex flex-wrap justify-center gap-2">
+                {[
+                  { label: '💨 Wind Damage', href: '/resources/insurance-claims/wind-damage' },
+                  { label: '❄️ Ice Dam & Snow', href: '/resources/insurance-claims/ice-dam-snow-damage-claims' },
+                  { label: '🌳 Tree Damage', href: '/resources/insurance-claims/tree-damage' },
+                  { label: '🏠 Old Roof Claims', href: '/resources/insurance-claims/old-roof' },
+                ].map((l) => (
+                  <Link key={l.href} href={l.href} className="rounded-full border border-white/15 px-3 py-1 text-xs font-semibold text-white/70 transition hover:border-white/30 hover:text-white">
+                    {l.label}
                   </Link>
-                  <a href="tel:763-427-3093">
-                    <Button variant="outline" size="lg">
-                      <Phone className="mr-2 h-5 w-5" />
-                      Call 763-427-3093
-                    </Button>
-                  </a>
-                </div>
+                ))}
               </div>
-            </Card>
+            </div>
           </AnimatedDiv>
         </div>
       </Section>

@@ -1,13 +1,13 @@
 import { PageLayout } from '@/components/layout/PageLayout'
 import { PageHero } from '@/components/ui/PageHero'
-import { Section, SectionHeader } from '@/components/ui/Section'
-import { Card } from '@/components/ui/Card'
+import { ReviewsBanner } from '@/components/sections/ReviewsBanner'
+import { InsuranceClaimsCTA } from '@/components/sections/InsuranceClaimsCTA'
 import { AnimatedDiv } from '@/components/ui/AnimatedDiv'
-import { Button } from '@/components/ui/Button'
-import { Home, Shield, ArrowRight, Clock, Award, Users, FileCheck, HelpCircle, ArrowLeft } from 'lucide-react'
+import { Home, Shield, Clock, Award, FileCheck, CheckCircle, ArrowRight, Phone } from 'lucide-react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { FAQSchema } from '@/components/seo/FAQSchema'
+import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema'
 
 export const metadata: Metadata = {
   title: 'Residential Roofing & Siding Services | Minnesota & Wisconsin | Advanced Roofing & Siding',
@@ -36,323 +36,189 @@ export const metadata: Metadata = {
     'wind damage roofing Minnesota',
     'residential gutters MN',
   ],
-  alternates: {
-    canonical: 'https://advancedroofingmn.com/who-we-serve/residential',
-  },
+  alternates: { canonical: 'https://advancedroofingmn.com/who-we-serve/residential' },
   openGraph: {
     title: 'Residential Roofing & Exterior Services in Minnesota & Wisconsin',
     description: 'Trusted home exterior services including roofing, siding, windows, and storm restoration. Serving Minnesota & Wisconsin homeowners since 2001.',
     url: 'https://advancedroofingmn.com/who-we-serve/residential',
     type: 'website',
-    images: [
-      {
-        url: 'https://advancedroofingmn.com/AFS-Logo900.png',
-        width: 1200,
-        height: 630,
-        alt: 'Residential Roofing & Siding Services - Advanced Roofing & Siding Inc.',
-      },
-    ],
+    images: [{ url: 'https://advancedroofingmn.com/AFS-Logo900.png', width: 1200, height: 630, alt: 'Residential Roofing & Siding Services' }],
   },
 }
 
-const roofingServices = [
-  {
-    title: 'Certified Roof Replacement & Installation',
-    description: 'Expert roof replacement and installation with GAF Master Elite® certified practices. We install premium shingle systems, designer shingles, metal roofing options, and premium underlayment systems with industry-leading warranties up to 50 years.',
-    icon: Home,
-  },
-  {
-    title: 'Storm Damage & Insurance Claim Support',
-    description: 'Comprehensive storm damage assessments with drone/aerial measurement reports and thorough photo documentation. We specialize in hail, wind, and ice dam damage with full insurance claim guidance, adjuster meetings, and claim management.',
-    icon: Clock,
-  },
-  {
-    title: 'Roofing Repairs for Hail, Wind & Ice Damage',
-    description: 'Fast, professional repairs for hail damage, wind damage, ice dams, and leaking roofs. We provide detailed inspections to identify missing shingles, granule loss, leaks, and age-related wear.',
-    icon: Shield,
-  },
-]
-
-const exteriorServices = [
-  {
-    title: 'Siding Installation & Replacement',
-    description: 'Transform your home\'s exterior with durable siding options including LP SmartSide®, fiber cement, and traditional materials. We enhance curb appeal, long-term value, and total weather protection.',
-    icon: Shield,
-  },
-  {
-    title: 'Window Replacement for Energy Efficiency',
-    description: 'High-performance window systems that reduce heating and cooling costs while improving home comfort and aesthetics. Energy-efficient windows backed by comprehensive warranties.',
-    icon: FileCheck,
-  },
-  {
-    title: 'Gutter Systems & Exterior Upgrades',
-    description: 'Complete gutter installation and exterior upgrades to protect your home from water damage. We provide comprehensive exterior restoration services for Minnesota and Wisconsin homes.',
-    icon: Home,
-  },
+const services = [
+  { title: 'Roof Replacement & Installation', href: '/services/roofing', icon: Home, desc: 'GAF Master Elite® certified installs — asphalt, designer shingles, and metal. Up to 50-year warranties.' },
+  { title: 'Storm Damage & Insurance Claims', href: '/resources/insurance-claims', icon: Clock, desc: 'Hail, wind, and ice dam assessments with drone documentation and full adjuster support.' },
+  { title: 'Roof Repairs — Hail, Wind, Ice Dams', href: '/services/storm-restoration', icon: Shield, desc: 'Fast repairs for missing shingles, granule loss, leaks, and age-related wear.' },
+  { title: 'Siding Installation & Replacement', href: '/services/siding', icon: Shield, desc: 'LP SmartSide®, fiber cement, and traditional materials. Curb appeal + weatherproofing.' },
+  { title: 'Window Replacement', href: '/services/windows', icon: FileCheck, desc: 'Energy-efficient window systems backed by comprehensive performance warranties.' },
+  { title: 'Gutters & Exterior Upgrades', href: '/services/roofing', icon: Home, desc: 'Seamless gutters, downspouts, and full exterior restoration for lasting protection.' },
 ]
 
 const whyChoose = [
-  {
-    icon: Award,
-    title: 'GAF Master Elite® Certification',
-    description: 'One of only ~2% of roofing companies nationwide with this prestigious certification. We deliver premium shingle systems, certified installation practices, and long-term warranties.',
-  },
-  {
-    icon: Shield,
-    title: 'Local Minnesota & Wisconsin Weather Expertise',
-    description: 'We understand the toughest roofing conditions—hail, snow loads, windstorms, and freeze-thaw cycles. Our detailed inspections and documentation help homeowners understand exactly what their roof needs.',
-  },
-  {
-    icon: Users,
-    title: '160+ Five-Star Reviews & Long-Term Warranties',
-    description: 'With thousands of completed projects and 160+ five-star reviews, we\'ve earned a reputation for professionalism, communication, and dependable service. Industry-leading warranties protect your investment.',
-  },
+  { text: 'GAF Master Elite® Certified — top 3% of roofers nationwide', href: '/resources/gaf-master-elite-contractor' },
+  { text: 'GAF Golden Pledge 50-Year Warranty available', href: '/resources/warranties' },
+  { text: '160+ five-star Google reviews across MN & WI', href: '/resources/reviews' },
+  { text: 'Specializes in hail, wind, and ice dam damage claims', href: '/resources/insurance-claims/hail-damage' },
+  { text: 'Free drone inspections with photo documentation', href: '/services/free-estimate' },
+  { text: 'Serving Minneapolis, Anoka, St. Paul & greater Twin Cities', href: '/service-areas/minnesota' },
 ]
 
 const faqs = [
-  {
-    question: 'How do I know if my home needs a roof replacement?',
-    answer: 'A full inspection will identify missing shingles, granule loss, leaks, storm damage, and age-related wear.',
-  },
-  {
-    question: 'Do you handle residential insurance claims for storm damage?',
-    answer: 'Yes. We help with documentation, adjuster meetings, and ensuring approved repairs match actual damage.',
-  },
-  {
-    question: 'How long does a residential roof replacement take?',
-    answer: 'Most homes are completed in 1 day, depending on size and complexity.',
-  },
-  {
-    question: 'What roofing materials do you offer?',
-    answer: 'We install asphalt shingles, designer shingles, metal roofing (optional), and premium underlayment systems.',
-  },
-  {
-    question: 'Do you offer financing for homeowners?',
-    answer: 'Yes — flexible financing options are available for roof replacements and exterior upgrades.',
-  },
-  {
-    question: 'Do you work year-round in Minnesota?',
-    answer: 'Yes. We complete winter installs when temperatures allow, and perform emergency repairs all year.',
-  },
+  { question: 'How do I know if my home needs a roof replacement?', answer: 'A free inspection will identify missing shingles, granule loss, leaks, storm damage, and age-related wear. Most homeowners are surprised to learn storm damage qualifies for insurance — we help navigate that.' },
+  { question: 'Do you handle residential insurance claims for storm damage?', answer: 'Yes. We help with documentation, adjuster meetings, and ensuring approved repairs match the actual scope of damage. Our team has handled hundreds of MN hail and wind claims.' },
+  { question: 'How long does a residential roof replacement take?', answer: 'Most homes are completed in one day, depending on size and complexity. We handle tear-off, install, and cleanup — you\'re back to normal by end of day.' },
+  { question: 'What roofing materials do you offer?', answer: 'We install asphalt shingles, designer shingles, metal roofing, and premium underlayment systems — all through GAF\'s Master Elite program with certified warranty options.' },
+  { question: 'Do you offer financing for homeowners?', answer: 'Yes — flexible financing options are available for roof replacements and exterior upgrades. Ask when you schedule your free estimate.' },
+  { question: 'Do you work year-round in Minnesota?', answer: 'Yes. We complete winter installs when temperatures allow and perform emergency repairs all year. Ice dam damage in particular requires fast response to prevent interior water damage.' },
 ]
 
 export default function ResidentialWhoWeServePage() {
   return (
     <>
       <FAQSchema faqs={faqs} />
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: '/' },
+        { name: 'Who We Serve', url: '/who-we-serve' },
+        { name: 'Residential', url: '/who-we-serve/residential' },
+      ]} />
       <PageLayout>
-      <PageHero
-        title="Residential Services"
-        description="Expert exterior services for homeowners across Minnesota and Wisconsin. Protecting your most important investment with GAF Master Elite quality"
-      />
+        <PageHero
+          title="Residential Services"
+          description="Expert exterior services for homeowners across Minnesota and Wisconsin. Protecting your most important investment with GAF Master Elite quality"
+          showForm
+          theme="dark"
+          backHref="/who-we-serve"
+          backLabel="Who We Serve"
+        />
 
-      {/* Back Button */}
-      <Section className="bg-white py-4">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <Link href="/who-we-serve">
-            <Button variant="outline" size="md" className="group">
-              <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
-              Back to Who We Serve
-            </Button>
-          </Link>
-        </div>
-      </Section>
+        <ReviewsBanner />
 
-      {/* Introduction - SEO Content */}
-      <Section className="bg-white">
-        <div className="mx-auto max-w-4xl">
-          <Card>
-            <div className="prose prose-lg max-w-none">
-              <p className="text-lg text-gray-700 mb-4">
-                Your home is your biggest investment, and at Advanced Roofing & Siding, we protect it with industry-leading residential roofing and exterior services across <Link href="/service-areas/minnesota" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota</Link> and <Link href="/service-areas/wisconsin" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Western Wisconsin</Link>. As a <Link href="/resources/gaf-master-elite-contractor" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">GAF Master Elite® Contractor</Link>—a credential earned by only ~2% of roofing companies nationwide—we deliver premium shingle systems, certified installation practices, and long-term <Link href="/resources/warranties" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">warranties</Link> that give homeowners true peace of mind. Whether your home has <Link href="/services/storm-restoration" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">storm damage</Link>, aging shingles, or you're planning a full exterior upgrade, our team ensures every <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roofing project</Link> is completed with precision, clarity, and respect for your property.
-              </p>
-              <p className="text-lg text-gray-700 mb-4">
-                Minnesota and Wisconsin have some of the toughest roofing conditions in the country. Hail, snow loads, windstorms, and freeze-thaw cycles can cause shingle failure years before expected. That's why we provide detailed <Link href="/services/free-inspection" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">inspections</Link>, drone/aerial measurement reports, and thorough photo documentation to help homeowners understand exactly what their roof needs. We specialize in <Link href="/resources/insurance-claims" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">storm damage assessments</Link>, <Link href="/resources/insurance-claims" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">insurance claim guidance</Link>, and retail roof replacements, offering honest recommendations without the high-pressure sales tactics common in the industry. Our <Link href="/resources/24-7-support" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">24/7 support</Link> ensures you have help when you need it most, especially during emergency situations.
-              </p>
-              <p className="text-lg text-gray-700 mb-4">
-                Beyond <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">roofing</Link>, our residential services include <Link href="/services/siding" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">siding installation</Link>, <Link href="/services/windows" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">window replacement</Link>, <Link href="/services/winterization" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">winterization services</Link>, gutters, and full exterior restoration. From traditional asphalt shingles and LP SmartSide® siding to fiber cement and high-performance window systems, we help homeowners improve curb appeal, long-term value, and total weather protection. Our craftsmanship is supported by skilled subcontractors who have worked with us for 15+ years—ensuring reliable workmanship on every home. View our <Link href="/resources/reviews" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">customer reviews</Link> to see why thousands of homeowners trust us with their most important investment.
-              </p>
-              <p className="text-lg text-gray-700">
-                With thousands of completed projects and 160+ five-star <Link href="/resources/reviews" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">reviews</Link>, Advanced Roofing & Siding has earned a reputation for professionalism, communication, and dependable service. We treat your home like our own—from the first <Link href="/services/free-estimate" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">free estimate</Link> to the final cleanup. If you're looking for a trusted residential roofing contractor in <Link href="/service-areas/minnesota/minneapolis" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minneapolis</Link>, <Link href="/service-areas/minnesota/st-paul" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">St. Paul</Link>, <Link href="/service-areas/minnesota/anoka" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Anoka</Link>, or throughout <Link href="/service-areas/minnesota" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota</Link> and <Link href="/service-areas/wisconsin" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Wisconsin</Link>, our team is here to help you protect your home for decades to come. <Link href="/contact" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Contact us today</Link> to schedule your free inspection and learn more about our <Link href="/about" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">30+ years of experience</Link> serving homeowners across the region.
-              </p>
+        {/* Introduction */}
+        <section className="bg-white py-12 md:py-14">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
+              <AnimatedDiv initial={{ opacity: 0, x: -16 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.45 }}>
+                <p className="text-xs font-semibold uppercase tracking-widest text-brand-primary mb-3">Homeowners</p>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4 md:text-3xl">
+                  Your Home Deserves a Contractor You Can Trust
+                </h2>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Minnesota and Wisconsin have some of the harshest roofing conditions in the country — hail, ice dams, windstorms, and extreme freeze-thaw cycles. As a{' '}
+                  <Link href="/resources/gaf-master-elite-contractor" className="text-brand-primary hover:underline font-medium">GAF Master Elite® Contractor</Link>{' '}
+                  (top 3% nationwide), we deliver premium shingle systems, certified installs, and warranties up to 50 years. From{' '}
+                  <Link href="/resources/insurance-claims" className="text-brand-primary hover:underline font-medium">storm damage claims</Link>{' '}
+                  to full exterior upgrades, every project is handled with precision and respect for your property.
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  We serve homeowners across the{' '}
+                  <Link href="/service-areas/mn/minneapolis" className="text-brand-primary hover:underline font-medium">Twin Cities</Link>,{' '}
+                  <Link href="/service-areas/mn/anoka" className="text-brand-primary hover:underline font-medium">Anoka County</Link>,{' '}
+                  <Link href="/service-areas/minnesota" className="text-brand-primary hover:underline font-medium">greater Minnesota</Link>, and{' '}
+                  <Link href="/service-areas/wisconsin" className="text-brand-primary hover:underline font-medium">Western Wisconsin</Link>{' '}
+                  — with honest estimates, no pressure, and 30+ years of experience behind every job.
+                </p>
+              </AnimatedDiv>
+
+              <AnimatedDiv initial={{ opacity: 0, x: 16 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.45, delay: 0.1 }}>
+                <p className="text-sm font-semibold text-gray-900 mb-4">Why homeowners choose us:</p>
+                <ul className="space-y-3">
+                  {whyChoose.map(({ text, href }) => (
+                    <li key={text} className="flex items-start gap-3">
+                      <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-primary" />
+                      <Link href={href} className="text-sm text-gray-700 hover:text-brand-primary transition-colors">{text}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </AnimatedDiv>
             </div>
-          </Card>
-        </div>
-      </Section>
-
-      {/* Residential Roofing Services */}
-      <Section className="bg-gray-50">
-        <SectionHeader
-          title="Residential Roofing Services in Minnesota & Wisconsin"
-          description="Certified roof replacement, storm damage repair, and comprehensive roofing solutions"
-        />
-        <div className="mx-auto max-w-6xl">
-          <div className="grid gap-6 md:grid-cols-3">
-            {roofingServices.map((service, index) => {
-              const Icon = service.icon
-              return (
-                <AnimatedDiv
-                  key={service.title}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                >
-                  <Card className="h-full">
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100">
-                      <Icon className="h-6 w-6 text-brand-primary" strokeWidth={2} />
-                    </div>
-                    <h3 className="mb-2 text-xl font-bold text-gray-900">{service.title}</h3>
-                    <p className="text-gray-600">{service.description}</p>
-                    <div className="mt-4">
-                      <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold text-sm underline underline-offset-2">
-                        Learn more about roofing →
-                      </Link>
-                    </div>
-                  </Card>
-                </AnimatedDiv>
-              )
-            })}
           </div>
-        </div>
-      </Section>
+        </section>
 
-      {/* Complete Home Exterior Solutions */}
-      <Section className="bg-white">
-        <SectionHeader
-          title="Complete Home Exterior Solutions"
-          description="Siding, windows, gutters, and full exterior restoration for Minnesota and Wisconsin homes"
-        />
-        <div className="mx-auto max-w-6xl">
-          <div className="grid gap-6 md:grid-cols-3">
-            {exteriorServices.map((service, index) => {
-              const Icon = service.icon
-              const serviceLink = service.title.includes('Siding') ? '/services/siding' : service.title.includes('Window') ? '/services/windows' : '/services/storm-restoration'
-              return (
-                <AnimatedDiv
-                  key={service.title}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                >
-                  <Card className="h-full">
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100">
-                      <Icon className="h-6 w-6 text-brand-primary" strokeWidth={2} />
+        {/* Services */}
+        <section className="bg-gray-50 py-12 md:py-14">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <AnimatedDiv initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} className="mb-8">
+              <p className="text-xs font-semibold uppercase tracking-widest text-brand-primary mb-2">Services</p>
+              <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">Residential Roofing & Exterior Services</h2>
+              <p className="mt-2 text-sm text-gray-500 max-w-xl">
+                Full-scope exterior services for homeowners — roofing, siding, windows, and storm restoration.
+              </p>
+            </AnimatedDiv>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {services.map(({ title, href, icon: Icon, desc }, i) => (
+                <AnimatedDiv key={title} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.35, delay: i * 0.05 }}>
+                  <Link href={href} className="group flex h-full flex-col gap-3 rounded-xl border border-gray-200 bg-white p-5 transition hover:border-brand-primary hover:shadow-md">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-primary-light text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition">
+                      <Icon className="h-4 w-4" />
+                    </span>
+                    <div>
+                      <h3 className="mb-1 text-sm font-semibold text-gray-900 group-hover:text-brand-primary transition">{title}</h3>
+                      <p className="text-xs leading-relaxed text-gray-500">{desc}</p>
                     </div>
-                    <h3 className="mb-2 text-xl font-bold text-gray-900">{service.title}</h3>
-                    <p className="text-gray-600">{service.description}</p>
-                    <div className="mt-4">
-                      <Link href={serviceLink} className="text-brand-primary hover:text-red-800 font-semibold text-sm underline underline-offset-2">
-                        Learn more →
-                      </Link>
-                    </div>
-                  </Card>
-                </AnimatedDiv>
-              )
-            })}
-          </div>
-        </div>
-      </Section>
-
-      {/* Why Homeowners Choose Advanced Roofing & Siding */}
-      <Section className="bg-gray-50">
-        <SectionHeader
-          title="Why Homeowners Choose Advanced Roofing & Siding"
-          description="GAF Master Elite certification, local weather expertise, and proven track record"
-        />
-        <div className="mx-auto max-w-6xl">
-          <div className="grid gap-6 md:grid-cols-3">
-            {whyChoose.map((item, index) => {
-              const Icon = item.icon
-              return (
-                <AnimatedDiv
-                  key={item.title}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                >
-                  <Card className="h-full text-center">
-                    <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100">
-                      <Icon className="h-6 w-6 text-brand-primary" strokeWidth={2} />
-                    </div>
-                    <h3 className="mb-2 text-lg font-bold text-gray-900">{item.title}</h3>
-                    <p className="text-sm text-gray-600">{item.description}</p>
-                  </Card>
-                </AnimatedDiv>
-              )
-            })}
-          </div>
-        </div>
-      </Section>
-
-      {/* FAQ Section */}
-      <Section className="bg-gray-50">
-        <SectionHeader
-          title="Frequently Asked Questions About Residential Services"
-          description="Common questions from Minnesota and Wisconsin homeowners"
-        />
-        <div className="mx-auto max-w-4xl">
-          <Card>
-            <div className="space-y-6">
-              {faqs.map((faq, index) => (
-                <AnimatedDiv
-                  key={index}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                >
-                  <div className="border-b border-gray-200 pb-6 last:border-b-0 last:pb-0">
-                    <div className="flex items-start gap-3 mb-2">
-                      <HelpCircle className="h-6 w-6 flex-shrink-0 text-brand-primary mt-0.5" />
-                      <h3 className="text-lg font-bold text-gray-900">{faq.question}</h3>
-                    </div>
-                    <p className="text-gray-700 ml-9">{faq.answer}</p>
-                  </div>
+                    <span className="mt-auto flex items-center gap-1 text-xs font-medium text-brand-primary opacity-0 group-hover:opacity-100 transition">
+                      Learn more <ArrowRight className="h-3 w-3" />
+                    </span>
+                  </Link>
                 </AnimatedDiv>
               ))}
             </div>
-          </Card>
-        </div>
-      </Section>
+          </div>
+        </section>
 
-      {/* Request a Free Residential Roof Inspection */}
-      <Section className="bg-gradient-to-br from-red-50 to-white">
-        <div className="mx-auto max-w-4xl text-center">
-          <AnimatedDiv
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
-          >
-            <Card className="bg-white border-2 border-red-100">
-              <h2 className="mb-3 text-2xl font-bold text-gray-900 md:text-3xl">
-                Request a Free Residential Roof Inspection
-              </h2>
-              <p className="mb-6 text-base text-gray-700 md:text-lg max-w-2xl mx-auto">
-                Get your free inspection from a GAF Master Elite® contractor. We serve <Link href="/service-areas/minnesota" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Minnesota</Link> and <Link href="/service-areas/wisconsin" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Wisconsin</Link> homeowners with expert exterior services backed by industry-leading warranties. Serving the <Link href="/service-areas/minnesota/minneapolis" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Twin Cities</Link>, <Link href="/service-areas/minnesota/anoka" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Anoka</Link>, <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Hennepin County</Link>, <Link href="/service-areas" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Washington County</Link>, and <Link href="/service-areas/wisconsin" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Western Wisconsin</Link>.
+        {/* FAQ */}
+        <section className="bg-white py-12 md:py-14">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            <AnimatedDiv initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} className="mb-8">
+              <p className="text-xs font-semibold uppercase tracking-widest text-brand-primary mb-2">FAQ</p>
+              <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">Residential Roofing Questions</h2>
+            </AnimatedDiv>
+            <div className="divide-y divide-gray-100">
+              {faqs.map((faq, i) => (
+                <AnimatedDiv key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.04 }} className="py-5">
+                  <h3 className="mb-2 text-sm font-semibold text-gray-900">{faq.question}</h3>
+                  <p className="text-sm leading-relaxed text-gray-600">{faq.answer}</p>
+                </AnimatedDiv>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Closing CTA */}
+        <section className="bg-brand-secondary py-14 md:py-16">
+          <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+            <AnimatedDiv initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
+              <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-brand-primary">Free Inspection</p>
+              <h2 className="mb-3 text-2xl font-bold text-white md:text-3xl">Request a Free Residential Roof Inspection</h2>
+              <p className="mb-7 mx-auto max-w-xl text-sm text-white/70 md:text-base">
+                Serving{' '}
+                <Link href="/service-areas/minnesota" className="text-white/90 underline underline-offset-2 hover:text-white">Minnesota</Link>{' '}
+                and{' '}
+                <Link href="/service-areas/wisconsin" className="text-white/90 underline underline-offset-2 hover:text-white">Western Wisconsin</Link>{' '}
+                homeowners with certified roofing, siding, and storm damage services. Free, no-obligation inspection — same-day response.
               </p>
-              <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
+              <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
                 <Link href="/contact">
-                  <Button variant="primary" size="lg">
-                    Get Free Inspection
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
+                  <button className="inline-flex items-center gap-2 rounded-xl bg-brand-primary px-6 py-3 text-sm font-bold text-white transition hover:bg-brand-primary-dark">
+                    Get Free Inspection <ArrowRight className="h-4 w-4" />
+                  </button>
                 </Link>
-                <Link href="/services/free-inspection">
-                  <Button variant="outline" size="lg">
-                    Learn About Inspections
-                  </Button>
-                </Link>
+                <a href={`tel:${COMPANY_INFO.phone}`} className="inline-flex items-center gap-2 rounded-xl border border-white/20 px-6 py-3 text-sm font-bold text-white transition hover:border-white/40">
+                  <Phone className="h-4 w-4" /> {COMPANY_INFO.phone}
+                </a>
               </div>
-            </Card>
-          </AnimatedDiv>
-        </div>
-      </Section>
-    </PageLayout>
+              <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 border-t border-white/10 pt-6 text-xs text-white/50">
+                <Link href="/who-we-serve/commercial" className="hover:text-white/80 transition">Commercial →</Link>
+                <Link href="/who-we-serve/hoa" className="hover:text-white/80 transition">HOA & Condo →</Link>
+                <Link href="/who-we-serve/property-manager" className="hover:text-white/80 transition">Property Managers →</Link>
+                <Link href="/who-we-serve/agent" className="hover:text-white/80 transition">Real Estate Agents →</Link>
+              </div>
+            </AnimatedDiv>
+          </div>
+        </section>
+
+        <InsuranceClaimsCTA variant="compact" />
+      </PageLayout>
     </>
   )
 }
-

@@ -1,14 +1,10 @@
 'use client'
 
-import { Section, SectionHeader } from '@/components/ui/Section'
-import { Card } from '@/components/ui/Card'
-import { Button } from '@/components/ui/Button'
-import { AnimatedDiv } from '@/components/ui/AnimatedDiv'
+import { motion } from 'framer-motion'
 import { MINNESOTA_CITIES, WISCONSIN_CITIES } from '@/lib/constants'
-import { MapPin } from 'lucide-react'
+import { ArrowRight, MapPin } from 'lucide-react'
 import Link from 'next/link'
 
-// Client-safe city to slug conversion (matches server-side cityToSlug)
 function cityToSlug(city: string): string {
   if (!city || typeof city !== 'string') return ''
   return city.toLowerCase().replace(/\s+/g, '-').replace(/\./g, '')
@@ -16,97 +12,133 @@ function cityToSlug(city: string): string {
 
 export function ServiceAreas() {
   return (
-    <Section className="bg-white">
-      <SectionHeader
-        title="Service Areas"
-        description="Proudly serving Minnesota and Wisconsin communities"
-      />
+    <section className="bg-gray-50 border-t border-gray-100 section-padding">
+      <div className="container mx-auto container-padding">
 
-      <div className="grid gap-4 md:gap-6 lg:grid-cols-2">
-        {/* Minnesota */}
-        <AnimatedDiv
-          initial={{ opacity: 0, x: -15 }}
-          whileInView={{ opacity: 1, x: 0 }}
+        {/* ── Header row ── */}
+        <motion.div
+          className="mb-10 grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end"
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
+          transition={{ duration: 0.45 }}
         >
-          <Card hover={false} variant="elevated" className="p-4 md:p-6">
-            <div className="mb-3 flex items-center gap-2 md:mb-4 md:gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100 md:h-12 md:w-12">
-                <MapPin className="h-5 w-5 text-brand-primary md:h-6 md:w-6" strokeWidth={2} />
-              </div>
-              <h3 className="text-lg font-bold tracking-tight text-gray-900 md:text-2xl">Minnesota</h3>
-            </div>
-            
-            <div className="flex flex-wrap gap-1.5 md:gap-2">
-              {MINNESOTA_CITIES.map((city) => (
-                <Link
-                  key={city}
-                  href={`/service-areas/mn/${cityToSlug(city)}`}
-                  className="rounded-full bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-700 transition-all duration-200 hover:bg-brand-primary hover:text-white md:px-4 md:py-2 md:text-sm"
-                >
-                  {city}
-                </Link>
-              ))}
-            </div>
-          </Card>
-        </AnimatedDiv>
+          <div>
+            <p className="mb-1.5 text-[11px] font-bold uppercase tracking-widest text-brand-primary">
+              Where We Work
+            </p>
+            <h2 className="mb-3 text-2xl font-bold tracking-tight text-gray-900 md:text-3xl">
+              Roofing &amp; Exterior Services Across Minnesota &amp; Wisconsin
+            </h2>
+            <p className="max-w-2xl text-sm leading-relaxed text-gray-500 md:text-base">
+              Since the early 1990s, Advanced Roofing & Siding has delivered{' '}
+              <Link href="/services/roofing" className="font-medium text-gray-700 hover:text-brand-primary transition-colors">
+                roof replacements
+              </Link>
+              ,{' '}
+              <Link href="/services/siding" className="font-medium text-gray-700 hover:text-brand-primary transition-colors">
+                siding systems
+              </Link>
+              ,{' '}
+              <Link href="/services/windows" className="font-medium text-gray-700 hover:text-brand-primary transition-colors">
+                window installations
+              </Link>
+              , and{' '}
+              <Link href="/services/storm-restoration" className="font-medium text-gray-700 hover:text-brand-primary transition-colors">
+                storm damage restoration
+              </Link>{' '}
+              to homeowners and businesses across the Twin Cities metro, greater Minnesota, and western Wisconsin.
+              Every city below has a dedicated service page with local information, insurance claim guidance, and free estimate scheduling.
+            </p>
+          </div>
 
-        {/* Wisconsin */}
-        <AnimatedDiv
-          initial={{ opacity: 0, x: 15 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
-        >
-          <Card hover={false} variant="elevated" className="p-4 md:p-6">
-            <div className="mb-3 flex items-center gap-2 md:mb-4 md:gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-red-50 to-red-100 md:h-12 md:w-12">
-                <MapPin className="h-5 w-5 text-brand-primary md:h-6 md:w-6" strokeWidth={2} />
-              </div>
-              <h3 className="text-lg font-bold tracking-tight text-gray-900 md:text-2xl">Wisconsin</h3>
-            </div>
-            
-            <div className="flex flex-wrap gap-1.5 md:gap-2">
-              {WISCONSIN_CITIES.map((city) => (
-                <Link
-                  key={city}
-                  href={`/service-areas/wi/${cityToSlug(city)}`}
-                  className="rounded-full bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-700 transition-all duration-200 hover:bg-brand-primary hover:text-white md:px-4 md:py-2 md:text-sm"
-                >
-                  {city}
-                </Link>
-              ))}
-            </div>
-          </Card>
-        </AnimatedDiv>
-      </div>
-
-      {/* CTA Section */}
-      <AnimatedDiv
-        initial={{ opacity: 0, y: 15 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.4, delay: 0.2 }}
-        className="mt-10 text-center md:mt-12"
-      >
-        <Card className="bg-white p-4 md:p-6" variant="outlined">
-          <h3 className="mb-2 text-lg font-bold tracking-tight text-gray-900 md:mb-3 md:text-2xl">
-            Don't see your city listed?
-          </h3>
-          <p className="mb-4 text-sm text-gray-700 leading-relaxed md:mb-5 md:text-lg">
-            We may still service your area! <Link href="/contact" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">Contact us</Link> to find out if we can help with your
-            <Link href="/services/roofing" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2"> roofing</Link>, <Link href="/services/siding" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">siding</Link>, or <Link href="/services" className="text-brand-primary hover:text-red-800 font-semibold underline underline-offset-2">exterior needs</Link>.
-          </p>
-          <Link href="/contact">
-            <Button variant="primary" size="md" className="w-full sm:w-auto">
-              Contact Us
-            </Button>
+          <Link
+            href="/service-areas"
+            className="shrink-0 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary hover:text-brand-primary-dark transition-colors duration-200"
+          >
+            View all service areas
+            <ArrowRight className="h-4 w-4" />
           </Link>
-        </Card>
-      </AnimatedDiv>
-    </Section>
+        </motion.div>
+
+        {/* ── Directory ── */}
+        <motion.div
+          className="grid gap-8 md:grid-cols-[1fr_auto]"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
+          {/* Minnesota */}
+          <div>
+            <div className="mb-4 flex items-center gap-2">
+              <MapPin className="h-4 w-4 shrink-0 text-brand-primary" strokeWidth={2} />
+              <h3 className="text-sm font-bold uppercase tracking-widest text-gray-400">
+                Minnesota
+              </h3>
+            </div>
+            <ul className="grid grid-cols-2 gap-x-6 gap-y-1.5 sm:grid-cols-3 lg:grid-cols-4">
+              {MINNESOTA_CITIES.map((city) => (
+                <li key={city}>
+                  <Link
+                    href={`/service-areas/mn/${cityToSlug(city)}`}
+                    className="text-sm font-medium text-gray-600 hover:text-brand-primary transition-colors duration-150 leading-snug"
+                  >
+                    {city}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Wisconsin */}
+          <div className="md:min-w-[200px]">
+            <div className="mb-4 flex items-center gap-2">
+              <MapPin className="h-4 w-4 shrink-0 text-brand-primary" strokeWidth={2} />
+              <h3 className="text-sm font-bold uppercase tracking-widest text-gray-400">
+                Wisconsin
+              </h3>
+            </div>
+            <ul className="grid grid-cols-2 gap-x-6 gap-y-1.5 md:grid-cols-1">
+              {WISCONSIN_CITIES.map((city) => (
+                <li key={city}>
+                  <Link
+                    href={`/service-areas/wi/${cityToSlug(city)}`}
+                    className="text-sm font-medium text-gray-600 hover:text-brand-primary transition-colors duration-150 leading-snug"
+                  >
+                    {city}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </motion.div>
+
+        {/* ── Footer note ── */}
+        <motion.div
+          className="mt-8 flex flex-col gap-3 border-t border-gray-200 pt-6 sm:flex-row sm:items-center sm:justify-between"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.2 }}
+        >
+          <p className="text-sm text-gray-400">
+            Don't see your city?{' '}
+            <Link href="/contact" className="font-semibold text-gray-600 hover:text-brand-primary transition-colors">
+              Contact us
+            </Link>
+            {' '}— we may still serve your area.
+          </p>
+          <Link
+            href="/services/free-estimate"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-brand-primary px-4 py-2 text-sm font-semibold text-white hover:bg-brand-primary-dark transition-colors duration-200 shrink-0"
+          >
+            Get a Free Estimate
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </motion.div>
+
+      </div>
+    </section>
   )
 }
-
-

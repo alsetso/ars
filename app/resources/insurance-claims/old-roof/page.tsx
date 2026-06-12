@@ -1,4 +1,6 @@
 import { PageLayout } from '@/components/layout/PageLayout'
+import { StormDamageBanner } from '@/components/sections/StormDamageBanner'
+import { ClaimSubNav } from '@/components/sections/ClaimSubNav'
 import { PageHero } from '@/components/ui/PageHero'
 import { Section, SectionHeader } from '@/components/ui/Section'
 import { Card } from '@/components/ui/Card'
@@ -268,6 +270,9 @@ export default function OldRoofPage() {
         description="Understanding how roof age affects insurance coverage, depreciation, and claims in Minnesota & Wisconsin"
         backgroundImage="https://images.unsplash.com/photo-1632495375739-c7876ca4c8b9?q=80&w=2400"
       />
+
+      <StormDamageBanner variant="bar" />
+      <ClaimSubNav current="/resources/insurance-claims/old-roof" />
 
       {/* Introduction Section */}
       <Section className="bg-white">

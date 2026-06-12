@@ -8,6 +8,7 @@ import { Users, Shield, ArrowRight, Clock, Award, FileCheck, Briefcase, Trending
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { FAQSchema } from '@/components/seo/FAQSchema'
+import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema'
 
 export const metadata: Metadata = {
   title: 'Real Estate Roofing Services | Pre-Listing Inspections & Repairs | MN & WI',
@@ -154,23 +155,17 @@ export default function ProfessionalsWhoWeServePage() {
   return (
     <>
       <FAQSchema faqs={faqs} />
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: '/' },
+        { name: 'Who We Serve', url: '/who-we-serve' },
+        { name: 'Professionals', url: '/who-we-serve/professionals' },
+      ]} />
       <PageLayout>
         <PageHero
           title="Real Estate Professionals"
           description="Fast, reliable roofing support for real estate agents & brokers. Pre-listing inspections, buyer repair requests, and closing-ready services across Minnesota and Wisconsin"
         />
 
-        {/* Back Button */}
-        <Section className="bg-white py-4">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <Link href="/who-we-serve">
-              <Button variant="outline" size="md" className="group">
-                <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
-                Back to Who We Serve
-              </Button>
-            </Link>
-          </div>
-        </Section>
 
         {/* Introduction - SEO Content */}
         <Section className="bg-white">

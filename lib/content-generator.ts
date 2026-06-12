@@ -87,6 +87,36 @@ const SERVICE_CONTENT = {
     ],
     keywords: ['storm damage', 'hail damage', 'storm restoration', 'insurance claims', 'roof repair'],
   },
+  gutters: {
+    intro: 'seamless gutter systems',
+    benefits: [
+      'protect your foundation from costly water damage',
+      'eliminate seam failures with one-piece seamless construction',
+      'reduce maintenance with optional gutter protection covers',
+      'improve drainage and prevent landscape erosion',
+    ],
+    keywords: ['gutter installation', 'seamless gutters', 'gutter replacement', 'gutter repair', 'gutter protection'],
+  },
+  'soffit-fascia': {
+    intro: 'soffit and fascia systems',
+    benefits: [
+      'protect your roofline from moisture and pest intrusion',
+      'eliminate rot and painting with aluminum wraps',
+      'maintain proper attic ventilation year-round',
+      'preserve your GAF warranty with proper roofline support',
+    ],
+    keywords: ['soffit installation', 'fascia replacement', 'soffit fascia', 'roofline repair', 'aluminum soffit'],
+  },
+  'exterior-doors': {
+    intro: 'exterior door replacement',
+    benefits: [
+      'improve home security with reinforced door systems',
+      'reduce energy loss with properly insulated doors',
+      'enhance curb appeal with updated door styles',
+      'eliminate drafts and weather infiltration',
+    ],
+    keywords: ['exterior door replacement', 'door installation', 'entry door', 'exterior doors', 'door replacement'],
+  },
 }
 
 // Generate city-specific content
@@ -162,6 +192,107 @@ export function generateServiceCityContent(
   const challenges = weather.challenges
 
   return `${cityName}, ${stateFull} homeowners choose Advanced Roofing & Siding Inc. for professional ${service.intro} that stand up to local weather conditions. As a GAF Master Elite contractor serving ${cityName}, we understand that ${challenges[0]} and ${challenges[1]} require specialized expertise and premium materials. Our ${cityName} ${service.keywords[0]} services ${service.benefits[0]}, ${service.benefits[1]}, and ${service.benefits[2]}. We've been serving ${cityName} homeowners for over 30 years, building a reputation for quality craftsmanship, exceptional customer service, and reliable results. Whether you need ${service.keywords[1]} or ${service.keywords[2]}, our certified team brings the expertise and attention to detail that ${cityName} residents trust. Contact us today for your free estimate on ${service.keywords[0]} in ${cityName}, ${stateAbbr}.`
+}
+
+// Service slug → display metadata for matrix pages
+export const SERVICE_PAGE_MAP: Record<string, {
+  title: string
+  contentKey: string
+  shortDescription: string
+  metaKeywords: (city: string, state: string) => string[]
+}> = {
+  roofing: {
+    title: 'Roofing',
+    contentKey: 'roofing',
+    shortDescription: 'GAF Master Elite certified roof systems with lifetime warranties',
+    metaKeywords: (city, state) => [
+      `roofing contractor ${city} ${state}`,
+      `roof replacement ${city}`,
+      `roof repair ${city} ${state}`,
+      `GAF roofing ${city}`,
+      `roofer ${city} ${state}`,
+      `asphalt shingles ${city}`,
+      `roof installation ${city} ${state}`,
+      `storm damage roof ${city}`,
+    ],
+  },
+  siding: {
+    title: 'Siding',
+    contentKey: 'siding',
+    shortDescription: 'Durable exterior siding systems built for Minnesota\'s climate',
+    metaKeywords: (city, state) => [
+      `siding contractor ${city} ${state}`,
+      `siding installation ${city}`,
+      `siding replacement ${city} ${state}`,
+      `vinyl siding ${city}`,
+      `fiber cement siding ${city}`,
+      `exterior siding ${city} ${state}`,
+      `siding company ${city}`,
+    ],
+  },
+  windows: {
+    title: 'Windows',
+    contentKey: 'windows',
+    shortDescription: 'Energy-efficient window replacements that lower heating costs',
+    metaKeywords: (city, state) => [
+      `window replacement ${city} ${state}`,
+      `window installation ${city}`,
+      `energy efficient windows ${city}`,
+      `replacement windows ${city} ${state}`,
+      `window contractor ${city}`,
+      `new windows ${city} ${state}`,
+    ],
+  },
+  'storm-restoration': {
+    title: 'Storm Restoration',
+    contentKey: 'restoration',
+    shortDescription: 'Hail and wind damage assessment with full insurance claim support',
+    metaKeywords: (city, state) => [
+      `storm damage repair ${city} ${state}`,
+      `hail damage ${city}`,
+      `storm restoration ${city} ${state}`,
+      `insurance claim roofing ${city}`,
+      `wind damage repair ${city}`,
+      `hail damage siding ${city} ${state}`,
+    ],
+  },
+  gutters: {
+    title: 'Gutters',
+    contentKey: 'gutters',
+    shortDescription: 'Seamless aluminum gutter systems with optional protection covers',
+    metaKeywords: (city, state) => [
+      `gutter installation ${city} ${state}`,
+      `seamless gutters ${city}`,
+      `gutter replacement ${city} ${state}`,
+      `gutter contractor ${city}`,
+      `gutter repair ${city} ${state}`,
+      `gutter protection ${city}`,
+    ],
+  },
+  'soffit-fascia': {
+    title: 'Soffit & Fascia',
+    contentKey: 'soffit-fascia',
+    shortDescription: 'Aluminum soffit and fascia systems that never rot or need painting',
+    metaKeywords: (city, state) => [
+      `soffit fascia ${city} ${state}`,
+      `soffit installation ${city}`,
+      `fascia replacement ${city} ${state}`,
+      `roofline repair ${city}`,
+      `aluminum soffit ${city} ${state}`,
+    ],
+  },
+  'exterior-doors': {
+    title: 'Exterior Doors',
+    contentKey: 'exterior-doors',
+    shortDescription: 'Exterior door replacement built for comfort, security, and energy savings',
+    metaKeywords: (city, state) => [
+      `exterior door replacement ${city} ${state}`,
+      `door installation ${city}`,
+      `entry door ${city} ${state}`,
+      `exterior doors ${city}`,
+      `door contractor ${city} ${state}`,
+    ],
+  },
 }
 
 // Generate problem-solution content

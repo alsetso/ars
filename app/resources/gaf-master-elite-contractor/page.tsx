@@ -5,6 +5,7 @@ import { Card } from '@/components/ui/Card'
 import { AnimatedDiv } from '@/components/ui/AnimatedDiv'
 import { Shield, Award, CheckCircle, Star, Lock, Wrench, FileCheck, Building2, ArrowRight } from 'lucide-react'
 import type { Metadata } from 'next'
+import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 
@@ -34,10 +35,17 @@ export const metadata: Metadata = {
 export default function GAFMasterElitePage() {
   return (
     <PageLayout>
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: '/' },
+        { name: 'Resources', url: '/resources' },
+        { name: 'GAF Master Elite® Contractor', url: '/resources/gaf-master-elite-contractor' },
+      ]} />
       <PageHero
         title="GAF Master Elite® Contractor"
         description="Only 2% of roofing contractors in North America earn this prestigious certification"
         backgroundImage="https://images.unsplash.com/photo-1632495375739-c7876ca4c8b9?q=80&w=2400"
+        showForm
+        formServiceSlug="roofing"
       />
 
       <Section className="bg-white">

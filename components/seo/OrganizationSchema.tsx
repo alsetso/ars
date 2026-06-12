@@ -29,7 +29,7 @@ export function OrganizationSchema() {
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '4.9',
-      reviewCount: '150',
+      reviewCount: '160',
       bestRating: '5',
       worstRating: '1',
     },

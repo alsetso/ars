@@ -1,4 +1,6 @@
 import { PageLayout } from '@/components/layout/PageLayout'
+import { StormDamageBanner } from '@/components/sections/StormDamageBanner'
+import { ClaimSubNav } from '@/components/sections/ClaimSubNav'
 import { PageHero } from '@/components/ui/PageHero'
 import { Section, SectionHeader } from '@/components/ui/Section'
 import { Card } from '@/components/ui/Card'
@@ -248,6 +250,9 @@ export default function TreeDamagePage() {
         description="When Fallen Trees Damage Your Roof or Siding, Advanced Roofing & Siding Helps You Navigate Insurance—Fast, Accurately, and to Code"
         backgroundImage="https://images.unsplash.com/photo-1632495375739-c7876ca4c8b9?q=80&w=2400"
       />
+
+      <StormDamageBanner variant="bar" />
+      <ClaimSubNav current="/resources/insurance-claims/tree-damage" />
 
       {/* Introduction Section */}
       <Section className="bg-white">

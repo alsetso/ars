@@ -45,7 +45,7 @@ export const OVERLAY_CONFIG: OverlayPageConfig[] = [
     reason: 'High-value conversion page - first impression critical',
   },
   {
-    route: '/insurance-claims',
+    route: '/resources/insurance-claims',
     strategy: 'always',
     reason: 'High-value conversion page - premium service entry point',
   },

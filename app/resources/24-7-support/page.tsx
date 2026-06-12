@@ -5,6 +5,7 @@ import { Card } from '@/components/ui/Card'
 import { AnimatedDiv } from '@/components/ui/AnimatedDiv'
 import { Phone, Clock, CheckCircle, Star, AlertTriangle, Shield, CloudRain, Wrench, Mail, MessageCircle, ArrowRight, Zap } from 'lucide-react'
 import type { Metadata } from 'next'
+import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import { COMPANY_INFO } from '@/lib/constants'
@@ -35,6 +36,11 @@ export const metadata: Metadata = {
 export default function Support24_7Page() {
   return (
     <PageLayout>
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: '/' },
+        { name: 'Resources', url: '/resources' },
+        { name: '24/7 Support', url: '/resources/24-7-support' },
+      ]} />
       <PageHero
         title="24/7 Contact Services & Support"
         description="When there's a problem, you need a solution — fast"
