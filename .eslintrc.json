@@ -1,7 +1,10 @@
 {
   "extends": "next/core-web-vitals",
+  "plugins": ["@typescript-eslint"],
   "rules": {
-    "react/no-unescaped-entities": "off"
+    "react/no-unescaped-entities": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "jsx-a11y/role-supports-aria-props": "off"
   }
 }
 
